@@ -49,5 +49,11 @@ public class Main {
                 .filter(vehiculo -> vehiculo.getCosto() >= 1000)
                 .collect(Collectors.toList());
         vehiculosMayoresA1000.forEach(vehiculo -> System.out.println(vehiculo));
+
+        Double promedioCosto = vehiculos.stream()
+                .mapToDouble(Vehiculo::getCosto)
+                .average()
+                .orElse(0.0);
+        System.out.println(promedioCosto);
     }
 }
