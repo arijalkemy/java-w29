@@ -43,11 +43,8 @@ public class Garaje {
     }
 
     public double getPromedioCostos() {
-        try {
-            double total = vehiculos.stream().mapToDouble(Vehiculo::getCosto).sum();
-            return total / vehiculos.size();
-        } catch (ArithmeticException e) {
-            throw new ArithmeticException("No se puede dividir por cero");
-        }
+        return vehiculos.stream()
+                .mapToDouble(Vehiculo::getCosto)
+                .average().orElse(0);
     }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_carreras_selva/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_temperaturas/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_peso_imc/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_practica_excepciones/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_vehiculos/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="corretto-17" project-jdk-type="JavaSDK" />
+</project>
