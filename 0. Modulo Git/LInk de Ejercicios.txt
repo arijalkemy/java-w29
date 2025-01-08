@@ -1,0 +1,5 @@
+-- Link del Primer Ejercicio de Conflictos
+https://github.com/jdav1d/git_vivo_1
+
+-- Link del Segundo Ejercicio de Merge entre Ramas
+https://github.com/jdav1d/git_branches_vivo_1
