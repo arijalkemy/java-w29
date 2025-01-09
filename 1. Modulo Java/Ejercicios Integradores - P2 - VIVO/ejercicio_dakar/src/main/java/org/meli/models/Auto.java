@@ -5,6 +5,6 @@ public class Auto extends Vehiculo{
     private static final Integer RUEDAS = 4;
 
     public Auto(Double velocidad, Double aceleracion, Double anguloDeGiro, String patente, Double peso, Integer ruedas) {
-        super(velocidad, aceleracion, anguloDeGiro, patente, peso, ruedas);
+        super(velocidad, aceleracion, anguloDeGiro, patente, PESO, RUEDAS);
     }
 }

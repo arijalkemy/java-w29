@@ -2,11 +2,10 @@ package org.meli.models;
 
 import org.meli.Socorrista;
 
-public class SocorristaAuto implements Socorrista {
+public class SocorristaAuto implements Socorrista<Auto> {
 
     @Override
-    public void socorrer(Object auto) {
-        System.out.println("Socorriendo auto con patente: " + ((Auto) auto).getPatente());
+    public void socorrer(Auto auto) {
+        System.out.println("Socorriendo auto con patente: " + auto.getPatente());
     }
 }
-
