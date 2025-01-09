@@ -60,6 +60,18 @@ public class Carrera {
         return vehiculos.stream()
                 .max(Comparator.comparingDouble(Vehiculo::calcularValor))
                 .orElseThrow(() -> new IllegalArgumentException("La lista de vehículos está vacía."));
+        /*
+        Vehiculo ganador = null;
+        double maxValor = -Double.MAX_VALUE;
+        for (Vehiculo v : this.vehiculos) {
+            double valor = v.getVelocidad() * 0.5 * v.getAceleracion() / (v.getAnguloDeGiro() * (v.getPeso() - v.getRuedas() * 100));
+            if (valor > maxValor) {
+                maxValor = valor;
+                ganador = v;
+            }
+        }
+        return ganador;
+         */
     }
 
     // 7.
@@ -72,4 +84,7 @@ public class Carrera {
         if(moto != null) socorristaMoto.socorrer(moto);
     }
 
+    public List<Vehiculo> getVehiculos() {
+        return vehiculos;
+    }
 }

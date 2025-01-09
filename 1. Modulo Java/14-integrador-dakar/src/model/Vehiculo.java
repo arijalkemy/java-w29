@@ -42,6 +42,18 @@ public abstract class Vehiculo {
     }
 
     public double calcularValor() {
-        return (velocidad * 0.5 * aceleracion) / (anguloDeGiro * (peso - ruedas * 100));
+        return (velocidad * (aceleracion/2)) / (anguloDeGiro * (peso - ruedas * 100));
+    }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "velocidad=" + velocidad +
+                ", aceleracion=" + aceleracion +
+                ", anguloDeGiro=" + anguloDeGiro +
+                ", patente='" + patente + '\'' +
+                ", peso=" + peso +
+                ", ruedas=" + ruedas +
+                '}';
     }
 }
