@@ -1,9 +1,9 @@
 package com.example;
 
-import com.example.clases.Animal;
-import com.example.clases.Gato;
-import com.example.clases.Perro;
-import com.example.clases.Vaca;
+import com.example.clientes.Animal;
+import com.example.clientes.Gato;
+import com.example.clientes.Perro;
+import com.example.clientes.Vaca;
 import com.example.interfaces.Carnivoro;
 import com.example.interfaces.Herviboro;
 

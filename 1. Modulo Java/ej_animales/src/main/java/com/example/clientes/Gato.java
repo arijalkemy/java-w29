@@ -1,4 +1,4 @@
-package com.example.clases;
+package com.example.clientes;
 
 import com.example.interfaces.Carnivoro;
 
