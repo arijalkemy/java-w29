@@ -7,8 +7,8 @@ public class Carrera {
     private String nombre;
     private int cantidadDeVehiculosPermitidos;
     private List<Vehiculo> vehiculos;
-    private SocorristaAuto socorristaAuto;
-    private SocorristaMoto socorristaMoto;
+    private static Socorrista<Auto> socorristaAuto;
+    private static Socorrista<Moto> socorristaMoto;
 
     public Carrera(double distancia, double premioEnDolares, String nombre, int cantidadDeVehiculosPermitidos) {
         this.distancia = distancia;
@@ -66,6 +66,17 @@ public class Carrera {
         System.out.println("No se encontró una moto con la patente " + patente);
     }
 
+   /* public void socorrer(String patente) {
+        vehiculos.stream().filter(vehiculo -> vehiculo.getPatente().equals(patente)).forEach(vehiculo -> {
+            if (vehiculo instanceof Auto) {
+                socorristaAuto.socorrer((Auto) vehiculo);
+            } else {
+                socorristaMoto.socorrer((Moto) vehiculo);
+            }
+        });
+    }*/
+
+
     public Vehiculo determinarGanador() {
         Vehiculo ganador = null;
         double maxValor = Double.MIN_VALUE;
@@ -87,4 +98,5 @@ public class Carrera {
         }
 
     }
+
 }
