@@ -1,0 +1,32 @@
+# git config --global core.excludesfile ~/.gitignore_global
+
+# Some common .gitignore configurations: https://gist.github.com/octocat/9257657
+
+# Copy the next content on the .gitignore_global file:
+
+.DS_Store
+
+*.class
+
+bin/
+.settings/
+
+# Eclipse files
+.project
+.classpath
+.metadata/
+
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+atlassian-ide-plugin.xml
+
+# Maven files
+target/
+
+# Package Files #
+*.jar
+*.war
+*.ear
