@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Javap2 {
+public class Inscripciones {
     public static void main(String[] args) {
 
         // Definición de categorías
