@@ -5,7 +5,7 @@ public class Main {
   static List<Map<String, Object>> participantes = new ArrayList<>();
   static List<Map<String, Object>> inscripciones = new ArrayList<>();
 
-  public static void addInsripciones(Map<String, Object> inscripcion){
+  public static void addInsripcion(Map<String, Object> inscripcion){
     Integer montoAbonar = 0;
     Integer edad = (Integer) ((Map) inscripcion.get("participante")).get("edad");
     if(inscripcion.get("categoria") == categorias.get(0)){
@@ -33,6 +33,10 @@ public class Main {
     );
   }
 
+  public static void deleteInscripcion(Map<String, Object> participante){
+    inscripciones.removeIf(inscripcion -> inscripcion.get("participante") == participante);
+  }
+
   public static void main(String[] args) {
     categorias = List.of(
       Map.of("nombre", "Circuito chico", "descripcion", "2 km por selva y arroyos."),
@@ -46,17 +50,17 @@ public class Main {
       Map.of("numeroParticipante", 3, "dni", "45678912", "nombre", "Maria", "apellido", "Gomez", "edad", 35, "celular", "456789123", "numeroEmergencia", "456789123", "grupoSanguineo", "B+")
     );
 
-    Main.addInsripciones(Map.of(
+    Main.addInsripcion(Map.of(
       "numeroInscripcion", 1, 
       "categoria", categorias.get(0), 
       "participante", participantes.get(0)
     ));
-    Main.addInsripciones(Map.of(
+    Main.addInsripcion(Map.of(
       "numeroInscripcion", 2, 
       "categoria", categorias.get(1), 
       "participante", participantes.get(1)
     ));
-    Main.addInsripciones(Map.of(
+    Main.addInsripcion(Map.of(
       "numeroInscripcion", 3, 
       "categoria", categorias.get(2), 
       "participante", participantes.get(2)
@@ -77,5 +81,35 @@ public class Main {
     inscripciones.stream()
       .filter(inscripcion -> inscripcion.get("categoria") == categorias.get(2))
       .forEach(inscripcion -> System.out.println(inscripcion.get("participante")));
+    Main.deleteInscripcion(participantes.get(0));
+    System.out.println("=======================");
+    System.out.println("Inscripciones en la categoria Circuito chico:");
+    inscripciones.stream()
+      .filter(inscripcion -> inscripcion.get("categoria") == categorias.get(0))
+      .forEach(inscripcion -> System.out.println(inscripcion.get("participante")));
+    
+    Integer value = inscripciones.stream()
+      .filter(inscripcion -> inscripcion.get("categoria") == categorias.get(0))
+      .mapToInt(inscripcion -> (Integer) inscripcion.get("montoAbonar"))
+      .sum();
+    System.out.println("=======================");
+    System.out.println("Total categoria chico: " + value);
+    value = inscripciones.stream()
+      .filter(inscripcion -> inscripcion.get("categoria") == categorias.get(1))
+      .mapToInt(inscripcion -> (Integer) inscripcion.get("montoAbonar"))
+      .sum();
+    System.out.println("=======================");
+    System.out.println("Total categoria medio: " + value);
+    value = inscripciones.stream()
+      .filter(inscripcion -> inscripcion.get("categoria") == categorias.get(2))
+      .mapToInt(inscripcion -> (Integer) inscripcion.get("montoAbonar"))
+      .sum();
+    System.out.println("=======================");
+    System.out.println("Total categoria avanzado: " + value);
+    value = inscripciones.stream()
+      .mapToInt(inscripcion -> (Integer) inscripcion.get("montoAbonar"))
+      .sum();
+    System.out.println("=======================");
+    System.out.println("Total todas las categorias: " + value);
   }
 }
