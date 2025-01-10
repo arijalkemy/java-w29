@@ -8,8 +8,8 @@ public class NumeroRomanoService {
     static {
         romanos.add(Map.entry(1000, "M"));
         romanos.add(Map.entry(900, "CM"));
-        romanos.add(Map.entry(500, "D"));
         romanos.add(Map.entry(400, "CD"));
+        romanos.add(Map.entry(500, "D"));
         romanos.add(Map.entry(100, "C"));
         romanos.add(Map.entry(90, "XC"));
         romanos.add(Map.entry(50, "L"));
