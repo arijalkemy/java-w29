@@ -9,7 +9,6 @@ import java.util.Map;
 @RequestMapping("/codigo-morse")
 public class CodigoMorseController {
 
-    // El código morse es la clave, y la letra es el valor
     Map<String, String> equivalencias = new HashMap<>(
             Map.ofEntries(
                     Map.entry(".-", "A"),
