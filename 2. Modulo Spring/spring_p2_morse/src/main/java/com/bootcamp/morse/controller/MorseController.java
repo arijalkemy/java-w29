@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/morse")
+@RequestMapping("/morse")
 public class MorseController {
 
     private final MorseService morseService;
@@ -20,7 +20,7 @@ public class MorseController {
     }
 
     @GetMapping("/{query}")
-    public ResponseEntity<String> transateToMorse(@PathVariable("query") String query) {
-        return ResponseEntity.ok().body(morseService.generateMorse(query));
+    public ResponseEntity<String> translateToLetters(@PathVariable("query") String query) {
+        return ResponseEntity.ok().body(morseService.generateWord(query));
     }
 }
