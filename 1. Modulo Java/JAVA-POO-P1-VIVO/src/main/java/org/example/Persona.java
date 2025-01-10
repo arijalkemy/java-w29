@@ -95,4 +95,38 @@ public class Persona {
     public boolean mayorEdad(){
         return edad >= 18;
     }
+
+    public static class PersonaBuilder {
+        private String nombre;
+        private int edad;
+        private String dni;
+        private Double altura;
+        private Double peso;
+
+        public PersonaBuilder(){}
+
+        public PersonaBuilder setNombre(String nombre) {
+            this.nombre = nombre;
+            return this;
+        }
+        public PersonaBuilder setEdad(int edad) {
+            this.edad = edad;
+            return this;
+        }
+        public PersonaBuilder setDni(String dni) {
+            this.dni = dni;
+            return this;
+        }
+        public PersonaBuilder setAltura(Double altura) {
+            this.altura = altura;
+            return this;
+        }
+        public PersonaBuilder setPeso(Double peso) {
+            this.peso = peso;
+            return this;
+        }
+        public Persona build() {
+            return new Persona(nombre, edad, dni, altura, peso);
+        }
+    }
 }

@@ -22,6 +22,14 @@ public class Main {
         boolean mayorEdad = persona3.mayorEdad();
         String mensaje = mayorEdad ? "Mayor de edad" : "Menor de edad";
 
+        /*
+        Ejercicio 4 - Design pattern: Builder:
+        A continuación vamos a crear otro objeto de tipo persona y vamos a
+        construirlo pasando solamente un valor para el nombre y otro para la edad en el constructor.
+        ¿Es esto posible? No (Con lo que tenemos no). ¿Qué sucede si tratamos de hacer esto? Una combinatoria de ctores.
+        */
+        Persona p = new Persona.PersonaBuilder().setPeso(20.5).setNombre("Juan").build();
+        System.out.println(p);
 
     }
 }
