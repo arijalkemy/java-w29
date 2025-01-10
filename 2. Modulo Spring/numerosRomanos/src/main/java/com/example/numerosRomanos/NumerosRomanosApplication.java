@@ -1,4 +1,4 @@
-package com.example.numerosRomanos.numerosRomanos;
+package com.example.numerosRomanos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
