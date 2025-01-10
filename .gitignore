@@ -1,3 +1,9 @@
-# Java generated folders
+# Java generated files and folders
 
 **/out/
+
+# OSX related files
+.DS_Store
+
+# IntelliJ generated files and folders
+**/.idea/
