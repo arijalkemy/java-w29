@@ -7,8 +7,8 @@ import lombok.ToString;
 @ToString
 public class Prenda {
 
-    private String marca;
+    private final String marca;
 
-    private String modelo;
+    private final String modelo;
 
 }

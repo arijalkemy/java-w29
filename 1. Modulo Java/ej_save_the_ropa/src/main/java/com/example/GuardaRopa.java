@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class GuardaRopa {
 
-    private Map<Integer, List<Prenda>> prendas;
+    private final Map<Integer, List<Prenda>> prendas;
 
     private Integer contador;
 
@@ -24,10 +24,11 @@ public class GuardaRopa {
     public void mostrarPrendas() {
         System.out.println("LISTADO DE PRENDAS:");
 
-        for (Integer key : prendas.keySet()) {
-            System.out.print("ID: " + key);
-            System.out.println(" | Prendas: " + prendas.get(key));
-        }
+        prendas.forEach((id, prendas) -> {
+            System.out.print("ID: " + id);
+            System.out.println(" | Prendas: " + prendas);
+        });
+
     }
 
     public List<Prenda> devolverPrendas(Integer numero) {
