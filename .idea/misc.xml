@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/1. Modulo Java/ej_carreras_selva/pom.xml" />
         <option value="$PROJECT_DIR$/1. Modulo Java/ej_temperaturas/pom.xml" />
         <option value="$PROJECT_DIR$/1. Modulo Java/ej_peso_imc/pom.xml" />
-        <option value="$PROJECT_DIR$/1. Modulo Java/ej_practica_excepciones/pom.xml" />
         <option value="$PROJECT_DIR$/1. Modulo Java/ej_vehiculos/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_animales/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_distribuidora/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_save_the_ropa/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_practica_excepciones/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_imprimible/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_transacciones/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_series_numericas/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_agencia_turismo/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_dakar/pom.xml" />
       </list>
     </option>
   </component>

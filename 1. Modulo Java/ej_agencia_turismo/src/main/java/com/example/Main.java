@@ -3,6 +3,7 @@ package com.example;
 import com.example.model.Cliente;
 import com.example.model.Reserva;
 import com.example.model.TipoReserva;
+import com.example.repository.LocalizadorRepositoryImpl;
 import com.example.service.ClienteService;
 import com.example.service.LocalizadorService;
 
@@ -19,8 +20,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        LocalizadorRepositoryImpl localizadorRepository = new LocalizadorRepositoryImpl();
         ClienteService clienteService = new ClienteService();
-        LocalizadorService localizadorService = new LocalizadorService();
+        LocalizadorService localizadorService = new LocalizadorService(localizadorRepository);
 
         // PARTE 1
         Cliente nuevoCliente = clienteService.crearCliente("Agostina");

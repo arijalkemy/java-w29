@@ -7,54 +7,42 @@ import com.example.model.TipoReserva;
 import com.example.repository.LocalizadorRepositoryImpl;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class LocalizadorService {
 
-    private final LocalizadorRepositoryImpl localizadorRepository;
+    private final LocalizadorRepositoryImpl repository;
 
-    public LocalizadorService() {
-        this.localizadorRepository = new LocalizadorRepositoryImpl();
-    }
-
-    private boolean esPaqueteCompleto(List<Reserva> reservas) {
-        List<TipoReserva> tipos = reservas.stream().map(Reserva::getTipo).toList();
-        final List<TipoReserva> tiposDescuento10 = Arrays.asList(TipoReserva.values());
-        return tipos.containsAll(tiposDescuento10);
-    }
-
-    private long getCantidadDe(List<Reserva> reservas, TipoReserva filter) {
-        return reservas.stream()
-                .filter(reserva -> reserva.getTipo().equals(filter))
-                .count();
+    public LocalizadorService(LocalizadorRepositoryImpl repository) {
+        this.repository = repository;
     }
 
     public Localizador crearLocalizador(Cliente cliente, List<Reserva> reservas) {
-        List<Localizador> localizadores = localizadorRepository.getLocalizadoresByCliente(cliente.getId());
-        Localizador nuevoLocalizador = new Localizador(cliente, reservas);
+        List<Localizador> localizadores = repository.getLocalizadoresByCliente(cliente.getId());
+        Localizador localizador = new Localizador(cliente, reservas);
 
         // Aplicar descuentos
         if (localizadores.size() >= 2) {
-            nuevoLocalizador.aplicarDescuento(0.05);
+            localizador.aplicarDescuento(0.05);
         }
         if (esPaqueteCompleto(reservas)) {
-            nuevoLocalizador.aplicarDescuento(0.10);
+            localizador.aplicarDescuento(0.10);
         }
-        if (getCantidadDe(reservas, TipoReserva.HOTEL) >= 2 || getCantidadDe(reservas, TipoReserva.BOLETO) >= 2) {
-            nuevoLocalizador.aplicarDescuento(0.05);
+        if (localizador.getCantidadDe(TipoReserva.HOTEL) >= 2 || localizador.getCantidadDe(TipoReserva.BOLETO) >= 2) {
+            localizador.aplicarDescuento(0.05);
         }
 
-        // Agregar el localizador al repository
-        localizadorRepository.addLocalizador(nuevoLocalizador);
+        repository.addLocalizador(localizador);
 
-        return nuevoLocalizador;
+        return localizador;
     }
 
     public long getCantidadLocalizadoresVendidos() {
-        return localizadorRepository.getAll().size();
+        return repository.getAll().size();
     }
 
     private List<Reserva> getReservas() {
-        return localizadorRepository.getAll().stream()
+        return repository.getAll().stream()
                 .flatMap(localizador -> localizador.getReservas().stream()).toList();
     }
 
@@ -79,11 +67,17 @@ public class LocalizadorService {
     }
 
     public double getTotalVentas() {
-        return localizadorRepository.getAll().stream().mapToDouble(Localizador::getTotal).sum();
+        return repository.getAll().stream().mapToDouble(Localizador::getTotal).sum();
     }
 
     public double getPromedioVentas() {
-        return localizadorRepository.getAll().stream().mapToDouble(Localizador::getTotal).average().orElse(0.0);
+        return repository.getAll().stream().mapToDouble(Localizador::getTotal).average().orElse(0.0);
+    }
+
+    private boolean esPaqueteCompleto(List<Reserva> reservas) {
+        Set<TipoReserva> tiposReserva = reservas.stream().map(Reserva::getTipo).collect(Collectors.toSet());
+        final List<TipoReserva> tipos = Arrays.asList(TipoReserva.values());
+        return tiposReserva.containsAll(tipos);
     }
 
 }

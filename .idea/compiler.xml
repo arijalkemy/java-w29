@@ -2,24 +2,30 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ej_distribuidora" />
         <module name="ej_practica_excepciones" />
-        <module name="ej_carreras_selva" />
+        <module name="ej_animales" />
+        <module name="ej_save_the_ropa" />
+        <module name="ej_transacciones" />
         <module name="ej_temperaturas" />
         <module name="ej_peso_imc" />
+        <module name="ej_series_numericas" />
+        <module name="ej_dakar" />
+        <module name="ej_carreras_selva" />
+        <module name="ej_agencia_turismo" />
         <module name="ej_vehiculos" />
+        <module name="ej_imprimible" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ej_carreras_selva" target="17" />
-      <module name="ej_peso_imc" target="17" />
+      <module name="ej_agencia_turismo (1)" target="17" />
       <module name="ej_peso_imc (1)" target="17" />
-      <module name="ej_practica_excepciones" target="17" />
-      <module name="ej_temperaturas" target="17" />
-      <module name="ej_vehiculos" target="17" />
+      <module name="ej_temperaturas (1)" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

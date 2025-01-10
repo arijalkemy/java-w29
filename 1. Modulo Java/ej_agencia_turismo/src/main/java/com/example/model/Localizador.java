@@ -27,4 +27,10 @@ public class Localizador {
         this.total = reservas.stream().mapToDouble(Reserva::getPrecio).sum();
     }
 
+    public long getCantidadDe(TipoReserva filter) {
+        return reservas.stream()
+                .filter(reserva -> reserva.getTipo().equals(filter))
+                .count();
+    }
+
 }

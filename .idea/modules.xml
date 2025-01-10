@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/1. Modulo Java/ej_carreras_selva/ej_carreras_selva.iml" filepath="$PROJECT_DIR$/1. Modulo Java/ej_carreras_selva/ej_carreras_selva.iml" />
-      <module fileurl="file://$PROJECT_DIR$/1. Modulo Java/ej_peso_imc/ej_peso_imc.iml" filepath="$PROJECT_DIR$/1. Modulo Java/ej_peso_imc/ej_peso_imc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/1. Modulo Java/ej_practica_excepciones/ej_practica_excepciones.iml" filepath="$PROJECT_DIR$/1. Modulo Java/ej_practica_excepciones/ej_practica_excepciones.iml" />
-      <module fileurl="file://$PROJECT_DIR$/1. Modulo Java/ej_temperaturas/ej_temperaturas.iml" filepath="$PROJECT_DIR$/1. Modulo Java/ej_temperaturas/ej_temperaturas.iml" />
-      <module fileurl="file://$PROJECT_DIR$/1. Modulo Java/ej_vehiculos/ej_vehiculos.iml" filepath="$PROJECT_DIR$/1. Modulo Java/ej_vehiculos/ej_vehiculos.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java-w29.iml" filepath="$PROJECT_DIR$/.idea/java-w29.iml" />
     </modules>
   </component>
