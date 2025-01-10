@@ -7,5 +7,6 @@ public class App {
         carrera.darDeAltaAuto(150.0, 2.0, 2.0, "DEF456");
         carrera.darDeAltaMoto(150.0, 2.0, 2.0, "GHI789");
         carrera.socorrerAuto("ABC123");
+        carrera.socorrerMoto("GHI789");
     }
 }
