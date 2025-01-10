@@ -1,58 +1,81 @@
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
+import java.util.*;
 
 public class Main {
   static List<Map<String, Object>> categorias = new ArrayList<>();
-  String fields_categorias[] = { "nombre", "descripcion" };
-
   static List<Map<String, Object>> participantes = new ArrayList<>();
-  String fields_participantes[] = { "dni", "nombre", "apellido", "edad", "celular", "numeroEmergencia", "grupoSanguineo" };
-  
   static List<Map<String, Object>> inscripciones = new ArrayList<>();
-  String fields_inscripciones[] = { "categoria", "participante", "montoAbonar" };  
+
+  public static void addInsripciones(Map<String, Object> inscripcion){
+    Integer montoAbonar = 0;
+    Integer edad = (Integer) ((Map) inscripcion.get("participante")).get("edad");
+    if(inscripcion.get("categoria") == categorias.get(0)){
+      if(edad < 18) montoAbonar = 1300;
+      else montoAbonar = 1500;
+    } else if(inscripcion.get("categoria") == categorias.get(1)){
+      if(edad < 18) montoAbonar = 2000;
+      else montoAbonar = 2300;
+    } else if(inscripcion.get("categoria") == categorias.get(2)){
+      if(edad < 18) montoAbonar = null;
+      else montoAbonar = 2800;
+    }
+    if(montoAbonar == null){
+      System.out.println("No se puede inscribir a menores de edad en esta categoria");
+      return;
+    }
+
+    inscripciones.add(
+      Map.of(
+        "numeroInscripcion", inscripcion.get("numeroInscripcion"),
+        "categoria", inscripcion.get("categoria"),
+        "participante", inscripcion.get("participante"),
+        "montoAbonar", montoAbonar
+      )
+    );
+  }
 
   public static void main(String[] args) {
-    // categorias
-    Map<String, Object> carrera1 = new HashMap<>();
-    carrera1.put("nombre", "Circuito chico");
-    carrera1.put("descripcion", "2 km por selva y arroyos.");
-    categorias.add(carrera1);
+    categorias = List.of(
+      Map.of("nombre", "Circuito chico", "descripcion", "2 km por selva y arroyos."),
+      Map.of("nombre", "Circuito medio", "descripcion", "5 km por selva, arroyos y barro."),
+      Map.of("nombre", "Circuito Avanzado", "descripcion", "10 km por selva, arroyos, barro y escalada en piedra.")
+    );
 
-    Map<String, Object> carrera2 = new HashMap<>();
-    carrera2.put("nombre", "Circuito medio");
-    carrera2.put("descripcion", "5 km por selva, arroyos y barro.");
-    categorias.add(carrera2);
+    participantes = List.of(
+      Map.of("numeroParticipante", 1, "dni", "12345678", "nombre", "Edward", "apellido", "Soto", "edad", 25, "celular", "987654321", "numeroEmergencia", "123456789", "grupoSanguineo", "O+"),
+      Map.of("numeroParticipante", 2, "dni", "87654321", "nombre", "Juan", "apellido", "Perez", "edad", 30, "celular", "123456789", "numeroEmergencia", "987654321", "grupoSanguineo", "A+"),
+      Map.of("numeroParticipante", 3, "dni", "45678912", "nombre", "Maria", "apellido", "Gomez", "edad", 35, "celular", "456789123", "numeroEmergencia", "456789123", "grupoSanguineo", "B+")
+    );
 
-    Map<String, Object> carrera3 = new HashMap<>();
-    carrera3.put("nombre", "Circuito Avanzado");
-    carrera3.put("descripcion", "10 km por selva, arroyos, barro y escalada en piedra.");
-    categorias.add(carrera3);
+    Main.addInsripciones(Map.of(
+      "numeroInscripcion", 1, 
+      "categoria", categorias.get(0), 
+      "participante", participantes.get(0)
+    ));
+    Main.addInsripciones(Map.of(
+      "numeroInscripcion", 2, 
+      "categoria", categorias.get(1), 
+      "participante", participantes.get(1)
+    ));
+    Main.addInsripciones(Map.of(
+      "numeroInscripcion", 3, 
+      "categoria", categorias.get(2), 
+      "participante", participantes.get(2)
+    ));
 
-    // participantes
-    Map<String, Object> participante1 = new HashMap<>();
-    participante1.put("numeroParticipante", 1);
-    participante1.put("dni", "12345678");
-    participante1.put("nombre", "Edward");
-    participante1.put("apellido", "Soto");
-    participante1.put("edad", 25);
-    participante1.put("celular", "987654321");
-    participante1.put("numeroEmergencia", "123456789");
-    participante1.put("grupoSanguineo", "O+");
-    participantes.add(participante1);
-  
-    // inscripciones
-    Map<String, Object> inscripcion1 = new HashMap<>();
-    inscripcion1.put("numeroInscripcion", 1);
-    inscripcion1.put("categoria", carrera1);
-    inscripcion1.put("participante", "Edward Soto");
-    inscripcion1.put("montoAbonar", 50.0);
-    inscripcion1.put("participante", participante1);
-    inscripciones.add(inscripcion1);
-
-    for (Map<String, Object> inscripcion : inscripciones){
-      System.out.println(inscripcion);
-    }
+    System.out.println("=======================");
+    System.out.println("Inscripciones en la categoria Circuito chico:");
+    inscripciones.stream()
+      .filter(inscripcion -> inscripcion.get("categoria") == categorias.get(0))
+      .forEach(inscripcion -> System.out.println(inscripcion.get("participante")));
+    System.out.println("=======================");
+    System.out.println("Inscripciones en la categoria Circuito medio:");
+    inscripciones.stream()
+      .filter(inscripcion -> inscripcion.get("categoria") == categorias.get(1))
+      .forEach(inscripcion -> System.out.println(inscripcion.get("participante")));
+    System.out.println("=======================");
+    System.out.println("Inscripciones en la categoria Circuito Avanzado:");
+    inscripciones.stream()
+      .filter(inscripcion -> inscripcion.get("categoria") == categorias.get(2))
+      .forEach(inscripcion -> System.out.println(inscripcion.get("participante")));
   }
 }
