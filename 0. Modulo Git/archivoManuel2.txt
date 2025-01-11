@@ -1,0 +1,4 @@
+archivo adicional para subir, práctica Git
+
+Línea nueva para conflicto 2 (ahora sí espero xD)
+Agregando línea que será el conflicto :)
