@@ -1,6 +1,6 @@
-package com.example.numerosromanos.controllers;
+package com.example.persona.controllers;
 
-import com.example.numerosromanos.services.NumerosRomanosService;
+import com.example.persona.services.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,18 +11,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 
-    private final NumerosRomanosService service;
+    private final PersonaService service;
 
     @Autowired
-    public Controller(NumerosRomanosService service) {
+    public Controller(PersonaService service) {
         this.service = service;
     }
 
-    @GetMapping("/{numeroDecimal}")
-    public ResponseEntity<String> convertir(@PathVariable int numeroDecimal) {
+    @GetMapping("/{dia}/{mes}/{anio}")
+    public ResponseEntity<?> obtenerEdad(
+            @PathVariable Integer dia,
+            @PathVariable Integer mes,
+            @PathVariable Integer anio
+    ) {
         try {
-            String numeroRomano = service.decimalToRoman(numeroDecimal);
-            return ResponseEntity.ok(numeroRomano);
+            Integer edad = service.calcularEdad(dia, mes, anio);
+            return ResponseEntity.ok(edad);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
