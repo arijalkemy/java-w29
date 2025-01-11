@@ -2,61 +2,43 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        String ciudades[] = new String[10];
+        Map<String, List<Integer>> temperaturaPaises = new HashMap<>(
+                Map.ofEntries(
+                        Map.entry("Londres", List.of(-2,33)),
+                        Map.entry("Madrid", List.of(-3,32)),
+                        Map.entry("Nueva York", List.of(-8,27)),
+                        Map.entry("Buenos Aires", List.of(4,37)),
+                        Map.entry("Asuncion", List.of(6,42)),
+                        Map.entry("Sao Pablo", List.of(5,43)),
+                        Map.entry("Lima", List.of(0,39)),
+                        Map.entry("Santiado de Chile", List.of(-7,26)),
+                        Map.entry("Lisboa", List.of(-1,31)),
+                        Map.entry("Tokio", List.of(-10,35))
+                )
+        );
 
-        ciudades[0] = "Londres";
-        ciudades[1] = "Madrid";
-        ciudades[2] = "Nueva York";
-        ciudades[3] = "Buenos Aires";
-        ciudades[4] = "Asunción";
-        ciudades[5] = "Sao Pablo";
-        ciudades[6] = "Lima";
-        ciudades[7] = "Santiago de Chile";
-        ciudades[8] = "Lisboa";
-        ciudades[9] = "Tokio";
+        int temperaturaMasBaja = Integer.MAX_VALUE;
+        int temperaturaMasAlta = Integer.MIN_VALUE;
+        String ciudadMasAlta = "";
+        String ciudadMasBaja = "";
 
-        int temperaturas[][]=new int[10][10];
+        for (Map.Entry<String, List<Integer>> entry : temperaturaPaises.entrySet()) {
+            String ciudad = entry.getKey();
+            int temperaturaMinima = entry.getValue().get(0);
+            int temperaturaMaxima = entry.getValue().get(1);
 
-        temperaturas[0][0]=-2;
-        temperaturas[0][1]=33;
-        temperaturas[1][0]=-3;
-        temperaturas[1][1]=32;
-        temperaturas[2][0]=-8;
-        temperaturas[2][1]=27;
-        temperaturas[3][0]=4;
-        temperaturas[3][1]=37;
-        temperaturas[4][0]=6;
-        temperaturas[4][1]=42;
-        temperaturas[5][0]=5;
-        temperaturas[5][1]=43;
-        temperaturas[6][0]=0;
-        temperaturas[6][1]=39;
-        temperaturas[7][0]=-7;
-        temperaturas[7][1]=26;
-        temperaturas[8][0]=-1;
-        temperaturas[8][1]=31;
-        temperaturas[9][0]=-10;
-        temperaturas[9][1]=35;
+            if (temperaturaMinima < temperaturaMasBaja) {
+                temperaturaMasBaja = temperaturaMinima;
+                ciudadMasBaja = ciudad;
+            }
 
-        int menor=0;
-        int mayor=0;
-        String ciudad_mayor="";
-        String ciudad_menor="";
-
-        for(int f = 0; f <= 9; f++){
-            for(int c = 0; c <= 9; c++){
-                if(temperaturas[f][c] < menor){
-                    menor=temperaturas[f][c];
-                    ciudad_mayor=ciudades[f];
-                }
-                if(temperaturas[f][c] > mayor){
-                    mayor=temperaturas[f][c];
-                    ciudad_menor=ciudades[f];
-                }
+            if (temperaturaMaxima > temperaturaMasAlta) {
+                temperaturaMasAlta = temperaturaMaxima;
+                ciudadMasAlta = ciudad;
             }
         }
 
-        System.out.println("La temperatura mas baja es: " + menor + " y es la ciudad: " + ciudad_mayor);
-        System.out.println("La temperatura mas alta es: " + mayor + " y es la ciudad: " + ciudad_menor);
+        System.out.println("La menor temperatura fue en " + ciudadMasBaja + ", con " + temperaturaMasBaja + " grados");
+        System.out.println("La mayor temperatura fue en " + ciudadMasAlta + ", con " + temperaturaMasAlta + " grados");
     }
 }
