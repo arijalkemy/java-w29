@@ -16,8 +16,12 @@ public class NumerosRomanosController {
     @Autowired
     private NumerosRomanosService numerosRomanosService;
 
-    @GetMapping("/convertir/{numeroEntero}")
-    public ResponseEntity<NumeroRomanoDTO> convertirANumerosRomanos(@PathVariable String numeroEntero) {
-        return ResponseEntity.ok(numerosRomanosService.getNumeroRomanoDTO(numeroEntero));
+    @GetMapping("/convertir/{numero}")
+    public ResponseEntity<NumeroRomanoDTO> convertirANumerosRomanos(@PathVariable String numero) {
+        try {
+            return ResponseEntity.ok(numerosRomanosService.convertirANumeroRomano(Integer.parseInt(numero)));
+        } catch (NumberFormatException ex) {
+            return ResponseEntity.ok(numerosRomanosService.convertirANumeroEntero(numero));
+        }
     }
 }
