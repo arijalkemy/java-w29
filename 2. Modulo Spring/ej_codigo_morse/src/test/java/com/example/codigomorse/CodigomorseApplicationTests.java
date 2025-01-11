@@ -1,10 +1,10 @@
-package com.bootcamp.numerosromanos;
+package com.example.codigomorse;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NumerosromanosApplicationTests {
+class CodigomorseApplicationTests {
 
 	@Test
 	void contextLoads() {
