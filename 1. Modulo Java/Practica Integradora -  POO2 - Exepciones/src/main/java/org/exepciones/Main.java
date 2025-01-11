@@ -18,7 +18,7 @@ public class Main {
         PracticaExcepciones practice = new PracticaExcepciones();
 
         /*
-        //Ejercicio 1
+        //Ejercicio 1.1
 
         try {
             practice.calcularCociente();
@@ -30,7 +30,7 @@ public class Main {
 
         */
 
-        //Ejercicio 2
+        //Ejercicio 1.2
         try {
             practice.calcularCociente();
             System.out.println(messageFinal);
