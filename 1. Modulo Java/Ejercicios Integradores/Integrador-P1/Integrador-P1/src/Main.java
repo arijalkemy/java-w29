@@ -56,7 +56,7 @@ public class Main {
         List<Item> lista = new ArrayList<>(Arrays.asList(item,item2,item3));
 
         //pasa el cliente a validar
-        Cliente clienteValidacion = cliente3;
+        Cliente clienteValidacion = cliente1;
 
         //valida si el cliente asociado a la factura se encuentra registrado en la collection de clientes.
         //en caso de que no, el mismo deberá ser creado.
