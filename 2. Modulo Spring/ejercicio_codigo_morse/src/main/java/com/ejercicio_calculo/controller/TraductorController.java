@@ -21,6 +21,4 @@ public class TraductorController {
     public String traductor(@PathVariable String codigoMorse) {
         return traductorService.traducir(codigoMorse);
     }
-
-
 }

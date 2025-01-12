@@ -42,14 +42,11 @@ public class TraductorService {
     public String traducir(String codigoMorse) {
         StringBuilder sb = new StringBuilder();
         String[] palabras = codigoMorse.split("  ");
-        for (int i = 0; i < palabras.length; i++) {
-            String[] letras = palabras[i].split(" ");
-            for (int j = 0; j < letras.length; j++) {
-                sb.append(MORSE_TO_TEXT.getOrDefault(letras[j], " "));
-            }
+        for (String p : palabras) {
+            String[] letras = p.split(" ");
+            for (String l : letras)
+                sb.append(MORSE_TO_TEXT.getOrDefault(l, " "));
         }
         return sb.toString().trim();
     }
-
-
 }
