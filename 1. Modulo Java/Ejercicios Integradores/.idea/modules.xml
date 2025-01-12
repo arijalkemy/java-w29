@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Ejercicios Integradores.iml" filepath="$PROJECT_DIR$/.idea/Ejercicios Integradores.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Integrador-P1-VIVO/Integrador-P1-VIVO.iml" filepath="$PROJECT_DIR$/Integrador-P1-VIVO/Integrador-P1-VIVO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Integrador-P2-VIVO/Integrador-P2-VIVO.iml" filepath="$PROJECT_DIR$/Integrador-P2-VIVO/Integrador-P2-VIVO.iml" />
+    </modules>
+  </component>
+</project>
