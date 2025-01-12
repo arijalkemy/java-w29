@@ -1,32 +1,16 @@
 package org.meli.models;
 
 public class Producto {
-    private String nombre;
-    private double precio;
+        private String nombre;
+    private Double precio;
 
-    public Producto(String nombre, double precio) {
-        this.nombre = nombre;
-        this.precio = precio;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public double getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public Producto(String nombre, Double precio) {
+        this.nombre = nombre;
         this.precio = precio;
-    }
-
-    public double calcular(int cantidadDeProductos) {
-        return precio * cantidadDeProductos;
     }
 
     @Override
@@ -35,6 +19,10 @@ public class Producto {
                 "nombre='" + nombre + '\'' +
                 ", precio=" + precio +
                 '}';
+    }
+
+    public Double calcular(Integer cantidadDeProductos) {
+        return precio * cantidadDeProductos;
     }
 }
 
