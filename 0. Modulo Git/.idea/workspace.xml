@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8539c10-f3ed-477b-859a-426b7b75dfad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Modulo correspondiente a la practica de Git.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Modulo correspondiente a la practica de Git.txt" afterDir="false" />
-    </list>
+    <list default="true" id="c8539c10-f3ed-477b-859a-426b7b75dfad" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736723503386</updated>
-      <workItem from="1736723504460" duration="741000" />
+      <workItem from="1736723504460" duration="1239000" />
     </task>
     <servers />
   </component>
