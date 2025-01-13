@@ -28,7 +28,7 @@ public class SportsController {
     }
 
     @GetMapping("/findSports/{name}")
-    public ResponseEntity<Sport> getSportByName(@PathVariable("name") String name) {
+    public ResponseEntity<Sport> getSportByName(@PathVariable String name) {
         Optional<Sport> sport = sportService.getSportByName(name);
         return sport.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
