@@ -1,4 +1,9 @@
-package com.bootcamp.deportista.domain;;
+package com.bootcamp.deportista.dto;
+
+import com.bootcamp.deportista.domain.Person;
+import com.bootcamp.deportista.domain.Sport;
+
+;
 public class DeportistaDTO {
     private String fullName;
 
