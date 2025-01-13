@@ -18,7 +18,7 @@ public record FechaNacimientoDto (
 
         // Validar que sea una fecha anterior a la fecha actual
         if (fechaNacimiento.isAfter(fechaActual)) {
-            throw new IllegalArgumentException("La fecha de nacimiento debe ser anterior a la fecha actual");
+            throw new DateTimeException("La fecha de nacimiento debe ser anterior a la fecha actual");
         }
 
         return fechaNacimiento;

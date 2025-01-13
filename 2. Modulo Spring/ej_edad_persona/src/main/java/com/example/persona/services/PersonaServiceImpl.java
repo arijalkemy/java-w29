@@ -6,8 +6,6 @@ import com.example.persona.repositories.PersonaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.DateTimeException;
-import java.time.LocalDate;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 

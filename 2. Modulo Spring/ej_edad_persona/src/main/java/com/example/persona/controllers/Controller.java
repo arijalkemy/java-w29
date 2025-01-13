@@ -4,13 +4,11 @@ import com.example.persona.dtos.FechaNacimientoDto;
 import com.example.persona.entities.Persona;
 import com.example.persona.services.PersonaService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.util.NoSuchElementException;
 
 @RestController
 @RequiredArgsConstructor

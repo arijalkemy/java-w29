@@ -12,11 +12,6 @@ import java.util.NoSuchElementException;
 @ControllerAdvice(annotations = RestController.class)
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(IllegalArgumentException.class)
-    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
-        return ResponseEntity.badRequest().body(e.getMessage());
-    }
-
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<String> handleIllegalArgumentException(NoSuchElementException e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
