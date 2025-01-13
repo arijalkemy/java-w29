@@ -9,7 +9,7 @@ import java.time.Period;
 
 @RestController
 public class EdadPersonaController {
-    @GetMapping("{dia}/{mes}/{año}")
+    @GetMapping("/darEdad/{dia}/{mes}/{año}")
     public int darEdad(@PathVariable int dia
             , @PathVariable int mes, @PathVariable int año){
         //LocalDate para representar las fechas.
