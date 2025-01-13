@@ -1,29 +1,43 @@
 package com.meli.ej_edad.controller;
 
-import com.meli.ej_edad.service.AgeService;
+import com.meli.ej_edad.dto.PersonDetailsDTO;
+import com.meli.ej_edad.model.Person;
+import com.meli.ej_edad.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
 
 @RestController
 public class AppController {
 
-    private final AgeService ageService;
+    private final PersonService personService;
 
     @Autowired
-    public AppController(AgeService ageService) {
-        this.ageService = ageService;
+    public AppController(PersonService personService) {
+        this.personService = personService;
     }
 
     @GetMapping("/{day}/{month}/{year}")
-    public ResponseEntity<Integer> getAge(
+    public ResponseEntity<String> getAge(
             @PathVariable Integer day,
             @PathVariable Integer month,
             @PathVariable Integer year) {
-        Integer age = this.ageService.calculateAge(day, month, year);
-        return ResponseEntity.ok(age);
+        LocalDate birthday = LocalDate.of(year, month, day);
+        Integer age = this.personService.calculateAge(birthday);
+        return ResponseEntity.ok(String.format("Edad: %d años", age));
+    }
+
+    @PostMapping("/person")
+    public ResponseEntity<String> createPerson(@RequestBody Person person) {
+        Integer personId = this.personService.createPerson(person);
+        return new ResponseEntity<String>("Persona creada con id: " + personId, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/person/{id}")
+    public ResponseEntity<PersonDetailsDTO> getPersonDetails(@PathVariable Integer id) {
+        return ResponseEntity.ok(this.personService.getPersonDetails(id));
     }
 }
