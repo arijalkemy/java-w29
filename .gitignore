@@ -1,0 +1,5 @@
+out/*
+*.class
+*.jar
+*.war
+.DS_Store
