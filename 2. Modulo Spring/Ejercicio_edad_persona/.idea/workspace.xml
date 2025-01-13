@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3c743b55-745c-4eef-964e-58cbcd2bc0f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Java/AbstractasYInterfaces/ej2/ej2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/AbstractasYInterfaces/untitled/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/AbstractasYInterfaces/untitled/src/Clientes/Basic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/AbstractasYInterfaces/untitled/src/Clientes/Cobrador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/AbstractasYInterfaces/untitled/src/Clientes/Ejecutivo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/AbstractasYInterfaces/untitled/src/Interfaces/Transaccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/AbstractasYInterfaces/untitled/src/Operaciones/ConsultaSaldo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/AbstractasYInterfaces/untitled/src/Operaciones/Deposito.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/AbstractasYInterfaces/untitled/src/Operaciones/PagoServicios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/AbstractasYInterfaces/untitled/src/Operaciones/RetiroEfectivo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/AbstractasYInterfaces/untitled/src/Operaciones/Transferencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/AbstractasYInterfaces/untitled/untitled.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/Integrador/P2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/Integrador/P2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/Integrador/P2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/Integrador/P2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/Integrador/P2/P2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/Integrador/untitled/untitled.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/POO1/untitled/src/entity/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/POO1/untitled/src/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/POO1/untitled/untitled.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/POO2/POO2/POO2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/POO2/POO2/src/Distribuidora.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/POO2/PracticaExcepciones/PracticaExcepciones.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/Parte1/Ciudades/Ciudades.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/streams/untitled/src/Garaje.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/streams/untitled/src/Vehiculo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/streams/untitled/untitled.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../factorial/src/main/java/com/example/factorial/service/Iservice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1g-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1g-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1g-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1g-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1g-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1g-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1g-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/1g-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/2-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/2-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/2-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/2-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/2-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/2-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/2-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/2-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/4-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/4-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/4-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/4-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Arrows/4-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Bars/BarsFull.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Bars/bars0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Bars/bars1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Bars/bars2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Bars/bars3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Bars/bars4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Bug Tracking/bug.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Bug Tracking/icon-scheduleitem.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Bug Tracking/light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Bug Tracking/mail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Gender/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Gender/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Gender/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Gender/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Gender/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Gender/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Gender/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Gender/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Gender/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/KPI/01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/KPI/02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/KPI/03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/KPI/04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/KPI/05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/KPI/06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/KPI/07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/KPI/08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/KPI/09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/KPI/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/KPI/12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/KPI/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Proportions/0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Proportions/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Proportions/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Proportions/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Proportions/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Ratings/0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Ratings/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Ratings/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Ratings/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Ratings/3bw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Ratings/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Ratings/4bw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Thin Arrows/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Thin Arrows/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Thin Arrows/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Thin Arrows/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Thin Arrows/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Thin Arrows/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Thin Arrows/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Thin Arrows/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Weather/1-0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Weather/1-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Weather/1-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Weather/1-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Weather/1-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Weather/1-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Weather/2-0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Weather/2-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Weather/2-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Weather/2-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Weather/2-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Formas/Weather/2-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Fuentes de datos/2023.1/es_ES-LATAM/Indicadores Mundiales.hyper" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Fuentes de datos/2023.1/es_ES-LATAM/Indicadores Mundiales.tds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Fuentes de datos/2023.1/es_ES-LATAM/Muestra - Supertienda.tds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Fuentes de datos/2023.1/es_ES-LATAM/Muestra - Supertienda.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Fuentes de datos/2023.1/es_ES-LATAM/Sample - Superstore.tds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Fuentes de datos/2023.1/es_ES-LATAM/Sample - Superstore.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Preferences.tps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mi Repositorio de Tableau/Registros/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../hola.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2rZkwozWVeoGhcnd31rA5J1Hz2w" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.EdadPersonaApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="EdadPersonaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="edadPersona" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.melibootcamp.edadPersona.EdadPersonaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c743b55-745c-4eef-964e-58cbcd2bc0f6" name="Changes" comment="" />
+      <created>1736774225866</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736774225866</updated>
+      <workItem from="1736774227753" duration="60000" />
+      <workItem from="1736774313189" duration="710000" />
+      <workItem from="1736781860299" duration="1221000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
