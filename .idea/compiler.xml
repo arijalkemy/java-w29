@@ -32,7 +32,7 @@
         <module name="ej_numeros_romanos" />
         <module name="ej_factorial" />
       </profile>
-      <profile name="Annotation profile for ej_covid" enabled="true">
+      <profile name="Annotation profile for ej_blog" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -40,11 +40,12 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="ej_starwars" />
-        <module name="ej_calculadora_calorias" />
+        <module name="ej_blog" />
         <module name="ej_covid" />
         <module name="ej_concesionaria" />
         <module name="ej_deportistas" />
         <module name="ej_codigo_morse" />
+        <module name="ej_calculadora_calorias" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -66,6 +67,7 @@
       <module name="calorias" options="-parameters" />
       <module name="codigomorse" options="-parameters" />
       <module name="concesionaria" options="-parameters" />
+      <module name="ej_blog" options="-parameters" />
       <module name="ej_calculadora_calorias" options="-parameters" />
       <module name="ej_codigo_morse" options="-parameters" />
       <module name="ej_concesionaria" options="-parameters" />
