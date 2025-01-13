@@ -4,6 +4,8 @@ import com.meli.practicaanotaciones.DTO.AddEmployeeDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 public class PracticaController {
 
@@ -18,16 +20,16 @@ public class PracticaController {
 
     @GetMapping(path = "/student")
     public String sayHelloStudent(
-            @RequestParam String name,
-            @RequestParam String lastname
+            @RequestParam Optional<String> name,
+            @RequestParam Optional<String> lastname
     ) {
-        return "Hello " + name + " " + lastname;
+        return "Hello ";
     }
 
     @PostMapping("/employee")
-    public ResponseEntity<String> addEmployee(
+    public ResponseEntity<AddEmployeeDTO> addEmployee(
             @RequestBody AddEmployeeDTO employee
     ) {
-        return ResponseEntity.ok("Usuario creado con username: " + employee);
+        return ResponseEntity.ok(employee);
     }
 }
