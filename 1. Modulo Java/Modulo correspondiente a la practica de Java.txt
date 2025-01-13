@@ -5,3 +5,4 @@
 5. Clases abstractas e interfaces - Practice Bank - Practice Documents - PracticeAnimals
 6. Ejercicios prácticos Generics + Wrapper + Lambda + Streams - PracticeLambdaStreams
 7. Ejercicio Clases Abstractas - PracticeAbstractClasses
+8. Ejercicio integrador P1 - PracticeTheEconomical
