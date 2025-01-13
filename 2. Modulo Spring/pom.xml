@@ -11,6 +11,7 @@
         <module>P2-PG</module>
         <module>P2-VIVO</module>
         <module>P1-VIVO</module>
+        <module>P1-Deportistas</module>
     </modules>
 
     <dependencyManagement>
