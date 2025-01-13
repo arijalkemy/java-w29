@@ -1,13 +1,21 @@
 package com.meli.scaffolding.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-public class PersonaDTO {
+public class DeportistaDTO {
     private String nombre;
     private String apellido;
     private String deporte;
+
+    public DeportistaDTO(String nombre, String apellido, String deporte) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.deporte = deporte;
+    }
+
+    public DeportistaDTO(Persona persona) {
+        this.nombre = persona.getNombre();
+        this.apellido = persona.getApellido();
+        this.deporte = persona.getDeporte().getNombre();
+    }
 
     public String getNombre() {
         return nombre;
@@ -30,12 +38,6 @@ public class PersonaDTO {
     }
 
     public void setDeporte(String deporte) {
-        this.deporte = deporte;
-    }
-
-    public PersonaDTO(String nombre, String apellido, String deporte) {
-        this.nombre = nombre;
-        this.apellido = apellido;
         this.deporte = deporte;
     }
 }
