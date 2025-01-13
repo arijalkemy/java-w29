@@ -25,7 +25,7 @@ public class Main {
         System.out.println("--------------");
         garaje.getVehiculos()
                 .stream()
-                .sorted(Comparator.comparing(Vehiculo::getCosto).thenComparing(Vehiculo::getMarca))
+                .sorted(Comparator.comparing(Vehiculo::getMarca).thenComparing(Vehiculo::getCosto))
                 .forEach(System.out::println);
         System.out.println("-------------");
         List<Vehiculo> precioNoMayorAMil = garaje.getVehiculos()
