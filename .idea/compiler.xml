@@ -21,7 +21,7 @@
         <module name="ej_vehiculos" />
         <module name="ej_imprimible" />
       </profile>
-      <profile name="Annotation profile for ej_edad_persona" enabled="true">
+      <profile name="Annotation profile for ej_numeros_romanos" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -31,27 +31,52 @@
         <module name="ej_edad_persona" />
         <module name="ej_numeros_romanos" />
         <module name="ej_factorial" />
+      </profile>
+      <profile name="Annotation profile for ej_covid" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="ej_starwars" />
+        <module name="ej_calculadora_calorias" />
+        <module name="ej_covid" />
+        <module name="ej_concesionaria" />
+        <module name="ej_deportistas" />
         <module name="ej_codigo_morse" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="codigomorse" target="17" />
+      <module name="calorias" target="17" />
+      <module name="codigomorse" target="23" />
+      <module name="concesionaria" target="17" />
+      <module name="dakar" target="23" />
       <module name="ej_agencia_turismo (1)" target="17" />
       <module name="ej_peso_imc (1)" target="17" />
       <module name="ej_temperaturas (1)" target="17" />
       <module name="factorial" target="17" />
+      <module name="morse" target="21" />
       <module name="numerosromanos" target="17" />
       <module name="persona" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="calorias" options="-parameters" />
       <module name="codigomorse" options="-parameters" />
+      <module name="concesionaria" options="-parameters" />
+      <module name="ej_calculadora_calorias" options="-parameters" />
       <module name="ej_codigo_morse" options="-parameters" />
+      <module name="ej_concesionaria" options="-parameters" />
+      <module name="ej_covid" options="-parameters" />
+      <module name="ej_deportistas" options="-parameters" />
       <module name="ej_edad_persona" options="-parameters" />
       <module name="ej_factorial" options="-parameters" />
       <module name="ej_numeros_romanos" options="-parameters" />
+      <module name="ej_starwars" options="-parameters" />
       <module name="factorial" options="-parameters" />
+      <module name="morse" options="-parameters" />
       <module name="numerosromanos" options="-parameters" />
       <module name="persona" options="-parameters" />
     </option>

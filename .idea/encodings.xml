@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/1. Modulo Java/ej_dakar/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/1. Modulo Java/ej_dakar/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/2. Modulo Spring/codigomorse/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/2. Modulo Spring/ej_calculadora_calorias/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/2. Modulo Spring/ej_codigo_morse/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/2. Modulo Spring/ej_concesionaria/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/2. Modulo Spring/ej_covid/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/2. Modulo Spring/ej_deportistas/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/2. Modulo Spring/ej_edad_persona/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/2. Modulo Spring/ej_factorial/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/2. Modulo Spring/ej_numeros_romanos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/2. Modulo Spring/ej_starwars/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/2. Modulo Spring/morse/src/main/java" charset="UTF-8" />
   </component>
 </project>

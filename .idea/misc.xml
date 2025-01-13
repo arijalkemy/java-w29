@@ -16,13 +16,23 @@
         <option value="$PROJECT_DIR$/1. Modulo Java/ej_transacciones/pom.xml" />
         <option value="$PROJECT_DIR$/1. Modulo Java/ej_series_numericas/pom.xml" />
         <option value="$PROJECT_DIR$/1. Modulo Java/ej_agencia_turismo/pom.xml" />
-        <option value="$PROJECT_DIR$/1. Modulo Java/ej_dakar/pom.xml" />
-        <option value="$PROJECT_DIR$/2. Modulo Spring/ej_codigo_morse/pom.xml" />
         <option value="$PROJECT_DIR$/2. Modulo Spring/ej_factorial/pom.xml" />
         <option value="$PROJECT_DIR$/2. Modulo Spring/ej_numeros_romanos/pom.xml" />
         <option value="$PROJECT_DIR$/2. Modulo Spring/ej_edad_persona/pom.xml" />
+        <option value="$PROJECT_DIR$/2. Modulo Spring/ej_deportistas/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/ej_dakar/pom.xml" />
+        <option value="$PROJECT_DIR$/2. Modulo Spring/ej_codigo_morse/pom.xml" />
+        <option value="$PROJECT_DIR$/2. Modulo Spring/ej_starwars/pom.xml" />
+        <option value="$PROJECT_DIR$/2. Modulo Spring/ej_calculadora_calorias/pom.xml" />
+        <option value="$PROJECT_DIR$/2. Modulo Spring/ej_concesionaria/pom.xml" />
+        <option value="$PROJECT_DIR$/2. Modulo Spring/ej_covid/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/1. Modulo Java/dakar/pom.xml" />
+      </set>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="corretto-17" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" project-jdk-name="openjdk-23" project-jdk-type="JavaSDK" />
 </project>

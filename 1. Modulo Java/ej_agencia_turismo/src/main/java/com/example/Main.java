@@ -1,11 +1,16 @@
 package com.example;
 
-import com.example.model.Cliente;
-import com.example.model.Reserva;
-import com.example.model.TipoReserva;
-import com.example.repository.LocalizadorRepositoryImpl;
-import com.example.service.ClienteService;
-import com.example.service.LocalizadorService;
+import com.example.entities.Cliente;
+import com.example.entities.Reserva;
+import com.example.enums.TipoReserva;
+import com.example.repositories.ClienteRepository;
+import com.example.repositories.ClienteRepositoryImpl;
+import com.example.repositories.LocalizadorRepository;
+import com.example.repositories.LocalizadorRepositoryImpl;
+import com.example.services.ClienteService;
+import com.example.services.ClienteServiceImpl;
+import com.example.services.LocalizadorService;
+import com.example.services.LocalizadorServiceImpl;
 
 import java.text.DecimalFormat;
 import java.util.List;
@@ -20,9 +25,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        LocalizadorRepositoryImpl localizadorRepository = new LocalizadorRepositoryImpl();
-        ClienteService clienteService = new ClienteService();
-        LocalizadorService localizadorService = new LocalizadorService(localizadorRepository);
+        ClienteRepository clienteRepository = new ClienteRepositoryImpl();
+        ClienteService clienteService = new ClienteServiceImpl(clienteRepository);
+        LocalizadorRepository localizadorRepository = new LocalizadorRepositoryImpl();
+        LocalizadorService localizadorService = new LocalizadorServiceImpl(localizadorRepository);
 
         // PARTE 1
         Cliente nuevoCliente = clienteService.crearCliente("Agostina");
