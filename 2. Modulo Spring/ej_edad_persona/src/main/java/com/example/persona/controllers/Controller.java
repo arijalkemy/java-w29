@@ -1,20 +1,25 @@
 package com.example.persona.controllers;
 
+import com.example.persona.dtos.FechaNacimientoDto;
+import com.example.persona.entities.Persona;
 import com.example.persona.services.PersonaService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/persona")
 public class Controller {
 
     private final PersonaService service;
 
-    @GetMapping("/{dia}/{mes}/{anio}")
+    @GetMapping("/edad/{dia}/{mes}/{anio}")
     public ResponseEntity<Integer> obtenerEdad(
             @PathVariable Integer dia,
             @PathVariable Integer mes,
@@ -23,9 +28,18 @@ public class Controller {
         return ResponseEntity.ok(service.calcularEdad(dia, mes, anio));
     }
 
-    @ExceptionHandler(IllegalArgumentException.class)
-    public ResponseEntity<?> handleIllegalArgumentException(IllegalArgumentException e) {
-        return ResponseEntity.badRequest().body(e.getMessage());
+    @PostMapping
+    public ResponseEntity<String> crearPersona(@RequestBody FechaNacimientoDto fechaNacimiento) {
+        Persona persona = service.addPersona(fechaNacimiento);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .build(persona.getId());
+        return ResponseEntity.created(location).body("Persona creada correctamente. ID: " + persona.getId());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<String> obtenerPersona(@PathVariable Long id) {
+        return ResponseEntity.ok(String.format("Edad: %s", service.getEdad(id)));
     }
 
 }

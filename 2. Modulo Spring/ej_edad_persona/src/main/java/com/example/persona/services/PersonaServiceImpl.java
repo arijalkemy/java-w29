@@ -1,38 +1,47 @@
 package com.example.persona.services;
 
+import com.example.persona.dtos.FechaNacimientoDto;
+import com.example.persona.entities.Persona;
+import com.example.persona.repositories.PersonaRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class PersonaServiceImpl implements PersonaService {
+
+    private final PersonaRepository repo;
+
+    private Long maxId = 1L;
 
     @Override
     public Integer calcularEdad(Integer dia, Integer mes, Integer anio) {
+        Persona persona = Persona.builder()
+                .fechaNacimiento(FechaNacimientoDto.toLocalDate(dia, mes, anio))
+                .build();
+        return persona.calcularEdad();
+    }
 
-        LocalDate fechaActual = LocalDate.now();
-        LocalDate fechaNacimiento;
+    @Override
+    public Persona addPersona(FechaNacimientoDto fechaNacimiento) {
+        Persona persona = Persona.builder()
+                .id(maxId++)
+                .fechaNacimiento(fechaNacimiento.toLocalDate())
+                .build();
+        repo.save(persona);
+        return persona;
+    }
 
-        // Validar que sea una fecha válida
-        try {
-            fechaNacimiento = LocalDate.of(anio, mes, dia);
-        } catch (DateTimeException e) {
-            throw new IllegalArgumentException("Fecha de nacimiento no válida: " + e.getMessage());
-        }
-
-        // Validar que sea una fecha anterior a la fecha actual
-        if (fechaNacimiento.isAfter(fechaActual)) {
-            throw new IllegalArgumentException("La fecha de nacimiento debe ser anterior a la fecha actual");
-        }
-
-        // Calcular edad
-        int edad = fechaActual.getYear() - fechaNacimiento.getYear();
-        if (fechaActual.getDayOfYear() < fechaNacimiento.getDayOfYear()) {
-            edad--;
-        }
-
-        return edad;
+    @Override
+    public Integer getEdad(Long personaId) {
+        Optional<Persona> persona = repo.getById(personaId);
+        if (persona.isEmpty()) throw new NoSuchElementException("Persona no encontrada");
+        return persona.get().calcularEdad();
     }
 
 }

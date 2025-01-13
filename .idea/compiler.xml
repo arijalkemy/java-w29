@@ -32,7 +32,7 @@
         <module name="ej_numeros_romanos" />
         <module name="ej_factorial" />
       </profile>
-      <profile name="Annotation profile for ej_blog" enabled="true">
+      <profile name="Annotation profile for ej_link_tracker" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -40,6 +40,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="ej_starwars" />
+        <module name="ej_link_tracker" />
         <module name="ej_blog" />
         <module name="ej_covid" />
         <module name="ej_concesionaria" />
@@ -75,6 +76,7 @@
       <module name="ej_deportistas" options="-parameters" />
       <module name="ej_edad_persona" options="-parameters" />
       <module name="ej_factorial" options="-parameters" />
+      <module name="ej_link_tracker" options="-parameters" />
       <module name="ej_numeros_romanos" options="-parameters" />
       <module name="ej_starwars" options="-parameters" />
       <module name="factorial" options="-parameters" />
