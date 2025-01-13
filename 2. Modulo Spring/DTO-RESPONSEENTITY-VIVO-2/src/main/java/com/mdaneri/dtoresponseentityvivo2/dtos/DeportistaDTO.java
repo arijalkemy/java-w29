@@ -7,19 +7,25 @@ import java.io.Serializable;
 
 public class DeportistaDTO implements Serializable {
 
-    private Persona persona;
-    private Deporte deporte;
+    private String firstname;
+    private String lastname;
+    private String sportname;
 
-    public DeportistaDTO(Persona persona, Deporte deporte) {
-        this.persona = persona;
-        this.deporte = deporte;
+    public DeportistaDTO(String firstname, String lastname, String sportname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.sportname = sportname;
     }
 
-    public Persona getPersona() {
-        return persona;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public Deporte getDeporte() {
-        return deporte;
+    public String getLastname() {
+        return lastname;
+    }
+
+    public String getSportname() {
+        return sportname;
     }
 }

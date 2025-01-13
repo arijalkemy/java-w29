@@ -51,11 +51,10 @@ public class DeportistasController {
         List<DeportistaDTO> deportistasDTOS = new ArrayList<>();
         for (Deporte d : personasByDeporte.keySet()) {
             for (Persona p : personasByDeporte.get(d)) {
-                deportistasDTOS.add(new DeportistaDTO(p, d));
+                deportistasDTOS.add(new DeportistaDTO(p.getNombre(), p.getApellido(), d.getNombre()));
             }
         }
         return new ResponseEntity<>(deportistasDTOS, HttpStatus.OK);
     }
-
 
 }
