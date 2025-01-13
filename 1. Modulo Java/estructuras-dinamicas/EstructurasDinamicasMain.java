@@ -1,5 +1,3 @@
-package com.company;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +5,7 @@ import java.util.Map;
 public class EstructurasDinamicasMain {
 
     public static void main(String[] args) {
-        Map<String, ArrayList> categoria = new HashMap<>();
+        Map<String, ArrayList<String>> categoria = new HashMap<>();
         ArrayList<String> chico = new ArrayList<>();
         chico.add("Circuito Chico");
         chico.add("Dos Kilometros por selva y arroyos");
@@ -19,8 +17,8 @@ public class EstructurasDinamicasMain {
         categoria.put("Medio", medio);
 
         ArrayList<String> avanzado = new ArrayList<>();
-        chico.add("Circuito Avanzado");
-        chico.add("10 km por selva, arroyos, barro y escalada en piedra");
+        avanzado.add("Circuito Avanzado");
+        avanzado.add("10 km por selva, arroyos, barro y escalada en piedra");
         categoria.put("Avanzado", avanzado);
 
         Map<String, Object> participante1 = new HashMap<>();
@@ -53,21 +51,20 @@ public class EstructurasDinamicasMain {
         participante3.put("Número de Emergencia", "555-5678");
         participante3.put("Grupo Sanguíneo", "O+");
 
-        ArrayList<Map> inscripcionesChico = new ArrayList<>();
+        ArrayList<Map<String, Object>> inscripcionesChico = new ArrayList<>();
         inscripcionesChico.add(participante1);
         participante1.put("Monto", calcularMonto("Chico", participante1));
         participante1.put("Inscripcion", 1);
 
-        ArrayList<Map> inscripcionesMedio = new ArrayList<>();
-        inscripcionesMedio.add(2, participante2);
+        ArrayList<Map<String, Object>> inscripcionesMedio = new ArrayList<>();
+        inscripcionesMedio.add(participante2);
         participante2.put("Monto", calcularMonto("Medio", participante2));
-        participante2.put("Insripcion", 2);
+        participante2.put("Inscripcion", 2);
 
-        ArrayList<Map> inscripcionesAvanzado = new ArrayList<>();
-        inscripcionesAvanzado.add(3, participante3);
+        ArrayList<Map<String, Object>> inscripcionesAvanzado = new ArrayList<>();
+        inscripcionesAvanzado.add(participante3);
         participante3.put("Monto", calcularMonto("Avanzado", participante3));
         participante3.put("Inscripcion", 3);
-
 
         for (Map.Entry<String, Object> entry : participante1.entrySet()) {
             String key = entry.getKey();
@@ -88,7 +85,7 @@ public class EstructurasDinamicasMain {
         }
     }
 
-    public static int calcularMonto(String categoria, Map participante) {
+    public static int calcularMonto(String categoria, Map<String, Object> participante) {
         Integer edad = (Integer) participante.get("Edad");
         switch (categoria) {
             case "Chico":
