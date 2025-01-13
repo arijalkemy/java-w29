@@ -1,10 +1,10 @@
 package com.bootcamp.controller;
 
+import com.bootcamp.model.Persona;
 import com.bootcamp.service.NacimientoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class NacimientoController {
@@ -18,4 +18,16 @@ public class NacimientoController {
                                @PathVariable Integer anio) {
         return nacimientoService.calcularEdad(dia, mes, anio);
     }
+
+    @GetMapping("/persona/{id}")
+    public ResponseEntity<String> getEdadById(@PathVariable Long id) {
+        return ResponseEntity.ok().body(nacimientoService.getEdadById(id));
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<Persona> agregarPersona(@RequestBody Persona persona){
+        return ResponseEntity.ok().body(nacimientoService.agregarPersona(persona));
+    }
+
+    
 }
