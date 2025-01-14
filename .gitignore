@@ -3,4 +3,5 @@ out/*
 *.jar
 *.war
 .DS_Store
+*/.idea/*
 .idea/*
