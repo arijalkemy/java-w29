@@ -14,7 +14,6 @@
       <sourceFolder url="file://$MODULE_DIR$/practica-excepciones" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/recapitulacion" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/agenciaTurismo" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/dakar" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/saveTheRopaSA" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
