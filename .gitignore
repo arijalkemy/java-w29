@@ -1,7 +1,6 @@
 out/*
-*/.idea/*
+**/.idea/*
 .idea/*
-/.idea/*
 *.class
 *.jar
 *.war
