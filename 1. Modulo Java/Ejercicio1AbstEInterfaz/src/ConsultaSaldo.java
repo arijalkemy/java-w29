@@ -1,0 +1,11 @@
+public class ConsultaSaldo implements Transaccion {
+    @Override
+    public void transaccionOk() {
+        System.out.println("Consulta de saldo realizada correctamente.");
+    }
+
+    @Override
+    public void transaccionNoOk() {
+        System.out.println("No se pudo realizar la consulta de saldo.");
+    }
+}
