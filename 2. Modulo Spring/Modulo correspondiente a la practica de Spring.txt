@@ -2,3 +2,4 @@
 2. Introducción a Spring - P2 - romanNumbers
 3. Ejercicio Introducción Spring P2 - morseCode
 4. Arquitectura API REST - ageCalculator
+5. Practica DTO - practiceCovid19
