@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Pasta con Tomates y Cebolla",
+    "ingredients": [
+      "Pasta al huevo",
+      "Tomates",
+      "Cebolla"
+    ]
+  },
+  {
+    "name": "Salteado de Pollo con Pimientos",
+    "ingredients": [
+      "Pollo",
+      "Pimiento",
+      "Salsa de Soja"
+    ]
+  },
+  {
+    "name": "Ensalada de Pepino",
+    "ingredients": [
+      "Pepino",
+      "Tomates",
+      "Aceitunas Negras"
+    ]
+  }
+]

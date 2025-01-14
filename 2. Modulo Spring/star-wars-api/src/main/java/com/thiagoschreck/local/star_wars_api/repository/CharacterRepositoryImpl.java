@@ -32,8 +32,6 @@ public class CharacterRepositoryImpl implements ICharacterRepository {
         try {
             final File jsonFile = new ClassPathResource("starwars.json").getFile();
             final ObjectMapper objectMapper = new ObjectMapper();
-
-            // Explicitly specify List<Character> type in TypeReference
             return objectMapper.readValue(jsonFile, new TypeReference<>() {
             });
 
