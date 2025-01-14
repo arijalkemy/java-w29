@@ -9,4 +9,6 @@ public interface IVehicleService {
     List<VehicleDto> searchAllVehicles();
 
     Vehicle addOne(VehicleDto dto);
+
+    List<VehicleDto> findAllByColorAndYear(String color, Integer year);
 }

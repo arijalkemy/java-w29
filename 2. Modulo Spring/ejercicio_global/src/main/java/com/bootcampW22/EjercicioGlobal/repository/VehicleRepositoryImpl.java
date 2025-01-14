@@ -10,7 +10,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Repository
 public class VehicleRepositoryImpl implements IVehicleRepository{
@@ -36,6 +38,14 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
     public Vehicle save(Vehicle vehicule) {
         listOfVehicles.add(vehicule);
         return vehicule;
+    }
+
+    @Override
+    public List<Vehicle> findAllByColorAndYear(String color, Integer year) {
+        return listOfVehicles.stream()
+                .filter(v -> v.getColor().equalsIgnoreCase(color) && v.getYear() == year)
+                //.filter(v -> Objects.equals(v.getColor(), color) && Objects.equals(v.getYear(), year))
+                .collect(Collectors.toList());
     }
 
     private void loadDataBase() throws IOException {

@@ -11,4 +11,6 @@ public interface IVehicleRepository {
     Optional<Vehicle> findById(Long id);
 
     Vehicle save(Vehicle vehicule);
+
+    List<Vehicle> findAllByColorAndYear(String color, Integer year);
 }

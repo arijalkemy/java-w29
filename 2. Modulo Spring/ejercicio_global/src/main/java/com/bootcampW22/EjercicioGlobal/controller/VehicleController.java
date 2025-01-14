@@ -25,11 +25,18 @@ public class VehicleController {
         return new ResponseEntity<>(vehicleService.searchAllVehicles(), HttpStatus.OK);
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<Vehicle> addOne(@RequestBody VehicleDto dto){
+    @PostMapping("/")
+    public ResponseEntity<?> addOne(@RequestBody VehicleDto dto){
         Vehicle vehicle = vehicleService.addOne(dto);
         return new ResponseEntity<>(vehicle, HttpStatus.CREATED);
     }
+
+    @GetMapping("/color/{color}/year/{year}")
+    public ResponseEntity<List<VehicleDto>> findAllByColorAndYear(@PathVariable String color,
+                                                       @PathVariable Integer year){
+        return new ResponseEntity<>(vehicleService.findAllByColorAndYear(color, year), HttpStatus.OK);
+    }
+
 
 
 

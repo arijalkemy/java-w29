@@ -45,5 +45,18 @@ public class VehicleServiceImpl implements IVehicleService {
         return vehicleRepository.save(mapper.convertValue(dto, Vehicle.class));
     }
 
+    @Override
+    public List<VehicleDto> findAllByColorAndYear(String color, Integer year) {
+        ObjectMapper mapper = new ObjectMapper();
+        List<Vehicle> vehicleList = vehicleRepository.findAllByColorAndYear(color, year);
+        if (vehicleList.isEmpty()) {
+            throw new NotFoundException("No se encontraron vehículos con esos criterios.");
+        }
+        return vehicleList.stream()
+                .map(v -> mapper.convertValue(v, VehicleDto.class))
+                .collect(Collectors.toList());
+    }
+
 
 }
+
