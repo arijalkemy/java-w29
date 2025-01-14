@@ -18,7 +18,7 @@ public class PersonajeRepositoryImpl implements PersonajeRepository {
         ObjectMapper mapper = new ObjectMapper();
         try {
             personajes = mapper.readValue(
-                    getClass().getResourceAsStream("/starwars.json"),
+                    getClass().getResourceAsStream("/json/starwars.json"),
                     new TypeReference<>() {
                     });
         } catch (IOException e) {

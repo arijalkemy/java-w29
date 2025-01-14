@@ -26,8 +26,8 @@ public class PersonaServiceImpl implements PersonajeService {
                                     p.getMass(),
                                     p.getGender(),
                                     p.getHomeworld(),
-                                    p.getSpecies())).
-                    collect(Collectors.toList());
+                                    p.getSpecies()))
+                            .collect(Collectors.toList());
 
         } catch (Exception e) {
             return Collections.emptyList();

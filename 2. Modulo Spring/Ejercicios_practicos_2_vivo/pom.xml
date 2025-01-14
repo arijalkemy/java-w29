@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.example</groupId>
-	<artifactId>Arquitectura_multicapa_1_vivo</artifactId>
+	<artifactId>Ejercicios_practicos_2_vivo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Arquitectura_multicapa_1_vivo</name>
-	<description>Arquitectura_multicapa_1_vivo</description>
+	<name>Ejercicios_practicos_2_vivo</name>
+	<description>Ejercicios_practicos_2_vivo</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -44,7 +44,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<scope>provided</scope>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
