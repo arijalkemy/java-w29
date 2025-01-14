@@ -1,9 +1,10 @@
 package com.meli.ej_starwars.service;
 
-import com.meli.ej_starwars.model.Personaje;
+import com.meli.ej_starwars.dto.PersonajeDTO;
+
 
 import java.util.List;
 
 public interface PersonajeService {
-    List<Personaje> findAllPersonajesByName(String name);
+    List<PersonajeDTO> findAllPersonajesByName(String name);
 }

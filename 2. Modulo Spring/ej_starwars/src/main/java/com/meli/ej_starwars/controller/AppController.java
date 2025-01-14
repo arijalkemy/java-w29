@@ -1,6 +1,7 @@
 package com.meli.ej_starwars.controller;
 
 
+import com.meli.ej_starwars.dto.PersonajeDTO;
 import com.meli.ej_starwars.model.Personaje;
 import com.meli.ej_starwars.service.PersonajeService;
 import com.meli.ej_starwars.service.PersonajeServiceImpl;
@@ -23,7 +24,7 @@ public class AppController {
     }
 
     @GetMapping("/personaje/{name}")
-    public ResponseEntity<List<Personaje>> getPersonajes(@PathVariable String name) {
+    public ResponseEntity<List<PersonajeDTO>> getPersonajesByName(@PathVariable String name) {
         return ResponseEntity.ok(this.personajeService.findAllPersonajesByName(name));
     }
 }

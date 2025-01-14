@@ -34,4 +34,11 @@ public class PersonajeRepositoryImpl implements PersonajeRepository {
     public List<Personaje> findAll() {
         return this.personajes;
     }
+
+    @Override
+    public List<Personaje> findAllByName(String name) {
+        return this.personajes.stream()
+                .filter(p -> p.getName().toLowerCase().contains(name.toLowerCase()))
+                .toList();
+    }
 }
