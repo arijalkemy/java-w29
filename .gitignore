@@ -1,7 +1,8 @@
 out/*
+*/.idea/*
+.idea/*
+/.idea/*
 *.class
 *.jar
 *.war
 .DS_Store
-*/.idea/*
-.idea/*
