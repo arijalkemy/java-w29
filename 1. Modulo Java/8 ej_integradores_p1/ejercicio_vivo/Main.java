@@ -46,6 +46,14 @@ public class Main {
       repositorio_cliente
     );
     System.out.println("Localizador 3: " + localizador3.getTotal());
+    System.out.println("===================================");
+    System.out.println("Total de localizadores: " + repositorio_cliente.totalLocalizadores());
+    System.out.println("Total de reservas: " + repositorio_cliente.totalReservas());
+    repositorio_cliente.getReservasPorTipo().forEach((tipo, reservas) -> {
+      System.out.println("\n***********************************");
+      System.out.println("Reservas de tipo " + tipo + ": " + reservas);
+    });
+    System.out.println("Total de ventas: " + repositorio_cliente.totalVentas());
+    System.out.println("Promedio de ventas: " + repositorio_cliente.averageVentas());
   }
-  
 }

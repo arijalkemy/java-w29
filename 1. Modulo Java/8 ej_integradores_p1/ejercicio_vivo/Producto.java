@@ -1,7 +1,7 @@
 package integrador_p1;
 
 public class Producto {
-  public enum Tipo{
+  public static enum Tipo{
     RESERVA("Reserva de Hotel"),
     COMIDA("Comida"),
     BOLETOS("Boletos de viajes"),

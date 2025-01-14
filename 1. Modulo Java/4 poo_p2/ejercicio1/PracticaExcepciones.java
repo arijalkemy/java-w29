@@ -1,3 +1,5 @@
+package poo_p2_e1;
+
 public class PracticaExcepciones {
   private static int a = 0;
   private static int b = 300;

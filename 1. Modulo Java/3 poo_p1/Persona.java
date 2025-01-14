@@ -1,3 +1,5 @@
+package poo_p1;
+
 public class Persona {
   String nombre;
   int edad;

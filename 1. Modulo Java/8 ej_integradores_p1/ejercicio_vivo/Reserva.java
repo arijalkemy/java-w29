@@ -42,4 +42,8 @@ public class Reserva {
   public Integer numBoletosProductType() {
     return productos.stream().filter(producto -> producto.getTipoProducto() == Producto.Tipo.BOLETOS).mapToInt(producto -> 1).sum();
   }
+
+  public Boolean hasProductType(Producto.Tipo tipo) {
+    return productos.stream().anyMatch(producto -> producto.getTipoProducto() == tipo);
+  }
 }
