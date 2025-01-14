@@ -12,5 +12,4 @@ import java.util.List;
 public class PlateRequestDTO {
     private String name;
     private Double weight;
-    private List<String> ingredients;
 }

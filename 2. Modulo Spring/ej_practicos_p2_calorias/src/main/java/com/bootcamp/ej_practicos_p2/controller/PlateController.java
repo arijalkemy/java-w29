@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/plate")
 public class PlateController {
@@ -21,8 +23,14 @@ public class PlateController {
         this.plateService = plateService;
     }
 
+    /// GET o POST????
     @GetMapping
     public ResponseEntity<PlateResponseDTO> getPlateInfo(@RequestBody PlateRequestDTO plateRequestDTO) {
         return ResponseEntity.ok(plateService.getPlateInfo(plateRequestDTO));
+    }
+
+    @GetMapping("/batch")
+    public ResponseEntity<List<PlateResponseDTO>> getBatchPlateInfo(@RequestBody List<PlateRequestDTO> plateRequestDTOs) {
+        return ResponseEntity.ok(plateService.getBatchPlateInfo(plateRequestDTOs));
     }
 }

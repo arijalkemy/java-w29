@@ -36,4 +36,8 @@ public class FileIngredientRepository implements IIngredientRepository{
     public List<Ingredient> filterIngredientsByName(List<String> names) {
         return ingredients.stream().filter(i -> names.contains(i.getName())).collect(Collectors.toList());
     }
+
+    public List<Ingredient> getRandomIngredients() {
+        return ingredients.stream().filter(i -> Math.random() < 0.05).collect(Collectors.toList());
+    }
 }

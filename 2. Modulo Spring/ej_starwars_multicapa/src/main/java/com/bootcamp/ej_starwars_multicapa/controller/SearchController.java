@@ -22,6 +22,10 @@ public class SearchController {
 
     @GetMapping("/{query}")
     public ResponseEntity<List<CharacterDTO>> searchCharacters(@PathVariable String query) {
-        return ResponseEntity.ok(searchService.searchCharacters(query));
+        List<CharacterDTO> characters = searchService.searchCharacters(query);
+        if (characters.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(characters);
     }
 }
