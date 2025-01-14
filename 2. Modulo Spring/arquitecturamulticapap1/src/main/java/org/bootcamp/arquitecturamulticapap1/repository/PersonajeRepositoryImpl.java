@@ -2,13 +2,12 @@ package org.bootcamp.arquitecturamulticapap1.repository;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.bootcamp.arquitecturamulticapap1.entity.Personaje;
+import org.bootcamp.arquitecturamulticapap1.model.Personaje;
 import org.springframework.stereotype.Repository;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public class PersonajeRepositoryImpl implements IPersonajeRepository {

@@ -1,4 +1,4 @@
-package org.bootcamp.arquitecturamulticapap1.entity;
+package org.bootcamp.arquitecturamulticapap1.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

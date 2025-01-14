@@ -1,6 +1,6 @@
 package org.bootcamp.arquitecturamulticapap1.repository;
 
-import org.bootcamp.arquitecturamulticapap1.entity.Personaje;
+import org.bootcamp.arquitecturamulticapap1.model.Personaje;
 
 import java.util.List;
 

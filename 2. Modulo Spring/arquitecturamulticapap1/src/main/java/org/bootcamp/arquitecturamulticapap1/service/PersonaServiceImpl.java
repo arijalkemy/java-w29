@@ -3,7 +3,7 @@ package org.bootcamp.arquitecturamulticapap1.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.bootcamp.arquitecturamulticapap1.dto.PersonajeDTO;
-import org.bootcamp.arquitecturamulticapap1.entity.Personaje;
+import org.bootcamp.arquitecturamulticapap1.model.Personaje;
 import org.bootcamp.arquitecturamulticapap1.repository.PersonajeRepositoryImpl;
 import org.springframework.stereotype.Service;
 
