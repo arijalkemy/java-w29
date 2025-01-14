@@ -25,6 +25,7 @@ public class AppController {
 
     @GetMapping("/findSports")
     public ResponseEntity<List<Deporte>> getDeportes() {
+
         return ResponseEntity.ok(this.deporteService.findAll());
     }
 
@@ -34,13 +35,8 @@ public class AppController {
     }
 
     @GetMapping("/findSportsPersons")
-    public ResponseEntity<List<PersonaDeporteDTO>> getDeportesPersonas() {
+    public ResponseEntity<List<PersonaDeporteDTO>> getDeportistas() {
         return ResponseEntity.ok(this.personaService.findAllPersonasDeportistas());
     }
 
-    @GetMapping("/test")
-    public ResponseEntity<String> test(@RequestParam String nombre) {
-        System.out.println(nombre);
-        return ResponseEntity.ok("Hello " + nombre);
-    }
 }
