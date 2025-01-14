@@ -3,6 +3,7 @@ package com.meli.ej_starwars.controller;
 
 import com.meli.ej_starwars.model.Personaje;
 import com.meli.ej_starwars.service.PersonajeService;
+import com.meli.ej_starwars.service.PersonajeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +24,6 @@ public class AppController {
 
     @GetMapping("/personaje/{name}")
     public ResponseEntity<List<Personaje>> getPersonajes(@PathVariable String name) {
-        return ResponseEntity.ok(this.personajeService.getPersonajesIncludingName(name));
+        return ResponseEntity.ok(this.personajeService.findAllPersonajesByName(name));
     }
 }
