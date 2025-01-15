@@ -1,8 +1,6 @@
 package com.example.ejercicio_deportistas.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
@@ -10,6 +8,6 @@ import lombok.NoArgsConstructor;
 public class Persona {
     private String nombre;
     private String apellido;
-    private int edad;
+    private Integer edad;
     private Deporte deporte;
 }
