@@ -1,11 +1,11 @@
-package com.meli.starwars.dto;
+package com.meli.starwars.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class PersonajeDTO {
+public class PersonajeResponseDTO {
     private String name;
     private Integer height;
     private Integer mass;
