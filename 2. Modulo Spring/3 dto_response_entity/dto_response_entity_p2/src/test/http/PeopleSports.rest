@@ -1,0 +1,7 @@
+GET http://localhost:8080/findSports
+
+###
+Get http://localhost:8080/findSport/soccer
+
+###
+GET http://localhost:8080/findSportsPersons
