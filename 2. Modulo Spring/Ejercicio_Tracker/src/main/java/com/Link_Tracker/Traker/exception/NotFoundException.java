@@ -1,0 +1,7 @@
+package com.Link_Tracker.Traker.exception;
+
+public class NotFoundException extends RuntimeException {
+    public NotFoundException(String message) {
+        super(message);
+    }
+}
