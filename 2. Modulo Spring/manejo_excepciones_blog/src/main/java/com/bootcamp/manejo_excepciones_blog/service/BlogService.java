@@ -25,7 +25,7 @@ public class BlogService {
         this.blogRepository = blogRepository;
     }
 
-    public Integer createBlog(BlogRequestDTO blogDTO) throws BlogAlreadyExistsException {
+    public Integer createBlog(BlogRequestDTO blogDTO) {
         if (blogRepository.getBlogById(blogDTO.getBlogId()) != null)
             throw new BlogAlreadyExistsException("Blog with id: " + blogDTO.getBlogId() + " already exists :(");
         ObjectMapper objectMapper = new ObjectMapper().findAndRegisterModules();
@@ -34,7 +34,7 @@ public class BlogService {
         return blogRepository.saveBlog(entradaBlog);
     }
 
-    public BlogResponseDTO getBlogById(Integer id) throws BlogNotFoundException {
+    public BlogResponseDTO getBlogById(Integer id) {
         EntradaBlog blog = blogRepository.getBlogById(id);
         if (blog == null)
             throw new BlogNotFoundException("Blog with id: " + id + " was not found :(");

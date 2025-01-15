@@ -24,13 +24,13 @@ public class BlogController {
     }
 
     @PostMapping
-    public ResponseEntity<URI> createBlog(@RequestBody BlogRequestDTO blogRequestDTO) throws BlogAlreadyExistsException {
+    public ResponseEntity<URI> createBlog(@RequestBody BlogRequestDTO blogRequestDTO) {
         Integer id = blogService.createBlog(blogRequestDTO);
         return ResponseEntity.created(URI.create("/blog/" + id)).build();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<BlogResponseDTO> getBlogById(@PathVariable Integer id) throws BlogNotFoundException {
+    public ResponseEntity<BlogResponseDTO> getBlogById(@PathVariable Integer id) {
         BlogResponseDTO blogResponseDTO = blogService.getBlogById(id);
         return ResponseEntity.ok(blogResponseDTO);
     }
