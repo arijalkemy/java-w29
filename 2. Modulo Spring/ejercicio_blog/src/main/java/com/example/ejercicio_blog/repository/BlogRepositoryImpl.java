@@ -33,8 +33,7 @@ public class BlogRepositoryImpl implements IBlogRepository{
     }
 
     @Override
-    public Integer addEntrada(EntradaBlog entradaBlog) {
+    public void addEntrada(EntradaBlog entradaBlog) {
         entradasBlog.add(entradaBlog);
-        return entradaBlog.getId();
     }
 }

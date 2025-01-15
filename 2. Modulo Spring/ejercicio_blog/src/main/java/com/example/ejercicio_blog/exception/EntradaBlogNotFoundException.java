@@ -1,7 +1,11 @@
 package com.example.ejercicio_blog.exception;
 
 public class EntradaBlogNotFoundException extends RuntimeException {
-    public EntradaBlogNotFoundException(String message) {
-        super(message);
+    public EntradaBlogNotFoundException(Integer id) {
+        super("No se encontró la entrada con id: " + id);
+    }
+
+    public EntradaBlogNotFoundException() {
+        super("No se encontraron entradas en el blog.");
     }
 }

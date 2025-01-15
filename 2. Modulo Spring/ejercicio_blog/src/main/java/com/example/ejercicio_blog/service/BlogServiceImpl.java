@@ -1,10 +1,12 @@
 package com.example.ejercicio_blog.service;
 
 import com.example.ejercicio_blog.dto.EntradaBlogDto;
+import com.example.ejercicio_blog.dto.response.NuevaEntradaBlogDto;
 import com.example.ejercicio_blog.entity.EntradaBlog;
 import com.example.ejercicio_blog.exception.EntradaBlogAlreadyExistsException;
 import com.example.ejercicio_blog.exception.EntradaBlogNotFoundException;
 import com.example.ejercicio_blog.repository.IBlogRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +24,7 @@ public class BlogServiceImpl implements IBlogService {
     public EntradaBlogDto getBlogById(Integer id) {
         Optional<EntradaBlog> oEntrada = blogRepository.getBlogById(id);
         if(oEntrada.isEmpty()){
-            throw new EntradaBlogNotFoundException("No se encontró la entrada con id: " + id);
+            throw new EntradaBlogNotFoundException(id);
         }
         return EntradaBlogDto.convertToDto(oEntrada.get());
     }
@@ -31,18 +33,20 @@ public class BlogServiceImpl implements IBlogService {
     public List<EntradaBlogDto> getAll() {
         List<EntradaBlog> entradas = blogRepository.getAll();
         if(entradas.isEmpty()){
-            throw new EntradaBlogNotFoundException("No se encontraron entradas en el blog.");
+            throw new EntradaBlogNotFoundException();
         }
         return entradas.stream().map(EntradaBlogDto::convertToDto).toList();
     }
 
     @Override
-    public String createBlog(EntradaBlog entradaBlog) {
-        Optional<EntradaBlog> oEntrada = blogRepository.getBlogById(entradaBlog.getId());
+    public NuevaEntradaBlogDto createBlog(EntradaBlogDto entradaBlogDto) {
+        Optional<EntradaBlog> oEntrada = blogRepository.getBlogById(entradaBlogDto.id());
         if(oEntrada.isPresent()) {
-            throw new EntradaBlogAlreadyExistsException("La entrada con id " + entradaBlog.getId() + " ya existe en el blog.");
+            throw new EntradaBlogAlreadyExistsException(entradaBlogDto.id());
         }
-        Integer nuevoId = blogRepository.addEntrada(entradaBlog);
-        return "Se creó la entrada de blog con id: " + nuevoId;
+        ObjectMapper om = new ObjectMapper();
+        EntradaBlog nuevaEntrada = om.convertValue(entradaBlogDto, EntradaBlog.class);
+        blogRepository.addEntrada(nuevaEntrada);
+        return new NuevaEntradaBlogDto("Se creó la entrada de blog con id: " + entradaBlogDto.id());
     }
 }

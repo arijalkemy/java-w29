@@ -8,5 +8,5 @@ import java.util.Optional;
 public interface IBlogRepository {
     Optional<EntradaBlog> getBlogById(Integer id);
     List<EntradaBlog> getAll();
-    Integer addEntrada(EntradaBlog entradaBlog);
+    void addEntrada(EntradaBlog entradaBlog);
 }

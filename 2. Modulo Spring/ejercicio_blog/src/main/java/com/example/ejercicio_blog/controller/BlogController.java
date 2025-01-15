@@ -1,6 +1,7 @@
 package com.example.ejercicio_blog.controller;
 
 import com.example.ejercicio_blog.dto.EntradaBlogDto;
+import com.example.ejercicio_blog.dto.response.NuevaEntradaBlogDto;
 import com.example.ejercicio_blog.entity.EntradaBlog;
 import com.example.ejercicio_blog.service.IBlogService;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +28,7 @@ public class BlogController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createBlog(@RequestBody EntradaBlog entradaBlog) {
-        return new ResponseEntity<>(blogService.createBlog(entradaBlog), HttpStatus.OK);
+    public ResponseEntity<NuevaEntradaBlogDto> createBlog(@RequestBody EntradaBlogDto entradaBlogDto) {
+        return new ResponseEntity<>(blogService.createBlog(entradaBlogDto), HttpStatus.OK);
     }
 }
