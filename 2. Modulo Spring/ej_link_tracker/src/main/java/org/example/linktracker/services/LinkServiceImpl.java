@@ -4,12 +4,11 @@ import lombok.RequiredArgsConstructor;
 import org.example.linktracker.dtos.LinkUrlDto;
 import org.example.linktracker.dtos.LinkIdDto;
 import org.example.linktracker.entities.Link;
+import org.example.linktracker.exceptions.InvalidPasswordException;
 import org.example.linktracker.exceptions.NotFoundException;
 import org.example.linktracker.exceptions.NotValidLinkException;
 import org.example.linktracker.repositories.LinkRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -31,9 +30,10 @@ public class LinkServiceImpl implements LinkService {
     }
 
     @Override
-    public String redirect(Long linkId) {
+    public String redirect(Long linkId, String password) {
         Link link = getLink(linkId);
 
+        if (!link.isPasswordValid(password)) throw new InvalidPasswordException("Password inválido");
         if (!link.isValid()) throw new NotValidLinkException("Link inválido");
 
         link.redireccionar();

@@ -1,5 +1,6 @@
 package org.example.linktracker.exceptions;
 
+import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -21,6 +22,11 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(NotValidLinkException.class)
     public ResponseEntity<String> handleNotValidLinkException(NotValidLinkException e) {
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
+
+    @ExceptionHandler(InvalidPasswordException.class)
+    public ResponseEntity<String> handleInvalidPasswordException(InvalidPasswordException e) {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 

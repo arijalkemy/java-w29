@@ -23,6 +23,10 @@ public class Link {
         this.cantidadRedirecciones++;
     }
 
+    public Boolean isPasswordValid(String password) {
+        return this.password.equals(password);
+    }
+
     public Boolean isValid() {
         return valid;
     }
