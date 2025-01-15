@@ -1,0 +1,2 @@
+Este es un archivo de Texto
+Esta es la nueva linea de codigo de silvia - Conflicto sobre commit 2
