@@ -4,6 +4,7 @@ import com.example.starwars.StarwarsApplication;
 import com.example.starwars.entities.Personaje;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
@@ -15,7 +16,8 @@ public class StarWarsRepositoryImpl implements StarWarsRepository {
 
     private List<Personaje> personajes;
 
-    public StarWarsRepositoryImpl(){
+    @PostConstruct
+    private void init(){
         ObjectMapper MAPPER = new ObjectMapper();
         InputStream inputStream = StarwarsApplication.class.getResourceAsStream("/prueba.json");
 

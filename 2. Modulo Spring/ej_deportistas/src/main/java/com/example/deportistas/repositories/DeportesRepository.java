@@ -11,4 +11,6 @@ public interface DeportesRepository {
 
     Optional<Deporte> findByNombre(String nombre);
 
+    Deporte getRandomSport();
+
 }

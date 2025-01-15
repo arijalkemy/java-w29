@@ -22,13 +22,8 @@ public class DeportesServiceImpl implements DeportesService {
 
     @Override
     public Deporte findByName(String name) {
-        Optional<Deporte> optionalDeporte = deporteRepository.findByNombre(name);
-
-        if (optionalDeporte.isEmpty()) {
-            throw new NoSuchElementException("No se encontró el deporte");
-        }
-
-        return optionalDeporte.get();
+        return deporteRepository.findByNombre(name)
+                .orElseThrow(() -> new NoSuchElementException("No se encontró el deporte"));
     }
 
 }

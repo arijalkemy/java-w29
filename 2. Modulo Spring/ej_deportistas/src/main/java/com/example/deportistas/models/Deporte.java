@@ -1,16 +1,15 @@
 package com.example.deportistas.models;
 
+import com.example.deportistas.enums.Nivel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class Deporte {
 
     private String nombre;
 
-    private String nivel;
+    private Nivel nivel;
 
-    public Deporte(String nombre, String nivel) {
-        this.nombre = nombre;
-        this.nivel = nivel;
-    }
 }

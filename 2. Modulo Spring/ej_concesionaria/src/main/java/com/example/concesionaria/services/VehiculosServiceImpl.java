@@ -42,9 +42,7 @@ public class VehiculosServiceImpl implements VehiculosService {
 
     @Override
     public Vehiculo getById(Integer id) {
-        Optional<Vehiculo> optionalVehiculo = repo.getById(id);
-        if (optionalVehiculo.isEmpty()) throw new NotFoundException("No existe el vehículo ID " + id);
-        return optionalVehiculo.get();
+        return repo.getById(id).orElseThrow(() -> new NotFoundException("No existe el vehículo ID " + id));
     }
 
 }

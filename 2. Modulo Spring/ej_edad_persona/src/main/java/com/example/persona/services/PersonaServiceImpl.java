@@ -37,9 +37,10 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Override
     public Integer getEdad(Long personaId) {
-        Optional<Persona> persona = repo.getById(personaId);
-        if (persona.isEmpty()) throw new NoSuchElementException("Persona no encontrada");
-        return persona.get().calcularEdad();
+        Persona persona = repo
+                .getById(personaId)
+                .orElseThrow(() -> new NoSuchElementException("Persona no encontrada"));
+        return persona.calcularEdad();
     }
 
 }

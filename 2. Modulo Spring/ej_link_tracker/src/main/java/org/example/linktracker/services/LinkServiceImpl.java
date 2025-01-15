@@ -55,9 +55,7 @@ public class LinkServiceImpl implements LinkService {
     }
 
     private Link getLink(Long linkId) {
-        Optional<Link> optionalLink = repo.findById(linkId);
-        if (optionalLink.isEmpty()) throw new NotFoundException("Link no encontrado");
-        return optionalLink.get();
+        return repo.findById(linkId).orElseThrow(() -> new NotFoundException("Link no encontrado"));
     }
 
 }

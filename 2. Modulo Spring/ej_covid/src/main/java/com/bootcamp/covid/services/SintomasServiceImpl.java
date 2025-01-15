@@ -23,13 +23,11 @@ public class SintomasServiceImpl implements SintomasService {
 
     @Override
     public String findGravedadByName(String name) {
-        Optional<Sintoma> optionalSintoma = sintomaRepository.getByName(name);
+        Sintoma sintoma = sintomaRepository
+                .getByName(name)
+                .orElseThrow(() -> new NoSuchElementException("No se encontró el síntoma " + name));
 
-        if (optionalSintoma.isEmpty()) {
-            throw new NoSuchElementException("No se encontró el síntoma " + name);
-        }
-
-        return optionalSintoma.get().getNivelDeGravedad().getString();
+        return sintoma.getNivelDeGravedad().getString();
     }
 
 }
