@@ -2,6 +2,7 @@ package exercise.starwars.service;
 
 import exercise.starwars.dto.response.CharacterResponseDto;
 import exercise.starwars.entity.MovieCharacter;
+import exercise.starwars.exception.CharacterNotFoundException;
 import exercise.starwars.repository.ICharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,10 @@ public class CharacterServiceImpl implements ICharacterService {
     public List<CharacterResponseDto> getCharactersByName(String search) {
         List<MovieCharacter> characters = characterRepository.getCharactersByName(search);
         List<CharacterResponseDto> characterResponseDtos = new ArrayList<>();
+
+        if(characters.isEmpty()) {
+            throw new CharacterNotFoundException("No characters found with name: " + search);
+        }
 
         for (MovieCharacter movieCharacter : characters) {
             CharacterResponseDto characterResponseDto = new CharacterResponseDto();
