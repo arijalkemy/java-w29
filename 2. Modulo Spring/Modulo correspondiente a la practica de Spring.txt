@@ -4,3 +4,4 @@
 4. Arquitectura API REST - ageCalculator
 5. Practica DTO - practiceCovid19
 6. Ejercicios prácticos DTO - practiceSportsman
+7. Practica arquitectura multicapa - starWarsCharacters
