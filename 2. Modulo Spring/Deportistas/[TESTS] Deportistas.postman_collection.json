@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "ebad1954-ebd3-42ee-8e1a-8b9fb9a935ec",
+		"name": "[TESTS] Deportistas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40683270"
+	},
+	"item": [
+		{
+			"name": "encontrarDeportes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/encontrarDeportes/"
+			},
+			"response": []
+		},
+		{
+			"name": "encontrarDeportePorNombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/encontrarDeportes/Tenis"
+			},
+			"response": []
+		},
+		{
+			"name": "encontrarDeportistasPorNombreDelDeporte",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/encontrarDeportes/Tenis/deportistas"
+			},
+			"response": []
+		},
+		{
+			"name": "encontrarDeportistasPorNombreDelDeporte2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/encontrarDeportes/Fútbol/deportistas"
+			},
+			"response": []
+		}
+	]
+}
