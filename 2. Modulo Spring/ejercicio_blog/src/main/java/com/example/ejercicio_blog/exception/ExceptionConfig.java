@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class ExceptionConfig {
 
-    @ExceptionHandler
+    @ExceptionHandler(EntradaBlogNotFoundException.class)
     public ResponseEntity<ExceptionDto> notFound(EntradaBlogNotFoundException e){
-        return new ResponseEntity<>(new ExceptionDto(e.getMessage()), HttpStatus.NOT_FOUND);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionDto(e.getMessage()));
     }
 
-    @ExceptionHandler
+    @ExceptionHandler(EntradaBlogAlreadyExistsException.class)
     public ResponseEntity<ExceptionDto> alreadyExists(EntradaBlogAlreadyExistsException e){
-        return new ResponseEntity<>(new ExceptionDto(e.getMessage()), HttpStatus.CONFLICT);
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(new ExceptionDto(e.getMessage()));
     }
 }

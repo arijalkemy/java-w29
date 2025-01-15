@@ -19,16 +19,16 @@ public class BlogController {
 
     @GetMapping("/{id}")
     public ResponseEntity<EntradaBlogDto> getBlogById(@PathVariable Integer id) {
-        return new ResponseEntity<>(blogService.getBlogById(id), HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.OK).body(blogService.getBlogById(id));
     }
 
     @GetMapping
     public ResponseEntity<List<EntradaBlogDto>> getAllBlogs() {
-        return new ResponseEntity<>(blogService.getAll(), HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.OK).body(blogService.getAll());
     }
 
     @PostMapping
     public ResponseEntity<NuevaEntradaBlogDto> createBlog(@RequestBody EntradaBlogDto entradaBlogDto) {
-        return new ResponseEntity<>(blogService.createBlog(entradaBlogDto), HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.OK).body(blogService.createBlog(entradaBlogDto));
     }
 }
