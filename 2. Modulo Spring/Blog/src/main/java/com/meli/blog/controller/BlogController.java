@@ -1,12 +1,11 @@
 package com.meli.blog.controller;
 
 import com.meli.blog.dto.BlogDto;
+import com.meli.blog.dto.response.BlogListResponseDto;
 import com.meli.blog.dto.response.BlogResponseDto;
 import com.meli.blog.service.IBlogService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 public class BlogController {
@@ -23,8 +22,12 @@ public class BlogController {
     }
 
     @GetMapping("/blogs")
-    public ResponseEntity<List<BlogDto>> getBlogs() {
-        return ResponseEntity.ok(this.blogService.getAll());
+    public ResponseEntity<BlogListResponseDto> getBlogs() {
+        BlogListResponseDto blogListResponseDto = new BlogListResponseDto(
+                this.blogService.getAll(),
+                "AAF@!!!1214s"
+        );
+        return ResponseEntity.ok(blogListResponseDto);
     }
 
     @PostMapping("/blog")
