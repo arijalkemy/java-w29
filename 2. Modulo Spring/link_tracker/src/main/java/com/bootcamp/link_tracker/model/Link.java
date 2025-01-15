@@ -13,4 +13,5 @@ public class Link {
     private Integer linkId;
     private String link;
     private Integer timesUsed;
+    private String password;
 }

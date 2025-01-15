@@ -16,8 +16,18 @@ public class LinkExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
 
-    @ExceptionHandler(exception = {MalformedURLException.class, URISyntaxException.class})
+    @ExceptionHandler(InvalidLinkException.class)
     public ResponseEntity<String> handleBadLinkException(Exception e) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Invalid URL");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    }
+
+    @ExceptionHandler(LinkAlreadyExistsException.class)
+    public ResponseEntity<String> handleLinkAlreadyExistsException(Exception e) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+    }
+
+    @ExceptionHandler(InvalidPasswordException.class)
+    public ResponseEntity<String> handleInvalidPasswordException(Exception e) {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
     }
 }

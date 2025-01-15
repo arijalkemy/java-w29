@@ -2,8 +2,6 @@ package com.bootcamp.manejo_excepciones_blog.controller;
 
 import com.bootcamp.manejo_excepciones_blog.dto.BlogRequestDTO;
 import com.bootcamp.manejo_excepciones_blog.dto.BlogResponseDTO;
-import com.bootcamp.manejo_excepciones_blog.exceptions.BlogAlreadyExistsException;
-import com.bootcamp.manejo_excepciones_blog.exceptions.BlogNotFoundException;
 import com.bootcamp.manejo_excepciones_blog.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

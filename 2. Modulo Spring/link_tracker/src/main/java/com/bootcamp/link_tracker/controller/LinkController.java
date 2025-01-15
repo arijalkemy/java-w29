@@ -32,8 +32,8 @@ public class LinkController {
     }
 
     @GetMapping("/link/{linkId}")
-    public ResponseEntity<Void> redirectToLink(@PathVariable Integer linkId) throws LinkNotFoundException, MalformedURLException, URISyntaxException {
-        Link link = linkService.redirectLink(linkId);
+    public ResponseEntity<Void> redirectToLink(@PathVariable Integer linkId, @RequestParam String password) throws LinkNotFoundException, MalformedURLException, URISyntaxException {
+        Link link = linkService.redirectLink(linkId, password);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(link.getLink()));
@@ -45,5 +45,11 @@ public class LinkController {
     @GetMapping("/metrics/{linkId}")
     public ResponseEntity<Integer> getLinkMetrics(@PathVariable Integer linkId) throws LinkNotFoundException {
         return ResponseEntity.ok(linkService.getMetrics(linkId));
+    }
+
+    @PostMapping("/invalidate/{linkId}")
+    public ResponseEntity<Void> invalidateLink(@PathVariable Integer linkId){
+        linkService.invalidateLink(linkId);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -9,4 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class LinkRequestDTO {
     private String link;
+    private String password;
 }
