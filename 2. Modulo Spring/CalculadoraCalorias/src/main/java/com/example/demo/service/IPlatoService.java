@@ -1,11 +1,14 @@
-package com.example.demo.service;
+package com.bootcamp.service;
 
-import com.example.demo.model.Ingrediente;
-import com.example.demo.model.Plato;
+import com.bootcamp.dto.response.IngredienteDto;
 
 import java.util.List;
-import java.util.Map;
 
 public interface IPlatoService {
-    double calcularCalorias(Plato plato, double gramos);
+
+    Double getCantidadTotalCaloriasPlato(String nombre);
+
+    List<IngredienteDto> getListaIngredientesYCalorias(String nombre);
+
+    IngredienteDto getIngredienteMayorCalorias(String nombre);
 }

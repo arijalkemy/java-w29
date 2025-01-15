@@ -7,6 +7,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class Ingrediente {
     private String nombre;
-    private double peso;
-    private double calorias;
+    private Double calorias;
+    private Integer unidad;
 }
