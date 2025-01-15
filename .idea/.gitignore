@@ -1,0 +1,61 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# Archivos de compilación
+*.class
+*.jar
+*.war
+*.ear
+
+# Archivos generados por el IDE
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Archivos de configuración de Eclipse
+.settings/
+*.classpath
+*.project
+
+# Archivos de configuración de NetBeans
+nbproject/
+
+# Archivos de configuración de IntelliJ IDEA
+*.idea/
+*.iml
+out/
+
+# Archivos temporales de compilación
+target/
+
+# Archivos generados por Maven
+*.log
+*.tar.gz
+*.zip
+*.tar
+*.tar.bz2
+*.gz
+
+# Dependencias de Maven
+.mvn/
+target/
+!target/classes/
+!target/generated-sources/
+
+# Archivos de Gradle
+.gradle/
+build/
+
+# Archivos de configuración de OS
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de Java
+*.log
