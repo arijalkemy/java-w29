@@ -15,13 +15,24 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Repository
-public class VehicleRepositoryImpl implements IVehicleRepository{
+public class VehicleRepositoryImpl implements IVehicleRepository {
 
     private List<Vehicle> listOfVehicles = new ArrayList<>();
+
+    private void loadDataBase() throws IOException {
+        File file;
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<Vehicle> vehicles;
+        file = ResourceUtils.getFile("classpath:vehicles_100.json");
+        vehicles = objectMapper.readValue(file, new TypeReference<List<Vehicle>>() {
+        });
+        listOfVehicles = vehicles;
+    }
 
     public VehicleRepositoryImpl() throws IOException {
         loadDataBase();
     }
+
     @Override
     public List<Vehicle> findAll() {
         return listOfVehicles;
@@ -48,14 +59,28 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
                 .collect(Collectors.toList());
     }
 
-    private void loadDataBase() throws IOException {
-        File file;
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<Vehicle> vehicles ;
-
-        file= ResourceUtils.getFile("classpath:vehicles_100.json");
-        vehicles= objectMapper.readValue(file,new TypeReference<List<Vehicle>>(){});
-
-        listOfVehicles = vehicles;
+    @Override
+    public List<Vehicle> findAllByBrandAndBetweenYears(String brand, Integer startYear, Integer endYear) {
+        return listOfVehicles.stream()
+                .filter(v -> v.getBrand().equalsIgnoreCase(brand))
+                .filter(v -> v.getYear() >= startYear && v.getYear() <= endYear)
+                .toList();
     }
+
+    @Override
+    public List<Vehicle> findAllByDimensions(Double minHeight, Double maxHeight, Double minWidth, Double maxWidth) {
+        return listOfVehicles.stream()
+                .filter(v -> v.getHeight() >= minHeight && v.getHeight() <= maxHeight
+                        && v.getWidth() >= minWidth && v.getWidth() <= maxWidth)
+                .toList();
+    }
+
+    @Override
+    public List<Vehicle> findAllByWeight(Double min, Double max) {
+        return listOfVehicles.stream()
+                .filter(v -> v.getWidth() >= min && v.getWidth() <= max)
+                .toList();
+    }
+
+
 }
