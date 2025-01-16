@@ -1,0 +1,4 @@
+package com.practicablogexepcion.blogexepcion.dto.response;
+
+public record BlogResponseDTO(int id, String titulo, String nombre, String fechaDePublicacion) {
+}
