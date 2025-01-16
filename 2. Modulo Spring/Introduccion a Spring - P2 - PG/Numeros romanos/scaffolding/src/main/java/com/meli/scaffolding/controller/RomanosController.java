@@ -11,32 +11,16 @@ import java.util.Map;
 @RestController
 @RequestMapping("/romanos")
 public class RomanosController {
-    Map<Integer, String> romanos = new HashMap<>(
-            Map.ofEntries(
-                    Map.entry(1, "I"),
-                    Map.entry(2, "II"),
-                    Map.entry(3, "III"),
-                    Map.entry(4, "IV"),
-                    Map.entry(5, "V"),
-                    Map.entry(6, "VI"),
-                    Map.entry(7, "VII"),
-                    Map.entry(8, "VIII"),
-                    Map.entry(9, "IX"),
-                    Map.entry(10, "X"),
-                    Map.entry(11, "XI"),
-                    Map.entry(12, "XII"),
-                    Map.entry(13, "XIII"),
-                    Map.entry(14, "XIV"),
-                    Map.entry(15, "XV"),
-                    Map.entry(50, "L"),
-                    Map.entry(100, "C"),
-                    Map.entry(500, "D"),
-                    Map.entry(1000, "M")
-            )
-    );
+    @GetMapping("/{number}")
+    public String toRoman(@PathVariable Integer number) {
+        StringBuilder romanNumber = new StringBuilder();
+        int[] numbersToCompare = {1000,900,500,400,100,90,50,40,10, 9, 5, 4, 1};
+        String[] romanNumbers = {"M","CM","D","CD","C","XC","L","XL", "X", "IX", "V", "IV", "I"};
 
-    @GetMapping("/obtener/{numero}")
-    public String obtenerNumeroRomano(@PathVariable Integer numero){
-        return romanos.get(numero);
+        for (int i = 0; i < numbersToCompare.length; i++)
+            for (;number >= numbersToCompare[i]; number -= numbersToCompare[i])
+                romanNumber.append(romanNumbers[i]);
+
+        return romanNumber.toString();
     }
 }
