@@ -1,0 +1,13 @@
+package org.bootcamp.recapitulandospringp2;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Recapitulandospringp2Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Recapitulandospringp2Application.class, args);
+    }
+
+}
