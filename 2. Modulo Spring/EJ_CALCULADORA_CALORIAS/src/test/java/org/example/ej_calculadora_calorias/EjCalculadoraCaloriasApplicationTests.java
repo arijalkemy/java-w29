@@ -1,0 +1,13 @@
+package org.example.ej_calculadora_calorias;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class EjCalculadoraCaloriasApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
