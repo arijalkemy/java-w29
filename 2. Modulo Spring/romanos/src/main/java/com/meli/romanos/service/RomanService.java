@@ -24,10 +24,10 @@ public class RomanService {
     public String intToRoman(Integer number){
         String roman = "";
         for(Map.Entry<Integer, String> element:romanosArray) {
-            while ((element.getKey() % number) >= 1){
-                roman += element.getValue();
-                number -= element.getKey();
-            }
+            double divisionResult = (number / element.getKey());
+            int result = (int) Math.floor(divisionResult);
+            roman += element.getValue().repeat(result);
+            number -= element.getKey()*result;
         }
         return roman;
     }

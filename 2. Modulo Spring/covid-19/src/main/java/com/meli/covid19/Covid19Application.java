@@ -1,13 +1,13 @@
-package com.example.demo;
+package com.meli.covid19;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class Covid19Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(Covid19Application.class, args);
     }
 
 }

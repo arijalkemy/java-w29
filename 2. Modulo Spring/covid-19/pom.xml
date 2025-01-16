@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.meli</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>covid-19</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>demo</description>
+    <name>covid-19</name>
+    <description>covid-19</description>
     <url/>
     <licenses>
         <license/>
