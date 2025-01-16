@@ -8,8 +8,12 @@ import java.util.Optional;
 
 public interface IVehicleRepository {
     List<Vehicle> findAll();
-
     Optional<Vehicle> getById(Long id);
-
     void addVehicle(Vehicle newVehicle);
+    List<Vehicle> getByColorAndYear(String color, Integer year);
+    List<Vehicle> getByBrandAndBetweenYears(String brand, Integer startYear, Integer endYear);
+    List<Vehicle> getByWeight(double weightMin, double weightMax);
+    List<Vehicle> getByDimensions(double minLength, double maxLength, double minWidth, double maxWidth);
+    void updateFuel(Vehicle entity, String fuelType);
+    Double getAverageCapacityByBrand(String brand);
 }
