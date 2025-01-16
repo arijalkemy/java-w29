@@ -25,4 +25,10 @@ public class ExceptionController {
         ExceptionDto exceptionDto = new ExceptionDto(e.getMessage());
         return new ResponseEntity<>(exceptionDto, HttpStatus.FORBIDDEN);
     }
+
+    @ExceptionHandler(InvalidURLException.class)
+    public ResponseEntity<?> incorrectPassword(InvalidURLException e) {
+        ExceptionDto exceptionDto = new ExceptionDto(e.getMessage());
+        return new ResponseEntity<>(exceptionDto, HttpStatus.BAD_REQUEST);
+    }
 }

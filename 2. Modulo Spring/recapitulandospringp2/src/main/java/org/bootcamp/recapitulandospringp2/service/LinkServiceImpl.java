@@ -5,12 +5,14 @@ import org.bootcamp.recapitulandospringp2.dto.request.LinkDto;
 import org.bootcamp.recapitulandospringp2.dto.response.LinkResponseDto;
 import org.bootcamp.recapitulandospringp2.entity.Link;
 import org.bootcamp.recapitulandospringp2.exception.IncorrectPasswordException;
+import org.bootcamp.recapitulandospringp2.exception.InvalidURLException;
 import org.bootcamp.recapitulandospringp2.exception.LinkInvalidatedException;
 import org.bootcamp.recapitulandospringp2.exception.NotFoundException;
 import org.bootcamp.recapitulandospringp2.repository.ILinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.net.URL;
 import java.util.Optional;
 
 @Service
@@ -27,9 +29,21 @@ public class LinkServiceImpl implements ILinkService{
 
     @Override
     public LinkResponseDto crearLink(LinkDto linkDto) {
+        if(!isValidURL(linkDto.getUrl())){
+            throw new InvalidURLException("Url invalida");
+        }
         Link linkToCreate = new Link(linkDto.getUrl());
         Integer linkId = this.repository.crearLink(linkToCreate);
         return new LinkResponseDto(linkId);
+    }
+
+    private boolean isValidURL(String urlString) {
+        try {
+            new URL(urlString);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     @Override
