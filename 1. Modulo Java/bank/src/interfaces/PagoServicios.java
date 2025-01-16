@@ -1,0 +1,5 @@
+package interfaces;
+
+public interface PagoServicios extends Transaccion {
+    public void pagarServicios();
+}
