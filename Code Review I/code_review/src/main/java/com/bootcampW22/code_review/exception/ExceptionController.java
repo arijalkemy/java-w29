@@ -10,10 +10,14 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class ExceptionController {
     @ExceptionHandler(NotFoundException.class)
-    public ResponseEntity<?> notFound(NotFoundException e){
+    public ResponseEntity<ExceptionDto> notFound(NotFoundException e){
         ExceptionDto exceptionDto = new ExceptionDto(e.getMessage());
-        return new ResponseEntity<>(exceptionDto, HttpStatus.NOT_FOUND);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exceptionDto);
     }
 
-
+    @ExceptionHandler(VehicleAlreadyExistsException.class)
+    public ResponseEntity<ExceptionDto> alreadyExists(VehicleAlreadyExistsException e){
+        ExceptionDto exceptionDto = new ExceptionDto(e.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(exceptionDto);
+    }
 }

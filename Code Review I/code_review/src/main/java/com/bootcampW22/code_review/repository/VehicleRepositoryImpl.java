@@ -1,5 +1,6 @@
 package com.bootcampW22.code_review.repository;
 
+import com.bootcampW22.code_review.dto.VehicleDto;
 import com.bootcampW22.code_review.entity.Vehicle;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class VehicleRepositoryImpl implements IVehicleRepository{
@@ -23,6 +25,16 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
     @Override
     public List<Vehicle> findAll() {
         return listOfVehicles;
+    }
+
+    @Override
+    public Optional<Vehicle> getById(Long id) {
+        return listOfVehicles.stream().filter(v -> v.getId().equals(id)).findFirst();
+    }
+
+    @Override
+    public void addVehicle(Vehicle newVehicle) {
+        listOfVehicles.add(newVehicle);
     }
 
     private void loadDataBase() throws IOException {
