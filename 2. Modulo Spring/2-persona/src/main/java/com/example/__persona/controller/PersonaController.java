@@ -1,9 +1,8 @@
 package com.example.__persona.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.__persona.dto_out.PersonaDTO_In;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -24,4 +23,5 @@ public class PersonaController {
 
         return period.getYears();
     }
+
 }
