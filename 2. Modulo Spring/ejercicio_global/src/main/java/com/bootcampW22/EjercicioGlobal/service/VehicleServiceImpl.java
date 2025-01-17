@@ -2,6 +2,7 @@ package com.bootcampW22.EjercicioGlobal.service;
 
 import com.bootcampW22.EjercicioGlobal.dto.VehicleDto;
 import com.bootcampW22.EjercicioGlobal.entity.Vehicle;
+import com.bootcampW22.EjercicioGlobal.exception.CanNotSaveException;
 import com.bootcampW22.EjercicioGlobal.exception.DuplicateIdException;
 import com.bootcampW22.EjercicioGlobal.exception.NotFoundException;
 import com.bootcampW22.EjercicioGlobal.repository.IVehicleRepository;
@@ -101,6 +102,95 @@ public class VehicleServiceImpl implements IVehicleService {
                 .toList();
     }
 
+    @Override
+    public Double getAverageCapacityOfBrand(String brand) {
+        Double average = vehicleRepository.getAverageCapacityOfBrand(brand);
+        if (average == 0.0) {
+            throw new NotFoundException("No se encontraron vehículos de esa marca");
+        }
+        return average;
+    }
+
+    @Override
+    public Double getAverageSpeedOfBrand(String brand) {
+        Double average = vehicleRepository.getAverageSpeedOfBrand(brand);
+        if (average == 0.0) {
+            throw new NotFoundException("No se encontraron vehículos de esa marca");
+        }
+        return average;
+    }
+
+    @Override
+    public List<VehicleDto> addVehicles(List<VehicleDto> dtos) {
+        List<Vehicle> createdVehicles = vehicleRepository.findAll();
+        boolean isRepited = createdVehicles.stream()
+                .anyMatch(entity -> dtos.stream()
+                        .anyMatch(dto -> dto.getId().equals(entity.getId())));
+        if (isRepited) {
+            throw new DuplicateIdException("Identificador del vehículo ya existente");
+        }
+        ObjectMapper mapper = new ObjectMapper();
+        List<Vehicle> saveVehicles = dtos.stream()
+                .map(dto -> mapper.convertValue(dto, Vehicle.class))
+                .toList();
+
+        boolean saved = vehicleRepository.saveAll(saveVehicles);
+        if (!saved) {
+            throw new CanNotSaveException("Datos mal formados o incompletos");
+        }
+        return dtos;
+    }
+
+    @Override
+    public VehicleDto updateSpeed(Long id, Integer speed) {
+        Vehicle vehicle = vehicleRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("No se encontró el vehículo"));
+        vehicle.setMax_speed(String.valueOf(speed));
+        vehicleRepository.update(vehicle);
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.convertValue(vehicle, VehicleDto.class);
+    }
+
+    @Override
+    public List<VehicleDto> findAllByFuelType(String type) {
+        List<Vehicle> vehicleList = vehicleRepository.findAllByFuelType(type);
+        if (vehicleList.isEmpty()) {
+            throw new NotFoundException("No se encontraron vehículos con ese tipo de combustible.");
+        }
+        ObjectMapper mapper = new ObjectMapper();
+        return vehicleList.stream()
+                .map(v -> mapper.convertValue(v, VehicleDto.class))
+                .toList();
+    }
+
+    @Override
+    public String deleteById(Long id) {
+        Vehicle vehicle = vehicleRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("No se encontró el vehículo"));
+        vehicleRepository.remove(vehicle);
+        return "Vehiculo Eliminado con el ID: " + id;
+    }
+
+    @Override
+    public List<VehicleDto> findByTransmissionType(String type) {
+        List<Vehicle> vehicleList = vehicleRepository.findByTransmissionType(type);
+        if (vehicleList.isEmpty())
+            throw new NotFoundException("No se encontraron vehículos con ese tipo de transmisión.");
+        ObjectMapper mapper = new ObjectMapper();
+        return vehicleList.stream()
+                .map(v -> mapper.convertValue(v, VehicleDto.class))
+                .toList();
+    }
+
+    @Override
+    public VehicleDto updateFuelById(Long id, String fuel) {
+        Vehicle vehicle = vehicleRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("No se encontró el vehículo."));
+        vehicle.setFuel_type(fuel);
+        vehicleRepository.update(vehicle);
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.convertValue(vehicle, VehicleDto.class);
+    }
 
 }
 

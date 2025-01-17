@@ -19,4 +19,18 @@ public interface IVehicleRepository {
     List<Vehicle> findAllByDimensions(Double minHeight, Double maxHeight, Double minWidth, Double maxWidth);
 
     List<Vehicle> findAllByWeight(Double min, Double max);
+
+    Double getAverageCapacityOfBrand(String brand);
+
+    Double getAverageSpeedOfBrand(String brand);
+
+    boolean saveAll(List<Vehicle> vehiclesToSave);
+
+    Vehicle update(Vehicle vehicle);
+
+    List<Vehicle> findAllByFuelType(String type);
+
+    void remove(Vehicle vehicle);
+
+    List<Vehicle> findByTransmissionType(String type);
 }
