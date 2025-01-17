@@ -1,0 +1,29 @@
+[
+  {
+    "nombre": "Ensalada Mediterránea",
+    "ingredientes": [
+      "Aceitunas negras",
+      "Tomates",
+      "Lechuga",
+      "Cebolla"
+    ]
+  },
+  {
+    "nombre": "Salteado de Verduras",
+    "ingredientes": [
+      "Calabacín",
+      "Brócoli",
+      "Zanahoria",
+      "Champiñón y otras setas"
+    ]
+  },
+  {
+    "nombre": "Sopa de Verduras",
+    "ingredientes": [
+      "Apio",
+      "Papas cocidas",
+      "Cebolla tierna",
+      "Pimiento"
+    ]
+  }
+]
