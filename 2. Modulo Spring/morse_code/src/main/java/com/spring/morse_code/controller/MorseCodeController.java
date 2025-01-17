@@ -15,7 +15,7 @@ public class MorseCodeController {
     MorseCodeService morseCodeService;
 
     @GetMapping("/{morseSentence}")
-    public ResponseEntity<?> getSentence(@PathVariable String morseSentence) {
+    public ResponseEntity<String> getSentence(@PathVariable String morseSentence) {
         return ResponseEntity.ok(morseCodeService.mapToSentence(morseSentence));
     }
 }
