@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "brand": "Chevrolet",
+    "model": "Corsa",
+    "manufacturingDate": "2000-11-20",
+    "numberOfKilometers": 115000,
+    "doors": 5,
+    "price": 90000,
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2003-05-20",
+        "kilometers": 60000,
+        "descriptions": "Change air filters"
+      }
+    ],
+    "countOfOwners": 2
+  },
+  {
+    "id": 2,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "manufacturingDate": "2015-04-12",
+    "numberOfKilometers": 80000,
+    "doors": 4,
+    "price": 150000,
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2018-06-15",
+        "kilometers": 40000,
+        "descriptions": "Oil change"
+      }
+    ],
+    "countOfOwners": 1
+  },
+  {
+    "id": 3,
+    "brand": "Ford",
+    "model": "Fiesta",
+    "manufacturingDate": "2018-09-30",
+    "numberOfKilometers": 45000,
+    "doors": 5,
+    "price": 180000,
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2020-10-20",
+        "kilometers": 20000,
+        "descriptions": "Brake pads replacement"
+      }
+    ],
+    "countOfOwners": 1
+  },
+  {
+    "id": 4,
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "manufacturingDate": "2012-03-15",
+    "numberOfKilometers": 140000,
+    "doors": 5,
+    "price": 200000,
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2015-05-22",
+        "kilometers": 70000,
+        "descriptions": "Tire change"
+      }
+    ],
+    "countOfOwners": 3
+  },
+  {
+    "id": 5,
+    "brand": "Renault",
+    "model": "Clio",
+    "manufacturingDate": "2005-08-25",
+    "numberOfKilometers": 120000,
+    "doors": 3,
+    "price": 95000,
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2008-11-10",
+        "kilometers": 60000,
+        "descriptions": "Battery replacement"
+      }
+    ],
+    "countOfOwners": 2
+  },
+  {
+    "id": 6,
+    "brand": "Honda",
+    "model": "Civic",
+    "manufacturingDate": "2017-07-11",
+    "numberOfKilometers": 50000,
+    "doors": 4,
+    "price": 250000,
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2020-01-15",
+        "kilometers": 25000,
+        "descriptions": "Air filter replacement"
+      }
+    ],
+    "countOfOwners": 1
+  },
+  {
+    "id": 7,
+    "brand": "Peugeot",
+    "model": "208",
+    "manufacturingDate": "2020-02-10",
+    "numberOfKilometers": 30000,
+    "doors": 5,
+    "price": 300000,
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2022-03-01",
+        "kilometers": 15000,
+        "descriptions": "General maintenance"
+      }
+    ],
+    "countOfOwners": 1
+  },
+  {
+    "id": 8,
+    "brand": "Hyundai",
+    "model": "Tucson",
+    "manufacturingDate": "2016-12-05",
+    "numberOfKilometers": 70000,
+    "doors": 5,
+    "price": 270000,
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2019-07-30",
+        "kilometers": 35000,
+        "descriptions": "Brake fluid replacement"
+      }
+    ],
+    "countOfOwners": 2
+  },
+  {
+    "id": 9,
+    "brand": "Kia",
+    "model": "Rio",
+    "manufacturingDate": "2014-06-18",
+    "numberOfKilometers": 95000,
+    "doors": 4,
+    "price": 190000,
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2017-05-10",
+        "kilometers": 45000,
+        "descriptions": "Oil and filter change"
+      }
+    ],
+    "countOfOwners": 2
+  },
+  {
+    "id": 10,
+    "brand": "BMW",
+    "model": "Series 3",
+    "manufacturingDate": "2019-10-22",
+    "numberOfKilometers": 40000,
+    "doors": 4,
+    "price": 450000,
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2021-12-15",
+        "kilometers": 20000,
+        "descriptions": "Coolant replacement"
+      }
+    ],
+    "countOfOwners": 1
+  }
+]
