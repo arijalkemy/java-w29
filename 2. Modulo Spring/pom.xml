@@ -13,6 +13,7 @@
         <module>P1-VIVO</module>
         <module>P1-Deportistas</module>
         <module>P1-STARWARS</module>
+        <module>P1-BLOG</module>
     </modules>
 
     <build>
