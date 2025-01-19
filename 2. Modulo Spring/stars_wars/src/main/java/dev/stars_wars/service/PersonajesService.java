@@ -5,14 +5,9 @@ import dev.stars_wars.dto.PersonajeDto;
 import dev.stars_wars.entity.Personaje;
 import com.fasterxml.jackson.core.type.TypeReference;
 import org.springframework.stereotype.Service;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.stereotype.Service;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 @Service
@@ -20,6 +15,7 @@ public class PersonajesService {
     private List<Personaje> personajes;
     private final ObjectMapper objectMapper = new ObjectMapper();
     public PersonajesService() {
+
         /*this.personajes = new ArrayList<>(List.of(
             new Personaje("Luke Skywalker", 172, 77, "Blond", "Fair", "Blue", "19BBY", "Male", "Tatooine", "Human"),
             new Personaje("Leia Organa", 150, 49, "Brown", "Light", "Brown", "19BBY", "Female", "Alderaan", "Human"),
