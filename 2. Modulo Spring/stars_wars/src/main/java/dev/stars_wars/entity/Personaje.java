@@ -1,26 +1,39 @@
 package dev.stars_wars.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Personaje {
 
     private String name;
     private Integer height;
     private Integer mass;
-    private String hairColor;
-    private String skinColor;
-    private String eyeColor;
-    private String birthYear;
+    @JsonProperty("hair_color")
+    private String hair_color;
+
+    @JsonProperty("skin_color")
+    private String skin_color;
+
+    @JsonProperty("eye_color")
+    private String eye_color;
+
+    @JsonProperty("birth_year")
+    private String birth_year;
     private String gender;
     private String homeworld;
     private String species;
+
+    public Personaje() {
+    }
+
 
     public Personaje(String name, Integer height, Integer mass, String hairColor, String skinColor, String eyeColor, String birthYear, String gender, String homeworld, String species) {
         this.name = name;
         this.height = height;
         this.mass = mass;
-        this.hairColor = hairColor;
-        this.skinColor = skinColor;
-        this.eyeColor = eyeColor;
-        this.birthYear = birthYear;
+        this.hair_color = hairColor;
+        this.skin_color = skinColor;
+        this.eye_color = eyeColor;
+        this.birth_year = birthYear;
         this.gender = gender;
         this.homeworld = homeworld;
         this.species = species;
@@ -50,36 +63,36 @@ public class Personaje {
         this.mass = mass;
     }
 
-    public String getHairColor() {
-        return hairColor;
+    public String getHair_Color() {
+        return hair_color;
     }
 
-    public void setHairColor(String hairColor) {
-        this.hairColor = hairColor;
+    public void setHair_Color(String hair_Color) {
+        this.hair_color = hair_Color;
     }
 
     public String getSkinColor() {
-        return skinColor;
+        return skin_color;
     }
 
     public void setSkinColor(String skinColor) {
-        this.skinColor = skinColor;
+        this.skin_color = skinColor;
     }
 
     public String getEyeColor() {
-        return eyeColor;
+        return eye_color;
     }
 
     public void setEyeColor(String eyeColor) {
-        this.eyeColor = eyeColor;
+        this.eye_color = eyeColor;
     }
 
     public String getBirthYear() {
-        return birthYear;
+        return birth_year;
     }
 
     public void setBirthYear(String birthYear) {
-        this.birthYear = birthYear;
+        this.birth_year = birthYear;
     }
 
     public String getGender() {
