@@ -21,7 +21,7 @@ public class StarWarsRepositoryImpl implements IStarWarsRepository {
     private void loadData() {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            personajes = List.of(objectMapper.readValue(new File("src/main/resources/starwars.json"), StarWars[].class)); // Asegúrate de ajustar la ruta
+            personajes = List.of(objectMapper.readValue(new File("src/main/resources/starwars.json"), StarWars[].class));
         } catch (IOException e) {
             e.printStackTrace();
         }
