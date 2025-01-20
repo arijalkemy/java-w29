@@ -19,5 +19,10 @@ public class ExceptionConfig {
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(BlogNotFoundException.class)
+    public ResponseEntity<?> blogNotFoundException(BlogNotFoundException e){
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
 
 }

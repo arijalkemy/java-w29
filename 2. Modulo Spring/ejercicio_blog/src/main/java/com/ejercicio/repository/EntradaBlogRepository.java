@@ -1,29 +1,32 @@
 package com.ejercicio.repository;
 
-import com.ejercicio.model.EntradaBlog;
+import com.ejercicio.model.Blog;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Repository
-public class EntradaBlogRepository implements IEntradaBlogRepository{
+public class EntradaBlogRepository implements IEntradaBlogRepository {
 
-    private Map<Long, EntradaBlog> blogs = new HashMap<>();
+    private Map<Long, Blog> blogs = new HashMap<>();
 
     @Override
-    public Optional<EntradaBlog> save(EntradaBlog entradaBlog){
-        if (blogs.containsKey(entradaBlog.getId())) {
+    public Optional<Blog> save(Blog blog) {
+        if (blogs.containsKey(blog.getId())) {
             return Optional.empty();
         }
-        blogs.put(entradaBlog.getId(), entradaBlog);
-        return Optional.of(entradaBlog);
+        blogs.put(blog.getId(), blog);
+        return Optional.of(blog);
     }
 
     @Override
-    public Optional<EntradaBlog> findBlogById(Long id) {
-        return Optional.of(blogs.get(id));
+    public Optional<Blog> findBlogById(Long id) {
+        return Optional.ofNullable(blogs.get(id));
+    }
+
+    @Override
+    public List<Blog> findAllBlogs() {
+        return new ArrayList<>(blogs.values());
     }
 
 }

@@ -1,11 +1,14 @@
 package com.ejercicio.repository;
 
-import com.ejercicio.model.EntradaBlog;
+import com.ejercicio.model.Blog;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface IEntradaBlogRepository {
-    Optional<EntradaBlog> save(EntradaBlog entradaBlog);
+    Optional<Blog> save(Blog entradaBlog);
 
-    Optional<EntradaBlog> findBlogById(Long id);
+    Optional<Blog> findBlogById(Long id);
+
+    List<Blog> findAllBlogs();
 }

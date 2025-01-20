@@ -3,7 +3,7 @@ package com.ejercicio.model;
 import lombok.Data;
 
 @Data
-public class EntradaBlog {
+public class Blog {
 
     private Long id;
     private String titulo;
