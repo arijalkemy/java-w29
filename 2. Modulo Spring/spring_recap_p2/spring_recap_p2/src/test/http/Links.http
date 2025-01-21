@@ -1,0 +1,16 @@
+POST http://localhost:8080/link
+Content-Type: application/json
+
+{
+  "url": "http://www.google.com",
+  "password": "1234"
+}
+
+###
+GET http://localhost:8080/link/wpzj?password=123
+
+###
+GET http://localhost:8080/metrics/ub6-
+
+###
+POST http://localhost:8080/invalidate/ub6-

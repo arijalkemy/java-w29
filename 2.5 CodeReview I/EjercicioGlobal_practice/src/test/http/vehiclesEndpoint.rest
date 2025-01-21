@@ -1,3 +1,0 @@
-GET http://localhost:8080/vehicles
-###
-GET http://localhost:8080/vehicles/weight?min=0&max=1
