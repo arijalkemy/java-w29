@@ -19,7 +19,7 @@ public class VehiculoController {
         this.service = service;
     }
 
-    //Agrega un nuevo vehículo
+    //Agrega un nuevo vehículos
     @PostMapping("/vehicles")
     public ResponseEntity<?> saveVehicle(@RequestBody VehiculoDTO vehiculoDTO) {
 
