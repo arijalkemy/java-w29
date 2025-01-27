@@ -1,0 +1,24 @@
+[
+  {"id": 6000, "userId": 6000, "productId": 1, "category": 1, "price": 1200.0, "date": "2025-01-20", "hasPromo": true, "discount": 0.10},
+  {"id": 6001, "userId": 6002, "productId": 2, "category": 1, "price": 999.99, "date": "2025-01-20", "hasPromo": false, "discount": 0.00},
+  {"id": 6002, "userId": 6002, "productId": 3, "category": 2, "price": 200.0, "date": "2025-01-20", "hasPromo": true, "discount": 0.15},
+  {"id": 6003, "userId": 6000, "productId": 4, "category": 3, "price": 300.0, "date": "2025-01-20", "hasPromo": false, "discount": 0.00},
+  {"id": 6005, "userId": 6000, "productId": 5, "category": 1, "price": 150.0, "date": "2025-01-21", "hasPromo": true, "discount": 0.05},
+  {"id": 6004, "userId": 6004, "productId": 6, "category": 1, "price": 500.0, "date": "2025-01-21", "hasPromo": true, "discount": 0.20},
+  {"id": 6007, "userId": 6000, "productId": 7, "category": 2, "price": 400.0, "date": "2025-01-21", "hasPromo": false, "discount": 0.00},
+  {"id": 6008, "userId": 6002, "productId": 8, "category": 3, "price": 800.0, "date": "2025-01-21", "hasPromo": true, "discount": 0.10},
+  {"id": 6009, "userId": 6002, "productId": 10, "category": 3, "price": 120.0, "date": "2025-01-21", "hasPromo": true, "discount": 0.05},
+
+  {"id": 11000, "userId": 11000, "productId": 11000, "category": 11000, "price": 300.0, "date": "2025-01-18", "hasPromo": true, "discount": 0.15},
+  {"id": 11001, "userId": 11000, "productId": 11001, "category": 11000, "price": 300.0, "date": "2025-01-18", "hasPromo": true, "discount": 0.15},
+  {"id": 11002, "userId": 11000, "productId": 11002, "category": 11000, "price": 300.0, "date": "2025-01-18", "hasPromo": true, "discount": 0.15},
+  {"id": 11003, "userId": 11000, "productId": 11003, "category": 11000, "price": 300.0, "date": "2025-01-18", "hasPromo": false, "discount": 0.00},
+  {"id": 11004, "userId": 11000, "productId": 11004, "category": 11000, "price": 300.0, "date": "2025-01-18", "hasPromo": true, "discount": 0.15},
+  {"id": 11005, "userId": 11000, "productId": 11005, "category": 11000, "price": 300.0, "date": "2025-01-18", "hasPromo": true, "discount": 0.15},
+
+  {"id": 12001, "userId": 12001, "productId": 12001, "category": 12000, "price": 100.0, "date": "2025-01-18", "hasPromo": true, "discount": 0.15},
+  {"id": 12002, "userId": 12002, "productId": 12002, "category": 1, "price": 200.0, "date": "2025-01-18", "hasPromo": true, "discount": 0.15},
+  {"id": 12003, "userId": 12003, "productId": 12003, "category": 1, "price": 300.0, "date": "2025-01-18", "hasPromo": true, "discount": 0.15},
+  {"id": 12004, "userId": 12003, "productId": 12004, "category": 1, "price": 300.0, "date": "2025-01-18", "hasPromo": true, "discount": 0.15}
+
+]
