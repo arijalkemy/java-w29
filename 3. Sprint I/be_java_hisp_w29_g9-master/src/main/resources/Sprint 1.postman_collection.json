@@ -1,0 +1,675 @@
+{
+	"info": {
+		"_postman_id": "3fa14972-ef7f-4719-bd44-6c590a5f81f7",
+		"name": "Sprint 1 (Aplicacion de Seguidores)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40993043",
+		"_collection_link": "https://bootcamp-grupo-9.postman.co/workspace/Bootcamp-grupo-9-Workspace~23b5f092-f9fe-4ab8-8823-4a19a36e7375/collection/40976820-3fa14972-ef7f-4719-bd44-6c590a5f81f7?action=share&source=collection_link&creator=40993043"
+	},
+	"item": [
+		{
+			"name": "US 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/1/follow/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"follow",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/1/followers/count",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"followers",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/{userId}/followers/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"{userId}",
+						"followers",
+						"list"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UH 3",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/1/followers/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"followers",
+								"list"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "US 4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/1/followed/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"followed",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1,\n    \"date\": \"2021-04-29\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/post",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 6",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/followed/2/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"followed",
+						"2",
+						"list"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "SuccesfulResponse",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/followed/2/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"followed",
+								"2",
+								"list"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 23 Jan 2025 19:30:08 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user_id\": 2,\n    \"posts\": [\n        {\n            \"user_id\": 1,\n            \"post_id\": 101,\n            \"date\": \"2025-01-21\",\n            \"product\": {\n                \"product_id\": 201,\n                \"product_name\": \"Laptop\",\n                \"type\": \"Electronics\",\n                \"brand\": \"Dell\",\n                \"color\": \"Silver\",\n                \"notes\": \"15-inch screen\"\n            },\n            \"category\": \"Technology\",\n            \"price\": 800\n        },\n        {\n            \"user_id\": 1,\n            \"post_id\": 103,\n            \"date\": \"2025-01-20\",\n            \"product\": {\n                \"product_id\": 203,\n                \"product_name\": \"Smartphone\",\n                \"type\": \"Electronics\",\n                \"brand\": \"Samsung\",\n                \"color\": \"Black\",\n                \"notes\": \"128GB storage\"\n            },\n            \"category\": \"Technology\",\n            \"price\": 700\n        },\n        {\n            \"user_id\": 2,\n            \"post_id\": 104,\n            \"date\": \"2025-01-15\",\n            \"product\": {\n                \"product_id\": 204,\n                \"product_name\": \"Tablet\",\n                \"type\": \"Electronics\",\n                \"brand\": \"Apple\",\n                \"color\": \"White\",\n                \"notes\": \"10-inch screen\"\n            },\n            \"category\": \"Technology\",\n            \"price\": 500\n        },\n        {\n            \"user_id\": 2,\n            \"post_id\": 105,\n            \"date\": \"2025-01-10\",\n            \"product\": {\n                \"product_id\": 205,\n                \"product_name\": \"Smartwatch\",\n                \"type\": \"Accessories\",\n                \"brand\": \"Fitbit\",\n                \"color\": \"Black\",\n                \"notes\": \"Waterproof\"\n            },\n            \"category\": \"Wearables\",\n            \"price\": 150\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "US 7",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/{userId}/unfollow/{userIdToUnfollow}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"{userId}",
+						"unfollow",
+						"{userIdToUnfollow}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "US 7",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/1/unfollow/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"unfollow",
+								"1"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "US 8",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/1/followers/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"followers",
+						"list"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "US3 (Ascendente)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/1/followers/list?order=name_asc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_asc"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "US3 (Descendente)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/1/followers/list?order=name_desc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_desc"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "US 4 (Ascendente)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/1/followed/list?order=name_asc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_asc"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "US 4 (Descendente)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/1/followed/list?order=name_desc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_desc"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "US 9",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/followed/2/list?order=date_desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"followed",
+						"2",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "date_desc"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "date_asc",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/followed/2/list?order=date_asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"followed",
+								"2",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_asc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Jan 2025 16:10:45 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user_id\": 2,\n    \"posts\": [\n        {\n            \"user_id\": 2,\n            \"post_id\": 104,\n            \"date\": \"2025-01-15\",\n            \"product\": {\n                \"product_id\": 204,\n                \"product_name\": \"Tablet\",\n                \"type\": \"Electronics\",\n                \"brand\": \"Apple\",\n                \"color\": \"White\",\n                \"notes\": \"10-inch screen\"\n            },\n            \"category\": \"Technology\",\n            \"price\": 500\n        },\n        {\n            \"user_id\": 1,\n            \"post_id\": 103,\n            \"date\": \"2025-01-20\",\n            \"product\": {\n                \"product_id\": 203,\n                \"product_name\": \"Smartphone\",\n                \"type\": \"Electronics\",\n                \"brand\": \"Samsung\",\n                \"color\": \"Black\",\n                \"notes\": \"128GB storage\"\n            },\n            \"category\": \"Technology\",\n            \"price\": 700\n        },\n        {\n            \"user_id\": 1,\n            \"post_id\": 101,\n            \"date\": \"2025-01-21\",\n            \"product\": {\n                \"product_id\": 201,\n                \"product_name\": \"Laptop\",\n                \"type\": \"Electronics\",\n                \"brand\": \"Dell\",\n                \"color\": \"Silver\",\n                \"notes\": \"15-inch screen\"\n            },\n            \"category\": \"Technology\",\n            \"price\": 800\n        }\n    ]\n}"
+				},
+				{
+					"name": "date_desc",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/followed/2/list?order=date_desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"followed",
+								"2",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_desc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 24 Jan 2025 16:11:17 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user_id\": 2,\n    \"posts\": [\n        {\n            \"user_id\": 1,\n            \"post_id\": 101,\n            \"date\": \"2025-01-21\",\n            \"product\": {\n                \"product_id\": 201,\n                \"product_name\": \"Laptop\",\n                \"type\": \"Electronics\",\n                \"brand\": \"Dell\",\n                \"color\": \"Silver\",\n                \"notes\": \"15-inch screen\"\n            },\n            \"category\": \"Technology\",\n            \"price\": 800\n        },\n        {\n            \"user_id\": 1,\n            \"post_id\": 103,\n            \"date\": \"2025-01-20\",\n            \"product\": {\n                \"product_id\": 203,\n                \"product_name\": \"Smartphone\",\n                \"type\": \"Electronics\",\n                \"brand\": \"Samsung\",\n                \"color\": \"Black\",\n                \"notes\": \"128GB storage\"\n            },\n            \"category\": \"Technology\",\n            \"price\": 700\n        },\n        {\n            \"user_id\": 2,\n            \"post_id\": 104,\n            \"date\": \"2025-01-15\",\n            \"product\": {\n                \"product_id\": 204,\n                \"product_name\": \"Tablet\",\n                \"type\": \"Electronics\",\n                \"brand\": \"Apple\",\n                \"color\": \"White\",\n                \"notes\": \"10-inch screen\"\n            },\n            \"category\": \"Technology\",\n            \"price\": 500\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "US 10",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 2,\n    \"date\": \"2024-04-30\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/promo-post",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 11",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/products/promo-post/count?user_id=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post",
+						"count"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US12 (Bonus)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/promo-post/discount?discount=1.0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post",
+						"discount"
+					],
+					"query": [
+						{
+							"key": "discount",
+							"value": "1.0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US13 (Bonus 2)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/posts/{seller_id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"posts",
+						"{seller_id}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "US13 (Bonus 2)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/posts/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"posts",
+								"2"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
