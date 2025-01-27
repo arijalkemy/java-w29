@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,18 +17,38 @@ import sprint1.be_java_hisp_w29_g9.entities.Seller;
 import sprint1.be_java_hisp_w29_g9.entities.User;
 
 @Repository
-public class UserSellerImpRepo implements IUserSellerRepo {
+public class UserSellerRepoImp implements IUserSellerRepo {
   private List<Map<User, Seller>> userSellerList = new ArrayList<>();
+  private final SellerRepoImp seller_repo;
+  private final UserRepoImp user_repo;
+  private final ObjectMapper mapper;
 
-  public UserSellerImpRepo() throws IOException {
+  public UserSellerRepoImp(
+    SellerRepoImp seller_repo, 
+    UserRepoImp user_repo,
+    ObjectMapper objectMapper
+  ) throws IOException {
+
+    this.seller_repo = seller_repo;
+    this.user_repo = user_repo;
+    this.mapper = objectMapper;
+
     InputStream inputData = IUserSellerRepo.class.getClassLoader().getResourceAsStream("data.json");
-    ObjectMapper mapper = new ObjectMapper();
-    Map<String, List<?>> data = mapper.readValue(inputData, new TypeReference<Map<String, List<?>>>(){});
-    List<User> userList = mapper.convertValue(data.get("users"), new TypeReference<List<User>>(){});
-    List<Seller> sellerList = mapper.convertValue(data.get("sellers"), new TypeReference<List<Seller>>(){});
-    this.addSellerToUser(userList.get(0), sellerList.get(0));
-    this.addSellerToUser(userList.get(1), sellerList.get(0));
-    this.addSellerToUser(userList.get(1), sellerList.get(1));
+    Map<String, List<?>> data = this.mapper.readValue(inputData, new TypeReference<Map<String, List<?>>>(){});
+    this.user_repo.setUsers(this.mapper.convertValue(data.get("users"), new TypeReference<List<User>>(){}));
+    this.seller_repo.setSellers(this.mapper.convertValue(data.get("sellers"), new TypeReference<List<Seller>>(){}));
+    this.addSellerToUser(
+      this.user_repo.getUsers().get(0), 
+      this.seller_repo.getSellers().get(0)
+    );
+    this.addSellerToUser(
+      this.user_repo.getUsers().get(1), 
+      this.seller_repo.getSellers().get(0)
+    );
+    this.addSellerToUser(
+      this.user_repo.getUsers().get(1), 
+      this.seller_repo.getSellers().get(1)
+    );
   }
 
   @Override
@@ -78,25 +97,21 @@ public class UserSellerImpRepo implements IUserSellerRepo {
 
   @Override
   public Optional<Seller> getSellerById(Integer sellerId) {
-    return userSellerList.stream()
-      .flatMap(map -> map.values().stream())
+    return this.seller_repo.getSellers().stream()
       .filter(seller -> seller.getId().equals(sellerId))
       .findFirst();
   }
 
   @Override
   public Optional<User> getUserById(Integer userId) {
-    return userSellerList.stream()
-      .flatMap(map -> map.keySet().stream())
+    return this.user_repo.getUsers().stream()
       .filter(user -> user.getUser_id().equals(userId))
       .findFirst();
   }
 
   @Override
   public List<Seller> getAllSellers() {
-    return userSellerList.stream()
-            .flatMap(map -> map.values().stream())
-            .distinct().toList();
+    return this.seller_repo.getSellers();
   }
 
 }

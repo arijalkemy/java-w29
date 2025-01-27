@@ -6,22 +6,24 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 import sprint1.be_java_hisp_w29_g9.dtos.users.response.SellerFollowersCountResponseDTO;
+import sprint1.be_java_hisp_w29_g9.dtos.users.response.SellerFollowersInfoDTO;
 import sprint1.be_java_hisp_w29_g9.dtos.users.response.UserFollowedResponseDTO;
 import sprint1.be_java_hisp_w29_g9.dtos.users.response.UserFollowersDTO;
 import sprint1.be_java_hisp_w29_g9.entities.Seller;
 import sprint1.be_java_hisp_w29_g9.entities.User;
 import sprint1.be_java_hisp_w29_g9.exceptions.BadRequestException;
 import sprint1.be_java_hisp_w29_g9.exceptions.NotFoundException;
-import sprint1.be_java_hisp_w29_g9.repositories.UserSellerImpRepo;
+import sprint1.be_java_hisp_w29_g9.repositories.UserSellerRepoImp;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class UserServiceImp implements IUserService {
-    private final UserSellerImpRepo user_seller_repo;
+    private final UserSellerRepoImp user_seller_repo;
     private final ObjectMapper objectMapper;
     private final MessageSource messageSourceBean;
 
@@ -60,7 +62,12 @@ public class UserServiceImp implements IUserService {
         if(order != null){
             sellers = orderSellers(sellers,order);
         }
-        return new UserFollowedResponseDTO(userId, user.get().getUser_id().toString(), sellers);
+
+        List<SellerFollowersInfoDTO> sellersDTO = user_seller_repo.getUserFollowedById(userId).stream()
+                .map(seller -> new SellerFollowersInfoDTO(seller.getId(), seller.getUser_name()))
+                .collect(Collectors.toList());
+        
+        return new UserFollowedResponseDTO(userId, user.get().getFullname(), sellersDTO);
     }
 
     @Override

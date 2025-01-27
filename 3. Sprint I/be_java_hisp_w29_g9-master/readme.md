@@ -15,16 +15,26 @@ vendedor.
 un usuario sigue en las últimas dos semanas.
 - `US-0007 POST /users/{userID}/unfollow/{userIdToUnfollow}`:  
 Poder realizar la acción de “Unfollow” (dejar de seguir) a un determinado  vendedor.
-- `US-0008 GET Ordenamiento alfabético ascendente y descendente de las US-0003 y US-0004: /users/{UserID}/followers/list?order=name_asc  
-/users/{UserID}/followers/list?order=name_desc  
-/users/{UserID}/followed/list?order=name_asc  
-/users/{UserID}/followed/list?order=name_desc`
+- `US-0008 GET Ordenamiento alfabético ascendente y descendente de las US-0003 y US-0004:
+
+| **Tipo** | **Endpoint** | **Descripción** |
+|----------|--------------|-----------------|
+| Seguidores | `/users/{UserID}/followers/list?order=name_asc` | Ordenamiento alfabético ascendente de los seguidores |
+| Seguidores | `/users/{UserID}/followers/list?order=name_desc` | Ordenamiento alfabético descendente de los seguidores |
+| Seguidos | `/users/{UserID}/followed/list?order=name_asc` | Ordenamiento alfabético ascendente de los seguidos |
+| Seguidos | `/users/{UserID}/followed/list?order=name_desc` | Ordenamiento alfabético descendente de los seguidos |
+
 - `US-0009 GET Ordenamiento por fecha ascendente y descendente de la US-0006:`
-`/products/followed/{userId}/list?order=date_asc  
-/products/followed/{userId}/list?order=date_desc `
+
+| **Endpoint** | **Descripción** |
+|----------|-------------|
+| `/products/followed/{userId}/list?order=date_asc` | Ordenamiento por fecha ascendente de las publicaciones |
+| `/products/followed/{userId}/list?order=date_desc` | Ordenamiento por fecha descendente de las publicaciones |
+
 - `US-0010 POST /products/promo-post`:   Llevar a cabo la publicación de un nuevo producto en promoción.
 - `US-0011 GET /products/promo-post/count?user_id={userId}`: Obtener la cantidad de productos en promoción de un determinado vendedor.
-- `US-0012 GET /products/promo-post/discount?discount={descuento}`: traer todas las ofertas con mas de un determinado descuento.
+- `US-0012 (Bonus) GET /products/promo-post/discount?discount={descuento}`: traer todas las ofertas con mas de un determinado descuento.
+- `US-0013 (Bonus) GET /products/posts/{seller_id}`: Obtener los Posts de un vendedor en especifico.
 
 # Integrantes 👥👥
 

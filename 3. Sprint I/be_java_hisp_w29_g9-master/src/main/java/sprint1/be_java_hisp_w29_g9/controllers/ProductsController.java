@@ -40,13 +40,18 @@ public class ProductsController {
       return new ResponseEntity<>(productService.promoPublicationsCountByUser(user_id), HttpStatus.OK);
   }
 
-    @PostMapping("/products/post")
-    public ResponseEntity<?> newPublication(@RequestBody CreateProductPostRequestDTO publicationDTO){
-      productService.addNewPublication(publicationDTO);
-      return ResponseEntity.ok().build();
-    }
-    @GetMapping("/products/promo-post/discount")
+  @PostMapping("/products/post")
+  public ResponseEntity<?> newPublication(@RequestBody CreateProductPostRequestDTO publicationDTO){
+    productService.addNewPublication(publicationDTO);
+    return ResponseEntity.ok().build();
+  }
+  @GetMapping("/products/promo-post/discount")
   public ResponseEntity<?> promoDiscount(@RequestParam Double discount){
     return new ResponseEntity<>(productService.promoDiscountCalculate(discount),HttpStatus.OK);
-    }
+  }
+
+  @GetMapping("/products/posts/{seller_id}")
+  public ResponseEntity<?> getSellerPosts(@PathVariable Integer seller_id){
+    return new ResponseEntity<>(productService.getSellerPosts(seller_id),HttpStatus.OK);
+  }
 }

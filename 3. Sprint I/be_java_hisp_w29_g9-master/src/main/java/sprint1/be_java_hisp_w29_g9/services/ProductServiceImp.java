@@ -14,12 +14,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import sprint1.be_java_hisp_w29_g9.dtos.products.requests.CreateProductPostRequestDTO;
 import sprint1.be_java_hisp_w29_g9.dtos.products.requests.CreatePromoProductPostRequestDTO;
-import sprint1.be_java_hisp_w29_g9.dtos.products.responses.PostDTO;
-import sprint1.be_java_hisp_w29_g9.dtos.products.responses.PostDiscountDTO;
-import sprint1.be_java_hisp_w29_g9.dtos.products.responses.ProductDTO;
-import sprint1.be_java_hisp_w29_g9.dtos.products.responses.ProductsFollowedDTO;
+import sprint1.be_java_hisp_w29_g9.dtos.products.responses.*;
 import sprint1.be_java_hisp_w29_g9.entities.Post;
 import sprint1.be_java_hisp_w29_g9.entities.Seller;
+import sprint1.be_java_hisp_w29_g9.entities.User;
 import sprint1.be_java_hisp_w29_g9.exceptions.BadRequestException;
 import sprint1.be_java_hisp_w29_g9.exceptions.NotFoundException;
 import sprint1.be_java_hisp_w29_g9.repositories.IUserSellerRepo;
@@ -74,22 +72,30 @@ public class ProductServiceImp implements IProductService {
   @Override
   public Boolean addProductInPromo(CreatePromoProductPostRequestDTO productInPromo) {
     Optional<Seller> sellerOptional = user_seller_repo.getSellerById(productInPromo.getUser_id());
-    if(sellerOptional.isEmpty()){
-      throw new BadRequestException(messageSourceBean.getMessage("seller_not_found_any_seller", null, null));
-    }
-    return user_seller_repo.addSellerPost(sellerOptional.get(), objectMapper.convertValue(productInPromo, Post.class));
+    if(sellerOptional.isEmpty()) throw new BadRequestException(messageSourceBean.getMessage("seller_not_found_any_seller", null, null));
+    Post post = objectMapper.convertValue(productInPromo, Post.class);
+    Seller seller_entity = sellerOptional.get();
+    Optional<Integer> index_optional = seller_entity.getPosts().stream().map(Post::getPost_id).max(Integer::compare);
+    if(index_optional.isEmpty()) post.setPost_id(1);
+    else post.setPost_id(index_optional.get() + 1);
+    return user_seller_repo.addSellerPost(seller_entity, post);
   }
 
 
   @Override
-  public Integer promoPublicationsCountByUser(Integer userId){
+  public PromosCountDTO promoPublicationsCountByUser(Integer userId){
     Optional<Seller> seller = user_seller_repo.getSellerById(userId);
+    Optional<User> user = user_seller_repo.getUserById(userId);
     if(seller.isEmpty()) {
       throw new NotFoundException(messageSourceBean.getMessage("seller_not_found", null, null));
     }
+    if(user.isEmpty()) {
+      throw new NotFoundException(messageSourceBean.getMessage("user_not_found", null, null));
+    }
     List<Post> posts = seller.get().getPosts().stream().filter(Post::getHas_promo).toList();
     if(posts.isEmpty()) throw new NotFoundException(messageSourceBean.getMessage("not_promotions", null, null));
-    return posts.size();
+
+    return new PromosCountDTO(userId,user.get().getFullname(), posts.size());
   }
 
   @Override
@@ -97,6 +103,12 @@ public class ProductServiceImp implements IProductService {
     Post post = objectMapper.convertValue(publicationDTO, Post.class);
     Optional<Seller> seller = user_seller_repo.getSellerById(publicationDTO.getUser_id());
     if (seller.isEmpty()) throw new BadRequestException(messageSourceBean.getMessage("seller_not_found", null, null)); 
+    Seller seller_entity = seller.get();
+    Optional<Integer> index_optional = seller_entity.getPosts().stream().map(Post::getPost_id).max(Integer::compare);
+    if(index_optional.isEmpty()) post.setPost_id(1);
+    else post.setPost_id(index_optional.get() + 1);
+    post.setHas_promo(false);
+    post.setDiscount(0.0);
     user_seller_repo.addSellerPost(seller.get(), post);
   }
 
@@ -117,6 +129,31 @@ public class ProductServiceImp implements IProductService {
       throw new NotFoundException(messageSourceBean.getMessage("not_discount_promotions", null, null));
     }
     return postDiscountDTOList;
+  }
+
+  @Override
+  public List<PostDTO> getSellerPosts(Integer seller_id) {
+    Optional<Seller> seller = user_seller_repo.getSellerById(seller_id);
+    if(seller.isEmpty()) throw new NotFoundException(messageSourceBean.getMessage("seller_not_found", null, null));
+    List<Post> posts = seller.get().getPosts();
+    if(posts.isEmpty()) throw new NotFoundException(messageSourceBean.getMessage("not_posts", null, null));
+    return posts.stream()
+      .map(post -> new PostDTO(
+        seller_id,
+        post.getPost_id(),
+        post.getDate(),
+        new ProductDTO(
+          post.getProduct().getProduct_id(), 
+          post.getProduct().getProduct_name(), 
+          post.getProduct().getType(), 
+          post.getProduct().getBrand(), 
+          post.getProduct().getColor(), 
+          post.getProduct().getNotes()
+        ),
+        post.getCategory(),
+        post.getPrice()
+      ))
+      .toList();
   }
 
 }
