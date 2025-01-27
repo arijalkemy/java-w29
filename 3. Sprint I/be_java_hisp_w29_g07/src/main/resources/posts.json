@@ -1,0 +1,111 @@
+[
+  {
+    "user_id": 2,
+    "post_id": 1,
+    "date": "16-01-2025",
+    "product": {
+      "product_id": 1,
+      "product_name": "Headset RGB Inalámbrico",
+      "type": "Gamer",
+      "brand": "Razer",
+      "color": "Green with RGB",
+      "notes": "Sin Batería"
+    },
+    "category": 5,
+    "price": 2800.69
+  },
+  {
+    "user_id": 4,
+    "post_id": 2,
+    "date": "11-01-2025",
+    "product": {
+      "product_id": 2,
+      "product_name": "Silla Gamer",
+      "type": "Gamer",
+      "brand": "Racer",
+      "color": "Red & Black",
+      "notes": "Special Edition"
+    },
+    "category": 3,
+    "price": 15000.50
+  },
+  {
+    "user_id": 3,
+    "post_id": 3,
+    "date": "01-01-2024",
+    "product": {
+      "product_id": 3,
+      "product_name": "Silla Gamer",
+      "type": "Gamer",
+      "brand": "Racer",
+      "color": "Red & Black",
+      "notes": "Special Edition"
+    },
+    "category": 1,
+    "price": 15000.50
+  },
+  {
+    "user_id": 5,
+    "post_id": 4,
+    "date": "01-01-2024",
+    "product": {
+      "product_id": 4,
+      "product_name": "Keyboard",
+      "type": "Office",
+      "brand": "Racer",
+      "color": "Red & Black",
+      "notes": "Special Edition"
+    },
+    "category": 2,
+    "price": 15120.50
+  },
+  {
+    "user_id": 1,
+    "post_id": 5,
+    "date": "01-01-2024",
+    "product": {
+      "product_id": 5,
+      "product_name": "Graphic Card",
+      "type": "Gamer",
+      "brand": "Nvidia",
+      "color": "Red & Black",
+      "notes": "Special Edition"
+    },
+    "category": 3,
+    "price": 35000.50
+  },
+  {
+    "user_id": 2,
+    "post_id": 6,
+    "date": "01-01-2024",
+    "product": {
+      "product_id": 6,
+      "product_name": "Graphic Card",
+      "type": "Gamer",
+      "brand": "Nvidia",
+      "color": "Red & Black",
+      "notes": "Special Edition"
+    },
+    "category": 2,
+    "price": 35000.50,
+    "has_promo": true,
+    "discount": 0.25
+  },
+  {
+    "user_id": 5,
+    "post_id": 7,
+    "date": "01-01-2024",
+    "product": {
+      "product_id": 6,
+      "product_name": "Graphic Card",
+      "type": "Gamer",
+      "brand": "Asus TUF",
+      "color": "Red & Black",
+      "notes": "Special Edition"
+    },
+    "category": 1,
+    "price": 26500.50,
+    "has_promo": true,
+    "discount": 0.25
+  }
+]
