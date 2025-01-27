@@ -1092,10 +1092,10 @@
 									"script": {
 										"exec": [
 											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (!nextProductId) {",
+											"if (nextProductId == undefined || nextProductId == null) {",
 											"    nextProductId = -1;",
 											"}",
-											"pm.collectionVariables.set(nextProductId + 1);"
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -1184,7 +1184,7 @@
 									"script": {
 										"exec": [
 											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"if (nextProductId == undefined || nextProductId == null) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -1227,7 +1227,7 @@
 									"script": {
 										"exec": [
 											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"if (nextProductId == undefined || nextProductId == null) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -1378,7 +1378,7 @@
 									"script": {
 										"exec": [
 											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"if (nextProductId == undefined || nextProductId == null) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -1421,7 +1421,7 @@
 									"script": {
 										"exec": [
 											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"if (nextProductId == undefined || nextProductId == null) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2169,7 +2169,7 @@
 									"script": {
 										"exec": [
 											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"if (nextProductId == undefined || nextProductId == null) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2212,7 +2212,7 @@
 									"script": {
 										"exec": [
 											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"if (nextProductId == undefined || nextProductId == null) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2363,7 +2363,7 @@
 									"script": {
 										"exec": [
 											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"if (nextProductId == undefined || nextProductId == null) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2406,7 +2406,7 @@
 									"script": {
 										"exec": [
 											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"if (nextProductId == undefined || nextProductId == null) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2570,7 +2570,7 @@
 									"script": {
 										"exec": [
 											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"if (nextProductId == undefined || nextProductId == null) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2662,7 +2662,7 @@
 									"script": {
 										"exec": [
 											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"if (nextProductId == undefined || nextProductId == null) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2705,7 +2705,7 @@
 									"script": {
 										"exec": [
 											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"if (nextProductId == undefined || nextProductId == null) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2822,7 +2822,7 @@
 									"script": {
 										"exec": [
 											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"if (nextProductId == undefined || nextProductId == null) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2865,7 +2865,7 @@
 									"script": {
 										"exec": [
 											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"if (nextProductId == undefined || nextProductId == null) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -3039,27 +3039,11 @@
 			"type": "string"
 		},
 		{
-			"key": "clientId",
-			"value": ""
-		},
-		{
 			"key": "sellerId",
 			"value": ""
 		},
 		{
-			"key": "0",
-			"value": ""
-		},
-		{
 			"key": "nextProductId",
-			"value": ""
-		},
-		{
-			"key": "30",
-			"value": ""
-		},
-		{
-			"key": "43",
 			"value": ""
 		}
 	]

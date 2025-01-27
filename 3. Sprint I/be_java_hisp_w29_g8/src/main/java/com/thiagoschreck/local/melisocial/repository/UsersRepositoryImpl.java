@@ -35,6 +35,7 @@ public class UsersRepositoryImpl implements IUsersRepository {
 		return seller;
 	}
 
+
     @Override
     public Optional<Seller> findSellerById(int sellerId) {
         return Optional.ofNullable(sellers.get(sellerId));
@@ -97,4 +98,6 @@ public class UsersRepositoryImpl implements IUsersRepository {
         sellers.put(newSeller.getUserId(), newSeller);
         return newSeller;
     }
+
+
 }
