@@ -1,0 +1,25 @@
+[
+  {"id": 1, "name": "Laptop", "type": "Electronics", "brand": "Dell", "color": "Black", "notes": "High performance laptop suitable for gaming and work."},
+  {"id": 2, "name": "Smartphone", "type": "Electronics", "brand": "Apple", "color": "White", "notes": "Latest model with advanced camera features."},
+  {"id": 3, "name": "Headphones", "type": "Electronics", "brand": "Sony", "color": "Blue", "notes": "Noise-cancelling headphones with high-quality sound."},
+  {"id": 4, "name": "Coffee Machine", "type": "Appliance", "brand": "Nespresso", "color": "Silver", "notes": "Automated coffee machine for a perfect brew."},
+  {"id": 5, "name": "Smart Watch", "type": "Electronics", "brand": "Samsung", "color": "Black", "notes": "Fitness tracker with built-in health monitoring features."},
+  {"id": 6, "name": "TV", "type": "Electronics", "brand": "LG", "color": "Black", "notes": "4K Ultra HD Smart TV with a large screen."},
+  {"id": 7, "name": "Tablet", "type": "Electronics", "brand": "Microsoft", "color": "Silver", "notes": "High-end tablet with excellent processing power."},
+  {"id": 8, "name": "Refrigerator", "type": "Appliance", "brand": "Whirlpool", "color": "White", "notes": "Energy-efficient refrigerator with spacious compartments."},
+  {"id": 9, "name": "Washing Machine", "type": "Appliance", "brand": "Bosch", "color": "Silver", "notes": "High-efficiency washing machine with quick cycles."},
+  {"id": 10, "name": "Microwave Oven", "type": "Appliance", "brand": "Panasonic", "color": "Black", "notes": "Compact microwave oven with multiple cooking presets."},
+
+  {"id": 11000, "name": "Tennis Racket", "type": "Sports Equipment", "brand": "Wilson", "color": "Blue", "notes": "A very good product."},
+  {"id": 11001, "name": "Tennis Racket", "type": "Sports Equipment", "brand": "Wilson", "color": "Blue", "notes": "A very good product."},
+  {"id": 11002, "name": "Tennis Racket", "type": "Sports Equipment", "brand": "Wilson", "color": "Blue", "notes": "A very good product."},
+  {"id": 11003, "name": "Tennis Racket", "type": "Sports Equipment", "brand": "Wilson", "color": "Blue", "notes": "A very good product."},
+  {"id": 11004, "name": "Tennis Racket", "type": "Sports Equipment", "brand": "Wilson", "color": "Blue", "notes": "A very good product."},
+  {"id": 11005, "name": "Tennis Racket", "type": "Sports Equipment", "brand": "Wilson", "color": "Blue", "notes": "A very good product."},
+
+  {"id": 12001, "name": "Tennis Racket", "type": "Sports Equipment", "brand": "Wilson", "color": "Red", "notes": "Lightweight tennis racket designed for beginners and professionals."},
+  {"id": 12002, "name": "Tennis Balls (Pack of 3)", "type": "Sports Equipment", "brand": "Penn", "color": "Yellow", "notes": "Durable and pressurized tennis balls for optimal bounce."},
+  {"id": 12003, "name": "Tennis Shoes", "type": "Footwear", "brand": "Nike", "color": "White", "notes": "Comfortable and durable tennis shoes with excellent grip on the court."},
+  {"id": 12004, "name": "Tennis Bag", "type": "Accessories", "brand": "Babolat", "color": "Blue", "notes": "Spacious tennis bag that can hold up to 3 rackets and accessories."},
+  {"id": 12005, "name": "Tennis Headband", "type": "Accessories", "brand": "Adidas", "color": "Black", "notes": "Sweat-absorbing headband for maximum comfort during matches."}
+]

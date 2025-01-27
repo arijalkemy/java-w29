@@ -1,0 +1,1318 @@
+{
+	"info": {
+		"_postman_id": "8f67b1eb-5d80-4db4-8551-70c8cbdb908c",
+		"name": "EndPoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40549384",
+		"_collection_link": "https://sprint1-4389.postman.co/workspace/Sprint-1~d73cfb23-4deb-4f0b-be0d-2d9d2dd4d782/collection/40519729-8f67b1eb-5d80-4db4-8551-70c8cbdb908c?action=share&source=collection_link&creator=40549384"
+	},
+	"item": [
+		{
+			"name": "Get All",
+			"item": [
+				{
+					"name": "Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/posts/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"posts",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US 0001 - OK",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/follow/:userIdToFollow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"follow",
+						":userIdToFollow"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "11001",
+							"description": "Número que identifica al usuario actual"
+						},
+						{
+							"key": "userIdToFollow",
+							"value": "6000",
+							"description": "Número que identifica al usuario a seguir"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0001 - Bad Request - Already following",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/follow/:userIdToFollow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"follow",
+						":userIdToFollow"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "2000",
+							"description": "Número que identifica al usuario actual"
+						},
+						{
+							"key": "userIdToFollow",
+							"value": "6000",
+							"description": "Número que identifica al usuario a seguir"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0001 - Bad Request - Not a seller",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/follow/:userIdToFollow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"follow",
+						":userIdToFollow"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "2000",
+							"description": "Número que identifica al usuario actual"
+						},
+						{
+							"key": "userIdToFollow",
+							"value": "5000",
+							"description": "Número que identifica al usuario a seguir"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0001 - Bad Request - Follow yourself",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/follow/:userIdToFollow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"follow",
+						":userIdToFollow"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "2000",
+							"description": "Número que identifica al usuario actual"
+						},
+						{
+							"key": "userIdToFollow",
+							"value": "2000",
+							"description": "Número que identifica al usuario a seguir"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0001 - Not Found",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/follow/:userIdToFollow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"follow",
+						":userIdToFollow"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "2000",
+							"description": "Número que identifica al usuario actual"
+						},
+						{
+							"key": "userIdToFollow",
+							"value": "9999",
+							"description": "Número que identifica al usuario a seguir"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0002 - OK",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/followers/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"followers",
+						"count"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "2004",
+							"description": "Cant de seguidores de un Vendedor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0002 - Bad Request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/followers/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"followers",
+						"count"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "2003",
+							"description": "ID de comprador (No puede tener seguidores)"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0002 - Not Found",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/followers/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"followers",
+						"count"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "0",
+							"description": "id no existe"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0003 - OK",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/followers/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"followers",
+						"list"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "6000",
+							"description": "Id de vendedor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0003 - Not Found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/followers/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"followers",
+						"list"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "9999",
+							"description": "Id del vendedor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0004 - OK",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/followed/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"followed",
+						"list"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "12004",
+							"description": "Seguidos del userId "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0004 - User Not Found",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/followed/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"followed",
+						"list"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "12005",
+							"description": "Usario inexistente"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0005 - OK",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 6004,\n    \"date\": \"25-01-2025\",\n    \"product\": {\n        \"product_id\": 5000,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0005 - User Not Found",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 0,\n    \"date\": \"29-04-2025\",\n    \"product\": {\n        \"product_id\": 5000,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0005 - Conflict",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 5000,\n    \"date\": \"29-04-2025\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0006 - OK",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/followed/6001/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"followed",
+						"6001",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0006 - Not Follow Any User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/followed/6005/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"followed",
+						"6005",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0006 - Followed Users Have No Posts",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/followed/6004/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"followed",
+						"6004",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0007 - OK",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/unfollow/:userIdToUnfollow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"unfollow",
+						":userIdToUnfollow"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "7001",
+							"description": "Usuario actual (Id Comprador)"
+						},
+						{
+							"key": "userIdToUnfollow",
+							"value": "7000",
+							"description": "Usuario que va dejar de seguir (Id vendedor)"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0007 - Bad Request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/unfollow/:userIdToUnfollow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"unfollow",
+						":userIdToUnfollow"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "7001",
+							"description": "Usuario actual"
+						},
+						{
+							"key": "userIdToUnfollow",
+							"value": "7001",
+							"description": "Usuario con el mismo ID"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0007 - Forbidden",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/unfollow/:userIdToUnfollow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"unfollow",
+						":userIdToUnfollow"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "7000",
+							"description": "Id vendedor"
+						},
+						{
+							"key": "userIdToUnfollow",
+							"value": "7003",
+							"description": "Id comprador (No puede tener seguidores)"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0007 - Not Followed",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/unfollow/:userIdToUnfollow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"unfollow",
+						":userIdToUnfollow"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "7000",
+							"description": "Usuario Actual"
+						},
+						{
+							"key": "userIdToUnfollow",
+							"value": "7004",
+							"description": "Nunca lo estuvo siguiendo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0007 - Not Found",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/unfollow/:userIdToUnfollow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"unfollow",
+						":userIdToUnfollow"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "7000",
+							"description": "Usuario actual"
+						},
+						{
+							"key": "userIdToUnfollow",
+							"value": "0",
+							"description": "Id invalido"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0008 OK",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/followers/list?order=name_desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"followers",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "name_desc"
+						}
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "3000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0008 Wrong parameter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/followed/list?order=TEST",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"followed",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "TEST"
+						}
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "12004"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0008 Order without parameter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/:userId/followed/list?order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						":userId",
+						"followed",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": null
+						}
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "12003"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0009 - OK - Date desc",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/followed/:userId/list?order=date_desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"followed",
+						":userId",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "date_desc"
+						}
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "6001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0009 - OK - Date asc",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/followed/:userId/list?order=date_asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"followed",
+						":userId",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "date_asc"
+						}
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "6001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0009 - Not Found",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/followed/:userId/list?order=date_desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"followed",
+						":userId",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "date_desc"
+						}
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0010 - Ok",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 5000,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 20,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/promo-post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0010 - Conflict Product exists",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 8000,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/promo-post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0010 - Bad Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 10000,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 11,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": false,\n    \"discount\": 0.25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/promo-post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0010 - Not Found (User)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 100,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 11,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/promo-post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0011 - OK",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/promo-post/count?user_id=11000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post",
+						"count"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "11000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0012 Bonus",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/promo-post/list?userId=12003&date=17-01-2025&",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post",
+						"list"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "12003",
+							"description": "traer los posts de este usuario"
+						},
+						{
+							"key": "date",
+							"value": "17-01-2025",
+							"description": "A partir de esta fecha (inclusive) en adelante"
+						},
+						{
+							"key": "",
+							"value": null,
+							"description": "que estén en oferta"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0012 Bonus - Not found",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/promo-post/list?userId=12002&date=20-01-2025&",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post",
+						"list"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "12002",
+							"description": "traer los posts de este usuario"
+						},
+						{
+							"key": "date",
+							"value": "20-01-2025",
+							"description": "A partir de esta fecha en adelante"
+						},
+						{
+							"key": "",
+							"value": null,
+							"description": "que estén en oferta"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0012 Bonus - Not a Seller",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/promo-post/list?userId=12004&date=20-01-2025&",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post",
+						"list"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "12004",
+							"description": "traer los posts de este usuario"
+						},
+						{
+							"key": "date",
+							"value": "20-01-2025",
+							"description": "A partir de esta fecha en adelante"
+						},
+						{
+							"key": "",
+							"value": null,
+							"description": "que estén en oferta"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
