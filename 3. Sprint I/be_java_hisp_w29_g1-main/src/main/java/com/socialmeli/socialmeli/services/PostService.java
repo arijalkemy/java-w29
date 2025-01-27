@@ -61,7 +61,7 @@ public class PostService implements IPostService {
 
         throwIfNotSeller(user);
 
-        List<Post> posts = postRepository.getPostsWithPromoByUser(userId);
+        List<Post> posts = postRepository.findPostsWithPromoByUser(userId);
 
         throwIfPostsIsEmpty(posts, user);
 
@@ -161,7 +161,7 @@ public class PostService implements IPostService {
             throw new BadRequestException(Message.INVALID_ORDER.getStr());
         }
         User user= getUserIfExists(userId);
-        List<User> followed= followRepository.getFollowedUsers(user);
+        List<User> followed= followRepository.findFollowedUsers(user);
         List<Post> postsFromFollows = postRepository.postFromUsers(followed);
         List<PostIdDto> postsSinceLastWeek = filterPostsSince(postsFromFollows, LocalDate.now().minusWeeks(2));
 
@@ -262,7 +262,7 @@ public class PostService implements IPostService {
         User user = getUserIfExists(userId);
         throwIfNotSeller(user);
 
-        List<Post> posts = postRepository.getPostsWithPromoByUserOptional(userId);
+        List<Post> posts = postRepository.findPostsWithPromoByUserOptional(userId);
         throwIfPostsIsEmpty(posts, user);
 
         List<PostIdSaleDto> postDtos = posts.stream()
@@ -275,7 +275,7 @@ public class PostService implements IPostService {
     }
 
     private List<ProductsPromotionDto> findProductSaleCount() {
-        List<Post> allPromoPosts = postRepository.getPostsWithPromoByUserOptional();
+        List<Post> allPromoPosts = postRepository.findPostsWithPromoByUserOptional();
         throwIfNoPostCurrently(allPromoPosts);
 
         Map<User, List<Post>> groupedPosts = allPromoPosts.stream()

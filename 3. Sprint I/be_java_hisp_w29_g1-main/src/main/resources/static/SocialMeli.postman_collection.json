@@ -4,8 +4,8 @@
 		"name": "SocialMeli",
 		"description": "Requerimientos técnicos funcionales",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "40679618",
-		"_collection_link": "https://socialmeli-8766.postman.co/workspace/SocialMeli~baa250d9-4d00-4692-8209-e69028b27b1d/collection/40679618-8a870f34-9b31-438b-aabf-4f8662bbe5c2?action=share&source=collection_link&creator=40679618"
+		"_exporter_id": "40931158",
+		"_collection_link": "https://socialmeli-8766.postman.co/workspace/SocialMeli~baa250d9-4d00-4692-8209-e69028b27b1d/collection/40679618-8a870f34-9b31-438b-aabf-4f8662bbe5c2?action=share&source=collection_link&creator=40931158"
 	},
 	"item": [
 		{
@@ -789,7 +789,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/products/followed/3/list",
+							"raw": "localhost:8080/products/followed/2/list",
 							"host": [
 								"localhost"
 							],
@@ -797,7 +797,7 @@
 							"path": [
 								"products",
 								"followed",
-								"3",
+								"2",
 								"list"
 							]
 						}
@@ -1163,7 +1163,7 @@
 					"response": []
 				},
 				{
-					"name": "Followers order by error",
+					"name": "Followers order by null",
 					"event": [
 						{
 							"listen": "test",
@@ -1197,6 +1197,33 @@
 								{
 									"key": "order",
 									"value": "ascendiente"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Followers order by error",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/9/followers/list?order=error",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"9",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "error"
 								}
 							]
 						}
@@ -1339,6 +1366,33 @@
 					"response": []
 				},
 				{
+					"name": "Followed order by null",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/4/followed/list?order=",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"4",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Followed order by error",
 					"event": [
 						{
@@ -1358,7 +1412,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/users/4/followed/list?order=ascendiente",
+							"raw": "localhost:8080/users/4/followed/list?order=error",
 							"host": [
 								"localhost"
 							],
@@ -1372,7 +1426,7 @@
 							"query": [
 								{
 									"key": "order",
-									"value": "ascendiente"
+									"value": "error"
 								}
 							]
 						}
@@ -1443,7 +1497,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/products/followed/1/list?order=date_asc",
+							"raw": "localhost:8080/products/followed/4/list?order=date_asc",
 							"host": [
 								"localhost"
 							],
@@ -1451,7 +1505,7 @@
 							"path": [
 								"products",
 								"followed",
-								"1",
+								"4",
 								"list"
 							],
 							"query": [

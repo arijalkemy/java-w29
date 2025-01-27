@@ -14,13 +14,13 @@ public interface IPostRepository {
 
     List<Post> postFromUsers(List<User> userList);
 
-    List<Post> getPostsWithPromoByUser(Integer userId);
+    List<Post> findPostsWithPromoByUser(Integer userId);
 
     List<Post> findPostByFilter(Integer category, Double priceMin, Double priceMax, String productBrand, String productType);
 
-    List<Post> getPostsWithPromoByUserOptional(Integer userId);
+    List<Post> findPostsWithPromoByUserOptional(Integer userId);
 
-    List<Post> getPostsWithPromoByUserOptional();
+    List<Post> findPostsWithPromoByUserOptional();
 
     List<Post> findPostBySeller(Integer userID);
 

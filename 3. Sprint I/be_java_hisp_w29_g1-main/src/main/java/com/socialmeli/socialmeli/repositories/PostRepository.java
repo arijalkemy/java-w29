@@ -66,7 +66,7 @@ public class PostRepository implements IPostRepository {
     }
 
     @Override
-    public List<Post> getPostsWithPromoByUser(Integer userId) {
+    public List<Post> findPostsWithPromoByUser(Integer userId) {
         return posts.stream().filter(post -> post.getHasPromo() &&
                 post.getUser().getId().equals(userId)).collect(Collectors.toList());
     }
@@ -83,12 +83,12 @@ public class PostRepository implements IPostRepository {
     }
 
     @Override
-    public List<Post> getPostsWithPromoByUserOptional(Integer userId) {
+    public List<Post> findPostsWithPromoByUserOptional(Integer userId) {
         return posts.stream().filter(post -> post.getHasPromo() && post.getUser().getId().equals(userId)).collect(Collectors.toList());
     }
 
     @Override
-    public List<Post> getPostsWithPromoByUserOptional() {
+    public List<Post> findPostsWithPromoByUserOptional() {
         return posts.stream().filter(Post::getHasPromo).collect(Collectors.toList());
     }
 

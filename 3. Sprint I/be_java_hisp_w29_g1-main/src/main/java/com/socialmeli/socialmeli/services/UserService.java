@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 import java.util.Comparator;
 
 import java.util.List;
-import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -84,7 +83,10 @@ public class UserService implements IUserService {
     // US 0003
     @Override
     public FollowerListDto getFollowerList(Integer userId, String order) {
-        throwIfOrderInvalid(order);
+        if (!order.equalsIgnoreCase(String.format("name_%s", Order.ASC.getString())) &&
+                !order.equalsIgnoreCase(String.format("name_%s", Order.DESC.getString()))) {
+            throw new BadRequestException(Message.INVALID_ORDER.getStr());
+        }
 
         User user = getUserIfExists(userId);
         List<Follow> follows = getAllFollowers(user);
@@ -102,7 +104,11 @@ public class UserService implements IUserService {
     // US 0004
     @Override
     public FollowedListDto getFollowedList(Integer userId, String order) {
-        throwIfOrderInvalid(order);
+        if (!order.equalsIgnoreCase(String.format("name_%s", Order.ASC.getString())) &&
+                !order.equalsIgnoreCase(String.format("name_%s", Order.DESC.getString()))) {
+            throw new BadRequestException(Message.INVALID_ORDER.getStr());
+        }
+
         User user = getUserIfExists(userId);
 
         List<UserDto> followed = followRepository
@@ -120,7 +126,7 @@ public class UserService implements IUserService {
     // US 00016
     @Override
     public TopSellersDto getTopSellers() {
-        List<UserFollowerCountDto> topSellers = followRepository.getTopSellers();
+        List<UserFollowerCountDto> topSellers = followRepository.findTopSellers();
 
         if (topSellers.isEmpty()){
             throw new NotFoundException(Message.NO_SELLERS.getStr());
@@ -130,14 +136,11 @@ public class UserService implements IUserService {
     }
 
     private List<UserDto> orderListByName(String order, List<UserDto> followed) {
-        if (order.equals(String.format("name_%s", Order.ASC.getString())) || order.equals(String.format("name_%s", Order.DESC.getString()))) {
-            followed = followed.stream()
-                    .sorted(Comparator.comparing(UserDto::getName, order.endsWith(Order.ASC.getString())
-                            ? Comparator.naturalOrder()
-                            : Comparator.reverseOrder()))
-                    .toList();
-        }
-        return followed;
+        return followed.stream()
+                .sorted(Comparator.comparing(UserDto::getName, order.endsWith(Order.ASC.getString())
+                        ? Comparator.naturalOrder()
+                        : Comparator.reverseOrder()))
+                .toList();
     }
 
     private User getUserIfExists(Integer id) {
@@ -147,13 +150,6 @@ public class UserService implements IUserService {
     private List<Follow> getAllFollowers(User user) {
         throwIfNotSeller(user);
         return followRepository.findAllByIdFollowed(user.getId());
-    }
-
-    private void throwIfOrderInvalid(String order) {
-        if (!Objects.equals(order, String.format("name_%s", Order.ASC.getString())) &&
-                !Objects.equals(order, String.format("name_%s", Order.DESC.getString()))) {
-            throw new BadRequestException(Message.INVALID_ORDER.getStr());
-        }
     }
     
     private void throwIfNotSeller(User user) {
