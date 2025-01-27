@@ -1,0 +1,53 @@
+# Social Meli - Grupo 1
+
+## Integrantes
+
+- Avalle, Agostina
+- Comba, Carolina
+- Navarro, Eliana Denise
+- Pairetti, Franca
+- Peralta, Katerinne Fernanda
+- Sánchez Carrasco, Ciro Tomás
+
+---
+
+## Features
+
+### Obligatorios
+
+- **US 0001**: Poder realizar la acción de “Follow” (seguir) a un determinado vendedor.
+- **US 0002**: Obtener el resultado de la cantidad de usuarios que siguen a un determinado vendedor.
+- **US 0003**: Obtener un listado de todos los usuarios que siguen a un determinado vendedor (¿Quién me sigue?).
+- **US 0004**: Obtener un listado de todos los vendedores a los cuales sigue un determinado usuario (¿A quién sigo?).
+- **US 0005**: Dar de alta una nueva publicación.
+- **US 0006**: Obtener un listado de las publicaciones realizadas en las últimas dos semanas, por los vendedores que un usuario sigue (para esto tener en cuenta ordenamiento por fecha, publicaciones más recientes primero).
+- **US 0007**: Poder realizar la acción de “Unfollow” (dejar de seguir) a un determinado vendedor.
+- **US 0010**: Llevar a cabo la publicación de un nuevo producto en promoción.
+- **US 0011**: Obtener la cantidad de productos en promoción de un determinado vendedor.
+
+### Bonus
+- **US 0012**: Obtener un listado de todos los productos en promoción con la opción de filtrar por un vendedor específico.
+- **US 0013**: Agregar comentario a una publicación determinada.
+- **US 0014**: Obtener un listado de los comentarios de una publicación.
+- **US 0015**: Obtener un listado de publicaciones filtradas por categoría, precio, tipo de producto o marca de producto.
+- **US 0016**: Obtener un listado ordenado por los vendedores con más seguidores.
+- **US 0017**: Obtener un listado ordenado por los vendedores con más posts.
+- **US 0018**: Obtener un reporte de cantidad de posteos por categoría.
+- **US 0019**: Obtener un reporte de cantidad de posteos por categoría de un vendedor determinado.
+
+---
+
+## Diagrama de clases
+
+![](src/main/resources/static/diagrama_clases.jpg)
+
+---
+
+## Documentación
+
+- [Requerimientos técnicos](src/main/resources/static/requerimientos.pdf)
+
+- [Colección de postman](src/main/resources/static/SocialMeli.postman_collection.json)
+
+- [Trello](https://trello.com/invite/b/678fbbfb30a5a696fb590ac0/ATTIc2cf4176f47e241c9e4e462efe2a66419F89596B/socialmeli)
+
