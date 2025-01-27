@@ -6,7 +6,7 @@ import com.socialmeli.socialmeli.models.User;
 import java.util.List;
 
 public interface IFollowRepository {
-    List<User> getFollowedUsers(User user);
+    List<User> findFollowedUsers(User user);
 
     void add(Follow follow);
 
@@ -18,5 +18,5 @@ public interface IFollowRepository {
 
     List<Follow> findAllByIdFollower(Integer id);
 
-    List<UserFollowerCountDto> getTopSellers();
+    List<UserFollowerCountDto> findTopSellers();
 }

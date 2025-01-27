@@ -65,7 +65,7 @@ public class FollowRepository implements IFollowRepository {
     }
 
     @Override
-    public List<UserFollowerCountDto> getTopSellers() {
+    public List<UserFollowerCountDto> findTopSellers() {
 
         Set<User> followed = follows.stream().map(Follow::getUserFollowed)
                 .collect(Collectors.toSet());
@@ -84,7 +84,7 @@ public class FollowRepository implements IFollowRepository {
 
 
     @Override
-    public List<User> getFollowedUsers(User user) {
+    public List<User> findFollowedUsers(User user) {
         return follows.stream().filter(follow -> follow.getUserFollower().equals(user))
                 .map(Follow::getUserFollowed).toList();
     }
