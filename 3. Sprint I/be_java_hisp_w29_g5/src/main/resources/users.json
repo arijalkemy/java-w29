@@ -1,0 +1,57 @@
+[
+  {
+    "userId": 1,
+    "name": "Ana Torres",
+    "favoritePosts": [1,2]
+  },
+  {
+    "userId": 2,
+    "name": "Luis García",
+    "favoritePosts": [3,4]
+  },
+  {
+    "userId": 3,
+    "name": "María Pérez",
+    "favoritePosts": [3]
+  },
+  {
+    "userId": 4,
+    "name": "Carlos Mendoza",
+    "favoritePosts": []
+  },
+  {
+    "userId": 5,
+    "name": "Sofía Romero",
+    "favoritePosts": []
+  },
+  {
+    "userId": 6,
+    "name": "Javier López",
+    "favoritePosts": []
+  },
+  {
+    "userId": 7,
+    "name": "Laura Fernández",
+    "favoritePosts": []
+  },
+  {
+    "userId": 8,
+    "name": "Diego Sánchez",
+    "favoritePosts": []
+  },
+  {
+    "userId": 9,
+    "name": "Isabel Martínez",
+    "favoritePosts": []
+  },
+  {
+    "userId": 10,
+    "name": "Fernando Ruiz",
+    "favoritePosts": []
+  },
+  {
+    "userId": 11,
+    "name": "Pepito Ruiz",
+    "favoritePosts": []
+  }
+]
