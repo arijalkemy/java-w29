@@ -12,26 +12,34 @@ public class VehiculosRepositoryImpl implements VehiculosRepository {
 
     @Override
     public void add(Vehiculo vehiculo) {
+        vehiculo.setId((long) vehiculos.size() + 1);
         vehiculos.add(vehiculo);
     }
 
     @Override
-    public List<Vehiculo> getAll() {
+    public List<Vehiculo> findAll() {
         return vehiculos;
     }
 
     @Override
-    public Optional<Vehiculo> getById(Integer id) {
-        return vehiculos.stream().filter(v -> v.getId().equals(id)).findFirst();
+    public Optional<Vehiculo> findById(Long id) {
+        return vehiculos.stream()
+                .filter(v -> v.getId().equals(id))
+                .findFirst();
     }
 
     @Override
-    public List<Vehiculo> getByPrices(Integer minimo, Integer maximo) {
-        return vehiculos.stream().filter(v -> v.getPrice() <= maximo && v.getPrice() >= minimo).toList();
+    public List<Vehiculo> findByPrices(Integer minimo, Integer maximo) {
+        return vehiculos.stream()
+                .filter(v -> v.getPrice() <= maximo && v.getPrice() >= minimo)
+                .toList();
     }
 
     @Override
-    public List<Vehiculo> getByDates(Date desde, Date hasta) {
-        return vehiculos.stream().filter(v -> v.getManufacturingDate().compareTo(desde) > 0 && v.getManufacturingDate().compareTo(hasta) < 0).toList();
+    public List<Vehiculo> findByDates(Date desde, Date hasta) {
+        return vehiculos.stream()
+                .filter(v -> v.getManufacturingDate().compareTo(desde) > 0 && v.getManufacturingDate()
+                        .compareTo(hasta) < 0)
+                .toList();
     }
 }

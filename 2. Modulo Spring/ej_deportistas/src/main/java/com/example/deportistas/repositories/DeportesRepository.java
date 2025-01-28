@@ -6,11 +6,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface DeportesRepository {
-
-    List<Deporte> getAll();
+    List<Deporte> findAll();
 
     Optional<Deporte> findByNombre(String nombre);
 
-    Deporte getRandomSport();
-
+    Deporte findRandomSport();
 }

@@ -21,5 +21,4 @@ public class LinkRepositoryImpl implements LinkRepository {
     public Optional<Link> findById(Long id) {
         return links.stream().filter(link -> link.getId().equals(id)).findFirst();
     }
-
 }

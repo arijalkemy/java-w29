@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -16,33 +15,30 @@ public class VehiculosServiceImpl implements VehiculosService {
 
     private final VehiculosRepositoryImpl repo;
 
-    private Long maxId = 1L;
-
     @Override
     public Vehiculo add(Vehiculo vehiculo) {
-        vehiculo.setId(maxId++);
         repo.add(vehiculo);
         return vehiculo;
     }
 
     @Override
     public List<Vehiculo> getAll() {
-        return repo.getAll();
+        return repo.findAll();
     }
 
     @Override
     public List<Vehiculo> getByDate(Date desde, Date hasta) {
-        return repo.getByDates(desde, hasta);
+        return repo.findByDates(desde, hasta);
     }
 
     @Override
     public List<Vehiculo> getByPrice(Integer minimo, Integer maximo) {
-        return repo.getByPrices(minimo, maximo);
+        return repo.findByPrices(minimo, maximo);
     }
 
     @Override
-    public Vehiculo getById(Integer id) {
-        return repo.getById(id).orElseThrow(() -> new NotFoundException("No existe el vehículo ID " + id));
+    public Vehiculo getById(Long id) {
+        return repo.findById(id).orElseThrow(() -> new NotFoundException("No existe el vehículo ID " + id));
     }
 
 }

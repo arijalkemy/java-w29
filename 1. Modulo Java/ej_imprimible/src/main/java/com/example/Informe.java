@@ -19,8 +19,7 @@ public class Informe extends Documento {
     public void imprimir() {
         imprimirTipoDoc();
 
-        System.out.println(toString());
+        System.out.println(this);
     }
-
 }
 

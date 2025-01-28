@@ -7,7 +7,6 @@ import java.util.List;
 
 @Data
 public class Localizador {
-
     private Cliente cliente;
 
     private List<Reserva> reservas;
@@ -33,5 +32,4 @@ public class Localizador {
                 .filter(reserva -> reserva.getTipo().equals(filter))
                 .count();
     }
-
 }

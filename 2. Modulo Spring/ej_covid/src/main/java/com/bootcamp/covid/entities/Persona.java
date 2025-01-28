@@ -8,7 +8,6 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class Persona {
-
     private long id;
 
     private String nombre;
@@ -18,5 +17,4 @@ public class Persona {
     private int edad;
 
     private List<Sintoma> sintomas;
-
 }

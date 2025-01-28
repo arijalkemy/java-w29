@@ -7,5 +7,4 @@ public abstract class Documento implements Imprimible {
     public void imprimirTipoDoc() {
         System.out.println(getClass().getSimpleName().toUpperCase());
     }
-
 }

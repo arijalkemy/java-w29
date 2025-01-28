@@ -9,10 +9,8 @@ import java.util.NoSuchElementException;
 
 @ControllerAdvice(annotations = RestController.class)
 public class GlobalExceptionHandler {
-
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<?> handleNoSuchElementException(NoSuchElementException e) {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
-
 }

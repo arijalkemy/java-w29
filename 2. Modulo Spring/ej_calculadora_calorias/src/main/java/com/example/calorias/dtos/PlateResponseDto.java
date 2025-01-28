@@ -11,11 +11,4 @@ public record PlateResponseDto (
         Integer totalCalories,
         Ingredient mostCaloricIngredient,
         List<Ingredient> ingredients
-) {
-    public static PlateResponseDto createPlateResponse (Plate plate, Integer totalCalories,
-                                                        Ingredient mostCaloricIngredient) {
-        return new PlateResponseDto(
-                plate.getName(), plate.getWeight(), totalCalories, mostCaloricIngredient, plate.getIngredients()
-        );
-    }
-}
+) {}

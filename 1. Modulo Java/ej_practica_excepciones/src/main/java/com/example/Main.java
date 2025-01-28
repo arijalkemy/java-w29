@@ -8,7 +8,7 @@ public class Main {
             System.out.println(practicaExcepciones.calcularCociente());
         } catch (ArithmeticException e) {
             System.out.println("Se ha producido un error");
-            //throw new IllegalArgumentException("No se puede dividir por cero");
+            // throw new IllegalArgumentException("No se puede dividir por cero");
         } finally {
             System.out.println("Programa finalizado");
         }

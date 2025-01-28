@@ -36,5 +36,4 @@ public class CodigoMorseController {
                 .toList();
         return ResponseEntity.badRequest().body(mensajesDeError);
     }
-
 }

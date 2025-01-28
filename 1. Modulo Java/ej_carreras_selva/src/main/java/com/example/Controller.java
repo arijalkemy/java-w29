@@ -58,11 +58,6 @@ public class Controller {
         return num;
     }
 
-    // Devuelve el nombre de la categoría dado el id
-    private String getCategoriaStr(int index) {
-        return categorias.get(index).get("nombre");
-    }
-
     // Mostrar inscripciones de una categoría
     public void mostrarInscripciones(int categoria) {
         System.out.printf(AMARILLO + "\n%s\n", getCategoriaStr(categoria));
@@ -122,18 +117,6 @@ public class Controller {
         System.out.println(VERDE + "\n¡Participante creado exitosamente!" +  RESET);
     }
 
-    private int obtenerDniValido() {
-        int dni;
-        while (true) {
-            dni = pedirEntero("Ingrese el dni");
-            if (!participantes.containsKey(dni)) {
-                break;
-            }
-            System.out.println(ROJO + "El participante con el DNI ingresado ya está registrado" + RESET);
-        }
-        return dni;
-    }
-
     public void crearInscripcion() {
         int dni = pedirEntero("Ingrese el dni");
 
@@ -163,23 +146,6 @@ public class Controller {
         ));
 
         System.out.println(VERDE + "\n¡Inscripción creada exitosamente!" +  RESET);
-    }
-
-    private int calcularMonto(int dni, int categoria) {
-        int edad = Integer.parseInt(participantes.get(dni).get("edad"));
-        boolean esMayor = edad >= 18;
-        int monto = -1;
-
-        switch (categoria) {
-            case 1 -> monto = esMayor ? 1500 : 1300;
-            case 2 -> monto = esMayor ? 2300 : 2000;
-            case 3 -> monto = esMayor ? 2800 : -1;
-        }
-
-        if (monto == -1) {
-            System.out.println(ROJO + "No se ha podido inscribir porque es menor de edad" + RESET);
-        }
-        return monto;
     }
 
     public void desinscribir() {
@@ -228,4 +194,37 @@ public class Controller {
         System.out.println(div + RESET);
     }
 
+    private int calcularMonto(int dni, int categoria) {
+        int edad = Integer.parseInt(participantes.get(dni).get("edad"));
+        boolean esMayor = edad >= 18;
+        int monto = -1;
+
+        switch (categoria) {
+            case 1 -> monto = esMayor ? 1500 : 1300;
+            case 2 -> monto = esMayor ? 2300 : 2000;
+            case 3 -> monto = esMayor ? 2800 : -1;
+        }
+
+        if (monto == -1) {
+            System.out.println(ROJO + "No se ha podido inscribir porque es menor de edad" + RESET);
+        }
+        return monto;
+    }
+
+    // Devuelve el nombre de la categoría dado el id
+    private String getCategoriaStr(int index) {
+        return categorias.get(index).get("nombre");
+    }
+
+    private int obtenerDniValido() {
+        int dni;
+        while (true) {
+            dni = pedirEntero("Ingrese el dni");
+            if (!participantes.containsKey(dni)) {
+                break;
+            }
+            System.out.println(ROJO + "El participante con el DNI ingresado ya está registrado" + RESET);
+        }
+        return dni;
+    }
 }

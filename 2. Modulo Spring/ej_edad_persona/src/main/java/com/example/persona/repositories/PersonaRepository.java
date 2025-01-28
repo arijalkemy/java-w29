@@ -5,9 +5,7 @@ import com.example.persona.entities.Persona;
 import java.util.Optional;
 
 public interface PersonaRepository {
-
     Boolean save(Persona persona);
 
-    Optional<Persona> getById(Long id);
-
+    Optional<Persona> findById(Long id);
 }

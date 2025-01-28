@@ -5,9 +5,7 @@ import com.example.deportistas.models.Deporte;
 import java.util.List;
 
 public interface DeportesService {
-
     List<Deporte> getAllDeportes();
 
-    Deporte findByName(String name);
-
+    Deporte getByName(String name);
 }

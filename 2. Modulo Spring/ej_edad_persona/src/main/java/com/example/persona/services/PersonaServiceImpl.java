@@ -7,15 +7,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class PersonaServiceImpl implements PersonaService {
 
     private final PersonaRepository repo;
-
-    private Long maxId = 1L;
 
     @Override
     public Integer calcularEdad(Integer dia, Integer mes, Integer anio) {
@@ -28,7 +25,6 @@ public class PersonaServiceImpl implements PersonaService {
     @Override
     public Persona addPersona(FechaNacimientoDto fechaNacimiento) {
         Persona persona = Persona.builder()
-                .id(maxId++)
                 .fechaNacimiento(fechaNacimiento.toLocalDate())
                 .build();
         repo.save(persona);
@@ -38,9 +34,8 @@ public class PersonaServiceImpl implements PersonaService {
     @Override
     public Integer getEdad(Long personaId) {
         Persona persona = repo
-                .getById(personaId)
+                .findById(personaId)
                 .orElseThrow(() -> new NoSuchElementException("Persona no encontrada"));
         return persona.calcularEdad();
     }
-
 }

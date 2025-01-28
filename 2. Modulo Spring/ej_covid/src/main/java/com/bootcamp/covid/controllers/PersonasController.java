@@ -21,5 +21,4 @@ public class PersonasController {
     public ResponseEntity<List<PersonaRiesgoDto>> getPersonasRiesgo() {
         return ResponseEntity.ok(service.getPersonasRiesgo());
     }
-
 }

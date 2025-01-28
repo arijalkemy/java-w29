@@ -8,6 +8,7 @@ import org.example.linktracker.exceptions.InvalidPasswordException;
 import org.example.linktracker.exceptions.NotFoundException;
 import org.example.linktracker.exceptions.NotValidLinkException;
 import org.example.linktracker.repositories.LinkRepository;
+import org.example.linktracker.utisl.Mapper;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -26,7 +27,7 @@ public class LinkServiceImpl implements LinkService {
                 .password(password)
                 .build();
         repo.save(nuevo);
-        return LinkIdDto.toDto(nuevo);
+        return Mapper.toDto(nuevo);
     }
 
     @Override
@@ -57,5 +58,4 @@ public class LinkServiceImpl implements LinkService {
     private Link getLink(Long linkId) {
         return repo.findById(linkId).orElseThrow(() -> new NotFoundException("Link no encontrado"));
     }
-
 }

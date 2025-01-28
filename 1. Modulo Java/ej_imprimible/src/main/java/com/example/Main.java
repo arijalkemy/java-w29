@@ -1,7 +1,6 @@
 package com.example;
 
 public class Main {
-
     public static void main(String[] args) {
         Curriculum curriculum = new Curriculum(
                 "Agostina",
@@ -28,5 +27,4 @@ public class Main {
         Imprimible.imprimir(libro);
         Imprimible.imprimir(informe);
     }
-
 }

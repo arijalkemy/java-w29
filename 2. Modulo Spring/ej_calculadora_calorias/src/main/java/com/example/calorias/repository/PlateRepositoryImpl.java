@@ -4,7 +4,6 @@ import com.example.calorias.model.Ingredient;
 import com.example.calorias.model.Plate;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -28,14 +27,15 @@ public class PlateRepositoryImpl implements PlateRepository {
                 Plate.builder().name("Tacos").build()
         );
         plates.forEach(plate -> {
-            List<Ingredient> ingredients = ingredientRepository.getRandomIngredients();
+            List<Ingredient> ingredients = ingredientRepository.findRandomIngredients();
             plate.setIngredients(ingredients);
         });
     }
 
     @Override
-    public Optional<Plate> getPlateByName(String name) {
-        return plates.stream().filter(p -> p.getName().equalsIgnoreCase(name)).findFirst();
+    public Optional<Plate> findPlateByName(String name) {
+        return plates.stream()
+                .filter(p -> p.getName().equalsIgnoreCase(name))
+                .findFirst();
     }
-
 }

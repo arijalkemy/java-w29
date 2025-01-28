@@ -27,5 +27,4 @@ public class SintomasController {
     public ResponseEntity<String> findGravedadByName(@PathVariable String name) {
         return ResponseEntity.ok(service.findGravedadByName(name));
     }
-
 }

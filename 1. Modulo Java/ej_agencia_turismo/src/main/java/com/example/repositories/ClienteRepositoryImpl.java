@@ -11,15 +11,7 @@ public class ClienteRepositoryImpl implements ClienteRepository {
 
     @Override
     public void add(Cliente cliente) {
+        cliente.setId(clientes.size() + 1);
         clientes.add(cliente);
     }
-
-    @Override
-    public int getMaxId() {
-        return clientes.stream()
-                .map(Cliente::getId)
-                .max(Long::compare)
-                .orElse(0);
-    }
-
 }

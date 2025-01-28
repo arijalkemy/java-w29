@@ -8,7 +8,6 @@ import java.util.List;
 
 @Data
 public class Vehiculo {
-
     private Long id;
 
     private String brand;
@@ -29,5 +28,4 @@ public class Vehiculo {
     private List<Servicio> services;
 
     private Integer countOfOwners;
-
 }

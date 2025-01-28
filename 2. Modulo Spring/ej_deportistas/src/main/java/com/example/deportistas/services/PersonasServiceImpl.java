@@ -2,6 +2,7 @@ package com.example.deportistas.services;
 
 import com.example.deportistas.dtos.DeportistaDto;
 import com.example.deportistas.repositories.PersonasRepository;
+import com.example.deportistas.utils.Mapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,9 @@ public class PersonasServiceImpl implements PersonasService {
 
 
     @Override
-    public List<DeportistaDto> getAllPersonas() {
-        return personaRepository.getAll().stream().map(DeportistaDto::toDto).toList();
+    public List<DeportistaDto> findAllPersonas() {
+        return personaRepository.findAll().stream()
+                .map(Mapper::toDto)
+                .toList();
     }
 }

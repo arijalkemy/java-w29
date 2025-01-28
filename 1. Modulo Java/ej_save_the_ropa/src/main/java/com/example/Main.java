@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-
     public static void main(String[] args) {
         List<Prenda> prendas1 = new ArrayList<>(List.of(
                 new Prenda("Adidas", "Climalite"),
@@ -24,5 +23,4 @@ public class Main {
 
         guardaRopa.mostrarPrendas();
     }
-
 }

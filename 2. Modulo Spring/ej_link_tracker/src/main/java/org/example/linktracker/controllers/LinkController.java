@@ -25,8 +25,7 @@ public class LinkController {
     @PostMapping("/link")
     public ResponseEntity<LinkIdDto> addLink(
             @Valid @RequestBody LinkUrlDto linkDtoRequest,
-            @RequestHeader("password") String password
-    ) {
+            @RequestHeader("password") String password) {
         LinkIdDto response = linkService.createLink(linkDtoRequest, password);
         URI location = ServletUriComponentsBuilder.fromCurrentRequestUri()
                 .path("/{id}")
@@ -38,8 +37,7 @@ public class LinkController {
     public ResponseEntity<?> redirect(
             @PathVariable Long linkId,
             HttpServletResponse response,
-            @RequestHeader("password") String password
-    ) throws IOException {
+            @RequestHeader("password") String password) throws IOException {
         String url = linkService.redirect(linkId, password);
         response.sendRedirect(url);
         return ResponseEntity.status(HttpStatus.PERMANENT_REDIRECT).build();
@@ -55,5 +53,4 @@ public class LinkController {
         linkService.invalidate(linkId);
         return ResponseEntity.ok("Link invalidado con éxito");
     }
-
 }

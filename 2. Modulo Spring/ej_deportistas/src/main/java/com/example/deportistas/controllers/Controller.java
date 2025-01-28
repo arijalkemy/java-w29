@@ -27,12 +27,11 @@ public class Controller {
 
     @GetMapping("/findSport/{name}")
     public ResponseEntity<Deporte> findByName(@PathVariable String name) {
-        return ResponseEntity.ok(deportesService.findByName(name));
+        return ResponseEntity.ok(deportesService.getByName(name));
     }
 
     @GetMapping("/findSportsPersons")
     public ResponseEntity<List<DeportistaDto>> getAllPersonas() {
-        return ResponseEntity.ok(personasService.getAllPersonas());
+        return ResponseEntity.ok(personasService.findAllPersonas());
     }
-
 }

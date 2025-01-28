@@ -21,7 +21,7 @@ public class DeportesRepositoryImpl implements DeportesRepository {
     ));
 
     @Override
-    public List<Deporte> getAll() {
+    public List<Deporte> findAll() {
         return deportes;
     }
 
@@ -33,9 +33,8 @@ public class DeportesRepositoryImpl implements DeportesRepository {
     }
 
     @Override
-    public Deporte getRandomSport() {
+    public Deporte findRandomSport() {
         Random random = new Random();
         return deportes.get(random.nextInt(deportes.size()));
     }
-
 }

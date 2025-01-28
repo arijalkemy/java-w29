@@ -1,13 +1,9 @@
 package org.example.linktracker.services;
 
-import jakarta.servlet.http.HttpServletResponse;
 import org.example.linktracker.dtos.LinkUrlDto;
 import org.example.linktracker.dtos.LinkIdDto;
 
-import java.io.IOException;
-
 public interface LinkService {
-
     LinkIdDto createLink(LinkUrlDto linkDtoRequest, String password);
 
     String redirect(Long linkId, String password);
@@ -15,5 +11,4 @@ public interface LinkService {
     Integer getMetrics(Long linkId);
 
     Void invalidate(Long linkId);
-
 }

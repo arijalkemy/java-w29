@@ -5,9 +5,7 @@ import com.example.interfaces.PagoServicios;
 import com.example.interfaces.RetiroEfectivo;
 
 public class Basic extends Cliente implements ConsultaSaldo, PagoServicios, RetiroEfectivo {
-
     public Basic(int saldo) {
         super(saldo);
     }
-
 }

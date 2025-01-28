@@ -10,12 +10,12 @@ public class LocalizadorRepositoryImpl implements LocalizadorRepository {
     List<Localizador> localizadores = new ArrayList<>();
 
     @Override
-    public List<Localizador> getAll() {
+    public List<Localizador> findAll() {
         return localizadores;
     }
 
     @Override
-    public List<Localizador> getLocalizadoresByCliente(int idCliente) {
+    public List<Localizador> findLocalizadoresByCliente(int idCliente) {
         return localizadores.stream()
                 .filter(l -> l.getCliente().getId() == idCliente)
                 .toList();
@@ -25,5 +25,4 @@ public class LocalizadorRepositoryImpl implements LocalizadorRepository {
     public void addLocalizador(Localizador localizador) {
         localizadores.add(localizador);
     }
-
 }

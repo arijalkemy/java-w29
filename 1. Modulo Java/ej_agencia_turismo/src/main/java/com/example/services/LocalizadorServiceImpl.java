@@ -17,7 +17,7 @@ public class LocalizadorServiceImpl implements LocalizadorService {
 
     @Override
     public Localizador crearLocalizador(Cliente cliente, List<Reserva> reservas) {
-        List<Localizador> localizadores = repository.getLocalizadoresByCliente(cliente.getId());
+        List<Localizador> localizadores = repository.findLocalizadoresByCliente(cliente.getId());
         Localizador localizador = new Localizador(cliente, reservas);
 
         // Aplicar descuentos
@@ -38,7 +38,7 @@ public class LocalizadorServiceImpl implements LocalizadorService {
 
     @Override
     public long getCantidadLocalizadoresVendidos() {
-        return repository.getAll().size();
+        return repository.findAll().size();
     }
 
     @Override
@@ -65,12 +65,12 @@ public class LocalizadorServiceImpl implements LocalizadorService {
 
     @Override
     public double getTotalVentas() {
-        return repository.getAll().stream().mapToDouble(Localizador::getTotal).sum();
+        return repository.findAll().stream().mapToDouble(Localizador::getTotal).sum();
     }
 
     @Override
     public double getPromedioVentas() {
-        return repository.getAll().stream().mapToDouble(Localizador::getTotal).average().orElse(0.0);
+        return repository.findAll().stream().mapToDouble(Localizador::getTotal).average().orElse(0.0);
     }
 
     private boolean esPaqueteCompleto(List<Reserva> reservas) {
@@ -80,8 +80,7 @@ public class LocalizadorServiceImpl implements LocalizadorService {
     }
 
     private List<Reserva> getReservas() {
-        return repository.getAll().stream()
+        return repository.findAll().stream()
                 .flatMap(localizador -> localizador.getReservas().stream()).toList();
     }
-
 }

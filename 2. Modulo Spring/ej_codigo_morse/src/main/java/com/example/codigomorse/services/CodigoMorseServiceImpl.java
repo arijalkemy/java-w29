@@ -63,5 +63,4 @@ public class CodigoMorseServiceImpl implements CodigoMorseService {
                         .collect(Collectors.joining()))
                 .collect(Collectors.joining(" "));
     }
-
 }

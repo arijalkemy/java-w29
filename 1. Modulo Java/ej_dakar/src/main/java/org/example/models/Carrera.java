@@ -93,5 +93,4 @@ public class Carrera {
     private boolean estaInscripto(String patente) {
         return vehiculos.stream().anyMatch(v -> v.getPatente().equals(patente));
     }
-
 }

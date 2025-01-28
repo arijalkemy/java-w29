@@ -14,14 +14,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BlogServiceImpl implements BlogService {
 
-    private Long maxId = 1L;
-
     private final BlogRepository repo;
 
     @Override
     public EntradaBlog save(EntradaBlogRequest entradaBlogRequest) {
         EntradaBlog nuevo = EntradaBlog.builder()
-                .id(maxId++)
                 .autor(entradaBlogRequest.autor())
                 .titulo(entradaBlogRequest.titulo())
                 .fechaPublicacion(LocalDate.now())
@@ -32,11 +29,11 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public EntradaBlog findById(Long id) {
-        return repo.getById(id).orElseThrow(() -> new NotFoundException("Entrada blog no encontrada"));
+        return repo.findById(id).orElseThrow(() -> new NotFoundException("Entrada blog no encontrada"));
     }
 
     @Override
     public List<EntradaBlog> findAll() {
-        return repo.getAll();
+        return repo.findAll();
     }
 }

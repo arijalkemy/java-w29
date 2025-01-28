@@ -6,7 +6,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class Curriculum extends Documento {
-
     private final String nombre;
 
     private final String apellido;
@@ -19,7 +18,6 @@ public class Curriculum extends Documento {
     public void imprimir() {
         imprimirTipoDoc();
 
-        System.out.println(toString());
+        System.out.println(this);
     }
-
 }

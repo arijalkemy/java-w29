@@ -24,5 +24,4 @@ public abstract class Prototipo <T extends Number> {
         this.puntoActual = puntoInicial;
         this.incremento = incremento;
     }
-
 }

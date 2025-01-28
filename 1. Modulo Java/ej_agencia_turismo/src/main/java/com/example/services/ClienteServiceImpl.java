@@ -11,12 +11,8 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public Cliente crearCliente(String nombre) {
-        int id = clienteRepository.getMaxId() + 1;
-        Cliente nuevoCliente = new Cliente(id, nombre);
-
+        Cliente nuevoCliente = Cliente.builder().nombre(nombre).build();
         clienteRepository.add(nuevoCliente);
-
         return nuevoCliente;
     }
-
 }

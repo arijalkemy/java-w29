@@ -7,9 +7,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Deporte {
-
     private String nombre;
 
     private Nivel nivel;
-
 }

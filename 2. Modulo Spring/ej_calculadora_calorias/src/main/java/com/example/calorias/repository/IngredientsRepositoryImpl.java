@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Repository
 public class IngredientsRepositoryImpl implements IngredientsRepository {
@@ -33,7 +32,9 @@ public class IngredientsRepositoryImpl implements IngredientsRepository {
     }
 
     @Override
-    public List<Ingredient> getRandomIngredients() {
-        return ingredients.stream().filter(i -> Math.random() < 0.01).collect(Collectors.toList());
+    public List<Ingredient> findRandomIngredients() {
+        return ingredients.stream()
+                .filter(i -> Math.random() < 0.01)
+                .toList();
     }
 }

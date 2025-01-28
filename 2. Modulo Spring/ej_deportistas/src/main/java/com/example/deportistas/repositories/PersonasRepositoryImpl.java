@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 @Repository
 @RequiredArgsConstructor
@@ -27,12 +26,11 @@ public class PersonasRepositoryImpl implements PersonasRepository {
 
     @PostConstruct
     public void init() {
-        personas.forEach(p -> p.setDeporte(deportesRepository.getRandomSport()));
+        personas.forEach(p -> p.setDeporte(deportesRepository.findRandomSport()));
     }
 
     @Override
-    public List<Persona> getAll() {
+    public List<Persona> findAll() {
         return personas;
     }
-
 }

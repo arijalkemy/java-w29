@@ -14,12 +14,12 @@ public class PersonaRepositoryImpl implements PersonaRepository {
 
     @Override
     public Boolean save(Persona persona) {
+        persona.setId((long) personas.size() + 1);
         return personas.add(persona);
     }
 
     @Override
-    public Optional<Persona> getById(Long id) {
+    public Optional<Persona> findById(Long id) {
         return personas.stream().filter(persona -> persona.getId().equals(id)).findFirst();
     }
-
 }

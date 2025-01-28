@@ -1,7 +1,6 @@
 package com.example;
 
 public class Perecedero extends Producto {
-
     private int diasPorCaducar;
 
     public Perecedero(String nombre, double precio, int diasPorCaducar) {

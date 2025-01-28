@@ -24,7 +24,7 @@ public class StarWarsRepositoryImpl implements StarWarsRepository {
         try {
             personajes = MAPPER.readValue(inputStream, new TypeReference<>() {});
         } catch(IOException e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 

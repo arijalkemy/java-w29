@@ -17,9 +17,7 @@ public class Controller {
 
     @GetMapping("/factorial/{num}")
     public ResponseEntity<?> factorial(
-            @Positive @Max(value = 5000, message = "El número máximo es 5000") @PathVariable Integer num
-    ) {
+            @Positive @Max(value = 5000, message = "El número máximo es 5000") @PathVariable Integer num) {
         return ResponseEntity.ok(service.factorial(num));
     }
-
 }

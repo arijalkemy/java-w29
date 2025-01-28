@@ -6,11 +6,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface BlogRepository {
-
     Boolean save(EntradaBlog entradaBlog);
 
-    List<EntradaBlog> getAll();
+    List<EntradaBlog> findAll();
 
-    Optional<EntradaBlog> getById(Long id);
-
+    Optional<EntradaBlog> findById(Long id);
 }

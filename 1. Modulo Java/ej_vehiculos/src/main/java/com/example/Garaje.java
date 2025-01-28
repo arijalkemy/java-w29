@@ -1,6 +1,5 @@
 package com.example;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -11,7 +10,6 @@ import java.util.stream.Collectors;
 @Data
 @AllArgsConstructor
 public class Garaje {
-
     private int id;
 
     private List<Vehiculo> vehiculos;

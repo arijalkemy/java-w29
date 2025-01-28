@@ -18,5 +18,4 @@ public class StarWarsController {
     public ResponseEntity<List<PersonajeDto>> getPersonajes(@PathVariable String name) {
         return ResponseEntity.ok(service.getPersonajes(name));
     }
-
 }

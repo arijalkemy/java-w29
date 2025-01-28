@@ -25,8 +25,7 @@ public class PersonasRepositoryImpl implements PersonasRepository {
             ));
 
     @Override
-    public List<Persona> getAll() {
+    public List<Persona> findAll() {
         return personas;
     }
-
 }

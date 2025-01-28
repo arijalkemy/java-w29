@@ -12,11 +12,9 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class Plate {
-
     private String name;
 
     private Double weight;
 
     private List<Ingredient> ingredients;
-
 }

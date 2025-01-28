@@ -1,7 +1,6 @@
 package com.example.clientes;
 
 public class Cliente {
-
     private int saldo;
 
     public Cliente(int saldo) {
@@ -15,5 +14,4 @@ public class Cliente {
     public void setSaldo(int monto) {
         this.saldo = monto;
     }
-
 }

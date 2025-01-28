@@ -11,7 +11,6 @@ import java.time.Period;
 @AllArgsConstructor
 @Builder
 public class Persona {
-
     private Long id;
 
     private LocalDate fechaNacimiento;
@@ -19,5 +18,4 @@ public class Persona {
     public Integer calcularEdad() {
         return Period.between(fechaNacimiento, LocalDate.now()).getYears();
     }
-
 }

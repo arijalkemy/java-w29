@@ -15,6 +15,6 @@ public interface VehiculosService {
 
     List<Vehiculo> getByPrice(Integer minimo, Integer maximo);
 
-    Vehiculo getById(Integer id);
+    Vehiculo getById(Long id);
 
 }

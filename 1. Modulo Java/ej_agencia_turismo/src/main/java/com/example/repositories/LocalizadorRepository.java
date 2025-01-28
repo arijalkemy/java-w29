@@ -5,11 +5,9 @@ import com.example.entities.Localizador;
 import java.util.List;
 
 public interface LocalizadorRepository {
+    List<Localizador> findAll();
 
-    List<Localizador> getAll();
-
-    List<Localizador> getLocalizadoresByCliente(int idCliente);
+    List<Localizador> findLocalizadoresByCliente(int idCliente);
 
     void addLocalizador(Localizador localizador);
-
 }

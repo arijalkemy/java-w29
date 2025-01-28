@@ -39,5 +39,4 @@ public class Controller {
     public ResponseEntity<String> obtenerPersona(@PathVariable Long id) {
         return ResponseEntity.ok(String.format("Edad: %s", service.getEdad(id)));
     }
-
 }

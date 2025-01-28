@@ -20,15 +20,14 @@ public class SintomasRepositoryImpl implements SintomasRepository {
         ));
 
     @Override
-    public List<Sintoma> getAll() {
+    public List<Sintoma> findAll() {
         return sintomas;
     }
 
     @Override
-    public Optional<Sintoma> getByName(String name) {
+    public Optional<Sintoma> findByName(String name) {
         return sintomas.stream()
                 .filter(s -> s.getNombre().equalsIgnoreCase(name))
                 .findFirst();
     }
-
 }

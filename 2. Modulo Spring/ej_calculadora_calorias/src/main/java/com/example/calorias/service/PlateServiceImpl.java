@@ -6,6 +6,7 @@ import com.example.calorias.exceptions.NotFoundException;
 import com.example.calorias.model.Ingredient;
 import com.example.calorias.model.Plate;
 import com.example.calorias.repository.PlateRepository;
+import com.example.calorias.utils.Mapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class PlateServiceImpl implements PlateService {
 
     @Override
     public PlateResponseDto getPlateInfo(PlateRequestDto plateRequestDTO) {
-        Plate plate = repo.getPlateByName(plateRequestDTO.name())
+        Plate plate = repo.findPlateByName(plateRequestDTO.name())
                 .orElseThrow(() -> new NotFoundException("No se encontró el plato"));
 
         plate.setWeight(plateRequestDTO.weight());
@@ -29,7 +30,7 @@ public class PlateServiceImpl implements PlateService {
         Ingredient mostCaloricIngredient = calculateMaxCaloricIngredient(plate);
         Integer totalCalories = calculateTotalCalories(plate);
 
-        return PlateResponseDto.createPlateResponse(plate, totalCalories, mostCaloricIngredient);
+        return Mapper.createPlateResponse(plate, totalCalories, mostCaloricIngredient);
     }
 
     @Override
@@ -46,5 +47,4 @@ public class PlateServiceImpl implements PlateService {
     private Integer calculateTotalCalories(Plate plate) {
         return (int) (plate.getIngredients().stream().mapToInt(Ingredient::getCalories).sum() * plate.getWeight() / 100);
     }
-
 }

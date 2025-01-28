@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -17,13 +16,12 @@ public class DeportesServiceImpl implements DeportesService {
 
     @Override
     public List<Deporte> getAllDeportes() {
-        return deporteRepository.getAll();
+        return deporteRepository.findAll();
     }
 
     @Override
-    public Deporte findByName(String name) {
+    public Deporte getByName(String name) {
         return deporteRepository.findByNombre(name)
                 .orElseThrow(() -> new NoSuchElementException("No se encontró el deporte"));
     }
-
 }

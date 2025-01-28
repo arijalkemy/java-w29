@@ -23,8 +23,8 @@ public class PlateController {
     }
 
     @GetMapping("/batch")
-    public ResponseEntity<List<PlateResponseDto>> getBatchPlateInfo(@RequestBody List<PlateRequestDto> plateRequestDTOs) {
+    public ResponseEntity<List<PlateResponseDto>> getBatchPlateInfo(
+            @RequestBody List<PlateRequestDto> plateRequestDTOs) {
         return ResponseEntity.ok(service.getBatchPlateInfo(plateRequestDTOs));
     }
-
 }

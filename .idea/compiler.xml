@@ -21,6 +21,16 @@
         <module name="ej_vehiculos" />
         <module name="ej_imprimible" />
       </profile>
+      <profile name="Annotation profile for ej_covid" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="ej_covid" />
+      </profile>
       <profile name="Annotation profile for ej_numeros_romanos" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -31,7 +41,7 @@
         <module name="ej_numeros_romanos" />
         <module name="ej_factorial" />
       </profile>
-      <profile name="Annotation profile for ej_calculadora_calorias" enabled="true">
+      <profile name="Annotation profile for SocialMeli" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -41,12 +51,14 @@
         <module name="ej_starwars" />
         <module name="ej_link_tracker" />
         <module name="ej_blog" />
-        <module name="ej_covid" />
         <module name="ej_concesionaria" />
         <module name="ej_deportistas" />
         <module name="ej_codigo_morse" />
-        <module name="ej_calculadora_calorias" />
+        <module name="SocialMeli" />
+        <module name="ej_obtener_diploma_tests_unitarios" />
         <module name="ej_edad_persona" />
+        <module name="ej_calculadora_calorias" />
+        <module name="ej_obtener_diploma_validaciones" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -65,6 +77,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SocialMeli" options="-parameters" />
       <module name="calorias" options="-parameters" />
       <module name="codigomorse" options="-parameters" />
       <module name="concesionaria" options="-parameters" />
@@ -78,6 +91,8 @@
       <module name="ej_factorial" options="-parameters" />
       <module name="ej_link_tracker" options="-parameters" />
       <module name="ej_numeros_romanos" options="-parameters" />
+      <module name="ej_obtener_diploma_tests_unitarios" options="-parameters" />
+      <module name="ej_obtener_diploma_validaciones" options="-parameters" />
       <module name="ej_starwars" options="-parameters" />
       <module name="factorial" options="-parameters" />
       <module name="morse" options="-parameters" />

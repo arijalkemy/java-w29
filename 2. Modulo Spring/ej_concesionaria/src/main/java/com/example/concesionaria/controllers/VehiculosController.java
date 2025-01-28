@@ -36,21 +36,19 @@ public class VehiculosController {
     @GetMapping("/dates")
     public ResponseEntity<List<Vehiculo>> getByDate(
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date since,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date to
-    ) {
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date to) {
         return ResponseEntity.ok(service.getByDate(since, to));
     }
 
     @GetMapping("/prices")
     public ResponseEntity<List<Vehiculo>> getByPrice(
             @RequestParam Integer since,
-            @RequestParam Integer to
-    ) {
+            @RequestParam Integer to) {
         return ResponseEntity.ok(service.getByPrice(since, to));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Vehiculo> getById(@PathVariable Integer id) {
+    public ResponseEntity<Vehiculo> getById(@PathVariable Long id) {
         return ResponseEntity.ok(service.getById(id));
     }
 

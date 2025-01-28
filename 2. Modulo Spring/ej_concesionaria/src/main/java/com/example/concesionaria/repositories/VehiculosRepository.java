@@ -7,15 +7,13 @@ import java.util.List;
 import java.util.Optional;
 
 public interface VehiculosRepository {
-
     void add(Vehiculo vehiculo);
 
-    List<Vehiculo> getAll();
+    List<Vehiculo> findAll();
 
-    Optional<Vehiculo> getById(Integer id);
+    Optional<Vehiculo> findById(Long id);
 
-    List<Vehiculo> getByPrices(Integer minimo, Integer maximo);
+    List<Vehiculo> findByPrices(Integer minimo, Integer maximo);
 
-    List<Vehiculo> getByDates(Date desde, Date hasta);
-
+    List<Vehiculo> findByDates(Date desde, Date hasta);
 }

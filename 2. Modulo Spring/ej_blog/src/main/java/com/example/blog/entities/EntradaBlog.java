@@ -8,7 +8,6 @@ import java.time.LocalDate;
 @Data
 @Builder
 public class EntradaBlog {
-
     private Long id;
 
     private String titulo;
@@ -16,5 +15,4 @@ public class EntradaBlog {
     private String autor;
 
     private LocalDate fechaPublicacion;
-
 }

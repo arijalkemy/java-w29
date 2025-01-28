@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Distribuidora {
-
     public static void main(String[] args) {
         List<Producto> productos = new ArrayList<>();
 
@@ -19,5 +18,4 @@ public class Distribuidora {
             System.out.println(" | Precio total (5 productos): " + p.calcular(5));
         }
     }
-
 }

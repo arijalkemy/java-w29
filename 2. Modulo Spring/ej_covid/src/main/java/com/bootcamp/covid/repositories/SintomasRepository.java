@@ -6,9 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface SintomasRepository {
+    List<Sintoma> findAll();
 
-    List<Sintoma> getAll();
-
-    Optional<Sintoma> getByName(String name);
-
+    Optional<Sintoma> findByName(String name);
 }

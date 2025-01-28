@@ -5,7 +5,5 @@ import com.example.calorias.model.Ingredient;
 import java.util.List;
 
 public interface IngredientsRepository {
-
-    List<Ingredient> getRandomIngredients();
-
+    List<Ingredient> findRandomIngredients();
 }

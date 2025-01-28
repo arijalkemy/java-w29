@@ -6,7 +6,6 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 public class Vehiculo {
-
     private Double velocidad;
 
     private Double aceleracion;
@@ -22,5 +21,4 @@ public class Vehiculo {
     public Double calcularPuntaje() {
         return velocidad * 0.5 * aceleracion / (anguloDeGiro * (peso - ruedas * 100));
     }
-
 }

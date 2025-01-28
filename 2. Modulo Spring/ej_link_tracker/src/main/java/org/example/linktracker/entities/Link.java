@@ -6,7 +6,6 @@ import lombok.Data;
 @Data
 @Builder
 public class Link {
-
     private Long id;
 
     private String url;
@@ -30,5 +29,4 @@ public class Link {
     public Boolean isValid() {
         return valid;
     }
-
 }

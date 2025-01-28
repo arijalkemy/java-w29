@@ -1,6 +1,5 @@
 package org.example.linktracker.exceptions;
 
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -45,5 +44,4 @@ public class GlobalExceptionHandler {
         String message = String.format("El parámetro '%s' es obligatorio", parameterName);
         return ResponseEntity.badRequest().body(message);
     }
-
 }

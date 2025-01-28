@@ -35,5 +35,4 @@ public class BlogController {
     public ResponseEntity<List<EntradaBlog>> getAll() {
         return ResponseEntity.ok(service.findAll());
     }
-
 }

@@ -2,6 +2,7 @@ package com.bootcamp.covid.services;
 
 import com.bootcamp.covid.dtos.PersonaRiesgoDto;
 import com.bootcamp.covid.repositories.PersonasRepository;
+import com.bootcamp.covid.utils.Mapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +16,9 @@ public class PersonasServiceImpl implements PersonasService {
 
     @Override
     public List<PersonaRiesgoDto> getPersonasRiesgo() {
-        return personaRepository.getAll().stream()
+        return personaRepository.findAll().stream()
                 .filter(p -> p.getEdad() >= 60 && !p.getSintomas().isEmpty())
-                .map(PersonaRiesgoDto::toDto)
+                .map(Mapper::toDto)
                 .toList();
     }
-
 }

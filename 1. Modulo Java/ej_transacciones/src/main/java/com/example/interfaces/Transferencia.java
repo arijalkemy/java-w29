@@ -3,7 +3,6 @@ package com.example.interfaces;
 import com.example.clientes.Cliente;
 
 public interface Transferencia extends Transaccion {
-
     default void realizarTransferencia(int monto) {
         Cliente cliente = (Cliente) this;
         int montoFinal = cliente.getSaldo() - monto;
@@ -14,5 +13,4 @@ public interface Transferencia extends Transaccion {
             transaccionNoOk("Monto insuficiente");
         }
     }
-
 }
