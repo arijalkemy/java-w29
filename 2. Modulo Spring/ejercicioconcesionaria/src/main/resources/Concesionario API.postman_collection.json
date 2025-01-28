@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "1bfd459d-5713-43ba-9a46-9b71dfaf6075",
+		"name": "Concesionario API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41338561"
+	},
+	"item": [
+		{
+			"name": "Save vehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"brand\": \"Toyota\",\n    \"model\": \"Corolla\",\n    \"manufacturingDate\": \"2022-01-15\",\n    \"numberOfKilometers\": \"12000\",\n    \"doors\": 4,\n    \"price\": 25000.99,\n    \"currency\": \"USD\",\n    \"serviceVehicleList\": [\n        {\n            \"date\": \"2023-06-10\",\n            \"kilometers\": \"6000\",\n            \"descriptions\": \"Oil Change\"\n        }\n    ],\n    \"countOfOwners\": 1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/api/vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get vehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/api/vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get vehicle for ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/api/vehicles/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"vehicles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get vehicles for range date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/api/vehicles/dates?since&to",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"vehicles",
+						"dates"
+					],
+					"query": [
+						{
+							"key": "since",
+							"value": null
+						},
+						{
+							"key": "to",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get vehicles for range prices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/api/vehicles/prices?since&to",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"vehicles",
+						"prices"
+					],
+					"query": [
+						{
+							"key": "since",
+							"value": null
+						},
+						{
+							"key": "to",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
