@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "brand": "Toyota",
+  "model": "Corolla",
+  "manufacturingDate": "2022-01-15",
+  "numberOfKilometers": "12000",
+  "doors": 4,
+  "price": 25000.99,
+  "currency": "USD",
+  "serviceVehicleList": [
+    {
+      "date": "2023-06-10",
+      "kilometers": "6000",
+      "descriptions": "Oil Change"
+    }
+  ],
+  "countOfOwners": 1
+}
