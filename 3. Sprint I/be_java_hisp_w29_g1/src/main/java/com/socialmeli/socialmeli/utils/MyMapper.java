@@ -3,7 +3,6 @@ package com.socialmeli.socialmeli.utils;
 import com.socialmeli.socialmeli.dto.PostDto;
 import com.socialmeli.socialmeli.dto.PostSaleDto;
 import com.socialmeli.socialmeli.dto.ProductDto;
-import com.socialmeli.socialmeli.dto.request.CommentRequestDto;
 import com.socialmeli.socialmeli.dto.response.CommentResponseDto;
 import com.socialmeli.socialmeli.dto.response.PostIdDto;
 import com.socialmeli.socialmeli.dto.response.PostIdSaleDto;
@@ -12,8 +11,6 @@ import com.socialmeli.socialmeli.models.Comment;
 import com.socialmeli.socialmeli.models.Post;
 import com.socialmeli.socialmeli.models.Product;
 import com.socialmeli.socialmeli.models.User;
-
-import java.util.List;
 
 public class MyMapper {
     public static UserDto toUserDto(User user) {
@@ -25,70 +22,70 @@ public class MyMapper {
     }
 
     public static PostIdDto toPostIdDto(Post post) {
-        return PostIdDto.builder()
-                .userId(post.getUser().getId())
-                .id(post.getId())
-                .date(post.getDate())
-                .product(toProductDto(post.getProduct()))
-                .category(post.getCategory())
-                .price(post.getPrice())
-                .build();
+        return new PostIdDto(
+                post.getUser().getId(),
+                post.getId(),
+                post.getDate(),
+                toProductDto(post.getProduct()),
+                post.getCategory(),
+                post.getPrice()
+        );
     }
 
     public static Post toPost(User user, PostDto postDto) {
         return Post.builder()
                 .user(user)
-                .date(postDto.getDate())
-                .product(toProduct(postDto.getProduct()))
-                .category(postDto.getCategory())
-                .price(postDto.getPrice())
+                .date(postDto.date())
+                .product(toProduct(postDto.product()))
+                .category(postDto.category())
+                .price(postDto.price())
                 .build();
     }
 
     public static Post toPost(User user, PostSaleDto postDto) {
         return Post.builder()
                 .user(user)
-                .date(postDto.getDate())
-                .discount(postDto.getDiscount())
-                .hasPromo(postDto.getHasPromo())
-                .price(postDto.getPrice())
-                .category(postDto.getCategory())
-                .product(toProduct(postDto.getProduct()))
+                .date(postDto.date())
+                .discount(postDto.discount())
+                .hasPromo(postDto.hasPromo())
+                .price(postDto.price())
+                .category(postDto.category())
+                .product(toProduct(postDto.product()))
                 .build();
     }
 
     public static Product toProduct(ProductDto productDto) {
         return Product.builder()
-                .id(productDto.getId())
-                .color(productDto.getColor())
-                .name(productDto.getName())
-                .notes(productDto.getNotes())
-                .type(productDto.getType())
-                .brand(productDto.getBrand())
+                .id(productDto.id())
+                .color(productDto.color())
+                .name(productDto.name())
+                .notes(productDto.notes())
+                .type(productDto.type())
+                .brand(productDto.brand())
                 .build();
     }
 
     public static ProductDto toProductDto(Product product) {
-        return ProductDto.builder()
-                .id(product.getId())
-                .brand(product.getBrand())
-                .color(product.getColor())
-                .name(product.getName())
-                .notes(product.getNotes())
-                .type(product.getType())
-                .build();
+        return new ProductDto(
+                product.getId(),
+                product.getName(),
+                product.getType(),
+                product.getBrand(),
+                product.getColor(),
+                product.getNotes()
+        );
     }
 
     public static PostIdSaleDto toPostIdSaleDto(Post post) {
-        return PostIdSaleDto.builder()
-                .userId(post.getUser().getId())
-                .id(post.getId())
-                .date(post.getDate())
-                .product(toProductDto(post.getProduct()))
-                .category(post.getCategory())
-                .price(post.getPrice())
-                .hasPromo(post.getHasPromo())
-                .discount(post.getDiscount())
-                .build();
+        return new PostIdSaleDto(
+                post.getUser().getId(),
+                post.getId(),
+                post.getDate(),
+                toProductDto(post.getProduct()),
+                post.getCategory(),
+                post.getPrice(),
+                post.getHasPromo(),
+                post.getDiscount()
+        );
     }
 }

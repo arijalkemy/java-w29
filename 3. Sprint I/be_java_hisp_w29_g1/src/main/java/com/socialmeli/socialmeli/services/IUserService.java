@@ -3,7 +3,6 @@ import com.socialmeli.socialmeli.dto.response.*;
 import com.socialmeli.socialmeli.dto.response.FollowerListDto;
 
 public interface IUserService {
-
     MessageDto follow(Integer follower, Integer UserToFollow);
 
     MessageDto unfollow(Integer userId, Integer userIdToUnfollow);

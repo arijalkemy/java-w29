@@ -31,7 +31,9 @@ public class UserService implements IUserService {
         User follower = getUserIfExists(followerId);
         User followed = getUserIfExists(followedId);
 
-        throwIfNotSeller(followed);
+        if (!followed.getIsSeller()){
+            throw new UserNotSellerException(Message.USER_NOT_SELLER.format(followed.getName()));
+        }
         
         if (follower.equals(followed)) {
             throw new IllegalActionException(Message.CANNOT_FOLLOW_SELF.getStr());
@@ -47,28 +49,6 @@ public class UserService implements IUserService {
 
         followRepository.add(follow);
         return new MessageDto(Message.USER_FOLLOWED.format(followed.getName()));
-    }
-
-    // US 0007
-    @Override
-    public MessageDto unfollow(Integer followerId, Integer followedId) {
-        User follower = getUserIfExists(followerId);
-        User followed = getUserIfExists(followedId);
-
-        if (follower.equals(followed)) {
-            throw new IllegalActionException(Message.CANNOT_UNFOLLOW_SELF.getStr());
-        }
-
-        Follow follow = new Follow(follower, followed);
-
-        if (!followRepository.exists(follow)){
-            throw new AlreadyExistsException(
-                        Message.USER_NOT_FOLLOWED.format(followed.getName(), follower.getName())
-            );
-        }
-
-        followRepository.delete(follow);
-        return new MessageDto(Message.USER_UNFOLLOWED.format(followed.getName()));
     }
 
     // US 0002
@@ -123,12 +103,34 @@ public class UserService implements IUserService {
         return new FollowedListDto(user.getId(), user.getName(), followed);
     }
 
+    // US 0007
+    @Override
+    public MessageDto unfollow(Integer followerId, Integer followedId) {
+        User follower = getUserIfExists(followerId);
+        User followed = getUserIfExists(followedId);
+
+        if (follower.equals(followed)) {
+            throw new IllegalActionException(Message.CANNOT_UNFOLLOW_SELF.getStr());
+        }
+
+        Follow follow = new Follow(follower, followed);
+
+        if (!followRepository.exists(follow)){
+            throw new AlreadyExistsException(
+                    Message.USER_NOT_FOLLOWED.format(followed.getName(), follower.getName())
+            );
+        }
+
+        followRepository.delete(follow);
+        return new MessageDto(Message.USER_UNFOLLOWED.format(followed.getName()));
+    }
+
     // US 00016
     @Override
     public TopSellersDto getTopSellers() {
         List<UserFollowerCountDto> topSellers = followRepository.findTopSellers();
 
-        if (topSellers.isEmpty()){
+        if (topSellers.isEmpty()) {
             throw new NotFoundException(Message.NO_SELLERS.getStr());
         }
 
@@ -137,7 +139,7 @@ public class UserService implements IUserService {
 
     private List<UserDto> orderListByName(String order, List<UserDto> followed) {
         return followed.stream()
-                .sorted(Comparator.comparing(UserDto::getName, order.endsWith(Order.ASC.getString())
+                .sorted(Comparator.comparing(UserDto::name, order.endsWith(Order.ASC.getString())
                         ? Comparator.naturalOrder()
                         : Comparator.reverseOrder()))
                 .toList();
@@ -148,13 +150,9 @@ public class UserService implements IUserService {
     }
 
     private List<Follow> getAllFollowers(User user) {
-        throwIfNotSeller(user);
-        return followRepository.findAllByIdFollowed(user.getId());
-    }
-    
-    private void throwIfNotSeller(User user) {
-         if (!user.getIsSeller()){
+        if (!user.getIsSeller()){
             throw new UserNotSellerException(Message.USER_NOT_SELLER.format(user.getName()));
         }
+        return followRepository.findAllByIdFollowed(user.getId());
     }
 }

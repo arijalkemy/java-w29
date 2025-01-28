@@ -16,7 +16,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @Repository
 public class PostRepository implements IPostRepository {
@@ -48,11 +47,11 @@ public class PostRepository implements IPostRepository {
 
     @Override
     public List<Comment> findAllCommentsByPostId(Integer postId) {
-        return posts
-                .stream()
+        return posts.stream()
                 .filter(p -> p.getId().equals(postId))
                 .map(Post::getComments)
-                .findFirst().orElse(List.of());
+                .findFirst()
+                .orElse(List.of());
     }
 
     @Override
@@ -62,13 +61,16 @@ public class PostRepository implements IPostRepository {
 
     @Override
     public List<Post> postFromUsers(List<User> userList) {
-        return posts.stream().filter(post -> userList.contains(post.getUser())).toList();
+        return posts.stream()
+                .filter(post -> userList.contains(post.getUser()))
+                .toList();
     }
 
     @Override
     public List<Post> findPostsWithPromoByUser(Integer userId) {
-        return posts.stream().filter(post -> post.getHasPromo() &&
-                post.getUser().getId().equals(userId)).collect(Collectors.toList());
+        return posts.stream()
+                .filter(post -> post.getHasPromo() && post.getUser().getId().equals(userId))
+                .toList();
     }
 
     @Override
@@ -84,22 +86,30 @@ public class PostRepository implements IPostRepository {
 
     @Override
     public List<Post> findPostsWithPromoByUserOptional(Integer userId) {
-        return posts.stream().filter(post -> post.getHasPromo() && post.getUser().getId().equals(userId)).collect(Collectors.toList());
+        return posts.stream()
+                .filter(post -> post.getHasPromo() && post.getUser().getId().equals(userId))
+                .toList();
     }
 
     @Override
     public List<Post> findPostsWithPromoByUserOptional() {
-        return posts.stream().filter(Post::getHasPromo).collect(Collectors.toList());
+        return posts.stream()
+                .filter(Post::getHasPromo)
+                .toList();
     }
 
     @Override
     public List<Post> findPostBySeller(Integer userID) {
-        return posts.stream().filter(p-> p.getUser().getId().equals(userID)).toList();
+        return posts.stream()
+                .filter(p-> p.getUser().getId().equals(userID))
+                .toList();
     }
 
     @Override
     public Optional<Post> findById(Integer id) {
-        return posts.stream().filter(post -> post.getId().equals(id)).findFirst();
+        return posts.stream()
+                .filter(post -> post.getId().equals(id))
+                .findFirst();
     }
 
     @Override

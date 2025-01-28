@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -26,7 +25,8 @@ public class Post {
 
     private Double price;
 
-    private Boolean hasPromo;
+    @Builder.Default
+    private Boolean hasPromo = false;
 
     private Double discount;
 

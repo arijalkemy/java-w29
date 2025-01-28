@@ -3,35 +3,18 @@ package com.socialmeli.socialmeli.dto.response;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.socialmeli.socialmeli.dto.ProductDto;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
 @JsonPropertyOrder({"user_id", "post_id", "date", "product", "category", "price", "hasPromo", "discount"})
-public class PostIdSaleDto {
-    @JsonProperty("user_id")
-    private Integer userId;
+public record PostIdSaleDto(
+        @JsonProperty("user_id") Integer userId,
+        @JsonProperty("post_id") Integer id,
+        LocalDate date,
+        ProductDto product,
+        Integer category,
+        Double price,
+        @JsonProperty("has_promo") Boolean hasPromo,
+        Double discount
+) {}
 
-    @JsonProperty("post_id")
-    private Integer id;
-
-    private LocalDate date;
-
-    private ProductDto product;
-
-    private Integer category;
-
-    private Double price;
-
-    @JsonProperty("has_promo")
-    private Boolean hasPromo;
-
-    private Double discount;
-}

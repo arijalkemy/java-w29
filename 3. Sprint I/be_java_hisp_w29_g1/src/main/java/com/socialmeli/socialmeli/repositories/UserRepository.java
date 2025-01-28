@@ -30,7 +30,9 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public Optional<User> findById(Integer id) {
-        return users.stream().filter(user -> user.getId().equals(id)).findFirst();
+        return users.stream()
+                .filter(user -> user.getId().equals(id))
+                .findFirst();
     }
 
     @Override
@@ -42,6 +44,8 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public List<User> findUserSeller() {
-        return users.stream().filter(u->u.getIsSeller().equals(true)).toList();
+        return users.stream()
+                .filter(u->u.getIsSeller().equals(true))
+                .toList();
     }
 }

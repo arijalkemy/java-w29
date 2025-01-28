@@ -50,16 +50,14 @@ public class FollowRepository implements IFollowRepository {
 
     @Override
     public List<Follow> findAllByIdFollowed(Integer id) {
-        return follows
-                .stream()
+        return follows.stream()
                 .filter(f-> f.getUserFollowed().getId().equals(id))
                 .toList();
     }
 
     @Override
     public List<Follow> findAllByIdFollower(Integer id) {
-        return follows
-                .stream()
+        return follows.stream()
                 .filter(f-> f.getUserFollower().getId().equals(id))
                 .toList();
     }
@@ -67,25 +65,30 @@ public class FollowRepository implements IFollowRepository {
     @Override
     public List<UserFollowerCountDto> findTopSellers() {
 
-        Set<User> followed = follows.stream().map(Follow::getUserFollowed)
+        Set<User> followed = follows
+                .stream()
+                .map(Follow::getUserFollowed)
                 .collect(Collectors.toSet());
+
         List<UserFollowerCountDto> userFollowerCountDtos = new ArrayList<>();
+
         followed.forEach(user -> {
-            userFollowerCountDtos.add(new UserFollowerCountDto(user.getId(),user.getName(), findAllByIdFollowed(user.getId()).size()));
+            userFollowerCountDtos.add(
+                    new UserFollowerCountDto(user.getId(),user.getName(), findAllByIdFollowed(user.getId()).size())
+            );
         });
 
         return userFollowerCountDtos.stream()
-                .sorted(Comparator.comparing(UserFollowerCountDto::getFollowersCount)
+                .sorted(Comparator.comparing(UserFollowerCountDto::followersCount)
                 .reversed())
                 .toList();
     }
 
-
-
-
     @Override
     public List<User> findFollowedUsers(User user) {
-        return follows.stream().filter(follow -> follow.getUserFollower().equals(user))
-                .map(Follow::getUserFollowed).toList();
+        return follows.stream()
+                .filter(follow -> follow.getUserFollower().equals(user))
+                .map(Follow::getUserFollowed)
+                .toList();
     }
 }

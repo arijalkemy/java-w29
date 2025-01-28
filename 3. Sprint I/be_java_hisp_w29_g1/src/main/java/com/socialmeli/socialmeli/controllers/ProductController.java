@@ -49,16 +49,6 @@ public class ProductController {
         return ResponseEntity.ok(postService.getProductSaleCountByUser(userId));
     }
 
-    // US 0015 - Obtener un listado de publicaciones filtradas.
-    @GetMapping("/filter")
-    public ResponseEntity<List<PostIdDto>> getFilteredPosts(
-            @RequestParam(required = false) String category,
-            @RequestParam(required = false, value = "price_range") String priceRange,
-            @RequestParam(required = false, value = "product_brand") String productBrand,
-            @RequestParam(required = false, value = "product_type") String productType) {
-        return ResponseEntity.ok(postService.getFilteredPosts(category, priceRange,productBrand, productType));
-    }
-
     // US 0012 - Obtener un listado de todos los productos en promoción con la opción de filtrar por un vendedor.
     @GetMapping("promo-post/list")
     public ResponseEntity<List<ProductsPromotionDto>> getPromoPostList(@RequestParam(value = "user_id", required = false) Integer userId) {
@@ -77,5 +67,15 @@ public class ProductController {
     @GetMapping("/comments/{postId}")
     public ResponseEntity<CommentsListDto> getComments(@PathVariable Integer postId) {
         return ResponseEntity.ok(postService.getCommentsById(postId));
+    }
+
+    // US 0015 - Obtener un listado de publicaciones filtradas.
+    @GetMapping("/filter")
+    public ResponseEntity<List<PostIdDto>> getFilteredPosts(
+            @RequestParam(required = false) String category,
+            @RequestParam(required = false, value = "price_range") String priceRange,
+            @RequestParam(required = false, value = "product_brand") String productBrand,
+            @RequestParam(required = false, value = "product_type") String productType) {
+        return ResponseEntity.ok(postService.getFilteredPosts(category, priceRange,productBrand, productType));
     }
 }
