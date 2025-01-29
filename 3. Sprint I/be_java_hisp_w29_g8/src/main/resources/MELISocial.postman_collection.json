@@ -1091,11 +1091,11 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (!nextProductId) {",
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
 											"    nextProductId = -1;",
 											"}",
-											"pm.collectionVariables.set(nextProductId + 1);"
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -1183,8 +1183,8 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -1226,8 +1226,8 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -1377,8 +1377,8 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -1420,8 +1420,8 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2168,8 +2168,8 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2211,8 +2211,8 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2362,8 +2362,8 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2405,8 +2405,8 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2569,8 +2569,8 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2661,8 +2661,8 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2704,8 +2704,8 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2821,8 +2821,8 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -2864,8 +2864,8 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"let nextProductId = pm.collectionVariables.get(\"nextProductId\");",
-											"if (nextProductId == undefined) {",
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
 											"    nextProductId = -1;",
 											"}",
 											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
@@ -3037,30 +3037,6 @@
 			"key": "host",
 			"value": "{{protocol}}://{{address}}:{{port}}",
 			"type": "string"
-		},
-		{
-			"key": "clientId",
-			"value": ""
-		},
-		{
-			"key": "sellerId",
-			"value": ""
-		},
-		{
-			"key": "0",
-			"value": ""
-		},
-		{
-			"key": "nextProductId",
-			"value": ""
-		},
-		{
-			"key": "30",
-			"value": ""
-		},
-		{
-			"key": "43",
-			"value": ""
 		}
 	]
 }
