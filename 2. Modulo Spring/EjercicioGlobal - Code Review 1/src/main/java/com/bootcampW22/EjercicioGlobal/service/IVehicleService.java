@@ -18,7 +18,7 @@ public interface IVehicleService {
 
     ResponseDto addBatchVehicles(List<VehicleDto> vehicles);
 
-    ResponseDto updateSpeed(Long id, Double speed);
+    ResponseDto updateSpeed(Long id, String speed);
 
     List<VehicleDto> getVehiclesByFuel(String type);
 

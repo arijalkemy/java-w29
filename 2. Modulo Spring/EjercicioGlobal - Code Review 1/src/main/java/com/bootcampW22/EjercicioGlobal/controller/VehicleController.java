@@ -34,7 +34,7 @@ public class VehicleController {
     }
 
     @GetMapping("/brand/{brand}/between/{start_year}/{end_year}")
-    public ResponseEntity<List<VehicleDto>> getVehiclesByBrandAndYears(@RequestParam String brand, @RequestParam int start_year, @RequestParam int end_year){
+    public ResponseEntity<List<VehicleDto>> getVehiclesByBrandAndYears(@PathVariable String brand, @PathVariable int start_year, @PathVariable int end_year){
         return new ResponseEntity<>(vehicleService.searchVehiclesByBrandAndYears(brand, start_year,end_year), HttpStatus.OK);
     }
 
@@ -49,7 +49,7 @@ public class VehicleController {
     }
 
     @PutMapping("/{id}/update_speed")
-    public ResponseEntity<ResponseDto> updateSpeedById(@PathVariable Long id, @RequestParam Double speed){
+    public ResponseEntity<ResponseDto> updateSpeedById(@PathVariable Long id, @RequestParam String speed){
         return new ResponseEntity<>(vehicleService.updateSpeed(id, speed),HttpStatus.OK);
     }
 

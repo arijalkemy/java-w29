@@ -9,7 +9,7 @@ public interface IVehicleRepository {
     List<Vehicle> save(Vehicle vehicle);
     List<Vehicle> findByBrand(String brand);
     boolean existById(Long id);
-    Vehicle updateSpeed(Long id, Double speed);
+    Vehicle updateSpeed(Long id, String speed);
     List<Vehicle> findByFuel(String type);
     Boolean delete(Long id);
     List<Vehicle> findByTransmission(String type);

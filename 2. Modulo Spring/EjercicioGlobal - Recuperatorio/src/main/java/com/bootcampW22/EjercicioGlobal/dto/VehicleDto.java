@@ -1,4 +1,4 @@
-package com.bootcampW22.EjercicioGlobal.entity;
+package com.bootcampW22.EjercicioGlobal.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Vehicle {
+public class VehicleDto {
     private Long id;
     private String brand;
     private String model;

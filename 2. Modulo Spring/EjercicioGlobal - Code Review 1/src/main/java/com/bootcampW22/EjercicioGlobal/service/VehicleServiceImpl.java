@@ -70,7 +70,7 @@ public class VehicleServiceImpl implements IVehicleService {
         }
 
         Double avgSpeed = vehiclesBrand.stream()
-                .mapToDouble(Vehicle::getMax_speed)
+                .mapToDouble(v -> Double.parseDouble(v.getMax_speed()))
                 .average()
                 .orElse(0.0);
 
@@ -89,7 +89,7 @@ public class VehicleServiceImpl implements IVehicleService {
     }
 
     @Override
-    public ResponseDto updateSpeed(Long id, Double speed) {
+    public ResponseDto updateSpeed(Long id, String speed) {
 
         if (!vehicleRepository.existById(id)) {
             throw new NotFoundException("No se encontro el vehiculo.");

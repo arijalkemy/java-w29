@@ -44,7 +44,7 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
     }
 
     @Override
-    public Vehicle updateSpeed(Long id, Double speed) {
+    public Vehicle updateSpeed(Long id, String speed) {
         return listOfVehicles.stream()
                 .filter( v -> v.getId().equals(id))
                 .findFirst()
