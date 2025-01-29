@@ -3,17 +3,17 @@ package com.meli.obtenerdiploma.service;
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
 import com.meli.obtenerdiploma.repository.IStudentDAO;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class ObtenerDiplomaService implements IObtenerDiplomaService {
 
-    @Autowired
-    IStudentDAO studentDAO;
+    private final IStudentDAO studentDAO;
 
     @Override
     public StudentDTO analyzeScores(Long studentId) {

@@ -2,7 +2,9 @@ package com.meli.obtenerdiploma.controller;
 
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.service.IStudentService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,15 +13,15 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/student")
+@RequiredArgsConstructor
 public class StudentController {
 
-    @Autowired
-    IStudentService studentService;
+    private final IStudentService studentService;
 
     @PostMapping("/registerStudent")
     public ResponseEntity<?> registerStudent(@RequestBody @Valid StudentDTO stu) {
         this.studentService.create(stu);
-        return ResponseEntity.ok(null);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping("/getStudent/{id}")
@@ -27,21 +29,20 @@ public class StudentController {
         return this.studentService.read(id);
     }
 
-    @PostMapping("/modifyStudent")
+    @PutMapping("/modifyStudent")
     public ResponseEntity<?> modifyStudent(@RequestBody @Valid StudentDTO stu) {
         this.studentService.update(stu);
-        return ResponseEntity.ok(null);
+        return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/removeStudent/{id}")
+    @DeleteMapping("/removeStudent/{id}")
     public ResponseEntity<?> removeStudent(@PathVariable Long id) {
         this.studentService.delete(id);
-        return ResponseEntity.ok(null);
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/listStudents")
     public Set<StudentDTO> listStudents() {
         return this.studentService.getAll();
     }
-
 }

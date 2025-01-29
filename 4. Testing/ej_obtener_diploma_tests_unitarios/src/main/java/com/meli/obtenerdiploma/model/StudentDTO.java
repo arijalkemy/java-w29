@@ -1,19 +1,19 @@
 package com.meli.obtenerdiploma.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 
-@Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
+@Data
 public class StudentDTO {
-
     Long id;
 
     @NotBlank(message = "El nombre del estudiante no puede estar vacío.")

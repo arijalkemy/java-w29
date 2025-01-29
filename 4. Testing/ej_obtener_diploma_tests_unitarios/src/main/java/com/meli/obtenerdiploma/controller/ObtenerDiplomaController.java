@@ -1,18 +1,15 @@
 package com.meli.obtenerdiploma.controller;
 
 import com.meli.obtenerdiploma.model.StudentDTO;
-import com.meli.obtenerdiploma.service.IObtenerDiplomaService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
+import com.meli.obtenerdiploma.service.ObtenerDiplomaService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-
 @RestController
+@RequiredArgsConstructor
 public class ObtenerDiplomaController {
 
-    @Autowired
-    IObtenerDiplomaService service;
+    private final ObtenerDiplomaService service;
 
     @GetMapping("/analyzeScores/{studentId}")
     public StudentDTO analyzeScores(@PathVariable Long studentId) {
