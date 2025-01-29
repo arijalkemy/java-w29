@@ -14,4 +14,6 @@ public class ObtenerDiplomaControllerTests {
 
     @InjectMocks
     private ObtenerDiplomaController controller;
+
+
 }
