@@ -33,17 +33,6 @@ public class UrlService {
 
     }
 
-    public UrlDTO setUrlValid(UrlDTORequest urlDTORequest, String password) {
-        if (isValidURL(urlDTORequest.getUrl())) {
-            return objectMapper.convertValue(
-                    urlRepository.saveUrlWithPassword(objectMapper.convertValue(urlDTORequest, Url.class), password),
-                    UrlDTO.class);
-        } else {
-            throw new InvalidUrlException("La url es invalida");
-        }
-
-    }
-
     public String getUrl(Integer id) {
         Optional<Url> url = urlRepository.findById(id);
 

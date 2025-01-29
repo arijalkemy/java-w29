@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class UrlDTORequest {
 
     private String url;
+    private Strin password;
 }
