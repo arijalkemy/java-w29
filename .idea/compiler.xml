@@ -21,17 +21,7 @@
         <module name="ej_vehiculos" />
         <module name="ej_imprimible" />
       </profile>
-      <profile name="Annotation profile for ej_numeros_romanos" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
-        </processorPath>
-        <module name="ej_numeros_romanos" />
-        <module name="ej_factorial" />
-      </profile>
-      <profile name="Annotation profile for ej_starwars_tests_unitarios" enabled="true">
+      <profile name="Annotation profile for ej_starwars_tests" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -42,16 +32,27 @@
         <module name="ej_covid" />
         <module name="ej_concesionaria" />
         <module name="ej_deportistas" />
+        <module name="ej_starwars_tests" />
         <module name="ej_edad_persona" />
         <module name="ej_obtener_diploma_validaciones" />
         <module name="ej_starwars" />
         <module name="ej_link_tracker" />
-        <module name="ej_starwars_tests_unitarios" />
         <module name="ej_codigo_morse" />
         <module name="SocialMeli" />
         <module name="ej_obtener_diploma_tests_unitarios" />
         <module name="ej_obtener_diploma_tests_integracion" />
         <module name="ej_calculadora_calorias" />
+      </profile>
+      <profile name="Annotation profile for ej_numeros_romanos_tests" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="ej_numeros_romanos_tests" />
+        <module name="ej_numeros_romanos" />
+        <module name="ej_factorial" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -60,7 +61,9 @@
       <module name="concesionaria" target="17" />
       <module name="dakar" target="23" />
       <module name="ej_agencia_turismo (1)" target="17" />
+      <module name="ej_numeros_romanos (1)" target="17" />
       <module name="ej_peso_imc (1)" target="17" />
+      <module name="ej_starwars (1) (com.mercadolibre)" target="11" />
       <module name="ej_temperaturas (1)" target="17" />
       <module name="factorial" target="17" />
       <module name="morse" target="21" />
@@ -86,11 +89,14 @@
       <module name="ej_factorial" options="-parameters" />
       <module name="ej_link_tracker" options="-parameters" />
       <module name="ej_numeros_romanos" options="-parameters" />
+      <module name="ej_numeros_romanos (1)" options="-parameters" />
+      <module name="ej_numeros_romanos_tests" options="-parameters" />
       <module name="ej_obtener_diploma_tests_integracion" options="-parameters" />
       <module name="ej_obtener_diploma_tests_unitarios" options="-parameters" />
       <module name="ej_obtener_diploma_validaciones" options="-parameters" />
       <module name="ej_starwars" options="-parameters" />
-      <module name="ej_starwars_tests_unitarios" options="-parameters" />
+      <module name="ej_starwars (1) (com.mercadolibre)" options="-parameters" />
+      <module name="ej_starwars_tests" options="-parameters" />
       <module name="factorial" options="-parameters" />
       <module name="morse" options="-parameters" />
       <module name="numerosromanos" options="-parameters" />
