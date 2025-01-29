@@ -8,7 +8,7 @@ import org.junit.jupiter.api.*;
 
 import java.util.Set;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.class)
 @DisplayName("Test Student DAO Lifecycle per class")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class IStudentDAOLifeCyclePerClassTest {
@@ -101,5 +101,4 @@ class IStudentDAOLifeCyclePerClassTest {
         assertFalse(studentDAO.delete(nonExistingStudent.getId()),
                 "Debería devolver false si el estudiante no existe");
     }
-
 }

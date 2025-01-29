@@ -31,7 +31,7 @@
         <module name="ej_numeros_romanos" />
         <module name="ej_factorial" />
       </profile>
-      <profile name="Annotation profile for ej_obtener_diploma_tests_integracion" enabled="true">
+      <profile name="Annotation profile for ej_starwars_tests_unitarios" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -46,10 +46,11 @@
         <module name="ej_obtener_diploma_validaciones" />
         <module name="ej_starwars" />
         <module name="ej_link_tracker" />
+        <module name="ej_starwars_tests_unitarios" />
         <module name="ej_codigo_morse" />
         <module name="SocialMeli" />
-        <module name="ej_obtener_diploma_tests_integracion" />
         <module name="ej_obtener_diploma_tests_unitarios" />
+        <module name="ej_obtener_diploma_tests_integracion" />
         <module name="ej_calculadora_calorias" />
       </profile>
     </annotationProcessing>
@@ -66,6 +67,7 @@
       <module name="numerosromanos" target="17" />
       <module name="obtenerdiploma" target="11" />
       <module name="persona" target="17" />
+      <module name="starwars" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -88,11 +90,13 @@
       <module name="ej_obtener_diploma_tests_unitarios" options="-parameters" />
       <module name="ej_obtener_diploma_validaciones" options="-parameters" />
       <module name="ej_starwars" options="-parameters" />
+      <module name="ej_starwars_tests_unitarios" options="-parameters" />
       <module name="factorial" options="-parameters" />
       <module name="morse" options="-parameters" />
       <module name="numerosromanos" options="-parameters" />
       <module name="obtenerdiploma" options="-parameters" />
       <module name="persona" options="-parameters" />
+      <module name="starwars" options="-parameters" />
     </option>
   </component>
 </project>
