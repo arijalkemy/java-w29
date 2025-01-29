@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "56b87bb0-67dd-4e5b-a338-ae4faffb9a97",
+		"name": "Calories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40932602"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/calories",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"pasta en salsa de champiñones\",\n    \"ingredients\":[\n        {\"name\":\"Pasta al huevo\"},\n        {\"name\":\"Nata o crema de leche\"},\n        {\"name\":\"Champiñón y otras setas\"}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/calories"
+			},
+			"response": [
+				{
+					"name": "200 - Ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"pasta en salsa de champiñones\",\n    \"ingredients\":[\n        {\"name\":\"Pasta al huevo\"},\n        {\"name\":\"Nata o crema de leche\"},\n        {\"name\":\"Champiñón y otras setas\"}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/calories"
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Jan 2025 15:54:40 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"pasta en salsa de champiñones\",\n    \"total_calories\": 694,\n    \"ingredient_max_calories\": {\n        \"name\": \"Pasta al huevo\",\n        \"calories\": 368\n    },\n    \"ingredients\": [\n        {\n            \"name\": \"Pasta al huevo\",\n            \"calories\": 368\n        },\n        {\n            \"name\": \"Nata o crema de leche\",\n            \"calories\": 298\n        },\n        {\n            \"name\": \"Champiñón y otras setas\",\n            \"calories\": 28\n        }\n    ]\n}"
+				},
+				{
+					"name": "400 - Not found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"pasta en salsa de champiñones\",\n    \"ingredients\":[\n        {\"name\":\"Pasta al huevo\"},\n        {\"name\":\"Nata o crema de leche\"},\n        {\"name\":\"Champiñónes\"}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/calories"
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Jan 2025 15:55:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Ingrediente no encontrado\"\n}"
+				}
+			]
+		}
+	]
+}
