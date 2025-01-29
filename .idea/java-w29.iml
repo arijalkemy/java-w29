@@ -2,13 +2,7 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/1. Modulo Java/Intro_java_2_vivo/out" />
-      <excludeFolder url="file://$MODULE_DIR$/1. Modulo Java/Intro_java_vivo/out" />
-      <excludeFolder url="file://$MODULE_DIR$/1. Modulo Java/Recap_java_vivo/out" />
-      <excludeFolder url="file://$MODULE_DIR$/2. Modulo Spring/Intro_spring_1/.idea" />
-      <excludeFolder url="file://$MODULE_DIR$/2. Modulo Spring/Intro_spring_1/target" />
-    </content>
+    <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
