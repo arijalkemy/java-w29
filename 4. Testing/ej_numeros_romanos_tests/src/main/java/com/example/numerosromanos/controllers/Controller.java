@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 
-    private final NumerosRomanosService service = new NumerosRomanosServiceImpl();
+    private final NumerosRomanosService service;
 
     @GetMapping("/{numeroDecimal}")
     public ResponseEntity<String> convertir(@Positive @PathVariable Integer numeroDecimal) {
