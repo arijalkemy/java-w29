@@ -2,6 +2,7 @@ package com.meli.obtenerdiploma.controller;
 
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
+import com.meli.obtenerdiploma.repository.StudentDAO;
 import com.meli.obtenerdiploma.service.ObtenerDiplomaService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -26,7 +27,7 @@ class ObtenerDiplomaControllerIT {
     private MockMvc mockMvc;
 
     @MockBean
-    private ObtenerDiplomaService service;
+    private StudentDAO studentDAO;
 
     @Test
     @DisplayName("Analyze score successfully")
@@ -39,16 +40,14 @@ class ObtenerDiplomaControllerIT {
                 .id(studentId)
                 .studentName("Juan")
                 .subjects(List.of(math, history))
-                .averageScore(9.5)
                 .build();
 
-        given(service.analyzeScores(studentId)).willReturn(student);
+        given(studentDAO.findById(studentId)).willReturn(student);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/analyzeScores/{id}", studentId))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id").value(student.getId()))
-                .andExpect(jsonPath("$.studentName").value(student.getStudentName()))
-                .andExpect(jsonPath("$.averageScore").value(student.getAverageScore()));
+                .andExpect(jsonPath("$.averageScore").value(9.5));
     }
 }

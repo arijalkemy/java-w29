@@ -4,7 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.meli.obtenerdiploma.exception.StudentNotFoundException;
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
-import com.meli.obtenerdiploma.service.StudentService;
+import com.meli.obtenerdiploma.repository.StudentDAO;
+import com.meli.obtenerdiploma.repository.StudentRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
-
 @SpringBootTest
 @AutoConfigureMockMvc
 class StudentControllerIT {
@@ -33,41 +33,41 @@ class StudentControllerIT {
     private MockMvc mockMvc;
 
     @MockBean
-    private StudentService studentService;
+    private StudentDAO studentDAO;
+    
+    @MockBean
+    private StudentRepository studentRepository;
 
     SubjectDTO math = new SubjectDTO("Matemáticas", 10.0);
     SubjectDTO biology = new SubjectDTO("Biology", 8.0);
-
 
     StudentDTO student = StudentDTO.builder()
             .id(1L)
             .studentName("Agos")
             .subjects(List.of(math, biology))
-            .averageScore(9.0)
             .build();
+    
+    ObjectMapper mapper = new ObjectMapper();
 
     @Test
     @DisplayName("Get existing student by id")
     void testGetStudentById() throws Exception {
-        given(studentService.read(student.getId())).willReturn(student);
+        given(studentDAO.findById(1L)).willReturn(student);
 
         mockMvc.perform(get("/student/getStudent/{id}", student.getId()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id").value(student.getId()))
-                .andExpect(jsonPath("$.studentName").value(student.getStudentName()))
-                .andExpect(jsonPath("$.averageScore").value(student.getAverageScore()));
+                .andExpect(jsonPath("$.studentName").value(student.getStudentName()));
     }
 
     // Tuve que agregar un exception handler para StudentNotFoundException porque no estaba
     @Test
     @DisplayName("Get non existing student by id")
     void testGetStudentByIdNotFound() throws Exception {
-        Long studentId = 1L;
+        given(studentDAO.findById(student.getId())).willThrow(StudentNotFoundException.class);
 
-        given(studentService.read(studentId)).willThrow(StudentNotFoundException.class);
-
-        mockMvc.perform(get("/student/getStudent/{id}", studentId))
+        mockMvc.perform(get("/student/getStudent/{id}", student.getId()))
                 .andExpect(status().isNotFound());
     }
 
@@ -75,7 +75,6 @@ class StudentControllerIT {
     @Test
     @DisplayName("Register student successfully")
     void testRegisterStudentSuccessfully() throws Exception {
-        ObjectMapper mapper = new ObjectMapper();
         mockMvc.perform(post("/student/registerStudent")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(mapper.writeValueAsString(student)))
@@ -90,24 +89,27 @@ class StudentControllerIT {
     }
 
     @Test
-    @DisplayName("Register student with invalid body")
-    void testRegisterInvalidStudent() throws Exception {
-        ObjectMapper mapper = new ObjectMapper();
-
-        StudentDTO invalidStudent1 = StudentDTO.builder()
+    @DisplayName("Register student with invalid name")
+    void testRegisterInvalidName() throws Exception {
+        StudentDTO invalidStudent = StudentDTO.builder()
                 .studentName("agos")
                 .subjects(List.of(math, biology))
                 .build();
-        StudentDTO invalidStudent2 = StudentDTO.builder().studentName("Agos").subjects(List.of()).build();
 
         mockMvc.perform(post("/student/registerStudent")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(mapper.writeValueAsString(invalidStudent1)))
+                        .content(mapper.writeValueAsString(invalidStudent)))
                 .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    @DisplayName("Register student with invalid subjects")
+    void testRegisterInvalidSubjects() throws Exception {
+        StudentDTO invalidStudent = StudentDTO.builder().studentName("Agos").subjects(List.of()).build();
 
         mockMvc.perform(post("/student/registerStudent")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(mapper.writeValueAsString(invalidStudent2)))
+                        .content(mapper.writeValueAsString(invalidStudent)))
                 .andExpect(status().isBadRequest());
     }
 
@@ -115,7 +117,6 @@ class StudentControllerIT {
     @Test
     @DisplayName("Modify student successfully")
     void testModifyStudentSuccessfully() throws Exception {
-        ObjectMapper mapper = new ObjectMapper();
         mockMvc.perform(put("/student/modifyStudent")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(mapper.writeValueAsString(student)))
@@ -130,24 +131,27 @@ class StudentControllerIT {
     }
 
     @Test
-    @DisplayName("Modify student with invalid body")
-    void testModifyInvalidStudent() throws Exception {
-        ObjectMapper mapper = new ObjectMapper();
-
-        StudentDTO invalidStudent1 = StudentDTO.builder()
+    @DisplayName("Modify student with invalid name")
+    void testModifyInvalidName() throws Exception {
+        StudentDTO invalidStudent = StudentDTO.builder()
                 .studentName("agos")
                 .subjects(List.of(math, biology))
                 .build();
-        StudentDTO invalidStudent2 = StudentDTO.builder().studentName("Agos").subjects(List.of()).build();
 
         mockMvc.perform(put("/student/modifyStudent")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(mapper.writeValueAsString(invalidStudent1)))
+                        .content(mapper.writeValueAsString(invalidStudent)))
                 .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    @DisplayName("Modify student with invalid subjects")
+    void testModifyInvalidSubjects() throws Exception {
+        StudentDTO invalidStudent = StudentDTO.builder().studentName("Agos").subjects(List.of()).build();
 
         mockMvc.perform(put("/student/modifyStudent")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(mapper.writeValueAsString(invalidStudent2)))
+                        .content(mapper.writeValueAsString(invalidStudent)))
                 .andExpect(status().isBadRequest());
     }
 
@@ -155,7 +159,7 @@ class StudentControllerIT {
     @Test
     @DisplayName("Remove existing student")
     void testRemoveStudentSuccessfully() throws Exception {
-        mockMvc.perform(delete("/student/removeStudent/{id}", student.getId()))
+        mockMvc.perform(delete("/student/removeStudent/{id}", 1L))
                 .andExpect(status().isNoContent());
     }
 
@@ -164,7 +168,7 @@ class StudentControllerIT {
     void testRemoveStudentNotFound() throws Exception {
         Long studentId = 1L;
 
-        doThrow(StudentNotFoundException.class).when(studentService).delete(studentId);
+        doThrow(StudentNotFoundException.class).when(studentDAO).delete(studentId);
 
         mockMvc.perform(delete("/student/removeStudent/{id}", studentId))
                 .andExpect(status().isNotFound());
@@ -173,7 +177,7 @@ class StudentControllerIT {
     @Test
     @DisplayName("List students")
     void testListStudents() throws Exception {
-        given(studentService.getAll()).willReturn(Set.of(student));
+        given(studentRepository.findAll()).willReturn(Set.of(student));
         mockMvc.perform(get("/student/listStudents"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
