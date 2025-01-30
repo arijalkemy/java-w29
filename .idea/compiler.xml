@@ -21,28 +21,6 @@
         <module name="ej_vehiculos" />
         <module name="ej_imprimible" />
       </profile>
-      <profile name="Annotation profile for ej_starwars_tests" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-        </processorPath>
-        <module name="ej_blog" />
-        <module name="ej_covid" />
-        <module name="ej_concesionaria" />
-        <module name="ej_deportistas" />
-        <module name="ej_starwars_tests" />
-        <module name="ej_edad_persona" />
-        <module name="ej_obtener_diploma_validaciones" />
-        <module name="ej_starwars" />
-        <module name="ej_link_tracker" />
-        <module name="ej_codigo_morse" />
-        <module name="SocialMeli" />
-        <module name="ej_obtener_diploma_tests_unitarios" />
-        <module name="ej_obtener_diploma_tests_integracion" />
-        <module name="ej_calculadora_calorias" />
-      </profile>
       <profile name="Annotation profile for ej_numeros_romanos_tests" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -54,8 +32,32 @@
         <module name="ej_numeros_romanos" />
         <module name="ej_factorial" />
       </profile>
+      <profile name="Annotation profile for ej_calculadora_metros_cuadrados" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="ej_blog" />
+        <module name="ej_covid" />
+        <module name="ej_concesionaria" />
+        <module name="ej_deportistas" />
+        <module name="ej_calculadora_metros_cuadrados" />
+        <module name="ej_starwars_tests" />
+        <module name="ej_edad_persona" />
+        <module name="ej_obtener_diploma_validaciones" />
+        <module name="ej_starwars" />
+        <module name="ej_link_tracker" />
+        <module name="ej_codigo_morse" />
+        <module name="SocialMeli" />
+        <module name="ej_obtener_diploma_tests_unitarios" />
+        <module name="ej_obtener_diploma_tests_integracion" />
+        <module name="ej_calculadora_calorias" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="calculadora-metros-cuadrados" target="11" />
       <module name="calorias" target="17" />
       <module name="codigomorse" target="23" />
       <module name="concesionaria" target="17" />
@@ -76,11 +78,13 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SocialMeli" options="-parameters" />
+      <module name="calculadora-metros-cuadrados" options="-parameters" />
       <module name="calorias" options="-parameters" />
       <module name="codigomorse" options="-parameters" />
       <module name="concesionaria" options="-parameters" />
       <module name="ej_blog" options="-parameters" />
       <module name="ej_calculadora_calorias" options="-parameters" />
+      <module name="ej_calculadora_metros_cuadrados" options="-parameters" />
       <module name="ej_codigo_morse" options="-parameters" />
       <module name="ej_concesionaria" options="-parameters" />
       <module name="ej_covid" options="-parameters" />
