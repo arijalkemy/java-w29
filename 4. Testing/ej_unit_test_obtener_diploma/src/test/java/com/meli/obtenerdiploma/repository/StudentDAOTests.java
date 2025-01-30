@@ -25,7 +25,6 @@ public class StudentDAOTests {
 
     private static StudentDAO studentDAO;
     private static Set<StudentDTO> students;
-    private StudentDTO newStudent, existingStudent;
 
     @BeforeAll
     public static void beforeAll(){
@@ -68,7 +67,6 @@ public class StudentDAOTests {
     @Test
     public void unsuccessfulFindStudentById(){
         //ARRANGE
-        StudentDTO student = TestUtilsGenerator.getStudentWithId(1L);
         //ACT
         //ASSERT
         assertThrows(StudentNotFoundException.class, () -> studentDAO.findById(1L));
