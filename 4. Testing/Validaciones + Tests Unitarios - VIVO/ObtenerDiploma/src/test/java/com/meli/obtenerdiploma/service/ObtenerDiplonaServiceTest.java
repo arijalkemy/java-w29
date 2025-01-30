@@ -39,7 +39,7 @@ public class ObtenerDiplonaServiceTest {
     }
 
     @Test
-    void analyzeScoresTest() {
+    void testAnalyzeScores() {
         Long studentId = 1L;
 
         when(studentDAO.findById(studentId)).thenReturn(studentDTO);
@@ -48,7 +48,7 @@ public class ObtenerDiplonaServiceTest {
 
         assertNotNull(result);
         assertEquals("Juan Pérez", result.getStudentName());
-        assertEquals(9.0, result.getAverageScore()); // (9+8+10) / 3
+        assertEquals(9.0, result.getAverageScore());
         assertTrue(result.getMessage().contains("Puedes mejorar."));
 
         verify(studentDAO, times(1)).findById(studentId);
