@@ -25,12 +25,12 @@ public class ObtenerDiplomaService implements IObtenerDiplomaService {
         return stu;
     }
 
-    private String getGreetingMessage(String studentName, Double average) {
+    public String getGreetingMessage(String studentName, Double average) {
         return "El alumno " + studentName + " ha obtenido un promedio de " + new DecimalFormat("#.##").format(average)
                 + ((average > 9) ? ". Felicitaciones!" : ". Puedes mejorar.");
     }
 
-    private Double calculateAverage(List<SubjectDTO> scores) {
+    public Double calculateAverage(List<SubjectDTO> scores) {
         return scores.stream()
                 .reduce(0D, (partialSum, score)  -> partialSum + score.getScore(), Double::sum)
                 / scores.size();
