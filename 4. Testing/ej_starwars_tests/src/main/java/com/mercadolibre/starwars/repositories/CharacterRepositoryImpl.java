@@ -3,6 +3,7 @@ package com.mercadolibre.starwars.repositories;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mercadolibre.starwars.dto.CharacterDTO;
+import com.mercadolibre.starwars.exceptions.DataLoadException;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.ResourceUtils;
 
@@ -17,7 +18,7 @@ public class CharacterRepositoryImpl implements CharacterRepository {
 
     private List<CharacterDTO> database;
 
-    public CharacterRepositoryImpl() {
+    public CharacterRepositoryImpl() throws IOException {
         this.database = loadDataBase();
     }
 
@@ -28,22 +29,10 @@ public class CharacterRepositoryImpl implements CharacterRepository {
                 .collect(Collectors.toList());
     }
 
-    private List<CharacterDTO> loadDataBase() {
-        File file = null;
-        try {
-            file = ResourceUtils.getFile("classpath:starwars_characters.json");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        ObjectMapper objectMapper = new ObjectMapper();
+    public List<CharacterDTO> loadDataBase() throws IOException {
+        File file = ResourceUtils.getFile("classpath:starwars_characters.json");
         TypeReference<List<CharacterDTO>> typeRef = new TypeReference<>() {};
-        List<CharacterDTO> characters = null;
-        try {
-            characters = objectMapper.readValue(file, typeRef);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return characters;
+        return new ObjectMapper().readValue(file, typeRef);
     }
 
     private boolean matchWith(String query, CharacterDTO characterDTO) {

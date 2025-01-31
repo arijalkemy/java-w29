@@ -1,5 +1,6 @@
 package com.meli.obtenerdiploma.controller;
 
+import com.meli.obtenerdiploma.exception.StudentNotFoundException;
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
 import com.meli.obtenerdiploma.repository.StudentDAO;
@@ -49,5 +50,16 @@ class ObtenerDiplomaControllerIT {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id").value(student.getId()))
                 .andExpect(jsonPath("$.averageScore").value(9.5));
+    }
+
+    @Test
+    @DisplayName("Student not found")
+    void analyzeScoreStudentNotFound() throws Exception {
+        Long studentId = 1L;
+
+        given(studentDAO.findById(studentId)).willThrow(StudentNotFoundException.class);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/analyzeScores/{id}", studentId))
+                .andExpect(status().isNotFound());
     }
 }

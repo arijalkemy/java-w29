@@ -13,6 +13,7 @@ public class NumerosRomanosServiceImpl implements NumerosRomanosService {
     private static final List<String> numerosRomanos = List.of("M", "CM", "D", "CD", "C", "XC", "L", "XL",
             "X", "IX", "V", "IV", "I");
 
+    @Override
     public String decimalToRoman(int num) {
         StringBuilder roman = new StringBuilder();
 

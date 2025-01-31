@@ -8,7 +8,7 @@ import org.junit.jupiter.api.*;
 
 import java.util.Set;
 
-@TestMethodOrder(MethodOrderer.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DisplayName("Test Student DAO Lifecycle per class")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class IStudentDAOLifeCyclePerClassTest {
@@ -25,14 +25,23 @@ class IStudentDAOLifeCyclePerClassTest {
 
     @Test
     @Order(1)
-    @DisplayName("save()")
-    void testSave() {
+    @DisplayName("save() with non existing student")
+    void testSaveNonExistingStudent() {
         studentDAO.save(existingStudent);
         assertNotNull(existingStudent.getId(), "El ID no debe ser nulo después de guardar");
     }
 
     @Test
     @Order(2)
+    @DisplayName("save() with existing student")
+    void testSaveExistingStudent() {
+        Long id = existingStudent.getId();
+        studentDAO.save(existingStudent);
+        assertEquals(existingStudent.getId(), id, "El ID debe ser el mismo");
+    }
+
+    @Test
+    @Order(3)
     @DisplayName("exists() with existing student")
     void testExists_whenExists_thenReturnTrue() {
         assertTrue(studentDAO.exists(existingStudent), "El estudiante debe existir después de ser guardado");
@@ -46,7 +55,7 @@ class IStudentDAOLifeCyclePerClassTest {
     }
 
     @Test
-    @Order(3)
+    @Order(4)
     @DisplayName("findById() with existing student")
     void testFindById_whenExists_thenReturnStudent() {
         StudentDTO result = studentDAO.findById(existingStudent.getId());
@@ -64,25 +73,15 @@ class IStudentDAOLifeCyclePerClassTest {
     }
 
     @Test
-    @Order(4)
-    @DisplayName("findAll() when list is not empty")
-    @Disabled
-    void testFindAll_whenListNotEmpty() {
-        Set<StudentDTO> result = studentDAO.findAll();
-        assertEquals(result, Set.of(existingStudent));
-    }
-
-    @Test
-    @DisplayName("findAll() when list is empty")
-    @Disabled
-    @Order(6)
-    void testFindAll_whenListIsEmpty() {
-        Set<StudentDTO> result = studentDAO.findAll();
-        assertEquals(0, result.size(), "El resultado debe ser 0 elementos");
-    }
-
-    @Test
+    @DisplayName("findAll()")
     @Order(5)
+    void testFindAll() {
+        Set<StudentDTO> result = studentDAO.findAll();
+        assertFalse(result.isEmpty(), "El resultado ser una lista con elementos");
+    }
+
+    @Test
+    @Order(6)
     @DisplayName("delete() with existing student")
     void testDelete_ShouldRemoveStudent_WhenExists() {
         studentDAO.delete(existingStudent.getId());

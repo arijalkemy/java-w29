@@ -4,6 +4,8 @@ import com.meli.obtenerdiploma.exception.StudentNotFoundException;
 import com.meli.obtenerdiploma.model.StudentDTO;
 import org.junit.jupiter.api.*;
 
+import java.util.Set;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class IStudentDAOLifeCyclePerMethodTest {
@@ -60,19 +62,6 @@ public class IStudentDAOLifeCyclePerMethodTest {
     }
 
     @Test
-    @DisplayName("findAll() when list is not empty")
-    @Disabled
-    void testFindAll_whenListNotEmpty() {
-    }
-
-    @Test
-    @DisplayName("findAll() when list is empty")
-    @Disabled
-    void testFindAll_whenListIsEmpty() {
-    }
-
-    @Test
-    @Order(5)
     @DisplayName("delete() with existing student")
     void testDelete_ShouldRemoveStudent_WhenExists() {
         StudentDTO existingStudent = new StudentDTO();
@@ -95,4 +84,10 @@ public class IStudentDAOLifeCyclePerMethodTest {
                 "Debería devolver false si el estudiante no existe");
     }
 
+    @Test
+    @DisplayName("findAll()")
+    void testFindAll() {
+        Set<StudentDTO> result = studentDAO.findAll();
+        assertFalse(result.isEmpty(), "El resultado ser una lista con elementos");
+    }
 }

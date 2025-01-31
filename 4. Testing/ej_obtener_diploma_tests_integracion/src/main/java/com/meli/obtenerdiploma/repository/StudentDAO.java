@@ -29,9 +29,7 @@ public class StudentDAO implements IStudentDAO {
             properties.load(new ClassPathResource("application.properties").getInputStream());
             this.SCOPE = properties.getProperty("api.scope");
             this.loadData();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        } catch (IOException ignored) {}
     }
 
     @Override
@@ -56,7 +54,7 @@ public class StudentDAO implements IStudentDAO {
             ret  = true;
             this.saveData();
 
-        } catch (StudentNotFoundException e) {}
+        } catch (StudentNotFoundException ignored) {}
 
         return ret;
     }
@@ -67,7 +65,7 @@ public class StudentDAO implements IStudentDAO {
        try {
            ret  = this.findById(stu.getId()) != null;
        }
-       catch (StudentNotFoundException e) {}
+       catch (StudentNotFoundException ignored) {}
 
        return ret;
     }
@@ -87,14 +85,8 @@ public class StudentDAO implements IStudentDAO {
         File file;
         try {
             file = ResourceUtils.getFile("./src/" + SCOPE + "/resources/users.json");
-            loadedData = objectMapper.readValue(file, new TypeReference<Set<StudentDTO>>(){});
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("Failed while initializing DB, check your resources files");
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Failed while initializing DB, check your JSON formatting.");
-        }
+            loadedData = objectMapper.readValue(file, new TypeReference<>(){});
+        } catch (IOException ignored) {}
 
         this.students = loadedData;
     }
@@ -104,12 +96,6 @@ public class StudentDAO implements IStudentDAO {
         try {
             File file = ResourceUtils.getFile("./src/" + SCOPE + "/resources/users.json");
             objectMapper.writeValue(file, this.students);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("Failed while writing to DB, check your resources files");
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Failed while writing to DB, check your JSON formatting.");
-        }
+        } catch (IOException ignored) {}
     }
 }

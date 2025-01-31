@@ -17,9 +17,10 @@ class CalculateServiceTest {
     RoomDTO room1 = RoomDTO.builder().width(10).length(10).build();
     RoomDTO room2 = RoomDTO.builder().width(20).length(10).build();
     RoomDTO room3 = RoomDTO.builder().width(20).length(30).build();
-    RoomDTO invalidRoomZero = RoomDTO.builder().width(0).length(10).build();
-    RoomDTO invalidRoomNegative = RoomDTO.builder().width(-5).length(10).build();
 
+    RoomDTO invalidRoomZero1 = RoomDTO.builder().width(0).length(10).build();
+    RoomDTO invalidRoomNegative = RoomDTO.builder().width(-5).length(10).build();
+    RoomDTO invalidRoomZero2 = RoomDTO.builder().width(10).length(0).build();
     HouseDTO house = HouseDTO.builder()
             .rooms(List.of(room1, room2, room3))
             .build();
@@ -58,9 +59,18 @@ class CalculateServiceTest {
 
     @Test
     @DisplayName("Test con habitaciones con dimensiones inválidas (0)")
-    void testCalculateWithInvalidRoomDimensionsZero() {
+    void testCalculateWithInvalidRoomDimensionsZero1() {
         HouseDTO houseWithInvalidRoom = HouseDTO.builder()
-                .rooms(List.of(invalidRoomZero))
+                .rooms(List.of(invalidRoomZero1))
+                .build();
+        assertThrows(IllegalArgumentException.class, () -> service.calculate(houseWithInvalidRoom));
+    }
+
+    @Test
+    @DisplayName("Test con habitaciones con dimensiones inválidas (0)")
+    void testCalculateWithInvalidRoomDimensionsZero2() {
+        HouseDTO houseWithInvalidRoom = HouseDTO.builder()
+                .rooms(List.of(invalidRoomZero2))
                 .build();
         assertThrows(IllegalArgumentException.class, () -> service.calculate(houseWithInvalidRoom));
     }

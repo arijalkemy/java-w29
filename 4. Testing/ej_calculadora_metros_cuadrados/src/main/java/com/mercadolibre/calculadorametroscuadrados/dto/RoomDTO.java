@@ -15,9 +15,6 @@ public class RoomDTO {
     private Integer length;
 
     public Integer getSquareFeet() {
-        if (width == null || length == null || width <= 0 || length <= 0) {
-            return null;
-        }
         return width * length;
     }
 }

@@ -35,7 +35,6 @@ public class FindServiceTest {
         assertEquals(expectedCharacters, result, "Los personajes devueltos no coinciden con los esperados.");
     }
 
-
     static Stream<Arguments> testFindAllByNameContains() {
         CharacterDTO luke = new CharacterDTO("Luke Skywalker");
         CharacterDTO leia = new CharacterDTO("Leia Organa");

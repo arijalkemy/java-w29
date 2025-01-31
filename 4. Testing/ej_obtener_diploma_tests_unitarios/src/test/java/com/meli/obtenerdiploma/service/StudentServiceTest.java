@@ -3,6 +3,7 @@ package com.meli.obtenerdiploma.service;
 import com.meli.obtenerdiploma.exception.StudentNotFoundException;
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.repository.IStudentDAO;
+import com.meli.obtenerdiploma.repository.IStudentRepository;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -22,6 +23,9 @@ class StudentServiceTest {
 
     @Mock
     IStudentDAO studentDAO;
+
+    @Mock
+    IStudentRepository studentRepository;
 
     @InjectMocks
     StudentService studentService;
@@ -59,5 +63,12 @@ class StudentServiceTest {
     void testDeleteStudent() {
         studentService.delete(studentDTO.getId());
         verify(studentDAO).delete(studentDTO.getId());
+    }
+
+    @Test
+    @DisplayName("Get all students")
+    void testGetAllStudents() {
+        studentService.getAll();
+        verify(studentRepository).findAll();
     }
 }

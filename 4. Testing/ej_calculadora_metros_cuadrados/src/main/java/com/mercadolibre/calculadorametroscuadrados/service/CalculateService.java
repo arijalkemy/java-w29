@@ -19,7 +19,7 @@ public class CalculateService {
         RoomDTO biggest = null;
         Integer maxRoom = 0;
 
-        if (house.getRooms() == null || house.getRooms().isEmpty()) {
+        if (house.getRooms().isEmpty()) {
             throw new IllegalArgumentException("La casa debe tener al menos una habitación");
         }
 
