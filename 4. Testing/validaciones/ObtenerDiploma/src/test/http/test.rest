@@ -8,12 +8,12 @@ Content-Type: application/json
   "studentName": "hola",
   "subjects": [{
     "name": "Matematicas",
-    "score": 0
+    "score": 5
   },{
     "name": "Lengua",
     "score": 10
   },{
-    "name": "Historia",
+    "name": "Ingles",
     "score": 10
   },{
     "name": "Fisica",
