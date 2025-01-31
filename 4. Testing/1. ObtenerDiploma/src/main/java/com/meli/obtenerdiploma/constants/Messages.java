@@ -7,5 +7,5 @@ public class Messages {
     public static final String SUBJECTS_ERROR = "There must be at least one subject in the list";
     public static final String SUBJECT_NAME_ERROR = "Subject name cannot be empty or null";
     public static final String SCORE_ERROR = "The score must be equal to or greater than zero";
-
+    public static final String SCORE_NULL_ERROR = "The score cannot be empty or null";
 }

@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 
 @Getter @Setter
@@ -14,7 +15,7 @@ public class SubjectDTO {
     @NotBlank (message = Messages.SUBJECT_NAME_ERROR)
     private String name;
 
-    @NonNull
+    @NotNull(message = Messages.SCORE_NULL_ERROR)
     @PositiveOrZero (message = Messages.SCORE_ERROR)
     private Double score;
 }
