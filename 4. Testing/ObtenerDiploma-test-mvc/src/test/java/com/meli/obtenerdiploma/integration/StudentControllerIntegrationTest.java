@@ -1,10 +1,13 @@
 package com.meli.obtenerdiploma.integration;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.meli.obtenerdiploma.exception.StudentNotFoundException;
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
 import com.meli.obtenerdiploma.repository.IStudentDAO;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +23,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import java.util.Arrays;
+import java.util.List;
+
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
 @SpringBootTest
@@ -112,6 +117,68 @@ public class StudentControllerIntegrationTest {
         assertEquals(testStudent.getId(), responseStudent.getId());
         assertEquals(testStudent.getStudentName(), responseStudent.getStudentName());
     }
+
+    @Test
+    void modifyStudent_validStudent() throws Exception {
+        String jsonContent = new ObjectMapper().writeValueAsString(testStudent);
+
+        mockMvc.perform(post("/student/modifyStudent")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(jsonContent))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andReturn();
+    }
+
+    @Test
+    void modifyStudent_invalidStudent() throws Exception {
+        String jsonContent = new ObjectMapper().writeValueAsString(testInvalidStudent);
+
+        mockMvc.perform(post("/student/modifyStudent")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(jsonContent))
+                .andDo(print())
+                .andExpect(status().isBadRequest())
+                .andReturn();
+    }
+
+    @Test
+    void removeStudent_validId() throws Exception {
+        MvcResult result = mockMvc.perform(get("/student/removeStudent/{studentId}", testStudent.getId())
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andReturn();
+
+        // Obtener la respuesta y convertirla a StudentDTO
+        String responseContent = result.getResponse().getContentAsString();
+
+        // 3. Assert
+        assertEquals("", responseContent);
+        assertThrows(StudentNotFoundException.class, () -> studentDAO.findById(testStudent.getId()));
+    }
+
+    @Test
+    void listStudents() throws Exception {
+        // 2. Act
+        MvcResult result = mockMvc.perform(get("/student/listStudents")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andReturn();
+
+        String responseContent = result.getResponse().getContentAsString();
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<StudentDTO> responseStudents = objectMapper.readValue(
+                responseContent,
+                new TypeReference<List<StudentDTO>>() {}
+        );
+
+        // 3. Assert
+        assertNotNull(responseStudents);
+        assertFalse(responseStudents.isEmpty());
+    }
+
 
 
 }
