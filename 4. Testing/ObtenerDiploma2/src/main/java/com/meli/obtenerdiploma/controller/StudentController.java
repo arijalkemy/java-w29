@@ -16,30 +16,30 @@ public class StudentController {
     @Autowired
     IStudentService studentService;
 
-    @PostMapping("/registerStudent")
+    @PostMapping
     public ResponseEntity<?> registerStudent(@RequestBody @Valid StudentDTO stu) {
         this.studentService.create(stu);
         return ResponseEntity.ok(null);
     }
 
-    @GetMapping("/getStudent/{id}")
+    @GetMapping("/{id}")
     public StudentDTO getStudent(@PathVariable Long id) {
         return this.studentService.read(id);
     }
 
-    @PostMapping("/modifyStudent")
+    @PutMapping
     public ResponseEntity<?> modifyStudent(@RequestBody @Valid StudentDTO stu) {
         this.studentService.update(stu);
         return ResponseEntity.ok(null);
     }
 
-    @GetMapping("/removeStudent/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> removeStudent(@PathVariable Long id) {
         this.studentService.delete(id);
         return ResponseEntity.ok(null);
     }
 
-    @GetMapping("/listStudents")
+    @GetMapping
     public Set<StudentDTO> listStudents() {
         return this.studentService.getAll();
     }
