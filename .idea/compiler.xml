@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="JAVA-INTEGRADOR-P2-VIVO" />
+        <module name="POO-P1-EP" />
+        <module name="JAVA-INTEGRADOR-P1" />
+        <module name="JAVA-COMPLEMENTARIO" />
+        <module name="poo" />
+        <module name="JAVA-INTEGRADOR-P2" />
+        <module name="JAVA-AI-VIVO" />
+        <module name="JAVA-P1-VIVO" />
+        <module name="JAVA-POO-P2-VIVO" />
+        <module name="JAVA-RECAP-VIVO" />
+        <module name="JAVA-GLS" />
+        <module name="JAVA-POO-P1-VIVO" />
+        <module name="JAVA-POO.-P2" />
+        <module name="JAVA-P1" />
+        <module name="JAVA-POO-INTEGRADOR-P1-VIVO" />
+        <module name="JAVA-P2" />
+        <module name="JAVA-P2-VIVO" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ejercici1Spring" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ejercici1Spring" options="-parameters" />
+    </option>
+  </component>
+</project>

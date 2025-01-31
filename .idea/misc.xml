@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-P1/JAVA-P1/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-P2/JAVA-P2/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-GLS/JAVA-GLS/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-POO-P1/poo/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-POO-P1/POO-P1-EP/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-POO-P2/JAVA-POO.-P2/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-AI-VIVO/JAVA-AI-VIVO/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-P1-VIVO/JAVA-P1-VIVO/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-P2-VIVO/JAVA-P2-VIVO/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-POO-P1-VIVO/JAVA-POO-P1-VIVO/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-POO-P2-VIVO/JAVA-POO-P2-VIVO/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-INTEGRADOR-P1/JAVA-INTEGRADOR-P1/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-INTEGRADOR-P2/JAVA-INTEGRADOR-P2/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-COMPLEMENTARIO/JAVA-RECAP-VIVO/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-COMPLEMENTARIO/JAVA-COMPLEMENTARIO/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-INTEGRADOR-VIVO/JAVA-POO-INTEGRADOR-P1-VIVO/pom.xml" />
+        <option value="$PROJECT_DIR$/1. Modulo Java/JAVA-INTEGRADOR-P2-VIVO/JAVA-INTEGRADOR-P2-VIVO/pom.xml" />
+        <option value="$PROJECT_DIR$/2. Modulo Spring/Spring-P1/ejercici1Spring/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
