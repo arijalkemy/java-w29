@@ -1,0 +1,22 @@
+GET http://localhost:8080
+
+###
+POST http://localhost:8080/analyzeScores
+Content-Type: application/json
+
+{
+  "studentName": "hola",
+  "subjects": [{
+    "name": "Matematicas",
+    "score": 0
+  },{
+    "name": "Lengua",
+    "score": 10
+  },{
+    "name": "Historia",
+    "score": 10
+  },{
+    "name": "Fisica",
+    "score": 10
+  }]
+}
