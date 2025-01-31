@@ -24,13 +24,10 @@ public class ObtenerDiplomaControllerTests {
 
     @Test
     public void obtenerDiploma() {
-        // arrange
-        StudentDTO stu = TestUtilsGenerator.getStudentWith3Subjects("Marco");
+        StudentDTO stu = TestUtilsGenerator.getStudentWith3Subjects("Eliseo");
 
-        // act
         controller.analyzeScores(stu.getId());
 
-        // assert
         verify(service, atLeastOnce()).analyzeScores(stu.getId());
     }
 

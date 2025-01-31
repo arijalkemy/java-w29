@@ -105,7 +105,12 @@ public class TestUtilsGenerator {
         StudentDTO stu3 = getStudentWith3Subjects("Julio");
         StudentDTO stu4 = getStudentWith3Subjects("Julio Cesar");
 
-        return new HashSet<StudentDTO>(){{add(stu1); add(stu2); add(stu3); add(stu4);}};
+        return new HashSet<>() {{
+            add(stu1);
+            add(stu2);
+            add(stu3);
+            add(stu4);
+        }};
     }
 
     public static void appendNewStudent(StudentDTO stu) {
