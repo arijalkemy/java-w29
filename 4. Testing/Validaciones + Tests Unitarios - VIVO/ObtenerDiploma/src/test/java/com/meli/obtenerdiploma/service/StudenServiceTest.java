@@ -77,25 +77,17 @@ public class StudenServiceTest {
 
     @Test
     void deleteTest() {
-        Long id = 2L;
-
-        doNothing().when(studentDAO).delete(id);
-
+        Long id = 1L;
         studentService.delete(id);
-
         verify(studentDAO, times(1)).delete(id);
     }
 
 
     @Test
     void findAllTest() {
-        Set<StudentDTO> studentDTOSet = new HashSet<>();
-        studentDTOSet.add(studentDTO);
-        List<SubjectDTO> subjectDTOList = new ArrayList<>();
-        SubjectDTO subjectDTO = new SubjectDTO("Lengua", 8.0);
-        subjectDTOList.add(subjectDTO);
+        Set<StudentDTO> studentDTOSet = new HashSet<>(List.of(studentDTO));
+
         when(studentService.getAll()).thenReturn(studentDTOSet);
-        Set<StudentDTO> studentDTOS = studentService.getAll();
-        assertEquals(studentDTOSet, studentDTOS);
+        assertEquals(studentDTOSet, studentService.getAll());
     }
 }
