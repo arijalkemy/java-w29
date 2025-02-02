@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dfadbf7b-6507-479c-a3d6-e03514a65670" name="Changes" comment="" />
+    <list default="true" id="dfadbf7b-6507-479c-a3d6-e03514a65670" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/src/main/java/com/mercadolibre/starwars/StarWarsApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/src/main/java/com/mercadolibre/starwars/controller/FindController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/src/main/java/com/mercadolibre/starwars/dto/CharacterDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/src/main/java/com/mercadolibre/starwars/repositories/CharacterRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/src/main/java/com/mercadolibre/starwars/repositories/CharacterRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/src/main/java/com/mercadolibre/starwars/service/FindService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/src/main/resources/starwars_characters.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/src/test/java/com/mercadolibre/starwars/controller/FindControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/src/test/java/com/mercadolibre/starwars/repositories/CharacterRepositoryImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4. Testing/starwars 2/src/test/java/com/mercadolibre/starwars/service/FindServiceTest.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,34 +32,34 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2rRMD3eTRSB5ibRt90HbhJP33nI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "pairetti__franca",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/fpairetti/Desktop/java-w29",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;pairetti__franca&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/fpairetti/Desktop/java-w29&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.117" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.117" />
       </set>
     </attachedChunks>
   </component>
@@ -53,6 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1736517310479</updated>
       <workItem from="1736517311536" duration="1337000" />
+      <workItem from="1738526882196" duration="33000" />
     </task>
     <servers />
   </component>
