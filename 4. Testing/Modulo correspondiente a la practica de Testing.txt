@@ -1,1 +1,2 @@
 1. Introducción a la calidad de software - P1 - ObtenerDiploma
+2. Validaciones + Tests Unitarios - ObtenerDiploma
