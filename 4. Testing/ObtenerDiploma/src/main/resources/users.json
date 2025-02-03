@@ -1,0 +1,1 @@
+[{"id":1,"studentName":"Juan Pérez","message":"Excelente trabajo","averageScore":9.15,"subjects":[{"name":"Matematicas","score":9.5},{"name":"Literatura","score":8.8}]},{"id":2,"studentName":"Pedro","message":null,"averageScore":null,"subjects":[{"name":"Matemática","score":10.0},{"name":"Física","score":8.0},{"name":"Química","score":4.0}]}]
