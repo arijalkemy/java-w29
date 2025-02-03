@@ -1,6 +1,5 @@
-package com.meli.obtenerdiploma.controllers;
+package com.meli.obtenerdiploma.controller;
 
-import com.meli.obtenerdiploma.controller.ObtenerDiplomaController;
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.service.IObtenerDiplomaService;
 import com.meli.obtenerdiploma.util.TestUtilsGenerator;
