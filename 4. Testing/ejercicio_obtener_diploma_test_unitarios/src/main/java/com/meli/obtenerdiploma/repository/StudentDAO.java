@@ -20,8 +20,7 @@ public class StudentDAO implements IStudentDAO {
 
     private String SCOPE;
 
-    private Set<StudentDTO> students;
-
+    public static Set<StudentDTO> students;
 
     public StudentDAO() {
         Properties properties =  new Properties();
@@ -57,7 +56,9 @@ public class StudentDAO implements IStudentDAO {
             ret  = true;
             this.saveData();
 
-        } catch (StudentNotFoundException e) {}
+        } catch (StudentNotFoundException e) {
+            throw e;
+        }
 
         return ret;
     }
@@ -68,7 +69,9 @@ public class StudentDAO implements IStudentDAO {
        try {
            ret  = this.findById(stu.getId()) != null;
        }
-       catch (StudentNotFoundException e) {}
+       catch (StudentNotFoundException e) {
+           throw e;
+       }
 
        return ret;
     }

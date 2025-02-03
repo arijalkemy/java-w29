@@ -1,9 +1,11 @@
-package com.meli.obtenerdiploma.model;
+package com.meli.obtenerdiploma.unittest.model;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
+
+import com.meli.obtenerdiploma.model.SubjectDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,13 +1,11 @@
-package com.meli.obtenerdiploma.service;
+package com.meli.obtenerdiploma.unittest.service;
 
 
 import com.meli.obtenerdiploma.exception.StudentNotFoundException;
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
 import com.meli.obtenerdiploma.repository.IStudentDAO;
-import com.meli.obtenerdiploma.repository.IStudentRepository;
-import com.meli.obtenerdiploma.repository.StudentDAO;
-import org.junit.jupiter.api.BeforeEach;
+import com.meli.obtenerdiploma.service.ObtenerDiplomaService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -49,11 +47,11 @@ public class ObtenerDiplomaServiceTest {
         verify(studentDAO).findById(studentId);
     }
 
-    @Test
+    @Test // en este caso está mal xq el metodo del servicio no maneja la excepcion. lo hace el DAO.
     public void analyzeScoresThrowStudentNotFoundException() {
         Long studentId = 1L;
 
-        when(studentDAO.findById(studentId)).thenThrow(new StudentNotFoundException(studentId));
+        when(studentDAO.findById(studentId)).thenThrow(new StudentNotFoundException(studentId)); // por lo general sería thenReturn(Optional.empty)
 
         assertThrows(StudentNotFoundException.class, () -> obtenerDiplomaService.analyzeScores(studentId));
 
