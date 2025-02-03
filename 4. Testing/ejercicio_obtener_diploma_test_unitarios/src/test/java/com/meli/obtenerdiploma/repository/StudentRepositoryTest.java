@@ -2,17 +2,16 @@ package com.meli.obtenerdiploma.repository;
 
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.model.SubjectDTO;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 import javax.validation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class StudentRepositoryTest {
 
@@ -28,7 +27,7 @@ public class StudentRepositoryTest {
     }
 
     @Test
-    public void canNotCreateNewStudentDTOTest(){
+    public void canNotCreateNewStudentDTOTest() {
         StudentDTO dto = new StudentDTO(3L, "", null, null, null);
 
         Set<ConstraintViolation<StudentDTO>> violations = validator.validate(dto);
@@ -37,7 +36,7 @@ public class StudentRepositoryTest {
     }
 
     @Test
-    public void canCreateNewStudentDTOTest(){
+    public void canCreateNewStudentDTOTest() {
         List<SubjectDTO> subjectDTOs = new ArrayList<>();
         subjectDTOs.add(new SubjectDTO("Test", 7.0));
         StudentDTO dto = new StudentDTO(3L, "Juan", null, null, subjectDTOs);
@@ -48,7 +47,7 @@ public class StudentRepositoryTest {
     }
 
     @Test
-    public void canSaveNewStudentDTOTest(){
+    public void canSaveNewStudentDTOTest() {
         StudentDTO dto = new StudentDTO(3L, "Juan", null, null, null);
 
         studentDAO.save(dto);
@@ -56,11 +55,6 @@ public class StudentRepositoryTest {
         assertEquals(dto.getId(), studentDAO.findById(3L).getId());
         assertNotEquals("", studentDAO.findById(3L).getStudentName());
     }
-
-
-
-
-
 
 
 }
