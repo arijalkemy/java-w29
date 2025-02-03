@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IVehicleService {
     List<VehicleDto> searchAllVehicles();
+    List<VehicleDto> getByFuelType(String type);
 }

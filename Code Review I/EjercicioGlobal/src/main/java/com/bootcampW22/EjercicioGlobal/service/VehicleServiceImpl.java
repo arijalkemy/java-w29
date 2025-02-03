@@ -30,4 +30,18 @@ public class VehicleServiceImpl implements IVehicleService{
                 .map(v -> mapper.convertValue(v,VehicleDto.class))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<VehicleDto> getByFuelType(String type) {
+        List<Vehicle> vehicles = vehicleRepository.getByFuelType(type);
+        if(vehicles.isEmpty()){
+            throw new NotFoundException(String.format("No se encontraron vehículos con el tipo de combustible: %s", type));
+        }
+        return vehicles.stream().map(this::toDto).toList();
+    }
+
+    private VehicleDto toDto(Vehicle vehicle){
+        ObjectMapper om = new ObjectMapper();
+        return om.convertValue(vehicle, VehicleDto.class);
+    }
 }
