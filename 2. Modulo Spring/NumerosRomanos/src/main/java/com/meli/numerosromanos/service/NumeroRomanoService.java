@@ -26,7 +26,6 @@ public class NumeroRomanoService {
         StringBuilder roman = new StringBuilder();
 
         for (Map.Entry<Integer, String> element : romanos) {
-            System.out.println(element.getKey() + ": " + element.getValue() + " " + numero);
             while (numero >= element.getKey()) {
                 roman.append(element.getValue());
                 numero -= element.getKey();
