@@ -56,7 +56,7 @@ public class StudentDAOTest {
     @DisplayName("save Happy Path")
     public void save() {
         StudentDTO param = new StudentDTO(1L, "Juan", null, null, List.of());
-        
+
         studentDAO.save(param);
 
         assertTrue(StudentDAO.students.contains(param)); // en realidad se llama al repo.findAll() pero tengo problemas con el json
