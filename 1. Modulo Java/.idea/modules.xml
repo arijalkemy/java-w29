@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/1. Modulo Java.iml" filepath="$PROJECT_DIR$/.idea/1. Modulo Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/p1_PooEjerPrac_Automovil/p1_PooEjerPrac_Automovil.iml" filepath="$PROJECT_DIR$/POO/p1_PooEjerPrac_Automovil/p1_PooEjerPrac_Automovil.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/p1_PooEjerPrac_IMC/p1_PooEjerPrac_IMC.iml" filepath="$PROJECT_DIR$/POO/p1_PooEjerPrac_IMC/p1_PooEjerPrac_IMC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Introduccion/p1_introEjerPrac/p1_introEjerPrac.iml" filepath="$PROJECT_DIR$/Introduccion/p1_introEjerPrac/p1_introEjerPrac.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Introduccion/p1_introEjerPrac_TemperaturasGlobales/p1_introEjerPrac_TemperaturasGlobales.iml" filepath="$PROJECT_DIR$/Introduccion/p1_introEjerPrac_TemperaturasGlobales/p1_introEjerPrac_TemperaturasGlobales.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/p2_PooEjerPract_ManejoExcepcions/p2_PooEjerPract_ManejoExcepcions.iml" filepath="$PROJECT_DIR$/POO/p2_PooEjerPract_ManejoExcepcions/p2_PooEjerPract_ManejoExcepcions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Introduccion/p2_introEjerPrac/p2_introEjerPrac.iml" filepath="$PROJECT_DIR$/Introduccion/p2_introEjerPrac/p2_introEjerPrac.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Introduccion/p2_introEjerPrac_CarreraSelva/p2_introEjerPrac_CarreraSelva.iml" filepath="$PROJECT_DIR$/Introduccion/p2_introEjerPrac_CarreraSelva/p2_introEjerPrac_CarreraSelva.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,44 @@
+crcardenas@CO000MLJ40R604X java-w29 % pwd
+/Users/crcardenas/Documents/JavaW29/java-w29
+crcardenas@CO000MLJ40R604X java-w29 % ls
+0. Modulo Git				3. Sprint I				6. Bases de datos			9. Sprint III
+1. Modulo Java				4. Testing				7. Implementacion de bases de datos	README.md
+2. Modulo Spring			5. Sprint II				8. Sistemas distribuidos
+crcardenas@CO000MLJ40R604X java-w29 % cd 0. Modulo Git 
+cd: too many arguments
+crcardenas@CO000MLJ40R604X java-w29 % cd 1
+cd: no such file or directory: 1
+crcardenas@CO000MLJ40R604X java-w29 % cd Modulo Git
+cd: string not in pwd: Modulo
+crcardenas@CO000MLJ40R604X java-w29 % cd 0._Modulo_Git
+cd: no such file or directory: 0._Modulo_Git
+crcardenas@CO000MLJ40R604X java-w29 % cd 0
+cd: no such file or directory: 0
+crcardenas@CO000MLJ40R604X java-w29 % cd 0. Modulo Git
+cd: too many arguments
+crcardenas@CO000MLJ40R604X java-w29 % cd 0.\ Modulo\ Git
+crcardenas@CO000MLJ40R604X 0. Modulo Git % pws
+zsh: command not found: pws
+crcardenas@CO000MLJ40R604X 0. Modulo Git % pwd
+/Users/crcardenas/Documents/JavaW29/java-w29/0. Modulo Git
+crcardenas@CO000MLJ40R604X 0. Modulo Git % ls
+Modulo correspondiente a la practica de Git.txt	archivos
+crcardenas@CO000MLJ40R604X 0. Modulo Git % cd archivos
+crcardenas@CO000MLJ40R604X archivos % pwd
+/Users/crcardenas/Documents/JavaW29/java-w29/0. Modulo Git/archivos
+crcardenas@CO000MLJ40R604X archivos % touch prueba.txt
+crcardenas@CO000MLJ40R604X archivos % ls
+prueba.txt
+crcardenas@CO000MLJ40R604X archivos % touch hola.txt  
+crcardenas@CO000MLJ40R604X archivos % ls
+hola.txt	prueba.txt
+crcardenas@CO000MLJ40R604X archivos % mv hola.txt prueba2.txt
+crcardenas@CO000MLJ40R604X archivos % ls
+prueba.txt	prueba2.txt
+crcardenas@CO000MLJ40R604X archivos % mv prueba.txt prueba1.txt
+crcardenas@CO000MLJ40R604X archivos % ls
+prueba1.txt	prueba2.txt
+crcardenas@CO000MLJ40R604X archivos % rm prueba2.txt
+crcardenas@CO000MLJ40R604X archivos % ls
+prueba1.txt
+crcardenas@CO000MLJ40R604X archivos % 
