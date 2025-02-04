@@ -62,16 +62,7 @@ public class StudentDAO implements IStudentDAO {
         return ret;
     }
 
-    public boolean exists(StudentDTO stu) {
-       boolean ret = false;
 
-       try {
-           ret  = this.findById(stu.getId()) != null;
-       }
-       catch (StudentNotFoundException e) {}
-
-       return ret;
-    }
 
     @Override
     public StudentDTO findById(Long id) {
