@@ -28,7 +28,7 @@ public class SportsController {
     PersonService personService = new PersonService();
     SportService sportService = new SportService();
     @GetMapping("findSports")
-    public ResponseEntity<List<Sport>> getAllSports(String param) {
+    public ResponseEntity<List<Sport>> getAllSports() {
         List<Sport> sports = sportService.getAllSports();
         return new ResponseEntity<List<Sport>>(sports,HttpStatus.OK);
     }
@@ -50,7 +50,6 @@ public class SportsController {
 
     @PostMapping("addPerson")
     public ResponseEntity<String> createPerson(@RequestBody Person person) {
-        //TODO: process POST request
         personService.add(person);
         return new ResponseEntity<>("SE HA CREADO CORRECTAMENTE",HttpStatus.OK);
     }
