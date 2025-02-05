@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.Optional;
 
 @Service
-public class IngredientService {
+public class IngredientServiceImpl implements IngredientService {
     @Autowired
     private IngredientRepository ingredientRepository;
 

@@ -1,4 +1,0 @@
-GET http://localhost:8080/products/followed/3/list
-
-###
-GET http://localhost:8080

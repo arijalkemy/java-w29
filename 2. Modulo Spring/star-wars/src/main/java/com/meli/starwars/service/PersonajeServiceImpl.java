@@ -1,7 +1,6 @@
 package com.meli.starwars.service;
 
 import com.meli.starwars.dto.PersonajeDTO;
-import com.meli.starwars.entity.Personaje;
 import com.meli.starwars.repository.PersonajeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,14 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class PersonajeService {
+public class PersonajeServiceImpl implements PersonajeService {
     public PersonajeRepository personajeRepository;
 
     @Autowired
-    public PersonajeService(PersonajeRepository personajeRepository) {
+    public PersonajeServiceImpl(PersonajeRepository personajeRepository) {
         this.personajeRepository = personajeRepository;
     }
 
+    @Override
     public List<PersonajeDTO> findByName(String name) {
         List<PersonajeDTO> personajesDTO = new ArrayList<>();
         personajeRepository.getPersonajes().stream().filter(personaje -> personaje.name.contains(name)).forEach(
@@ -28,6 +28,7 @@ public class PersonajeService {
         return personajesDTO;
     }
 
+    @Override
     public List<PersonajeDTO> findAll() {
         List<PersonajeDTO> personajesDTO = new ArrayList<>();
         personajeRepository.getPersonajes().stream().forEach(

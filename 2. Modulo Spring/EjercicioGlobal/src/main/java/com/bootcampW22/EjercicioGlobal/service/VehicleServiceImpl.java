@@ -2,6 +2,8 @@ package com.bootcampW22.EjercicioGlobal.service;
 
 import com.bootcampW22.EjercicioGlobal.dto.VehicleDto;
 import com.bootcampW22.EjercicioGlobal.entity.Vehicle;
+import com.bootcampW22.EjercicioGlobal.exception.BadRequestException;
+import com.bootcampW22.EjercicioGlobal.exception.ConflictException;
 import com.bootcampW22.EjercicioGlobal.exception.NotFoundException;
 import com.bootcampW22.EjercicioGlobal.repository.IVehicleRepository;
 import com.bootcampW22.EjercicioGlobal.repository.VehicleRepositoryImpl;
@@ -58,6 +60,22 @@ public class VehicleServiceImpl implements IVehicleService{
         return "Vehiculos guardados correctamente";
     }
 
+    public String saveVehicle(VehicleDto vehicleDTO){
+        if (vehicleRepository.findById(vehicleDTO.getId())==null){
+            if(isVehicleDtoValid(vehicleDTO)){
+                vehicleRepository.saveVehicule(vehicleDTO);
+                return "Vehiculos guardados correctamente";
+            }
+            else {
+                throw new BadRequestException("El vehiculo tiene datos incompletos");
+            }
+        }
+        else {
+            throw new ConflictException("El vehiculo ya existe");
+        }
+
+    }
+
     @Override
     public String updateSpeedVehicle(Integer newSpeed, Long id){
         Vehicle vehicle = Optional.ofNullable(vehicleRepository.findById(id)).orElse(null);
@@ -106,4 +124,20 @@ public class VehicleServiceImpl implements IVehicleService{
     public List<Vehicle> findByWeigth(Double minWeight, Double MaxWeight){
         return vehicleRepository.findAll().stream().filter(vehicle -> vehicle.getWeight()<=MaxWeight && vehicle.getWeight()>=minWeight).collect(Collectors.toList());
     };
+
+    private boolean isVehicleDtoValid(VehicleDto vehicleDTO) {
+        return vehicleDTO.getId() != null &&
+                vehicleDTO.getBrand() != null &&
+                vehicleDTO.getModel() != null &&
+                vehicleDTO.getRegistration() != null &&
+                vehicleDTO.getColor() != null &&
+                vehicleDTO.getYear() > 0 &&
+                vehicleDTO.getMax_speed() != null &&
+                vehicleDTO.getPassengers() > 0 &&
+                vehicleDTO.getFuel_type() != null &&
+                vehicleDTO.getTransmission() != null &&
+                vehicleDTO.getHeight() > 0 &&
+                vehicleDTO.getWidth() > 0 &&
+                vehicleDTO.getWeight() > 0;
+    }
 }

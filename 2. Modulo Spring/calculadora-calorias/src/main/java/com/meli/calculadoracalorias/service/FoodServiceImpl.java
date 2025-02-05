@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class FoodService {
+public class FoodServiceImpl implements FoodService {
     @Autowired
     FoodRepository foodRepository;
 

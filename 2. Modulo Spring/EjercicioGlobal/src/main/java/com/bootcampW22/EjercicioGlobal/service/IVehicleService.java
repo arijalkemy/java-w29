@@ -12,6 +12,7 @@ public interface IVehicleService {
     List<Vehicle> findByYearBrand(Integer startYear, Integer endYear, String brand);
     Double averageSpeedBrand(String brand);
     String saveVehicles(List<VehicleDto> vehicleDTOs);
+    String saveVehicle(VehicleDto vehicleDto);
     String updateSpeedVehicle(Integer newSpeed, Long id);
     List<Vehicle> findByFuelType(String fuelType);
     String deleteById(Long id);
