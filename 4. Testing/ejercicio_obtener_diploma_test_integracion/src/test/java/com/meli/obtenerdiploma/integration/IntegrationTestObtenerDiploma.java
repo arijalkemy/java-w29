@@ -116,7 +116,6 @@ public class IntegrationTestObtenerDiploma {
 
     @Test
     void testGivenAnInvalidStudentIdThrowExceptionMessage() throws Exception {
-
         this.mockMvc.perform(MockMvcRequestBuilders.get("/analyzeScores/{studentId}", 22))
                 .andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isNotFound())
