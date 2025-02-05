@@ -1,0 +1,22 @@
+# ???
+Elosanz
+Elosanz.pub
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Maven/Gradle
+target/
+.gradle/
+build/
+
+# Logs
+*.log
+
+# macOS specific
+.DS_Store
+
+# Spring Boot environment properties
+*.env
