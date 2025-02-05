@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "22a02fd6-51c7-4edd-a944-0fb75789d780",
+		"name": "Sprint 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "41478433"
+	},
+	"item": [
+		{
+			"name": "basic crud",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "findAll",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 4,\n    \"user_name\": \"Mateo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/users"
+							},
+							"response": []
+						},
+						{
+							"name": "Find by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8080/users/4"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "http://localhost:8080/users/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Update by id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 4,\n    \"user_name\": \"Mateo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/users/4"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "posts",
+					"item": [
+						{
+							"name": "findAll",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 4,\n    \"user_name\": \"Mateo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/products"
+							},
+							"response": []
+						},
+						{
+							"name": "Find by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8080/products/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "http://localhost:8080/products/1"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "US 0001: /users/{{userId}}/follow/{{userIdToFollow}}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "localhost:8080/users/{{commonUserId}}/follow/{{sellerId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "US 0002: /users/{{userId}}/followers/count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/users/{{sellerId}}/followers/count"
+			},
+			"response": []
+		},
+		{
+			"name": "US 0003: /users/{{userId}}/followers/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/users/{{sellerId}}/followers/list"
+			},
+			"response": []
+		},
+		{
+			"name": "US 0004: /users/{{userId}}/followed/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/users/{{commonUserId}}/followed/list"
+			},
+			"response": []
+		},
+		{
+			"name": "US 0005: /products/post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1,\n    \"date\": \"24-01-2025\",\n    \"product\": {\n        \"product_id\": 4,\n        \"product_name\": \"Producto recién creado 3\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/products/post"
+			},
+			"response": []
+		},
+		{
+			"name": "US 0006: /products/followed/{{userId}}/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/products/followed/{{commonUserId}}/list"
+			},
+			"response": []
+		},
+		{
+			"name": "US 0007 /users/{{userId}}/unfollow/{{userIdToUnfollow}}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "localhost:8080/users/{{commonUserId}}/unfollow/{{sellerId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "US 0008 /users/{{UserID}}/followers/list?order=name_asc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/{{sellerId}}/followers/list?order=name_asc",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"{{sellerId}}",
+						"followers",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "name_asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0008 /users/{{UserID}}/followed/list?order=name_asc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/{{commonUserId}}/followed/list?order=name_asc",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"{{commonUserId}}",
+						"followed",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "name_asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0010 /products/promo-post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/products/promo-post"
+			},
+			"response": []
+		},
+		{
+			"name": "US 0009: /products/followed/{userId}/list?order=date_asc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/products/followed/{{commonUserId}}/list?order=date_asc",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"followed",
+						"{{commonUserId}}",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "date_asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0011: /products/promo-post/count?user_id={{userId}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/products/promo-post/count?user_id={{sellerId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post",
+						"count"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "{{sellerId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "US 0012: /products/promo-post/list?user_id={{seller_id}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/products/promo-post/list?seller_id={{sellerId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"promo-post",
+						"list"
+					],
+					"query": [
+						{
+							"key": "seller_id",
+							"value": "{{sellerId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "sellerId",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "commonUserId",
+			"value": "4",
+			"type": "string"
+		}
+	]
+}
