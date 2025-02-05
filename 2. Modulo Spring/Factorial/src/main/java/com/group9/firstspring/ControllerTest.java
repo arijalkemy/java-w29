@@ -6,15 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/factorial")
 public class ControllerTest {
-
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello World!";
-    }
-
-    @GetMapping("/factorial/{number}")
+    @GetMapping("/{number}")
     public Long obtenerFactorial(@PathVariable Long number) {
         if (number == 0) {
             return 1L;
