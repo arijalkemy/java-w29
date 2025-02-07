@@ -1,0 +1,3042 @@
+{
+	"info": {
+		"_postman_id": "7bd3e12d-b9b7-40dc-9d5e-3096f911b672",
+		"name": "MELISocial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39990494"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "sellers",
+					"item": [
+						{
+							"name": "Get Seller Followers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{userId}}/followers/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{userId}}",
+										"followers",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Seller Followers (Desc)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{userId}}/followers/list?order=name_desc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{userId}}",
+										"followers",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "name_desc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Seller Followers Count",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{userId}}/followers/count",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{userId}}",
+										"followers",
+										"count"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create seller",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Follow Seller",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/3/follow/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"3",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "clients",
+					"item": [
+						{
+							"name": "Get Followed Sellers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{userId}}/followed/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{userId}}",
+										"followed",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Followed Sellers (Desc)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{userId}}/followed/list?order=name_desc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{userId}}",
+										"followed",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "name_desc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Unfollow seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/1/unfollow/2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"1",
+										"unfollow",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create client",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"client\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/clients",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Follow seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/1/follow/2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"1",
+										"follow",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "Get promo posts from seller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/promo-post/list?user_id=0",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"promo-post",
+								"list"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get promo posts count from seller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/promo-post/count?user_id=0",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"promo-post",
+								"count"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Post Without Discount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"user_id\":2,\n   \"date\":\"29-04-2021\",\n   \"product\":{\n      \"product_id\":1,\n      \"product_name\":\"Silla Gamer\",\n      \"type\":\"Gamer\",\n      \"brand\":\"Racer\",\n      \"color\":\"Red & Black\",\n      \"notes\":\"Special Edition\"\n   },\n   \"category\":100,\n   \"price\":1500.50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Post With Discount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"user_id\":0,\n   \"date\":\"29-04-2021\",\n   \"product\":{\n      \"product_id\":1,\n      \"product_name\":\"Silla Gamer\",\n      \"type\":\"Gamer\",\n      \"brand\":\"Racer\",\n      \"color\":\"Red & Black\",\n      \"notes\":\"Special Edition\"\n   },\n   \"category\":100,\n   \"price\":1500.50,\n   \"discount\": 50.0,\n   \"has_promo\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/promo-post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"promo-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get feed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/followed/0/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"followed",
+								"0",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "demo",
+			"item": [
+				{
+					"name": "US 1: Poder seguir a un vendedor",
+					"item": [
+						{
+							"name": "1. Create client",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const clientId = data.user_id;",
+											"pm.collectionVariables.set(\"clientId\", clientId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"client1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/clients",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Create seller",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const sellerId = data.user_id;",
+											"pm.collectionVariables.set(\"sellerId\", sellerId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Follow seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{clientId}}",
+										"follow",
+										"{{sellerId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "US 2: Obtener cantidad de seguidores de un vendedor",
+					"item": [
+						{
+							"name": "1. Create seller",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const sellerId = data.user_id;",
+											"pm.collectionVariables.set(\"sellerId\", sellerId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Create first client",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const clientId = data.user_id;",
+											"pm.collectionVariables.set(\"clientId\", clientId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"client1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/clients",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. First client follows seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{clientId}}",
+										"follow",
+										"{{sellerId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4. Create second client",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const clientId = data.user_id;",
+											"pm.collectionVariables.set(\"clientId\", clientId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"client2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/clients",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5. Second client follows seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{clientId}}",
+										"follow",
+										"{{sellerId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "6. Get amount of followers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{sellerId}}/followers/count",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{sellerId}}",
+										"followers",
+										"count"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "US 3: Obtener seguidores de un vendedor",
+					"item": [
+						{
+							"name": "1. Create seller",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const sellerId = data.user_id;",
+											"pm.collectionVariables.set(\"sellerId\", sellerId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Create first client",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const clientId = data.user_id;",
+											"pm.collectionVariables.set(\"clientId\", clientId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"client1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/clients",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. First client follows seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{clientId}}",
+										"follow",
+										"{{sellerId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4. Create second client",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const clientId = data.user_id;",
+											"pm.collectionVariables.set(\"clientId\", clientId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"client2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/clients",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5. Second client follows seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{clientId}}",
+										"follow",
+										"{{sellerId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "6. Get followers from seller",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{sellerId}}/followers/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{sellerId}}",
+										"followers",
+										"list"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "US 4: Obtener vendedores seguidos por usuario",
+					"item": [
+						{
+							"name": "1. Create client",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const clientId = data.user_id;",
+											"pm.collectionVariables.set(\"clientId\", clientId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"client1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/clients",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Create seller",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const sellerId = data.user_id;",
+											"pm.collectionVariables.set(\"sellerId\", sellerId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Client follows seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{clientId}}",
+										"follow",
+										"{{sellerId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4. Get Followed Sellers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{clientId}}/followed/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{clientId}}",
+										"followed",
+										"list"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "US 5: Dar de alta publicación",
+					"item": [
+						{
+							"name": "1. Create seller",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const sellerId = data.user_id;",
+											"pm.collectionVariables.set(\"sellerId\", sellerId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Create post",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
+											"    nextProductId = -1;",
+											"}",
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": {{sellerId}},\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": {{nextProductId}},\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "US 6: Obtener feed",
+					"item": [
+						{
+							"name": "1. Create first seller",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const sellerId = data.user_id;",
+											"pm.collectionVariables.set(\"sellerId\", sellerId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. First seller creates first post",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
+											"    nextProductId = -1;",
+											"}",
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": {{sellerId}},\n    \"date\": \"26-01-2025\",\n    \"product\": {\n        \"product_id\": {{nextProductId}},\n        \"product_name\": \"Super Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. First seller creates second post",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
+											"    nextProductId = -1;",
+											"}",
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": {{sellerId}},\n    \"date\": \"26-01-2025\",\n    \"product\": {\n        \"product_id\": {{nextProductId}},\n        \"product_name\": \"Parlantes\",\n        \"type\": \"Electrodoméstico\",\n        \"brand\": \"Logitech\",\n        \"color\": \"Black\"\n    },\n    \"category\": 101,\n    \"price\": 2500.50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4. Create client",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const clientId = data.user_id;",
+											"pm.collectionVariables.set(\"clientId\", clientId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"client1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/clients",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5. Client follows first seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{clientId}}",
+										"follow",
+										"{{sellerId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "6. Create second seller",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const sellerId = data.user_id;",
+											"pm.collectionVariables.set(\"sellerId\", sellerId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "7. Second seller creates first post",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
+											"    nextProductId = -1;",
+											"}",
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": {{sellerId}},\n    \"date\": \"26-01-2025\",\n    \"product\": {\n        \"product_id\": {{nextProductId}},\n        \"product_name\": \"Monitor Ultrawide\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Xiaomi\",\n        \"color\": \"Black\",\n        \"notes\": \"Incluye HDMI\"\n    },\n    \"category\": 102,\n    \"price\": 4500.00\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "8. Second seller creates second post",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
+											"    nextProductId = -1;",
+											"}",
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": {{sellerId}},\n    \"date\": \"26-01-2025\",\n    \"product\": {\n        \"product_id\": {{nextProductId}},\n        \"product_name\": \"MX Master 3\",\n        \"type\": \"Productividad\",\n        \"brand\": \"Logitech\",\n        \"color\": \"Space gray\"\n    },\n    \"category\": 103,\n    \"price\": 2500.50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "9. Client follows second seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{clientId}}",
+										"follow",
+										"{{sellerId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "10. Get feed",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/followed/{{clientId}}/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"followed",
+										"{{clientId}}",
+										"list"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "US 7: Dejar de seguir a un vendedor",
+					"item": [
+						{
+							"name": "1. Create client",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const clientId = data.user_id;",
+											"pm.collectionVariables.set(\"clientId\", clientId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"client1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/clients",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Create seller",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const sellerId = data.user_id;",
+											"pm.collectionVariables.set(\"sellerId\", sellerId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Follow seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{clientId}}",
+										"follow",
+										"{{sellerId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4. Unfollow seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{clientId}}/unfollow/{{sellerId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{clientId}}",
+										"unfollow",
+										"{{sellerId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "US 8: Ordenar resultados alfabéticamente",
+					"item": [
+						{
+							"name": "US 3: Obtener seguidores de un vendedor",
+							"item": [
+								{
+									"name": "1. Create seller",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const data = pm.response.json();",
+													"const sellerId = data.user_id;",
+													"pm.collectionVariables.set(\"sellerId\", sellerId);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user_name\": \"seller1\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/users/sellers",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"sellers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2. Create first client",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const data = pm.response.json();",
+													"const clientId = data.user_id;",
+													"pm.collectionVariables.set(\"clientId\", clientId);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user_name\": \"client1\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/users/clients",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"clients"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "3. First client follows seller",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"{{clientId}}",
+												"follow",
+												"{{sellerId}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "4. Create second client",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const data = pm.response.json();",
+													"const clientId = data.user_id;",
+													"pm.collectionVariables.set(\"clientId\", clientId);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user_name\": \"client2\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/users/clients",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"clients"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "5. Second client follows seller",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"{{clientId}}",
+												"follow",
+												"{{sellerId}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "6. Get followers from seller (ascendent)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/users/{{sellerId}}/followers/list?order=name_asc",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"{{sellerId}}",
+												"followers",
+												"list"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "name_asc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "7. Get followers from seller (descendent)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/users/{{sellerId}}/followers/list?order=name_desc",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"{{sellerId}}",
+												"followers",
+												"list"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "name_desc"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "US 4: Obtener vendedores seguidos por usuario",
+							"item": [
+								{
+									"name": "1. Create client",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const data = pm.response.json();",
+													"const clientId = data.user_id;",
+													"pm.collectionVariables.set(\"clientId\", clientId);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user_name\": \"client1\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/users/clients",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"clients"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2. Create first seller",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const data = pm.response.json();",
+													"const sellerId = data.user_id;",
+													"pm.collectionVariables.set(\"sellerId\", sellerId);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user_name\": \"seller1\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/users/sellers",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"sellers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "3. Client follows first seller",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"{{clientId}}",
+												"follow",
+												"{{sellerId}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2. Create second seller",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const data = pm.response.json();",
+													"const sellerId = data.user_id;",
+													"pm.collectionVariables.set(\"sellerId\", sellerId);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user_name\": \"seller2\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/users/sellers",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"sellers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "3. Client follows second seller",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"{{clientId}}",
+												"follow",
+												"{{sellerId}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "4. Get Followed Sellers",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/users/{{clientId}}/followed/list",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"{{clientId}}",
+												"followed",
+												"list"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "5. Get Followed Sellers (ascendent)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/users/{{clientId}}/followed/list?order=name_asc",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"{{clientId}}",
+												"followed",
+												"list"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "name_asc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "6. Get Followed Sellers (descendent)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/users/{{clientId}}/followed/list?order=name_desc",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"users",
+												"{{clientId}}",
+												"followed",
+												"list"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "name_desc"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "US 9: Ordenar feed por fecha",
+					"item": [
+						{
+							"name": "1. Create first seller",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const sellerId = data.user_id;",
+											"pm.collectionVariables.set(\"sellerId\", sellerId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. First seller creates first post",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
+											"    nextProductId = -1;",
+											"}",
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": {{sellerId}},\n    \"date\": \"26-01-2025\",\n    \"product\": {\n        \"product_id\": {{nextProductId}},\n        \"product_name\": \"Super Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. First seller creates second post",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
+											"    nextProductId = -1;",
+											"}",
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": {{sellerId}},\n    \"date\": \"26-01-2025\",\n    \"product\": {\n        \"product_id\": {{nextProductId}},\n        \"product_name\": \"Parlantes\",\n        \"type\": \"Electrodoméstico\",\n        \"brand\": \"Logitech\",\n        \"color\": \"Black\"\n    },\n    \"category\": 101,\n    \"price\": 2500.50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4. Create client",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const clientId = data.user_id;",
+											"pm.collectionVariables.set(\"clientId\", clientId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"client1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/clients",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5. Client follows first seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{clientId}}",
+										"follow",
+										"{{sellerId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "6. Create second seller",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const sellerId = data.user_id;",
+											"pm.collectionVariables.set(\"sellerId\", sellerId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "7. Second seller creates first post",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
+											"    nextProductId = -1;",
+											"}",
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": {{sellerId}},\n    \"date\": \"26-01-2025\",\n    \"product\": {\n        \"product_id\": {{nextProductId}},\n        \"product_name\": \"Monitor Ultrawide\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Xiaomi\",\n        \"color\": \"Black\",\n        \"notes\": \"Incluye HDMI\"\n    },\n    \"category\": 102,\n    \"price\": 4500.00\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "8. Second seller creates second post",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
+											"    nextProductId = -1;",
+											"}",
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": {{sellerId}},\n    \"date\": \"24-01-2025\",\n    \"product\": {\n        \"product_id\": {{nextProductId}},\n        \"product_name\": \"MX Master 3\",\n        \"type\": \"Productividad\",\n        \"brand\": \"Logitech\",\n        \"color\": \"Space gray\"\n    },\n    \"category\": 103,\n    \"price\": 2500.50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "9. Client follows second seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/{{clientId}}/follow/{{sellerId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"{{clientId}}",
+										"follow",
+										"{{sellerId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "10. Get feed (ascendent)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/followed/{{clientId}}/list?order=date_asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"followed",
+										"{{clientId}}",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "11. Get feed (descendent)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/followed/{{clientId}}/list?order=date_desc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"followed",
+										"{{clientId}}",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_desc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "US 10: Dar de alta publicación con promoción",
+					"item": [
+						{
+							"name": "1. Create seller",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const sellerId = data.user_id;",
+											"pm.collectionVariables.set(\"sellerId\", sellerId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Create promo post",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
+											"    nextProductId = -1;",
+											"}",
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": {{sellerId}},\n    \"date\": \"27-01-2025\",\n    \"product\": {\n        \"product_id\": {{nextProductId}},\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"discount\": 0.5,\n    \"has_promo\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/promo-post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"promo-post"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "US 11: Obtener cantidad de productos en promoción de un vendedor",
+					"item": [
+						{
+							"name": "1. Create seller",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const sellerId = data.user_id;",
+											"pm.collectionVariables.set(\"sellerId\", sellerId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Create first promo post",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
+											"    nextProductId = -1;",
+											"}",
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": {{sellerId}},\n    \"date\": \"27-01-2025\",\n    \"product\": {\n        \"product_id\": {{nextProductId}},\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"discount\": 0.5,\n    \"has_promo\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/promo-post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"promo-post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Create second promo post",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
+											"    nextProductId = -1;",
+											"}",
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": {{sellerId}},\n    \"date\": \"24-01-2025\",\n    \"product\": {\n        \"product_id\": {{nextProductId}},\n        \"product_name\": \"Monitor Ultrawide\",\n        \"type\": \"Office\",\n        \"brand\": \"Xiaomi\",\n        \"color\": \"Black\",\n        \"notes\": \"Includes HDMI cable\"\n    },\n    \"category\": 101,\n    \"price\": 3500.50,\n    \"discount\": 0.25,\n    \"has_promo\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/promo-post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"promo-post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4. Get amount of promo posts from seller",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/promo-post/count?user_id={{sellerId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"promo-post",
+										"count"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "{{sellerId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "US 12: Obtener productos en promoción de un vendedor",
+					"item": [
+						{
+							"name": "1. Create seller",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json();",
+											"const sellerId = data.user_id;",
+											"pm.collectionVariables.set(\"sellerId\", sellerId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Create first promo post",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
+											"    nextProductId = -1;",
+											"}",
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": {{sellerId}},\n    \"date\": \"27-01-2025\",\n    \"product\": {\n        \"product_id\": {{nextProductId}},\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"discount\": 0.5,\n    \"has_promo\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/promo-post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"promo-post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Create second promo post",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let nextProductId = parseInt(pm.collectionVariables.get(\"nextProductId\"));",
+											"if (isNaN(nextProductId)) {",
+											"    nextProductId = -1;",
+											"}",
+											"pm.collectionVariables.set(\"nextProductId\", nextProductId + 1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": {{sellerId}},\n    \"date\": \"24-01-2025\",\n    \"product\": {\n        \"product_id\": {{nextProductId}},\n        \"product_name\": \"Monitor Ultrawide\",\n        \"type\": \"Office\",\n        \"brand\": \"Xiaomi\",\n        \"color\": \"Black\",\n        \"notes\": \"Includes HDMI cable\"\n    },\n    \"category\": 101,\n    \"price\": 3500.50,\n    \"discount\": 0.25,\n    \"has_promo\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/promo-post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"promo-post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4. Get promo posts from seller",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/promo-post/list?user_id={{sellerId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"promo-post",
+										"list"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "{{sellerId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "US 13: Dar de alta usuario",
+					"item": [
+						{
+							"name": "1. Create client",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"client1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/clients",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Create seller",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_name\": \"seller1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/sellers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "protocol",
+			"value": "http",
+			"type": "string"
+		},
+		{
+			"key": "address",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "8080",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "{{protocol}}://{{address}}:{{port}}",
+			"type": "string"
+		}
+	]
+}
