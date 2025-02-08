@@ -1,0 +1,48 @@
+name: Jobs on PR
+
+on: [pull_request]
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  checkstyle-pr:
+    name: checkstyle
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dbelyaev/action-checkstyle@master
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          checkstyle_config: src/main/resources/checkstyle/checkstyle.xml
+
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run pull request stats
+        uses: flowwer-dev/pull-request-stats@main
+        with:
+          charts: true
+          disableLinks: true
+          stats: 'totalReviews,openedPullRequests,totalComments'
+          sortBy: 'totalReviews'
+
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Run Maven build
+        run: |
+          mvn clean test jacoco:report
+      - name: Comment coverage results on PR
+        uses: madrapps/jacoco-report@v1.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
