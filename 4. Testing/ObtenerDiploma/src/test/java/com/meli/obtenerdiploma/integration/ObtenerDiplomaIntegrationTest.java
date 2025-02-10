@@ -31,7 +31,7 @@ public class ObtenerDiplomaIntegrationTest {
     void obtenerDiplomaTest() throws Exception {
         List<SubjectDTO> subjetc = List.of(new SubjectDTO("Matematica",10.0));
         StudentDTO student = new StudentDTO(1L,
-                "Pepe","El alumno Pepe ha obtenido un promedio de 10. Felicitaciones!",
+                "Lucia","El alumno Lucia ha obtenido un promedio de 10. Felicitaciones!",
                 10.0,subjetc);
 
         ObjectMapper mapper = new ObjectMapper();
@@ -56,7 +56,7 @@ public class ObtenerDiplomaIntegrationTest {
     void obtenerDiplomaMejorarTest() throws Exception {
         List<SubjectDTO> subjetc = List.of(new SubjectDTO("Matematica",7.0));
         StudentDTO student = new StudentDTO(1L,
-                "Pepe","El alumno Pepe ha obtenido un promedio de 7. Puedes mejorar.",
+                "Carlos","El alumno Carlos ha obtenido un promedio de 7. Puedes mejorar.",
                 7.0,subjetc);
 
         ObjectMapper mapper = new ObjectMapper();

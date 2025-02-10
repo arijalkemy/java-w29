@@ -28,21 +28,23 @@ public class StudentIntegrationTest {
     void createStudentIntegrationTest() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
 
-        var resultList = mockMvc.perform(MockMvcRequestBuilders.get("/student/listStudents")).andExpect(status().isOk())
-                .andReturn().getResponse().getContentAsString();
-
-        var idGet = mapper.readValue(resultList, new TypeReference<List<StudentDTO>>() {}).get(0).getId();
-
-        var resultGet = mockMvc.perform(MockMvcRequestBuilders.get("/student/getStudent/{id}", idGet))
-                .andReturn().getResponse().getContentAsString();
-
         List<SubjectDTO> subjetc = List.of(new SubjectDTO("Matematica",10.0));
-        StudentDTO student = new StudentDTO(idGet,
-                "Pepe","El alumno Pepe ha obtenido un promedio de 10. Felicitaciones!",
+        StudentDTO student = new StudentDTO(1L,
+                "Lucas","El alumno Lucas ha obtenido un promedio de 10. Felicitaciones!",
                 10.0,subjetc);
 
         String payload = mapper.writeValueAsString(student);
 
+        mockMvc.perform(MockMvcRequestBuilders.get("/student/listStudents")).andExpect(status().isOk())
+                .andReturn().getResponse().getContentAsString();
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/student/registerStudent")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(payload))
+                .andExpect(status().isOk());
+
+        var resultGet = mockMvc.perform(MockMvcRequestBuilders.get("/student/getStudent/{id}", 1))
+                .andReturn().getResponse().getContentAsString();
 
         mockMvc.perform(MockMvcRequestBuilders.post("/student/modifyStudent")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -56,7 +58,7 @@ public class StudentIntegrationTest {
                 .andExpect(status().isOk());
 
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/student/removeStudent/{id}", idGet))
+        mockMvc.perform(MockMvcRequestBuilders.get("/student/removeStudent/{id}", 1L))
                 .andExpect(status().isOk());
 
         assertEquals(payload, resultGet);
