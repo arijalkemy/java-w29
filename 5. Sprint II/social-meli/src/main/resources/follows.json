@@ -1,0 +1,180 @@
+[
+  {
+    "userFollower": { "id": 2, "name": "Jane Smith", "isSeller": false },
+    "userFollowed": { "id": 1, "name": "John Doe", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 3, "name": "Carlos Ruiz", "isSeller": true },
+    "userFollowed": { "id": 1, "name": "John Doe", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 4, "name": "Emily Johnson", "isSeller": false },
+    "userFollowed": { "id": 1, "name": "John Doe", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 4, "name": "Emily Johnson", "isSeller": false },
+    "userFollowed": { "id": 11, "name": "Amelia Taylor", "isSeller": true }
+  },
+  {
+  "userFollower": { "id": 4, "name": "Emily Johnson", "isSeller": false },
+  "userFollowed": { "id": 17, "name": "Mason Lewis", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 4, "name": "Emily Johnson", "isSeller": false },
+    "userFollowed": { "id": 15, "name": "Ethan Harris", "isSeller": true }
+  },
+
+  {
+    "userFollower": { "id": 5, "name": "Liam Brown", "isSeller": true },
+    "userFollowed": { "id": 1, "name": "John Doe", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 6, "name": "Sophia Williams", "isSeller": false },
+    "userFollowed": { "id": 5, "name": "Liam Brown", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 7, "name": "Oliver Martinez", "isSeller": true },
+    "userFollowed": { "id": 5, "name": "Liam Brown", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 8, "name": "Mia Davis", "isSeller": false },
+    "userFollowed": { "id": 5, "name": "Liam Brown", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 9, "name": "James Wilson", "isSeller": true },
+    "userFollowed": { "id": 5, "name": "Liam Brown", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 10, "name": "Isabella Moore", "isSeller": false },
+    "userFollowed": { "id": 9, "name": "James Wilson", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 11, "name": "Amelia Taylor", "isSeller": true },
+    "userFollowed": { "id": 9, "name": "James Wilson", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 12, "name": "Benjamin Anderson", "isSeller": false },
+    "userFollowed": { "id": 9, "name": "James Wilson", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 13, "name": "Lucas Thomas", "isSeller": true },
+    "userFollowed": { "id": 9, "name": "James Wilson", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 14, "name": "Charlotte Jackson", "isSeller": false },
+    "userFollowed": { "id": 13, "name": "Lucas Thomas", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 15, "name": "Ethan Harris", "isSeller": true },
+    "userFollowed": { "id": 13, "name": "Lucas Thomas", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 16, "name": "Avery Clark", "isSeller": false },
+    "userFollowed": { "id": 13, "name": "Lucas Thomas", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 17, "name": "Mason Lewis", "isSeller": true },
+    "userFollowed": { "id": 15, "name": "Ethan Harris", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 18, "name": "Ella Young", "isSeller": false },
+    "userFollowed": { "id": 15, "name": "Ethan Harris", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 19, "name": "Alexander Walker", "isSeller": true },
+    "userFollowed": { "id": 15, "name": "Ethan Harris", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 20, "name": "Grace Hall", "isSeller": false },
+    "userFollowed": { "id": 19, "name": "Alexander Walker", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 21, "name": "Jack Allen", "isSeller": true },
+    "userFollowed": { "id": 19, "name": "Alexander Walker", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 22, "name": "Chloe King", "isSeller": false },
+    "userFollowed": { "id": 19, "name": "Alexander Walker", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 23, "name": "Zoe Parker", "isSeller": false },
+    "userFollowed": { "id": 24, "name": "Ryan Carter", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 25, "name": "Hannah Phillips", "isSeller": true },
+    "userFollowed": { "id": 24, "name": "Ryan Carter", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 26, "name": "David Evans", "isSeller": false },
+    "userFollowed": { "id": 24, "name": "Ryan Carter", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 27, "name": "Sophia Turner", "isSeller": true },
+    "userFollowed": { "id": 28, "name": "Lucas Collins", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 29, "name": "Ella Scott", "isSeller": false },
+    "userFollowed": { "id": 28, "name": "Lucas Collins", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 30, "name": "Jacob Adams", "isSeller": true },
+    "userFollowed": { "id": 28, "name": "Lucas Collins", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 31, "name": "Charlotte Ramirez", "isSeller": false },
+    "userFollowed": { "id": 32, "name": "Michael Thompson", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 33, "name": "Matthew White", "isSeller": true },
+    "userFollowed": { "id": 32, "name": "Michael Thompson", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 34, "name": "Amelia Roberts", "isSeller": false },
+    "userFollowed": { "id": 32, "name": "Michael Thompson", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 35, "name": "Olivia Martinez", "isSeller": true },
+    "userFollowed": { "id": 36, "name": "Ethan Garcia", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 37, "name": "James Lee", "isSeller": false },
+    "userFollowed": { "id": 36, "name": "Ethan Garcia", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 38, "name": "Ava Walker", "isSeller": true },
+    "userFollowed": { "id": 36, "name": "Ethan Garcia", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 39, "name": "Mason Harris", "isSeller": false },
+    "userFollowed": { "id": 40, "name": "Chloe Nelson", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 41, "name": "Isabella Perez", "isSeller": true },
+    "userFollowed": { "id": 40, "name": "Chloe Nelson", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 42, "name": "Benjamin Wilson", "isSeller": false },
+    "userFollowed": { "id": 40, "name": "Chloe Nelson", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 43, "name": "Abigail Foster", "isSeller": true },
+    "userFollowed": { "id": 44, "name": "Liam Hill", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 45, "name": "Emily Baker", "isSeller": false },
+    "userFollowed": { "id": 44, "name": "Liam Hill", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 46, "name": "Elijah Reed", "isSeller": true },
+    "userFollowed": { "id": 44, "name": "Liam Hill", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 47, "name": "Mila Kelly", "isSeller": false },
+    "userFollowed": { "id": 48, "name": "Noah Bell", "isSeller": true }
+  },
+  {
+    "userFollower": { "id": 49, "name": "Aiden Richardson", "isSeller": true },
+    "userFollowed": { "id": 48, "name": "Noah Bell", "isSeller": true }
+  }
+
+]

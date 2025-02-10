@@ -1,0 +1,206 @@
+[
+  {
+    "id": 1,
+    "user": { "id": 1, "name": "John Doe", "isSeller": true },
+    "date": "2025-01-19",
+    "product": {
+      "id": 201,
+      "name": "headphones",
+      "type": "Electronics",
+      "brand": "Dell",
+      "color": "Silver",
+      "notes": "Includes charger and carrying case"
+    },
+    "category": 1,
+    "price": 1200.00,
+    "hasPromo": true,
+    "discount": 50.00
+  },
+  {
+    "id": 2,
+    "user": { "id": 1, "name": "John Doe", "isSeller": true },
+    "date": "2025-01-20",
+    "product": {
+      "id": 202,
+      "name": "Laptop",
+      "type": "Electronics",
+      "brand": "Dell",
+      "color": "Silver",
+      "notes": "Includes charger and carrying case"
+    },
+    "category": 2,
+    "price": 1200.00,
+    "hasPromo": true,
+    "discount": 50.00
+  },
+  {
+    "id": 3,
+    "user": { "id": 1, "name": "John Doe", "isSeller": true },
+    "date": "2025-01-21",
+    "product": {
+      "id": 203,
+      "name": "chair",
+      "type": "Furniture",
+      "brand": "Dell",
+      "color": "Silver",
+      "notes": "Includes charger and carrying case"
+    },
+    "category": 2,
+    "price": 1200.00,
+    "hasPromo": true,
+    "discount": 50.00
+  },
+  {
+    "id": 4,
+    "user": { "id": 3, "name": "Carlos Ruiz", "isSeller": true },
+    "date": "2025-01-21",
+    "product": {
+      "id": 204,
+      "name": "Smartphone",
+      "type": "Electronics",
+      "brand": "Apple",
+      "color": "Black",
+      "notes": "128GB storage, unlocked"
+    },
+    "category": 1,
+    "price": 999.99,
+    "hasPromo": false,
+    "discount": null
+  },
+  {
+    "id": 5,
+    "user": { "id": 5, "name": "Liam Brown", "isSeller": true },
+    "date": "2025-01-19",
+    "product": {
+      "id": 205,
+      "name": "Office Chair",
+      "type": "Furniture",
+      "brand": "ErgoTech",
+      "color": "Gray",
+      "notes": "Adjustable height and lumbar support"
+    },
+    "category": 2,
+    "price": 150.00,
+    "hasPromo": true,
+    "discount": 25.00
+  },
+  {
+    "id": 6,
+    "user": { "id": 7, "name": "Oliver Martinez", "isSeller": true },
+    "date": "2025-01-16",
+    "product": {
+      "id": 206,
+      "name": "Gaming Monitor",
+      "type": "Electronics",
+      "brand": "Samsung",
+      "color": "Black",
+      "notes": "32-inch, 4K resolution"
+    },
+    "category": 1,
+    "price": 450.00,
+    "hasPromo": false,
+    "discount": null
+  },
+  {
+    "id": 7,
+    "user": { "id": 9, "name": "James Wilson", "isSeller": true },
+    "date": "2025-01-14",
+    "product": {
+      "id": 207,
+      "name": "Coffee Maker",
+      "type": "Appliances",
+      "brand": "Nespresso",
+      "color": "Red",
+      "notes": "Includes milk frother"
+    },
+    "category": 3,
+    "price": 200.00,
+    "hasPromo": false,
+    "discount": null
+  },
+  {
+    "id": 8,
+    "user": { "id": 11, "name": "Amelia Taylor", "isSeller": true },
+    "date": "2025-01-13",
+    "product": {
+      "id": 208,
+      "name": "Vacuum Cleaner",
+      "type": "Appliances",
+      "brand": "Dyson",
+      "color": "Yellow",
+      "notes": "Cordless, lightweight"
+    },
+    "category": 3,
+    "price": 300.00,
+    "hasPromo": true,
+    "discount": 40.00
+  },
+  {
+    "id": 9,
+    "user": { "id": 13, "name": "Lucas Thomas", "isSeller": true },
+    "date": "2025-01-18",
+    "product": {
+      "id": 209,
+      "name": "Mountain Bike",
+      "type": "Outdoor",
+      "brand": "Trek",
+      "color": "Blue",
+      "notes": "21-speed, aluminum frame"
+    },
+    "category": 4,
+    "price": 800.00,
+    "hasPromo": false,
+    "discount": null
+  },
+  {
+    "id": 10,
+    "user": { "id": 17, "name": "Mason Lewis", "isSeller": true },
+    "date": "2025-01-12",
+    "product": {
+      "id": 210,
+      "name": "Smartwatch",
+      "type": "Electronics",
+      "brand": "Fitbit",
+      "color": "Black",
+      "notes": "Water resistant, tracks heart rate"
+    },
+    "category": 1,
+    "price": 250.00,
+    "hasPromo": true,
+    "discount": 15.00
+  },
+  {
+    "id": 11,
+    "user": { "id": 21, "name": "Jack Allen", "isSeller": true },
+    "date": "2025-01-20",
+    "product": {
+      "id": 211,
+      "name": "Wireless Earbuds",
+      "type": "Electronics",
+      "brand": "Sony",
+      "color": "White",
+      "notes": "Noise-cancelling, Bluetooth"
+    },
+    "category": 1,
+    "price": 150.00,
+    "hasPromo": false,
+    "discount": null
+  },
+  {
+    "id": 12,
+    "user": { "id": 21, "name": "Jack Allen", "isSeller": true },
+    "date": "2025-01-21",
+    "product": {
+      "id": 212,
+      "name": "LED TV",
+      "type": "Electronics",
+      "brand": "LG",
+      "color": "Black",
+      "notes": "50-inch, Smart TV"
+    },
+    "category": 2,
+    "price": 500.00,
+    "hasPromo": true,
+    "discount": 75.00
+  }
+]
