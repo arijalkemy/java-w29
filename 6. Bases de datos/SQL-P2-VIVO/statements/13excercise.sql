@@ -1,0 +1,1 @@
+SELECT title FROM movies WHERE release_date BETWEEN '2004/01/01' AND '2005/01/01';
