@@ -1,0 +1,1 @@
+SELECT first_name FROM actors LIMIT 10;

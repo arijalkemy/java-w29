@@ -1,0 +1,15 @@
+
+
+a. ¿Cuál es la primary key para la tabla de clientes? Justificar respuesta
+
+La primary key para la tabla clientes es ´id´, siendo un Integer autoincremental unique not null.
+
+b. ¿Cuál es la primary key para la tabla de planes de internet? Justificar respuesta.
+
+La primary key para la tabla planes_internet es ´id´, siendo un Integer autoincremental unique not null.
+
+c. ¿Cómo serían las relaciones entre tablas?
+¿En qué tabla debería haber foreign key? ¿A qué campo de qué tabla hace referencia dicha foreign key? Justificar respuesta.
+
+Suponiendo que un cliente puede tener únicamente un plan de internet asociado, y un plan puede tener varios clientes,
+la Foreign Key debería estar en la tabla ´clientes´, referenciando a la Primary Key de ´planes_internet´
