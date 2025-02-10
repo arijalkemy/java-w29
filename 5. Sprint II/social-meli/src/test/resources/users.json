@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Agostina Avalle", "isSeller": true },
+  { "id": 2, "name": "Carolina Comba", "isSeller": false },
+  { "id": 3, "name": "Ciro Sánchez", "isSeller": true },
+  { "id": 4, "name": "Eliana Navarro", "isSeller": false },
+  { "id": 5, "name": "Franca Pairetti", "isSeller": true },
+  { "id": 6, "name": "Katerinne Peralta", "isSeller": false }
+]
