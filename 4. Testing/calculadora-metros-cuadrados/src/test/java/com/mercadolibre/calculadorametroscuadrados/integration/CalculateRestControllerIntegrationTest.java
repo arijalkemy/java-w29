@@ -29,7 +29,7 @@ public class CalculateRestControllerIntegrationTest {
     @DisplayName("test calculate Ok")
     void calculate() throws Exception{
         ObjectMapper objectMapper = new ObjectMapper();
-        
+
         RoomDTO r1 = new RoomDTO();
         r1.setName("habitacion 1");
         r1.setLength(200);
