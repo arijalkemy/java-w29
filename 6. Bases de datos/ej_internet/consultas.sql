@@ -15,12 +15,10 @@ FROM contratos c
     JOIN planes p ON c.id_plan = p.id_plan
 WHERE c.fecha_inicio <= CURDATE() AND (c.fecha_fin IS NULL OR c.fecha_fin >= CURDATE());
 
--- 4. Ver los planes contratados por un cliente específico.
-SELECT cli.nombre, cli.apellido, p.velocidad, c.precio_total, c.descuento, c.fecha_inicio, c.fecha_fin
-FROM contratos c
-    JOIN clientes cli ON c.id_cliente = cli.id_cliente
-    JOIN planes p ON c.id_plan = p.id_plan
-WHERE cli.id_cliente = 1;
+-- 4. Ver todos los clientes de Córdoba
+SELECT nombre, apellido
+FROM clientes
+WHERE provincia = 'Córdoba';
 
 -- 5. Ver los clientes que tienen contratos con un descuento mayor al 15% (ordenado por descuento de mayor a menor).
 SELECT cli.nombre, cli.apellido, c.descuento
@@ -53,9 +51,9 @@ SELECT id_plan, velocidad, precio_base
 FROM planes
 ORDER BY velocidad DESC LIMIT 3;
 
--- 10. Obtener el nombre y apellido de los clientes que tienen un contrato activo para el plan de velocidad 50.
-SELECT cli.nombre, cli.apellido
-FROM contratos c
-    JOIN clientes cli ON c.id_cliente = cli.id_cliente
-    JOIN planes p ON c.id_plan = p.id_plan
-WHERE p.velocidad = 50 AND c.fecha_inicio <= CURDATE() AND (c.fecha_fin IS NULL OR c.fecha_fin >= CURDATE());
+-- 10. Consultar cuánto recauda la empresa por cada plan.
+SELECT p.id_plan, p.velocidad, SUM(c.precio_total) AS recaudacion_total
+FROM planes p
+         JOIN contratos c ON c.id_plan = p.id_plan
+GROUP BY p.id_plan, p.velocidad
+ORDER BY recaudacion_total DESC;

@@ -55,12 +55,12 @@ Plantear 10 consultas SQL que se podrían realizar a la base de datos. Expresar 
 1. Obtener todos los clientes con sus nombres y apellidos.
 2. Obtener todos los planes y su precio base, ordenados por velocidad de menor a mayor.
 3. Obtener todos los contratos activos (fecha de inicio menor a la fecha actual).
-4. Ver los planes contratados por un cliente específico.
+4. Ver todos los clientes de Córdoba
 5. Ver los clientes que tienen contratos con un descuento mayor al 15% (ordenado por descuento de mayor a menor).
 6. Obtener el total de clientes que han contratado un plan específico.
 7. Ver el precio total de los planes para un cliente específico.
 8. Obtener la fecha de inicio y fin de todos los contratos con el plan de velocidad 100.
 9. Obtener el top 3 planes con mayor velocidad.
-10. Obtener el nombre y apellido de los clientes que tienen un contrato activo para el plan de velocidad 50.
+10. Consultar cuánto recauda la empresa por cada plan.
 
 **Resolución**: [consultas.sql](consultas.sql)
