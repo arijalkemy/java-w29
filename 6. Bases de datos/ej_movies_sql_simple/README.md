@@ -1,9 +1,11 @@
-# Ejercicio movies
+# Ejercicio Movies - Consultas SQL simples
 
 ## Consigna
 Se propone realizar las siguientes consultas a la base de datos [movies_db.sql](movies_db.sql).
 
 Importar el archivo `movies_db.sql` desde `PHPMyAdmin` o `MySQL Workbench` y resolver las siguientes consultas:
+
+**Resolución**: [consultas.sql](consultas.sql)
 
 1. Mostrar todos los registros de la tabla de movies.
 
