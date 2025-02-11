@@ -1,0 +1,69 @@
+--Listar los datos de los autores.
+    SELECT Nombre, Nacionalidad
+    FROM AUTOR;
+--Listar nombre y edad de los estudiantes
+    SELECT nombre, edad
+    FROM ESTUDIANTE;
+
+--¿Qué estudiantes pertenecen a la carrera informática?
+    SELECT Nombre, Apellido, Carrera
+    FROM ESTUDIANTE
+    WHERE carrera = 'Informatica';
+
+--¿Qué autores son de nacionalidad francesa o italiana?
+    SELECT Nombre, Nacionalidad
+    FROM AUTOR
+    WHERE nacionalidad = 'Francesa' OR nacionalidad = 'Italiana';
+
+--¿Qué libros no son del área de internet?
+    SELECT Titulo, Area, Editorial
+    FROM LIBRO
+    WHERE area != 'Internet';
+
+--Listar los libros de la editorial Salamandra.
+    SELECT Titulo, Area, Editorial
+    FROM LIBRO
+    WHERE editorial = 'Salamandra';
+
+--Listar los datos de los estudiantes cuya edad es mayor al promedio.
+    SELECT nombre, apellido, edad, carrera, Dirección
+    FROM ESTUDIANTE
+    WHERE edad > (SELECT AVG(edad) FROM ESTUDIANTE);
+
+-- Listar los nombres de los estudiantes cuyo apellido comience con la letra G.
+    SELECT Nombre, Apellido
+    FROM ESTUDIANTE
+    WHERE Apellido like 'G%';
+
+
+--Listar los autores del libro “El Universo: Guía de viaje”. (Se debe listar solamente los nombres).
+    SELECT A.Nombre
+    FROM AUTOR A INNER JOIN LIBROAUTOR LA on LA.idAutor = A.idAutor INNER JOIN LIBRO L on LA.idLibro = L.idLibro
+    WHERE L.titulo = 'El Universo: Guía de viaje';
+
+
+--¿Qué libros se prestaron al lector “Filippo Galli”?
+    SELECT L.*, CONCAT(E.Nombre, ' ', E.Apellido) as Lector
+    FROM LIBRO L INNER JOIN PRESTAMO P on L.idLibro = P.idLibro INNER JOIN ESTUDIANTE E on P.idLector = E.idLector
+    WHERE E.nombre = 'Filippo' and E.apellido = 'Galli';
+
+
+--Listar el nombre del estudiante de menor edad.
+    SELECT Nombre, Apellido, Edad
+    FROM ESTUDIANTE
+    WHERE Edad = (SELECT MIN(Edad) FROM ESTUDIANTE);
+
+--Listar nombres de los estudiantes a los que se prestaron libros de Base de Datos.
+    SELECT concat(e.Nombre, ' ', e.Apellido) as Estudiante, L.titulo as Libro, L.area
+    FROM ESTUDIANTE E INNER JOIN PRESTAMO P on E.idLector = P.idLector INNER JOIN LIBRO L on P.idLibro = L.idLibro
+    WHERE L.area = 'Base de Datos';
+
+--Listar los libros que pertenecen a la autora J.K. Rowling.
+    SELECT L.titulo, A.Nombre as Autor
+    FROM LIBRO L INNER JOIN LIBROAUTOR LA on L.idLibro = LA.idLibro INNER JOIN AUTOR A on LA.idAutor = A.idAutor
+    WHERE A.Nombre = 'J.K. Rowling';
+
+--Listar títulos de los libros que debían devolverse el 16/07/2021.
+    SELECT L.Titulo, P.fechaDevolucion
+    FROM LIBRO L INNER JOIN PRESTAMO P on L.idLibro = P.idLibro
+    WHERE P.fechaDevolucion = '2021-07-16' AND p.Devuelto = 0;

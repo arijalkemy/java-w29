@@ -1,0 +1,30 @@
+--Seleccionar el nombre, el puesto y la localidad de los departamentos donde trabajan los vendedores.
+    SELECT E.nombre, E.puesto, D.localidad
+    FROM EMPLEADO E INNER JOIN main.DEPARTAMENTO D on D.depto_nro = E.depto_nro;
+
+--Visualizar los departamentos con más de cinco empleados.
+    SELECT D.nombre_depto, COUNT(E.depto_nro) as cantidad
+    FROM EMPLEADO E INNER JOIN main.DEPARTAMENTO D on D.depto_nro = E.depto_nro
+    GROUP BY D.nombre_depto
+    HAVING COUNT(E.depto_nro) > 5;
+
+--Mostrar el nombre, salario y nombre del departamento de los empleados que tengan el mismo puesto que ‘Mito Barchuk’.
+    SELECT E.nombre, E.apellido, E.salario, D.nombre_depto
+    FROM EMPLEADO E INNER JOIN main.DEPARTAMENTO D on D.depto_nro = E.depto_nro
+    WHERE E.puesto = (SELECT E2.puesto FROM EMPLEADO E2 WHERE E2.nombre = 'Mito' and E2.apellido = 'Barchuk');
+
+--Mostrar los datos de los empleados que trabajan en el departamento de contabilidad, ordenados por nombre.
+    SELECT E.*, D.nombre_depto
+    FROM EMPLEADO E INNER JOIN main.DEPARTAMENTO D on D.depto_nro = E.depto_nro
+    WHERE D.nombre_depto = 'Contabilidad';
+
+
+--Mostrar el nombre del empleado que tiene el salario más bajo.
+    SELECT E.nombre, E.apellido, E.salario
+    FROM EMPLEADO E
+    WHERE E.salario = (SELECT MIN(E2.salario) FROM EMPLEADO E2);
+
+--Mostrar los datos del empleado que tiene el salario más alto en el departamento de ‘Ventas’.
+    SELECT E.*, D.nombre_depto
+    FROM EMPLEADO E INNER JOIN main.DEPARTAMENTO D on D.depto_nro = E.depto_nro
+    WHERE E.salario = (SELECT MAX(E2.salario) FROM EMPLEADO E2 WHERE E2.depto_nro = E.depto_nro AND D.nombre_depto = 'Ventas');
