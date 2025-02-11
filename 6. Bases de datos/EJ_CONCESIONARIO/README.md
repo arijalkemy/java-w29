@@ -1,12 +1,14 @@
-Bases de Datos Relacionales
-Diseño Diagrama Entidad-Relación
-Práctica en Clase
-Ejercicio
-Realizar un diagrama de entidad-relación para el sistema de una concesionaria, que desea gestionar los servicios de los coches de sus clientes.
+# Ejercicio concesionaria
 
-Requisitos del Módulo:
 
-Se necesita almacenar información de los clientes, los coches que estos poseen y los servicios/revisiones de cada uno de estos.
-Instrucciones:
+Realizar un diagrama de entidad - relación para el sistema de una concesionaria, que desea gestionar los servicios de los coches de sus clientes.
 
-Utilizar el formato adecuado para representar las Primary Key y Foreign Key en el diagrama, además de los tipos de datos de cada atributo.
+- Para el módulo del sistema, se necesita almacenar información de los clientes, los coches que estos poseen y los service/revisiones de cada uno de estos.
+
+- Utilizar el formato adecuado para representar las Primary y Foreign Key en el diagrama, además de los tipos de datos de cada atributo.
+
+# Solución planteada 1
+![Diagrama Entidad-Relación](DER-PART1.png)
+
+# Solución planteada 2
+![Diagrama Entidad-Relación](DER-PART2.png)
