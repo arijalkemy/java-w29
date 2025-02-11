@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "username": "alargo",
+    "name": "Andrés",
+    "lastname": "Largo",
+    "email": "alargo@meli.com",
+    "userType": "USER"
+  },
+  {
+    "id": 2,
+    "username": "cmorales",
+    "name": "Catalina",
+    "lastname": "Morales",
+    "email": "cmorales@meli.com",
+    "userType": "SELLER"
+  },
+  {
+    "id": 3,
+    "username": "acano",
+    "name": "Andrés",
+    "lastname": "Cano",
+    "email": "acano@meli.com",
+    "userType": "USER"
+  },
+  {
+    "id": 4,
+    "username": "jfeo",
+    "name": "Juan Steven",
+    "lastname": "Feo",
+    "email": "jfeo@meli.com",
+    "userType": "SELLER"
+  },
+  {
+    "id": 5,
+    "username": "bsanchez",
+    "name": "Brayan Camilo",
+    "lastname": "Sanchez",
+    "email": "bsanchez@meli.com",
+    "userType": "USER"
+  }
+]
