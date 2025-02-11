@@ -21,4 +21,4 @@ Importar el archivo movies_db.sql desde PHPMyAdmin o MySQL Workbench y resolver 
 - Traer el título de las películas con el rating mayor a 3, con más de 1 premio y con fecha de lanzamiento entre el año 1988 al 2009. Ordenar los resultados por rating.
 
 ## Solución planteada 
-![Solucion](consultasMovies.sql)
+[Solucion](consultasMovies.sql)
