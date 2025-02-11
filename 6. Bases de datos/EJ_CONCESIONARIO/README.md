@@ -7,8 +7,8 @@ Realizar un diagrama de entidad - relación para el sistema de una concesionaria
 
 - Utilizar el formato adecuado para representar las Primary y Foreign Key en el diagrama, además de los tipos de datos de cada atributo.
 
-#Solución planteada 1
+# Solución planteada 1
 ![Diagrama Entidad-Relación](DER-PART1.png)
 
-#Solución planteada 2
+# Solución planteada 2
 ![Diagrama Entidad-Relación](DER-PART2.png)
