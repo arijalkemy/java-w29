@@ -12,7 +12,7 @@ Mediante un análisis previo se conoce que se tiene que almacenar la siguiente i
 
 Luego del planteo de los requerimientos de la empresa, se solicita modelar los mismos mediante un DER (Diagrama Entidad-Relación).
 
-## Solucion 
+## Solucion DER
 ![Solucion](DER-internet.png)
 
 
