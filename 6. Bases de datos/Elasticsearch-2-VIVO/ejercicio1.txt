@@ -1,0 +1,35 @@
+GET /productos/_search
+
+POST /productos/_doc/
+{
+  "Marca": "Under Armour",
+  "Modelo": "HOVR Phantom",
+  "Categoría": "Running",
+  "Talla": 42,
+  "Color": "Azul",
+  "Precio": 140,
+  "Stock": 90,
+  "Deportiva/No": "Deportiva",
+  "Material": "Malla Textil",
+  "Peso (g)": 295,
+  "Descripción": "Comodidad y durabilidad con HOVR"
+}
+
+GET /productos/_doc/1
+
+PUT /productos/_doc/1
+{
+  "Marca": "Nike",
+  "Modelo": "Air Max 270",
+  "Categoría": "Running",
+  "Talla": 42,
+  "Color": "Negro",
+  "Precio": 155,  // Actualizado
+  "Stock": 115,   // Actualizado
+  "Deportiva/No": "Deportiva",
+  "Material": "Sintético",
+  "Peso (g)": 290,
+  "Descripción": "Zapatillas con amortiguación Air"
+}
+
+

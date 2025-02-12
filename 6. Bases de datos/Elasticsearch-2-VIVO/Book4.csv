@@ -1,0 +1,21 @@
+﻿ID;Marca;Modelo;Categoría;Talla;Color;Precio;Stock;Deportiva/No;Material;Peso (g);Descripción
+1;Nike;Air Max 270;Running;42;Negro;150;120;Deportiva;Sintético;290;Zapatillas con amortiguación Air
+2;Adidas;Ultraboost 21;Running;41;Blanco;180;80;Deportiva;Textil;310;Amortiguación responsiva
+3;Puma;RS-X³ Puzzle;Casual;43;Azul;100;150;No;Cuero;350;Diseño futurista y moderno
+4;Reebok;Nano X1;Crossfit;40;Verde;130;90;Deportiva;Malla;300;Versatilidad para entrenamientos
+5;New Balance;574;Casual;44;Gris;110;200;No;Textil/Cuero;340;Clásico reinventado
+6;Asics;Gel-Kayano 28;Running;39;Rosa;160;60;Deportiva;Malla;280;Soporte mejorado y comodidad
+7;Nike;React Infinity;Running;41;Negro/Blanco;170;75;Deportiva;Sintético;300;Diseño para prevenir lesiones
+8;Adidas;NMD_R1;Casual;42;Rojo;140;125;No;Textil;270;Inspiración en el running retro
+9;Puma;Suede Classic;Casual;43;Negro;90;180;No;Gamuza;310;Icono atemporal
+10;Reebok;Club C 85;Casual;44;Blanco;95;160;No;Cuero;330;Estilo clásico y limpio
+11;New Balance;Fresh Foam 1080;Running;40;Naranja;170;110;Deportiva;Textil/Sintético;320;Comodidad para largas distancias
+12;Asics;Novablast 2;Running;41;Azul;150;100;Deportiva;Malla;290;Energía explosiva en cada pisada
+13;Nike;ZoomX Vaporfly;Running;44;Verde;200;50;Deportiva;Sintético;250;Tecnología de élite para correr
+14;Adidas;Terrex Free Hiker;Outdoor;43;Marrón;220;85;Deportiva;Gore-Tex;420;Para aventuras al aire libre
+15;Puma;Cali Star;Casual;39;Blanco;100;130;No;Cuero;295;Refrescante estilo california
+16;Reebok;Legacy Lifter;Levantamiento;42;Negro;180;60;Deportiva;Cuero;450;Estabilidad para levantamientos
+17;New Balance;990v5;Casual;43;Gris;175;95;No;Textil/Cuero;330;Rendimiento y moda
+18;Asics;Gel-Nimbus 24;Running;40;Blanco;185;75;Deportiva;Malla;280;Amortiguación y soporte superior
+19;Nike;Blazer Mid '77;Casual;41;Verde/Blanco;110;150;No;Cuero/Sintético;325;Estilo retro icónico
+20;Adidas;Superstar;Casual;44;Negro;100;140;No;Cuero;340;Silueta legendaria
