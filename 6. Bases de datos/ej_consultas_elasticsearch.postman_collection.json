@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "592a79d1-7bd8-4ca7-a599-c023119d0e13",
+		"name": "ElasticSearch en vivo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40525319"
+	},
+	"item": [
+		{
+			"name": "Create index",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "ApiKey UE8zOHQ1UUJzdGZPby1yLWhmdUU6QzBwR3FPOUJRTjZUc3ZPMjJXSWNkZw==",
+						"key": "Authorization"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mappings\": {\n        \"properties\": {\n            \"nombre\": {\n                \"type\": \"text\"\n            },\n            \"marca\": {\n                \"type\": \"text\"\n            },\n            \"talla\": {\n                \"type\": \"integer\"\n            },\n            \"precio\": {\n                \"type\": \"double\"\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:9200/zapatillas"
+			},
+			"response": []
+		},
+		{
+			"name": "Create data",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "ApiKey UE8zOHQ1UUJzdGZPby1yLWhmdUU6QzBwR3FPOUJRTjZUc3ZPMjJXSWNkZw==",
+						"key": "Authorization"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Mis zapaticos\", \"marca\": \"Nike\", \"talla\": 38, \"precio\": 10.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Mis zapatotes\", \"marca\": \"Adidas\", \"talla\": 38, \"precio\": 10.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos bonitos\", \"marca\": \"Adidas\", \"talla\": 42, \"precio\": 12.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos para correr\", \"marca\": \"Pollito\", \"talla\": 40, \"precio\": 16.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos para correr\", \"marca\": \"Pollito\", \"talla\": 37, \"precio\": 16.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos para correr\", \"marca\": \"Pollito\", \"talla\": 38, \"precio\": 16.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos para correr\", \"marca\": \"Pollito\", \"talla\": 39, \"precio\": 16.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos para escalar\", \"marca\": \"CAT\", \"talla\": 37, \"precio\": 20.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos para escalar\", \"marca\": \"CAT\", \"talla\": 38, \"precio\": 20.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos para escalar\", \"marca\": \"CAT\", \"talla\": 39, \"precio\": 20.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos para escalar\", \"marca\": \"CAT\", \"talla\": 40, \"precio\": 25.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos para escalar\", \"marca\": \"CAT\", \"talla\": 42, \"precio\": 25.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos para rio\", \"marca\": \"Inertar marca\", \"talla\": 37, \"precio\": 13.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos para rio\", \"marca\": \"Inertar marca\", \"talla\": 38, \"precio\": 13.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos para rio\", \"marca\": \"Inertar marca\", \"talla\": 39, \"precio\": 13.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos para rio\", \"marca\": \"Inertar marca\", \"talla\": 40, \"precio\": 15.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos para rio\", \"marca\": \"Inertar marca\", \"talla\": 41, \"precio\": 15.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos usados\", \"marca\": \"Usada Pekora\", \"talla\": 37, \"precio\": 7.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos usados\", \"marca\": \"Usada Pekora\", \"talla\": 38, \"precio\": 7.00}\n{\"index\": {\"_index\": \"zapatillas\"}}\n{\"nombre\": \"Zapatos usados\", \"marca\": \"Usada Pekora\", \"talla\": 40, \"precio\": 7.00}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/zapatillas/_bulk?pretty",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_bulk"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get shoes cheaper than 15$",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "ApiKey UE8zOHQ1UUJzdGZPby1yLWhmdUU6QzBwR3FPOUJRTjZUc3ZPMjJXSWNkZw==",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"range\": {\n            \"precio\": {\n                \"lte\": 15.00 \n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:9200/zapatillas/_search"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Adidas shoes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "ApiKey UE8zOHQ1UUJzdGZPby1yLWhmdUU6QzBwR3FPOUJRTjZUc3ZPMjJXSWNkZw==",
+						"key": "Authorization"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match\": {\n            \"marca\": \"Adidas\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:9200/zapatillas/_search"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete all documents",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "ApiKey UE8zOHQ1UUJzdGZPby1yLWhmdUU6QzBwR3FPOUJRTjZUc3ZPMjJXSWNkZw==",
+						"key": "Authorization"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\" : { \n        \"match_all\" : {}\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:9200/zapatillas/_delete_by_query"
+			},
+			"response": []
+		}
+	]
+}
