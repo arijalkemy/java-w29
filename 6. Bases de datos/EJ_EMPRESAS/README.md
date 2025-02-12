@@ -4,7 +4,7 @@
 
 Teniendo las tablas de una base de datos de una empresa:
 
-![creacion tablas](empresas_init.sql)
+[creacion tablas](empresas_init.sql)
 
 ## Realizar
 
@@ -16,4 +16,4 @@ Teniendo las tablas de una base de datos de una empresa:
 - Mostrar los datos del empleado que tiene el salario más alto en el departamento de ‘Ventas’.
 
 ## Solución planteada 
-![Solucion](empresa_Consultas.sql)
+[Solucion](empresa_Consultas.sql)
