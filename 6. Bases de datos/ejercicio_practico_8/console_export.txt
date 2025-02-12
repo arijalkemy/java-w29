@@ -1,0 +1,73 @@
+# Welcome to the Dev Tools Console!
+#
+# You can use Console to explore the Elasticsearch API. See the Elasticsearch API reference to learn more:
+# https://www.elastic.co/guide/en/elasticsearch/reference/current/rest-apis.html
+#
+# Here are a few examples to get you started.
+
+
+# Create an index
+PUT zapatillas
+{
+  "mappings": {
+    "properties": {
+      "marca": { "type": "text" },
+      "modelo": { "type": "text" },
+      "precio": { "type": "float" },
+      "talla": { "type": "integer" },
+      "color": { "type": "keyword" },
+      "tipo": { "type": "keyword" },
+      "stock": { "type": "integer" },
+      "descripcion": { "type": "text" }
+    }
+  }
+}
+
+
+# Add a document to my-index
+POST zapatillas/_bulk
+{ "index": { "_id": 1 } }
+{ "marca": "Nike", "modelo": "Air Max 90", "precio": 120.5, "talla": 42, "color": "Negro", "tipo": "Running", "stock": 10, "descripcion": "Zapatillas cómodas y ligeras para correr." }
+{ "index": { "_id": 2 } }
+{ "marca": "Adidas", "modelo": "Ultraboost", "precio": 140.0, "talla": 41, "color": "Blanco", "tipo": "Running", "stock": 15, "descripcion": "Zapatillas con gran amortiguación para running." }
+{ "index": { "_id": 3 } }
+{ "marca": "Puma", "modelo": "RS-X", "precio": 110.0, "talla": 43, "color": "Azul", "tipo": "Casual", "stock": 8, "descripcion": "Diseño moderno y cómodo para uso diario." }
+{ "index": { "_id": 4 } }
+{ "marca": "Reebok", "modelo": "Nano X", "precio": 130.0, "talla": 42, "color": "Rojo", "tipo": "Crossfit", "stock": 5, "descripcion": "Zapatillas resistentes para entrenamientos intensos." }
+{ "index": { "_id": 5 } }
+{ "marca": "New Balance", "modelo": "574", "precio": 90.0, "talla": 40, "color": "Gris", "tipo": "Casual", "stock": 20, "descripcion": "Clásicas y cómodas para el día a día." }
+{ "index": { "_id": 6 } }
+{ "marca": "Asics", "modelo": "Gel-Kayano 28", "precio": 150.0, "talla": 44, "color": "Negro", "tipo": "Running", "stock": 12, "descripcion": "Zapatillas con estabilidad y amortiguación superior." }
+{ "index": { "_id": 7 } }
+{ "marca": "Under Armour", "modelo": "HOVR Phantom 2", "precio": 125.0, "talla": 41, "color": "Verde", "tipo": "Running", "stock": 9, "descripcion": "Zapatillas con tecnología HOVR para máxima energía." }
+{ "index": { "_id": 8 } }
+{ "marca": "Mizuno", "modelo": "Wave Rider 25", "precio": 135.0, "talla": 42, "color": "Azul", "tipo": "Running", "stock": 11, "descripcion": "Excelente soporte para largas distancias." }
+{ "index": { "_id": 9 } }
+{ "marca": "Salomon", "modelo": "Speedcross 5", "precio": 145.0, "talla": 43, "color": "Negro", "tipo": "Trail", "stock": 7, "descripcion": "Zapatillas con tracción agresiva para montaña." }
+{ "index": { "_id": 10 } }
+{ "marca": "Nike", "modelo": "React Infinity Run", "precio": 160.0, "talla": 44, "color": "Blanco", "tipo": "Running", "stock": 14, "descripcion": "Zapatillas de running con amortiguación reactiva." }
+{ "index": { "_id": 11 } }
+{ "marca": "Adidas", "modelo": "NMD R1", "precio": 150.0, "talla": 42, "color": "Negro", "tipo": "Casual", "stock": 10, "descripcion": "Estilo moderno y cómodo para la ciudad." }
+{ "index": { "_id": 12 } }
+{ "marca": "Puma", "modelo": "Cali", "precio": 95.0, "talla": 40, "color": "Blanco", "tipo": "Casual", "stock": 18, "descripcion": "Diseño retro y versátil para cualquier ocasión." }
+{ "index": { "_id": 13 } }
+{ "marca": "Reebok", "modelo": "Club C 85", "precio": 85.0, "talla": 41, "color": "Blanco", "tipo": "Casual", "stock": 22, "descripcion": "Zapatillas clásicas de cuero para estilo urbano." }
+{ "index": { "_id": 14 } }
+{ "marca": "New Balance", "modelo": "997H", "precio": 105.0, "talla": 42, "color": "Gris", "tipo": "Casual", "stock": 16, "descripcion": "Inspiradas en los modelos clásicos de los 90." }
+{ "index": { "_id": 15 } }
+{ "marca": "Asics", "modelo": "Gel-Nimbus 24", "precio": 160.0, "talla": 44, "color": "Azul", "tipo": "Running", "stock": 13, "descripcion": "Máximo confort y absorción de impactos." }
+{ "index": { "_id": 16 } }
+{ "marca": "Under Armour", "modelo": "Charged Assert 9", "precio": 100.0, "talla": 41, "color": "Rojo", "tipo": "Running", "stock": 17, "descripcion": "Zapatillas con amortiguación Charged Cushioning." }
+{ "index": { "_id": 17 } }
+{ "marca": "Mizuno", "modelo": "Wave Inspire 17", "precio": 130.0, "talla": 43, "color": "Negro", "tipo": "Running", "stock": 12, "descripcion": "Zapatillas de estabilidad y control de pronación." }
+{ "index": { "_id": 18 } }
+{ "marca": "Salomon", "modelo": "XA Pro 3D", "precio": 140.0, "talla": 42, "color": "Verde", "tipo": "Trail", "stock": 8, "descripcion": "Zapatillas robustas para terrenos difíciles." }
+{ "index": { "_id": 19 } }
+{ "marca": "Nike", "modelo": "ZoomX Vaporfly", "precio": 250.0, "talla": 42, "color": "Rojo", "tipo": "Running", "stock": 6, "descripcion": "Zapatillas ultra rápidas para competición." }
+{ "index": { "_id": 20 } }
+{ "marca": "Adidas", "modelo": "Superstar", "precio": 90.0, "talla": 40, "color": "Blanco", "tipo": "Casual", "stock": 20, "descripcion": "Clásico diseño con puntera de goma." }
+
+
+
+# Perform a search in my-index
+GET zapatillas/_search
