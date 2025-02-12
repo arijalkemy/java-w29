@@ -1,0 +1,44 @@
+PUT zapatillas
+GET /_cat/indices
+GET zapatillas/_search
+{
+    "query": {
+        "match_all": {}
+    },
+    "size": 20
+}
+POST _bulk
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Nike", "modelo": "Air Max", "talla": 42, "color": "Negro", "precio": 120.50 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Adidas", "modelo": "Ultraboost", "talla": 40, "color": "Blanco", "precio": 150.00 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Puma", "modelo": "RS-X", "talla": 41, "color": "Rojo", "precio": 110.75 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Reebok", "modelo": "Classic", "talla": 43, "color": "Azul", "precio": 85.00 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "New Balance", "modelo": "574", "talla": 42, "color": "Gris", "precio": 99.99 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Under Armour", "modelo": "HOVR", "talla": 44, "color": "Verde", "precio": 130.25 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Nike", "modelo": "Air Force 1", "talla": 40, "color": "Blanco", "precio": 110.00 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Adidas", "modelo": "Superstar", "talla": 41, "color": "Negro", "precio": 90.00 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Vans", "modelo": "Old Skool", "talla": 42, "color": "Negro", "precio": 75.00 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Converse", "modelo": "Chuck Taylor", "talla": 43, "color": "Rojo", "precio": 70.00 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Fila", "modelo": "Disruptor", "talla": 40, "color": "Blanco", "precio": 95.50 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Puma", "modelo": "Cali", "talla": 39, "color": "Rosa", "precio": 85.75 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "New Balance", "modelo": "327", "talla": 42, "color": "Azul", "precio": 120.00 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Nike", "modelo": "ZoomX", "talla": 44, "color": "Verde", "precio": 180.99 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Adidas", "modelo": "NMD", "talla": 41, "color": "Negro", "precio": 140.00 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Reebok", "modelo": "Nano", "talla": 43, "color": "Gris", "precio": 110.50 }
+{ "index": { "_index": "zapatillas" } }
+{ "marca": "Under Armour", "modelo": "Curry Flow", "talla": 42, "color": "Amarillo", "precio": 160.75 }
