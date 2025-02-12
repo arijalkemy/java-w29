@@ -28,8 +28,14 @@ CREATE TEMPORARY TABLE movies_temp AS SELECT * FROM movies;
 DELETE FROM movies_temp WHERE awards < 5;
 
 -- 7. Obtener la lista de todos los géneros que tengan al menos una película.
-SELECT g.id, g.name FROM genres g
+SELECT g.id, g.name
+FROM genres g
 WHERE g.id IN (SELECT m.genre_id FROM movies m WHERE m.genre_id = g.id);
+
+SELECT g.id, g.name
+FROM genres g
+    JOIN movies m ON m.genre_id = g.id
+GROUP BY g.id;
 
 -- 8. Obtener la lista de actores cuya película favorita haya ganado más de 3 awards.
 SELECT a.id, a.first_name, a.last_name FROM actors a

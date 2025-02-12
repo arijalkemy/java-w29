@@ -2,8 +2,7 @@
 
 ## Ejercicio 1
 
-1. **Con la base de datos **“movies”**, se propone crear una tabla temporal llamada “TWD” y guardar en la misma los 
-2. episodios de todas las temporadas de “The Walking Dead”.**
+1. **Con la base de datos **“movies”**, se propone crear una tabla temporal llamada “TWD” y guardar en la misma los episodios de todas las temporadas de “The Walking Dead”.**
 
 ```sql
 -- Crear tabla
