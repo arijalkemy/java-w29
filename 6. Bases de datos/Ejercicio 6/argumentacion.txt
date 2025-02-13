@@ -1,0 +1,4 @@
+Hice las tablas nuevas, como la de usuarios, para poder separar datos innecesarios para la
+factura y evitar una repetición excesiva de esos datos, también quite las descripciones para evitar
+esas redundancias, cumpliendo con la 1FN, elimine cosas como la descripción del artículo para cumplir
+2FN, esto también ayuda a la 3FN y también separé las formas de pago para cumplir con esta norma.
