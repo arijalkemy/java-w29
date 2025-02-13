@@ -1,0 +1,98 @@
+/*PUT /zapatillas_deportivas*/
+{
+  "mappings": {
+    "properties": {
+      "nombre": {
+        "type": "text"
+      },
+      "marca": {
+        "type": "keyword"
+      },
+      "talla": {
+        "type": "keyword"
+      },
+      "color": {
+        "type": "keyword"
+      },
+      "precio": {
+        "type": "float"
+      },
+      "stock": {
+        "type": "integer"
+      },
+      "fecha_lanzamiento": {
+        "type": "date"
+      }
+    }
+  }
+}
+
+
+
+
+/*POST /zapatillas_deportivas/_bulk*/
+{ "index": { "_id": 1 } }
+{ "nombre": "Nike Air Max 2021", "marca": "Nike", "talla": "42", "color": "Blanco", "precio": 150.00, "stock": 50, "fecha_lanzamiento": "2021-04-01" }
+{ "index": { "_id": 2 } }
+{ "nombre": "Adidas Ultraboost", "marca": "Adidas", "talla": "43", "color": "Negro", "precio": 180.00, "stock": 30, "fecha_lanzamiento": "2020-06-15" }
+{ "index": { "_id": 3 } }
+{ "nombre": "Puma RS-X", "marca": "Puma", "talla": "44", "color": "Rojo", "precio": 120.00, "stock": 100, "fecha_lanzamiento": "2019-10-10" }
+{ "index": { "_id": 4 } }
+{ "nombre": "Reebok Classic Leather", "marca": "Reebok", "talla": "41", "color": "Blanco", "precio": 75.00, "stock": 150, "fecha_lanzamiento": "2018-05-20" }
+{ "index": { "_id": 5 } }
+{ "nombre": "New Balance 574", "marca": "New Balance", "talla": "40", "color": "Azul", "precio": 95.00, "stock": 200, "fecha_lanzamiento": "2017-08-25" }
+{ "index": { "_id": 6 } }
+{ "nombre": "Asics Gel Kayano 27", "marca": "Asics", "talla": "45", "color": "Verde", "precio": 160.00, "stock": 80, "fecha_lanzamiento": "2020-12-01" }
+{ "index": { "_id": 7 } }
+{ "nombre": "Nike Air Force 1", "marca": "Nike", "talla": "44", "color": "Blanco", "precio": 100.00, "stock": 120, "fecha_lanzamiento": "2016-03-15" }
+{ "index": { "_id": 8 } }
+{ "nombre": "Adidas Stan Smith", "marca": "Adidas", "talla": "42", "color": "Verde", "precio": 85.00, "stock": 130, "fecha_lanzamiento": "2015-07-10" }
+{ "index": { "_id": 9 } }
+{ "nombre": "Nike React Element 55", "marca": "Nike", "talla": "43", "color": "Gris", "precio": 140.00, "stock": 50, "fecha_lanzamiento": "2020-02-18" }
+{ "index": { "_id": 10 } }
+{ "nombre": "Puma Clyde Court", "marca": "Puma", "talla": "41", "color": "Amarillo", "precio": 130.00, "stock": 200, "fecha_lanzamiento": "2019-03-15" }
+{ "index": { "_id": 11 } }
+{ "nombre": "Under Armour Curry One", "marca": "Under Armour", "talla": "44", "color": "Azul", "precio": 110.00, "stock": 50, "fecha_lanzamiento": "2018-05-10" }
+{ "index": { "_id": 12 } }
+{ "nombre": "Vans Old Skool", "marca": "Vans", "talla": "42", "color": "Negro", "precio": 60.00, "stock": 100, "fecha_lanzamiento": "2017-11-10" }
+{ "index": { "_id": 13 } }
+{ "nombre": "Converse Chuck Taylor All Star", "marca": "Converse", "talla": "40", "color": "Rojo", "precio": 55.00, "stock": 200, "fecha_lanzamiento": "2016-07-15" }
+{ "index": { "_id": 14 } }
+{ "nombre": "Jordan 1 Retro", "marca": "Jordan", "talla": "43", "color": "Blanco/Negro", "precio": 160.00, "stock": 90, "fecha_lanzamiento": "2021-02-01" }
+{ "index": { "_id": 15 } }
+{ "nombre": "Nike ZoomX Vaporfly Next%", "marca": "Nike", "talla": "45", "color": "Naranja", "precio": 250.00, "stock": 40, "fecha_lanzamiento": "2020-06-01" }
+{ "index": { "_id": 16 } }
+{ "nombre": "Adidas NMD R1", "marca": "Adidas", "talla": "42", "color": "Negro", "precio": 140.00, "stock": 110, "fecha_lanzamiento": "2019-08-20" }
+{ "index": { "_id": 17 } }
+{ "nombre": "Saucony Triumph 18", "marca": "Saucony", "talla": "44", "color": "Azul", "precio": 135.00, "stock": 80, "fecha_lanzamiento": "2020-04-10" }
+{ "index": { "_id": 18 } }
+{ "nombre": "Fila Disruptor 2", "marca": "Fila", "talla": "43", "color": "Blanco", "precio": 75.00, "stock": 150, "fecha_lanzamiento": "2018-05-01" }
+{ "index": { "_id": 19 } }
+{ "nombre": "Nike Air Zoom Pegasus 37", "marca": "Nike", "talla": "45", "color": "Negro", "precio": 120.00, "stock": 100, "fecha_lanzamiento": "2020-01-25" }
+{ "index": { "_id": 20 } }
+{ "nombre": "Adidas UltraBoost 21", "marca": "Adidas", "talla": "44", "color": "Blanco", "precio": 180.00, "stock": 75, "fecha_lanzamiento": "2021-06-10" }
+
+
+
+
+/*GET /zapatillas_deportivas/_search*/
+{
+  "query": {
+    "match": {
+      "marca": "Nike"
+    }
+  }
+}
+
+
+
+
+/*GET /zapatillas_deportivas/_search*/
+{
+  "query": {
+    "match": {
+      "nombre": "Fila Disruptor 2"
+    }
+  }
+}
+
