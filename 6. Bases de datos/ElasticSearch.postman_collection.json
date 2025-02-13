@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "d1b91e20-3003-45e1-9ecf-a4da33f9dd49",
+		"name": "ElasticSearch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40519729",
+		"_collection_link": "https://sprint1-4389.postman.co/workspace/Sprint-1~d73cfb23-4deb-4f0b-be0d-2d9d2dd4d782/collection/40519729-d1b91e20-3003-45e1-9ecf-a4da33f9dd49?action=share&source=collection_link&creator=40519729"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "LMc2UQ2H",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mappings\": {\n        \"properties\": {\n            \"marca\": {\n                \"type\": \"text\"\n            },\n            \"precio\":{\n                \"type\": \"float\"\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert many",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "LMc2UQ2H",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"1\" } }\n{ \"marca\": \"Nike\", \"modelo\": \"Air Max 90\", \"precio\": 150.00, \"talla\": 42, \"color\": \"negro\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"2\" } }\n{ \"marca\": \"Adidas\", \"modelo\": \"Superstar\", \"precio\": 100.00, \"talla\": 41, \"color\": \"blanco\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"3\" } }\n{ \"marca\": \"Puma\", \"modelo\": \"Clyde\", \"precio\": 90.00, \"talla\": 40, \"color\": \"azul\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"4\" } }\n{ \"marca\": \"Reebok\", \"modelo\": \"Classic Leather\", \"precio\": 85.00, \"talla\": 39, \"color\": \"blanco\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"5\" } }\n{ \"marca\": \"New Balance\", \"modelo\": \"574\", \"precio\": 110.00, \"talla\": 43, \"color\": \"gris\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"6\" } }\n{ \"marca\": \"Vans\", \"modelo\": \"Old Skool\", \"precio\": 70.00, \"talla\": 38, \"color\": \"negro\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"7\" } }\n{ \"marca\": \"Converse\", \"modelo\": \"Chuck Taylor All Star\", \"precio\": 60.00, \"talla\": 37, \"color\": \"rojo\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"8\" } }\n{ \"marca\": \"Under Armour\", \"modelo\": \"Charged Assert 8\", \"precio\": 95.00, \"talla\": 44, \"color\": \"negro\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"9\" } }\n{ \"marca\": \"Asics\", \"modelo\": \"Gel-Lyte III\", \"precio\": 130.00, \"talla\": 42, \"color\": \"verde\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"10\" } }\n{ \"marca\": \"Skechers\", \"modelo\": \"Go Walk\", \"precio\": 75.00, \"talla\": 41, \"color\": \"azul\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"11\" } }\n{ \"marca\": \"Fila\", \"modelo\": \"Disruptor II\", \"precio\": 80.00, \"talla\": 39, \"color\": \"blanco\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"12\" } }\n{ \"marca\": \"Salomon\", \"modelo\": \"Speedcross 5\", \"precio\": 140.00, \"talla\": 43, \"color\": \"negro\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"13\" } }\n{ \"marca\": \"Timberland\", \"modelo\": \"Euro Hiker\", \"precio\": 160.00, \"talla\": 44, \"color\": \"marrón\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"14\" } }\n{ \"marca\": \"Merrell\", \"modelo\": \"Moab 2\", \"precio\": 120.00, \"talla\": 42, \"color\": \"verde\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"15\" } }\n{ \"marca\": \"Columbia\", \"modelo\": \"Newton Ridge\", \"precio\": 130.00, \"talla\": 41, \"color\": \"azul\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"16\" } }\n{ \"marca\": \"Hoka One One\", \"modelo\": \"Bondi 7\", \"precio\": 170.00, \"talla\": 43, \"color\": \"negro\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"17\" } }\n{ \"marca\": \"Brooks\", \"modelo\": \"Ghost 14\", \"precio\": 140.00, \"talla\": 42, \"color\": \"gris\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"18\" } }\n{ \"marca\": \"Onitsuka Tiger\", \"modelo\": \"Mexico 66\", \"precio\": 125.00, \"talla\": 40, \"color\": \"amarillo\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"19\" } }\n{ \"marca\": \"Diadora\", \"modelo\": \"B. Elite\", \"precio\": 110.00, \"talla\": 41, \"color\": \"rojo\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"20\" } }\n{ \"marca\": \"Lacoste\", \"modelo\": \"Carnaby Evo\", \"precio\": 135.00, \"talla\": 42, \"color\": \"blanco\" }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_bulk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "LMc2UQ2H",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9200/zapatillas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "LMc2UQ2H",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
