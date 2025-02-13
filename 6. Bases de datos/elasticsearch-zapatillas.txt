@@ -1,0 +1,95 @@
+PUT /zapatillas-deportivas
+{
+  "mappings": {
+    "properties": {
+      "brand": {
+        "type": "text"
+      },
+      "model": {
+        "type": "text"
+      },
+      "color": {
+        "type": "text"
+      },
+      "size": {
+        "type": "text"
+      }
+    }
+  }
+}
+
+DELETE /zapatillas-deportivas
+
+GET /zapatillas-deportivas/_mapping
+
+POST /zapatillas-deportivas/_bulk
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Nike", "model": "Air Max", "color": "Red", "size": 42 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Adidas", "model": "Ultra Boost", "color": "Black", "size": 43 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Puma", "model": "Suede", "color": "Blue", "size": 44 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Reebok", "model": "Classic", "color": "White", "size": 41 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Asics", "model": "Gel-Lyte", "color": "Green", "size": 42 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "New Balance", "model": "574", "color": "Grey", "size": 43 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Converse", "model": "Chuck Taylor", "color": "Black", "size": 44 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Vans", "model": "Old Skool", "color": "Red", "size": 41 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Under Armour", "model": "Curry", "color": "Blue", "size": 42 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Jordan", "model": "Air Jordan 1", "color": "White", "size": 43 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Fila", "model": "Disruptor", "color": "Pink", "size": 44 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Skechers", "model": "D'Lites", "color": "Black", "size": 41 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Brooks", "model": "Ghost", "color": "Grey", "size": 42 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Saucony", "model": "Jazz", "color": "Green", "size": 43 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Mizuno", "model": "Wave Rider", "color": "Blue", "size": 44 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Hoka One One", "model": "Clifton", "color": "Red", "size": 41 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Merrell", "model": "Moab", "color": "Brown", "size": 42 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Salomon", "model": "Speedcross", "color": "Black", "size": 43 }
+{ "index": { "_index": "zapatillas-deportivas" } }
+{ "brand": "Timberland", "model": "6-Inch Boot", "color": "Yellow", "size": 44 }
+
+GET /zapatillas-deportivas/_search
+{
+  "query": {
+    "match": {
+      "brand": "Nike"
+    }
+  }
+}
+
+POST /zapatillas-deportivas/_doc
+{ "brand": "Nike", "model": "F1", "color": "White", "size": 40 }
+
+DELETE /zapatillas-deportivas/_doc/t3ay-5QBfQbgYGhn2glz
+
+POST /zapatillas-deportivas/_update/t3ay-5QBfQbgYGhn2glz
+{
+  "doc": {
+    "color": "Red", 
+    "size": 43
+  }
+}
+
+PUT /zapatillas-deportivas/_doc/t3ay-5QBfQbgYGhn2glz
+{
+  "brand": "Nike",
+  "model": "F2",
+  "color": "Yellow",
+  "size": 36
+}
+
+GET /_cat/indices

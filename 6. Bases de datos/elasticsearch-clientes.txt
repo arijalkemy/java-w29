@@ -1,0 +1,34 @@
+
+POST /clientes/_doc
+{
+  "nombre":"jhon",
+  "apellido":"zuñiga",
+  "pais":"colombia",
+  "localidad":"zipaquira"
+}
+
+GET /clientes/_search
+{
+  "query": {
+    "match": {
+      "pais":"españa"
+    }
+  }
+}
+
+DELETE /clientes/_doc/4n9qAJUBYoh-kvwiB54E
+
+POST /clientes/_update/4X9pAJUBYoh-kvwi_576
+{
+  "doc": {
+    "nombre":"jhon"
+  }
+}
+
+PUT /clientes/_doc/4X9pAJUBYoh-kvwi_576
+{
+  "nombre": "sebastian",
+  "apellido": "lopez",
+  "pais": "españa",
+  "localidad": "zipaquira"
+}
