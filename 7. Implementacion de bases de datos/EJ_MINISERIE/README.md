@@ -6,7 +6,11 @@ El objetivo principal de esta práctica es afianzar los conocimientos de ORM y J
 ## Ejercicio 1
 1. Crear una aplicación Spring Boot “MiniSeries” con las correspondientes dependencias en Spring Initializr.
 2. Agregar los parámetros necesarios en el archivo de configuración application.properties. En caso de querer utilizar H2 como bd de ejemplo, te dejamos un  ejemplo:
-![img.png](img.png)
+
+   
+      ![img.png](img.png)
+
+
 3. Levantar la aplicación y comprobar que está funcionando el servicio h2 http://localhost:8080/h2-console.
 4. Conectarse a la consola de h2 empleando los parámetros establecidos en el archivo application.properties.
 5. Crear una clase MiniSerie dentro del paquete “model”, que tenga los atributos Long id, String name, Double rating e int amount_of_awards.
