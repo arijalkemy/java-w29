@@ -1,0 +1,227 @@
+DELETE /zapatillas
+
+// Se solicita crear un índice (BBDD) en Elasticsearch, de zapatillas deportivas, donde se guardará información relacionada a estos productos.
+PUT /zapatillas
+{
+  "mappings": {
+    "properties": {
+      "marca": { "type": "keyword" },
+      "modelo": { "type": "keyword" },
+      "tamaño": { "type": "keyword" },
+      "color": { "type": "keyword" },
+      "precio": { "type": "float" },
+      "deporte": { "type": "keyword" }
+    }
+  }
+}
+
+// Guardar 20 registros en la base de datos creada, considerando los campos que crea necesarios.
+POST /zapatillas/_doc
+{
+  "marca": "Nike",
+  "modelo": "Air Max 270",
+  "tamaño": "42",
+  "color": "Negro",
+  "precio": 120.00,
+  "deporte": "Correr"
+}
+
+POST /zapatillas/_doc/
+{
+  "marca": "Adidas",
+  "modelo": "Ultraboost 22",
+  "tamaño": "40",
+  "color": "Blanco",
+  "precio": 180.00,
+  "deporte": "Correr"
+}
+
+POST /zapatillas/_doc/
+{
+  "marca": "Puma",
+  "modelo": "Future Rider",
+  "tamaño": "44",
+  "color": "Azul",
+  "precio": 90.00,
+  "deporte": "Lifestyle"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Reebok",
+  "modelo": "Nano X1",
+  "tamaño": "45",
+  "color": "Rojo",
+  "precio": 130.00,
+  "deporte": "Crossfit"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Asics",
+  "modelo": "Gel-Kayano 28",
+  "tamaño": "41",
+  "color": "Gris",
+  "precio": 160.00,
+  "deporte": "Correr"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Nike",
+  "modelo": "Zoom Pegasus 38",
+  "tamaño": "43",
+  "color": "Rojo",
+  "precio": 110.00,
+  "deporte": "Correr"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Under Armour",
+  "modelo": "HOVR Phantom 2",
+  "tamaño": "44",
+  "color": "Negro",
+  "precio": 140.00,
+  "deporte": "Correr"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Adidas",
+  "modelo": "Superstar",
+  "tamaño": "39",
+  "color": "Blanco",
+  "precio": 85.00,
+  "deporte": "Lifestyle"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Puma",
+  "modelo": "RS-X3",
+  "tamaño": "42",
+  "color": "Verde",
+  "precio": 95.00,
+  "deporte": "Lifestyle"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Nike",
+  "modelo": "React Infinity Run",
+  "tamaño": "40",
+  "color": "Azul",
+  "precio": 160.00,
+  "deporte": "Correr"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Adidas",
+  "modelo": "NMD R1",
+  "tamaño": "43",
+  "color": "Negro",
+  "precio": 140.00,
+  "deporte": "Lifestyle"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Nike",
+  "modelo": "Air Zoom Pegasus 37",
+  "tamaño": "44",
+  "color": "Blanco",
+  "precio": 110.00,
+  "deporte": "Correr"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Puma",
+  "modelo": "Clyde All-Pro",
+  "tamaño": "45",
+  "color": "Negro",
+  "precio": 120.00,
+  "deporte": "Baloncesto"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "New Balance",
+  "modelo": "Fresh Foam 1080v11",
+  "tamaño": "40",
+  "color": "Azul",
+  "precio": 130.00,
+  "deporte": "Correr"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Reebok",
+  "modelo": "Zig Kinetica II",
+  "tamaño": "42",
+  "color": "Gris",
+  "precio": 150.00,
+  "deporte": "Lifestyle"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Asics",
+  "modelo": "GT-2000 9",
+  "tamaño": "44",
+  "color": "Rojo",
+  "precio": 120.00,
+  "deporte": "Correr"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Under Armour",
+  "modelo": "TriBase Reign 3",
+  "tamaño": "45",
+  "color": "Negro",
+  "precio": 140.00,
+  "deporte": "Crossfit"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Nike",
+  "modelo": "Air Force 1",
+  "tamaño": "41",
+  "color": "Blanco",
+  "precio": 100.00,
+  "deporte": "Lifestyle"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Adidas",
+  "modelo": "Terrex Free Hiker",
+  "tamaño": "43",
+  "color": "Verde",
+  "precio": 200.00,
+  "deporte": "Senderismo"
+}
+
+POST /zapatillas/_doc
+{
+  "marca": "Puma",
+  "modelo": "Speedcat",
+  "tamaño": "42",
+  "color": "Amarillo",
+  "precio": 80.00,
+  "deporte": "Automovilismo"
+}
+
+// Comprobar con consultas los registros insertados en la nueva base de datos.
+// Utilizar como cliente API Rest, la consola Dev Tools de Kibana o Postman para realizar las operaciones.
+
+GET /zapatillas/_search?size=20
+{
+  "query": {
+    "match_all": {}
+  }
+}
