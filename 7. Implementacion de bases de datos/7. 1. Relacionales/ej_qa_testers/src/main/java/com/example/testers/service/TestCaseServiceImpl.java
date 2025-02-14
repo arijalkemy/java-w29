@@ -17,11 +17,12 @@ public class TestCaseServiceImpl implements TestCaseService {
 
     @Override
     public List<TestCase> getTestCases(LocalDate lastUpdate) {
-        List<TestCase> tests = repository.findAll();
-        if (lastUpdate != null) {
-            tests.removeIf(test -> test.getLastUpdate().isBefore(lastUpdate));
-        }
-        return tests;
+        return repository.findTestCaseByLastUpdateAfter(lastUpdate);
+    }
+
+    @Override
+    public List<TestCase> getTestCases() {
+        return repository.findAll();
     }
 
     @Override

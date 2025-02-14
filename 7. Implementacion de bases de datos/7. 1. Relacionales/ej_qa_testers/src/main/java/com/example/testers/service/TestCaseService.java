@@ -8,6 +8,8 @@ import java.util.List;
 public interface TestCaseService {
     List<TestCase> getTestCases(LocalDate lastUpdate);
 
+    List<TestCase> getTestCases();
+
     void saveTestCase(TestCase testCase);
 
     TestCase findTestCase(Long id);

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/api/testcases")
@@ -27,7 +28,11 @@ public class TestCaseController {
     public ResponseEntity<List<TestCase>> getTestCases(
             @RequestParam(required = false, value = "last_update")
             @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDate lastUpdate) {
-        return ResponseEntity.ok(service.getTestCases(lastUpdate));
+        if (Objects.isNull(lastUpdate)) {
+            return ResponseEntity.ok(service.getTestCases());
+        } else {
+            return ResponseEntity.ok(service.getTestCases(lastUpdate));
+        }
     }
 
     @GetMapping("/{id}")
