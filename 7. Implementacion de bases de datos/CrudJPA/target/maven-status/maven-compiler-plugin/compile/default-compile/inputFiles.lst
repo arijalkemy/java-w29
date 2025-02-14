@@ -1,0 +1,7 @@
+/Users/jzagardia/Downloads/QaTester/src/main/java/com/QaTester/QaTester/QaTesterApplication.java
+/Users/jzagardia/Downloads/QaTester/src/main/java/com/QaTester/QaTester/controller/TestCaseController.java
+/Users/jzagardia/Downloads/QaTester/src/main/java/com/QaTester/QaTester/dto/TestCaseDto.java
+/Users/jzagardia/Downloads/QaTester/src/main/java/com/QaTester/QaTester/model/TestCase.java
+/Users/jzagardia/Downloads/QaTester/src/main/java/com/QaTester/QaTester/repository/ITestCaseRepository.java
+/Users/jzagardia/Downloads/QaTester/src/main/java/com/QaTester/QaTester/service/ITestCaseService.java
+/Users/jzagardia/Downloads/QaTester/src/main/java/com/QaTester/QaTester/service/TestCaseServiceImpl.java
