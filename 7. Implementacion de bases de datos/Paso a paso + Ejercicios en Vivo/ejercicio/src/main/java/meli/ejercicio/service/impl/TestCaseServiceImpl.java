@@ -17,7 +17,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TestCaseServiceImpl implements TestCaseService {
     private final TestCaseJpaRepository testCaseJpaRepository;
-    private final ObjectMapper objectMapper;
+    //private final ObjectMapper objectMapper;
+    private ModelMapper modelMapper = new ModelMapper();
 
     @Override
     public TestCaseDto getTestCaseById(Long id) {
@@ -25,15 +26,15 @@ public class TestCaseServiceImpl implements TestCaseService {
         if (testCase == null) {
             throw new RuntimeException("Test case not found");
         } else {
-            return objectMapper.convertValue(testCase, TestCaseDto.class);
+            return modelMapper.map(testCase, TestCaseDto.class);
         }
     }
 
     @Override
     public TestCaseDto createTestCase(TestCaseDto testCaseDto) {
-        TestCase testCase = objectMapper.convertValue(testCaseDto, TestCase.class);
+        TestCase testCase = modelMapper.map(testCaseDto, TestCase.class);
         TestCase testCaseSaved = testCaseJpaRepository.save(testCase);
-        return objectMapper.convertValue(testCaseSaved, TestCaseDto.class);
+        return modelMapper.map(testCaseSaved, TestCaseDto.class);
     }
 
     @Override
@@ -48,7 +49,7 @@ public class TestCaseServiceImpl implements TestCaseService {
             testCase.setNumberOfTries(testCaseDto.getNumberOfTries());
             testCase.setLastUpdate(testCaseDto.getLastUpdate());
             TestCase testCaseSaved = testCaseJpaRepository.save(testCase);
-            return objectMapper.convertValue(testCaseSaved, TestCaseDto.class);
+            return modelMapper.map(testCaseSaved, TestCaseDto.class);
         }
     }
 
@@ -66,7 +67,7 @@ public class TestCaseServiceImpl implements TestCaseService {
     public List<TestCaseDto> getAllTestCases() {
         List<TestCase> testCases = testCaseJpaRepository.findAll();
 
-        return testCases.stream().map(testCase -> objectMapper.convertValue
+        return testCases.stream().map(testCase -> modelMapper.map
                 (testCase, TestCaseDto.class)).toList();
     }
 
@@ -74,6 +75,6 @@ public class TestCaseServiceImpl implements TestCaseService {
     public List<TestCaseDto> getTestCasesByFecha(LocalDate fecha) {
         List<TestCase> testCases = testCaseJpaRepository.findAll();
         return testCases.stream().filter(testCase -> testCase.getLastUpdate().isAfter(fecha)).
-                map(testCase -> objectMapper.convertValue(testCase, TestCaseDto.class)).toList();
+                map(testCase -> modelMapper.map(testCase, TestCaseDto.class)).toList();
     }
 }

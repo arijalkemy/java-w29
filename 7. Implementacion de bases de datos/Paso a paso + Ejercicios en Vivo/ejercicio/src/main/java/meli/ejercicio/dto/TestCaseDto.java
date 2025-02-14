@@ -11,6 +11,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TestCaseDto {
+    private Long id;
+
     private String description;
 
     private Boolean tested;

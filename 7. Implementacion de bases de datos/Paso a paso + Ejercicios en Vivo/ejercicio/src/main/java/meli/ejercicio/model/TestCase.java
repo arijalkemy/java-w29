@@ -15,7 +15,8 @@ import java.time.LocalDate;
 public class TestCase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_case;
+    @Column(name = "id_case")
+    private Long id;
 
     private String description;
 
