@@ -1,6 +1,5 @@
 package meli.ejercicio.service.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import meli.ejercicio.dto.TestCaseDto;
 import meli.ejercicio.model.TestCase;
@@ -10,14 +9,12 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class TestCaseServiceImpl implements TestCaseService {
     private final TestCaseJpaRepository testCaseJpaRepository;
-    //private final ObjectMapper objectMapper;
     private ModelMapper modelMapper = new ModelMapper();
 
     @Override
