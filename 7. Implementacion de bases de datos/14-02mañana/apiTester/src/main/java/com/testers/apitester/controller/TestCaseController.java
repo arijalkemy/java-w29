@@ -25,19 +25,27 @@ public class TestCaseController {
         return testCaseService.getTestCase();
     }
 
+    @GetMapping("/api/testcases/{id}")
+    public TestCase getTests(@PathVariable Long id){
+        return testCaseService.findTestById(id);
+    }
+
     @PutMapping("/api/testcases/{id}")
     public String editTestCase(@PathVariable Long id,
-                               @RequestParam ("description") String description,
-                               @RequestParam ("tested") Boolean tested,
-                               @RequestParam ("pased") Boolean pased,
-                               @RequestParam ("number_of_tries") int number_of_tries){
+                               @RequestBody TestCase testCase){
         TestCase test = testCaseService.findTestById(id);
-        test.setDescription(description);
-        test.setTested(tested);
-        test.setPassed(pased);
-        test.setNumber_of_tries(number_of_tries);
+        test.setDescription(testCase.getDescription());
+        test.setTested(testCase.getTested());
+        test.setPassed(testCase.getPassed());
+        test.setNumber_of_tries(testCase.getNumber_of_tries());
         test.setLast_update(LocalDate.now());
         testCaseService.saveTestCase(test);
         return "Test modificado con éxito";
+    }
+
+    @DeleteMapping("/api/testcases/{id}")
+    public String deleteTestCase(@PathVariable Long id){
+        testCaseService.deleteTest(id);
+        return "Test deleted";
     }
 }
