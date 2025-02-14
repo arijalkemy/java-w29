@@ -1,0 +1,71 @@
+package com.meli.obtenerdiploma.controller;
+
+import com.meli.obtenerdiploma.exception.StudentNotFoundException;
+import com.meli.obtenerdiploma.model.StudentDTO;
+import com.meli.obtenerdiploma.model.SubjectDTO;
+import com.meli.obtenerdiploma.service.ObtenerDiplomaService;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import java.util.List;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.verify;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+
+@SpringBootTest
+@AutoConfigureMockMvc
+class ObtenerDiplomaControllerTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockBean
+    private ObtenerDiplomaService service;
+
+    @Test
+    @DisplayName("Analyze score successfully")
+    void analyzeScoreSuccessfully() throws Exception {
+        Long studentId = 1L;
+        SubjectDTO math = new SubjectDTO("Matemáticas", 10.0);
+        SubjectDTO history = new SubjectDTO("Historia", 9.0);
+
+        StudentDTO student = StudentDTO.builder()
+                .id(studentId)
+                .studentName("Juan")
+                .subjects(List.of(math, history))
+                .averageScore(9.5)
+                .build();
+
+        given(service.analyzeScores(studentId)).willReturn(student);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/analyzeScores/{id}", studentId))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.id").value(student.getId()))
+                .andExpect(jsonPath("$.studentName").value(student.getStudentName()))
+                .andExpect(jsonPath("$.averageScore").value(student.getAverageScore()));
+
+        verify(service).analyzeScores(studentId);
+    }
+
+    @Test
+    @DisplayName("Analyze score id invalid")
+    void analyzeScoreIdInvalid() throws Exception {
+        given(service.analyzeScores(any(Long.class))).willThrow(StudentNotFoundException.class);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/analyzeScores/{id}", 1L))
+                .andExpect(status().isNotFound());
+
+        verify(service).analyzeScores(1L);
+    }
+}
