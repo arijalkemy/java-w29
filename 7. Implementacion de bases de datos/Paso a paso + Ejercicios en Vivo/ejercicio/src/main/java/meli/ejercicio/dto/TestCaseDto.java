@@ -1,0 +1,23 @@
+package meli.ejercicio.dto;
+
+import jakarta.persistence.Column;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class TestCaseDto {
+    private String description;
+
+    private Boolean tested;
+
+    private Boolean passed;
+
+    private int numberOfTries;
+
+    private LocalDate lastUpdate;
+}
