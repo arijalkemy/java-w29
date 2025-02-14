@@ -41,3 +41,4 @@ retorna un 400 si no existe y un 200 si existe el usuario
 HEAD /clientes/_doc/H4QG-5QBOh6RXaPZ4XZr
 ```
 ## Archivo con solución
+[Solucion](solucion.txt)
