@@ -1,4 +1,4 @@
-
+# crear el index zapatillas
 PUT /zapatillas
 
 POST _bulk
