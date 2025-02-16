@@ -2,6 +2,7 @@ package exercise.qa_testers.controller;
 
 import exercise.qa_testers.dto.request.TestCaseRequestDto;
 import exercise.qa_testers.service.ITestCaseService;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +26,7 @@ public class testCaseController {
     }
 
     @GetMapping
-    public ResponseEntity<?> getAll(@RequestParam(required = false) LocalDate lastUpdate){
+    public ResponseEntity<?> getAll(@RequestParam(name = "last_update", required = false) @DateTimeFormat(pattern = "dd-MM-yyyy") LocalDate lastUpdate){
         return new ResponseEntity<>(this.testCaseService.getAll(lastUpdate), HttpStatus.OK);
     }
 

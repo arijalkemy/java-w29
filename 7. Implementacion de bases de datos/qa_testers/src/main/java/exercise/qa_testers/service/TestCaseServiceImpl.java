@@ -20,7 +20,11 @@ public class TestCaseServiceImpl implements ITestCaseService{
 
     @Override
     public List<TestCase> getAll(LocalDate lastUpdate) {
-        return testCaseRepository.findByLastUpdateAfter(lastUpdate);
+        if(lastUpdate == null){
+            return this.testCaseRepository.findAll();
+        } else {
+            return testCaseRepository.findByLastUpdateAfter(lastUpdate);
+        }
     }
 
     @Override

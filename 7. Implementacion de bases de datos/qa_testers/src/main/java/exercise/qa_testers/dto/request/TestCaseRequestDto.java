@@ -11,6 +11,7 @@ public class TestCaseRequestDto {
     private Boolean tested;
     private Boolean passed;
     private Integer number_of_tries;
-    @JsonFormat(pattern = "dd/MM/yyyy")
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate lastUpdate;
 }

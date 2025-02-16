@@ -18,7 +18,6 @@ public class TestCase {
     private Boolean passed;
     private Integer number_of_tries;
 
-    @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(name = "last_update")
     private LocalDate lastUpdate;
 }
