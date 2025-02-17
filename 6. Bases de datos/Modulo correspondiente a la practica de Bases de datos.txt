@@ -7,3 +7,5 @@
 7. Consultas SQL Avanzadas VIVO Ej2 - Library
 8. Optimización de Base de Datos - Facturas
 9. Optimización de Base de Datos VIVO - Movies2
+10. Prueba Elasticsearch/Kibana - clients_queries
+11. Práctica Elasticsearch/Kibana - sports_shoes

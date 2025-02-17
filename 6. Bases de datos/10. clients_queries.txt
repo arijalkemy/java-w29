@@ -1,0 +1,16 @@
+POST /clientes/_doc
+{
+  "nombre": "Paolo",
+  "apellido": "Maldini",
+  "pais": "IT",
+  "localidad": "Posadas"
+}
+
+GET /clientes/_search
+{
+  "query": {
+    "match": {
+      "pais": "IT"
+    }
+  }
+}
