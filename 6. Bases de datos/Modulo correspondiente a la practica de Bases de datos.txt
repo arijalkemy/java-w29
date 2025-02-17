@@ -1,3 +1,7 @@
 1. BD Relacionales P1 - Mueblería
 2. BD Relacionales P1 VIVO - Concesionaria
 3. BD Consultas SQL P2 - Movies
+4. BD Consultas SQL P2 - Company
+5. Consultas SQL Avanzadas - Movies
+6. Consultas SQL Avanzadas VIVO Ej1 - CompanyLive
+7. Consultas SQL Avanzadas VIVO Ej2 - Library
