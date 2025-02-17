@@ -1,0 +1,85 @@
+# 1. Creación de índice
+
+PUT /tienda_zapatillas
+{
+  "mappings": {
+    "properties": {
+      "nombre": {
+        "type": "text"
+      },
+      "marca": {
+        "type": "text"
+      },
+      "modelo": {
+        "type": "text"
+      },
+      "talla": {
+        "type": "double"
+      }
+    }
+  }
+}
+
+# 2. Guardar 20 registros
+
+POST /tienda_zapatillas/_bulk
+{ "index": {}}
+{ "nombre": "Air Max 90", "marca": "Nike", "modelo": "Air Max", "talla": 42.0 }
+{ "index": {}}
+{ "nombre": "Blazer Mid '77", "marca": "Nike", "modelo": "Blazer", "talla": 41.0 }
+{ "index": {}}
+{ "nombre": "Superstar", "marca": "Adidas", "modelo": "Superstar", "talla": 40.0 }
+{ "index": {}}
+{ "nombre": "UltraBoost 21", "marca": "Adidas", "modelo": "UltraBoost", "talla": 43.0 }
+{ "index": {}}
+{ "nombre": "Suede Classic", "marca": "Puma", "modelo": "Suede", "talla": 44.0 }
+{ "index": {}}
+{ "nombre": "RS-X3 Puzzle", "marca": "Puma", "modelo": "RS-X3", "talla": 45.0 }
+{ "index": {}}
+{ "nombre": "574 Core", "marca": "New Balance", "modelo": "574", "talla": 39.0 }
+{ "index": {}}
+{ "nombre": "990v5", "marca": "New Balance", "modelo": "990", "talla": 42.5 }
+{ "index": {}}
+{ "nombre": "Air Force 1", "marca": "Nike", "modelo": "Air Force", "talla": 41.5 }
+{ "index": {}}
+{ "nombre": "Yeezy Boost 350", "marca": "Adidas", "modelo": "Yeezy", "talla": 43.5 }
+{ "index": {}}
+{ "nombre": "NMD_R1", "marca": "Adidas", "modelo": "NMD", "talla": 44.5 }
+{ "index": {}}
+{ "nombre": "Future Rider", "marca": "Puma", "modelo": "Future Rider", "talla": 40.5 }
+{ "index": {}}
+{ "nombre": "ZoomX Vaporfly", "marca": "Nike", "modelo": "ZoomX", "talla": 42.0 }
+{ "index": {}}
+{ "nombre": "Court Vision Low", "marca": "Nike", "modelo": "Court Vision", "talla": 41.0 }
+{ "index": {}}
+{ "nombre": "Gazelle", "marca": "Adidas", "modelo": "Gazelle", "talla": 39.0 }
+{ "index": {}}
+{ "nombre": "Classic Leather", "marca": "Reebok", "modelo": "Classic", "talla": 43.0 }
+{ "index": {}}
+{ "nombre": "Cali Sport", "marca": "Puma", "modelo": "Cali", "talla": 44.0 }
+{ "index": {}}
+{ "nombre": "574 Seasonal", "marca": "New Balance", "modelo": "574", "talla": 45.0 }
+{ "index": {}}
+{ "nombre": "ZX 2K Boost", "marca": "Adidas", "modelo": "ZX 2K", "talla": 40.0 }
+{ "index": {}}
+{ "nombre": "Legend React 2", "marca": "Nike", "modelo": "React", "talla": 41.0 }
+
+# 3. Get All
+
+GET /tienda_zapatillas/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+# 3.1 GetById
+
+GET /tienda_zapatillas/_search
+{
+  "query": {
+    "match": {
+      "_id": "o0sdFJUBydQkJRiamLOv"
+    }
+  }
+}
