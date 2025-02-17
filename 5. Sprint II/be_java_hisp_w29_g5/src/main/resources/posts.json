@@ -1,0 +1,210 @@
+[
+  {
+    "postId": 1,
+    "userId": 1,
+    "date": "03-10-2023",
+    "product": {
+      "productId": 1,
+      "productName": "Camiseta Deportiva",
+      "type": "Ropa",
+      "brand": "Adidas",
+      "color": "Rojo",
+      "notes": "Ideal para correr y hacer ejercicio."
+    },
+    "category": 2,
+    "price": 29.99,
+    "discount": 0.0
+  },
+  {
+    "postId": 2,
+    "userId": 2,
+    "date": "03-10-2023",
+    "product": {
+      "productId": 2,
+      "productName": "Pantalones Deportivos",
+      "type": "Ropa",
+      "brand": "Nike",
+      "color": "Negro",
+      "notes": "Comodidad y estilo."
+    },
+    "category": 2,
+    "price": 39.99,
+    "discount": 0.0
+  },
+  {
+    "postId": 3,
+    "userId": 3,
+    "date": "03-10-2023",
+    "product": {
+      "productId": 3,
+      "productName": "Zapatillas Running",
+      "type": "Calzado",
+      "brand": "Puma",
+      "color": "Blanco",
+      "notes": "Amortiguación avanzada."
+    },
+    "category": 1,
+    "price": 79.99,
+    "discount": 0.0
+  },
+  {
+    "postId": 4,
+    "userId": 4,
+    "date": "03-10-2023",
+    "product": {
+      "productId": 4,
+      "productName": "Gorra Deportiva",
+      "type": "Accesorio",
+      "brand": "Reebok",
+      "color": "Azul",
+      "notes": "Protección solar y estilo."
+    },
+    "category": 3,
+    "price": 19.99,
+    "discount": 0.0
+  },
+  {
+    "postId": 5,
+    "userId": 5,
+    "date": "03-10-2023",
+    "product": {
+      "productId": 5,
+      "productName": "Botella de Agua",
+      "type": "Accesorio",
+      "brand": "CamelBak",
+      "color": "Transparente",
+      "notes": "Ideal para hidratarse en el deporte."
+    },
+    "category": 3,
+    "price": 12.99,
+    "discount": 0.0
+  },
+  {
+    "postId": 6,
+    "userId": 6,
+    "date": "08-01-2025",
+    "product": {
+      "productId": 6,
+      "productName": "Mochila Deportiva",
+      "type": "Accesorio",
+      "brand": "Under Armour",
+      "color": "Gris",
+      "notes": "Espaciosa y cómoda."
+    },
+    "category": 3,
+    "price": 49.99,
+    "discount": 0.0
+  },
+  {
+    "postId": 7,
+    "userId": 7,
+    "date": "03-10-2023",
+    "product": {
+      "productId": 7,
+      "productName": "Calcetines Técnicos",
+      "type": "Ropa",
+      "brand": "Nike",
+      "color": "Blanco",
+      "notes": "Evita ampollas durante el deporte."
+    },
+    "category": 2,
+    "price": 9.99,
+    "discount": 0.0
+  },
+  {
+    "postId": 8,
+    "userId": 8,
+    "date": "03-10-2023",
+    "product": {
+      "productId": 8,
+      "productName": "Reloj Deportivo",
+      "type": "Accesorio",
+      "brand": "Garmin",
+      "color": "Negro",
+      "notes": "Monitorea tu actividad física."
+    },
+    "category": 4,
+    "price": 149.99,
+    "discount": 0.0
+  },
+  {
+    "postId": 9,
+    "userId": 9,
+    "date": "03-10-2023",
+    "product": {
+      "productId": 9,
+      "productName": "Pantalones Cortos",
+      "type": "Ropa",
+      "brand": "Adidas",
+      "color": "Azul",
+      "notes": "Perfecto para entrenamientos intensos."
+    },
+    "category": 2,
+    "price": 24.99,
+    "discount": 0.0
+  },
+  {
+    "postId": 10,
+    "userId": 10,
+    "date": "03-10-2023",
+    "product": {
+      "productId": 10,
+      "productName": "Camiseta Térmica",
+      "type": "Ropa",
+      "brand": "The North Face",
+      "color": "Negro",
+      "notes": "Mantén el calor en clima frío."
+    },
+    "category": 2,
+    "price": 34.99,
+    "discount": 0.0
+  },
+  {
+    "postId": 11,
+    "userId": 10,
+    "date": "18-01-2025",
+    "product": {
+      "productId": 11,
+      "productName": "Sudadera Deportiva",
+      "type": "Ropa",
+      "brand": "Nike",
+      "color": "Negro",
+      "notes": "Diseñada para mantener el calor."
+    },
+    "category": 2,
+    "price": 49.99,
+    "discount": 0.07
+  },
+  {
+    "postId": 12,
+    "userId": 10,
+    "date": "19-01-2025",
+    "product": {
+      "productId": 12,
+      "productName": "Zapatillas de Senderismo",
+      "type": "Calzado",
+      "brand": "The North Face",
+      "color": "Marrón",
+      "notes": "Perfectas para terrenos difíciles."
+    },
+    "category": 1,
+    "price": 129.99,
+    "discount": 0.034
+  },
+  {
+    "postId": 13,
+    "userId": 10,
+    "date": "21-01-2025",
+    "product": {
+      "productId": 13,
+      "productName": "Camiseta de la Selección Argentina",
+      "type": "Ropa",
+      "brand": "adidas",
+      "color": "Blanco",
+      "notes": "Diseñada para tirar facha."
+    },
+    "category": 2,
+    "price": 49.99,
+    "discount": 0
+  }
+]
