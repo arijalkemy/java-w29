@@ -5,3 +5,4 @@
 5. Consultas SQL Avanzadas - Movies
 6. Consultas SQL Avanzadas VIVO Ej1 - CompanyLive
 7. Consultas SQL Avanzadas VIVO Ej2 - Library
+8. Optimización de Base de Datos - Facturas
