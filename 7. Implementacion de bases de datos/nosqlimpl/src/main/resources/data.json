@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Cien años de soledad",
+    "author": "Gabriel García Márquez",
+    "pageCount": 432,
+    "publisher": "Editorial Sudamericana",
+    "publicationYear": 1967
+  },
+  {
+    "name": "1984",
+    "author": "George Orwell",
+    "pageCount": 328,
+    "publisher": "Secker & Warburg",
+    "publicationYear": 1949
+  },
+  {
+    "name": "Don Quijote de la Mancha",
+    "author": "Miguel de Cervantes",
+    "pageCount": 863,
+    "publisher": "Francisco de Robles",
+    "publicationYear": 1605
+  },
+  {
+    "name": "Crimen y castigo",
+    "author": "Fyodor Dostoevsky",
+    "pageCount": 551,
+    "publisher": "The Russian Messenger",
+    "publicationYear": 1866
+  },
+  {
+    "name": "Orgullo y prejuicio",
+    "author": "Jane Austen",
+    "pageCount": 279,
+    "publisher": "T. Egerton, Whitehall",
+    "publicationYear": 1813
+  },
+  {
+    "name": "El principito",
+    "author": "Antoine de Saint-Exupéry",
+    "pageCount": 96,
+    "publisher": "Reynal & Hitchcock",
+    "publicationYear": 1943
+  },
+  {
+    "name": "La sombra del viento",
+    "author": "Carlos Ruiz Zafón",
+    "pageCount": 487,
+    "publisher": "Planeta",
+    "publicationYear": 2001
+  },
+  {
+    "name": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "pageCount": 249,
+    "publisher": "Ballantine Books",
+    "publicationYear": 1953
+  },
+  {
+    "name": "Cien sonetos de amor",
+    "author": "Pablo Neruda",
+    "pageCount": 128,
+    "publisher": "Editorial Losada",
+    "publicationYear": 1959
+  },
+  {
+    "name": "El amor en los tiempos del cólera",
+    "author": "Gabriel García Márquez",
+    "pageCount": 368,
+    "publisher": "Editorial Oveja Negra",
+    "publicationYear": 1985
+  }
+]
