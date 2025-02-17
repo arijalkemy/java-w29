@@ -1,0 +1,68 @@
+{
+  "query": {
+    "match": {
+      "nombre": "quijote"
+    }
+  }
+}
+
+
+
+
+
+
+
+{
+  "query": {
+    "match": {
+      "autor": "Gabriel García Márquez"
+    }
+  }
+}
+
+
+
+
+
+
+{
+  "size": 5,
+  "sort": [
+    {
+        "cantidadPaginas": {
+            "order": "desc"
+        }
+    }
+  ],
+  "query": {
+    "match_all":{}
+  }
+}
+
+
+
+
+
+
+{
+  "query": {
+    "range": {
+        "anioPublicacion": {
+            "lt": 1998
+        }
+    }
+  }
+}
+
+
+
+
+
+
+{
+  "query": {
+    "match": {
+      "editorial": "editorial sudamericana"
+    }
+  }
+}
