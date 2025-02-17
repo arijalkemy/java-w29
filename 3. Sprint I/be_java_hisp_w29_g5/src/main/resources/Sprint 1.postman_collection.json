@@ -1,0 +1,2718 @@
+{
+  "info": {
+    "_postman_id": "9398b916-7a9b-4f7a-bb74-b973dd3fe624",
+    "name": "Sprint 1",
+    "description": "Documentación técnica correspondiente a la API de Social Media realizada por el equipo 5 en el sprint #1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40932602",
+    "_collection_link": "https://red-meteor-767468.postman.co/workspace/Grupo-5-Sprint-1~4522158d-4870-4b76-b233-b33d6f4c2966/collection/40932602-9398b916-7a9b-4f7a-bb74-b973dd3fe624?action=share&source=collection_link&creator=40932602"
+  },
+  "item": [
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "US_0003 Get Followers List By UserId",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/users/2/follower/list",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users", "2", "follower", "list"]
+            }
+          },
+          "response": [
+            {
+              "name": "200 - Ok",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/2/follower/list",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "2", "follower", "list"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jan 2025 15:03:27 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 2,\n    \"user_name\": \"Luis García\",\n    \"followers\": [\n        {\n            \"user_id\": 4,\n            \"user_name\": \"Carlos Mendoza\"\n        },\n        {\n            \"user_id\": 5,\n            \"user_name\": \"Sofía Romero\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "404 - Not found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/12/follower/list",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "12", "follower", "list"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 16:00:48 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El vendedor no existe\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "US_0002 Get count follwers by follwed id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/users/:userId/followers/count/",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users", ":userId", "followers", "count", ""],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 - Ok",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/:userId/followers/count/",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", ":userId", "followers", "count", ""],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "9"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 02:12:49 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 9,\n    \"user_name\": \"Isabel Martínez\",\n    \"followers_count\": 1\n}"
+            },
+            {
+              "name": "403 - Forbiden",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/:userId/followers/count/",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", ":userId", "followers", "count", ""],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "11"
+                    }
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jan 2025 15:29:45 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El usuario a seguir no es un vendedor\"\n}"
+            },
+            {
+              "name": "404 - Not found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/:userId/followers/count/",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", ":userId", "followers", "count", ""],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "0"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jan 2025 15:29:53 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El vendedor no existe\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "US_0004 Get Followed List By UserId",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/users/2/followed/list",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users", "2", "followed", "list"]
+            }
+          },
+          "response": [
+            {
+              "name": "200 - Ok",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/2/followed/list",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "2", "followed", "list"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jan 2025 18:45:38 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 2,\n    \"user_name\": \"Luis García\",\n    \"followed\": [\n        {\n            \"user_id\": 1,\n            \"user_name\": \"Ana Torres\"\n        },\n        {\n            \"user_id\": 3,\n            \"user_name\": \"María Pérez\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "404 - Not found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/12/followed/list",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "12", "followed", "list"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 16:01:26 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El usuario no fue encontrado\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "US_0008 Get Followers List By UserID With Order",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/users/2/follower/list?order=name_desc",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users", "2", "follower", "list"],
+              "query": [
+                {
+                  "key": "order",
+                  "value": "name_asc",
+                  "disabled": true
+                },
+                {
+                  "key": "order",
+                  "value": "name_desc"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 - Ok Asc Order",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/2/follower/list?order=name_asc",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "2", "follower", "list"],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "name_asc"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 14:41:43 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 2,\n    \"user_name\": \"Luis García\",\n    \"followers\": [\n        {\n            \"user_id\": 4,\n            \"user_name\": \"Carlos Mendoza\"\n        },\n        {\n            \"user_id\": 5,\n            \"user_name\": \"Sofía Romero\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "404 - Not found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/12/follower/list?order=name_asc",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "12", "follower", "list"],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "name_asc"
+                    },
+                    {
+                      "key": "order",
+                      "value": "name_desc",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 16:02:11 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El vendedor no existe\"\n}"
+            },
+            {
+              "name": "200 - Ok Desc Order",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/2/follower/list?order=name_desc",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "2", "follower", "list"],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "name_asc",
+                      "disabled": true
+                    },
+                    {
+                      "key": "order",
+                      "value": "name_desc"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 18:58:12 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 2,\n    \"user_name\": \"Luis García\",\n    \"followers\": [\n        {\n            \"user_id\": 5,\n            \"user_name\": \"Sofía Romero\"\n        },\n        {\n            \"user_id\": 4,\n            \"user_name\": \"Carlos Mendoza\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "400 - Filtro de orden no válido",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/2/follower/list?order=name_descc",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "2", "follower", "list"],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "name_asc",
+                      "disabled": true
+                    },
+                    {
+                      "key": "order",
+                      "value": "name_descc"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 20:38:02 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El orden indicado es inválido: el mismo debe ser 'name_asc' o 'name_desc'.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "US_0008 Get Followed List By UserId With Order",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/users/2/followed/list?order=name_desc",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users", "2", "followed", "list"],
+              "query": [
+                {
+                  "key": "order",
+                  "value": "name_asc",
+                  "disabled": true
+                },
+                {
+                  "key": "order",
+                  "value": "name_desc"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 - Ok Asc Order",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/2/followed/list?order=name_asc",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "2", "followed", "list"],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "name_asc"
+                    },
+                    {
+                      "key": "order",
+                      "value": "name_desc",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 15:10:38 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 2,\n    \"user_name\": \"Luis García\",\n    \"followed\": [\n        {\n            \"user_id\": 1,\n            \"user_name\": \"Ana Torres\"\n        },\n        {\n            \"user_id\": 3,\n            \"user_name\": \"María Pérez\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "404 - Not found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/12/followed/list?order=name_desc",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "12", "followed", "list"],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "name_asc",
+                      "disabled": true
+                    },
+                    {
+                      "key": "order",
+                      "value": "name_desc"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 16:02:29 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El usuario no fue encontrado\"\n}"
+            },
+            {
+              "name": "200 - Ok Desc Order",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/2/followed/list?order=name_desc",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "2", "followed", "list"],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "name_asc",
+                      "disabled": true
+                    },
+                    {
+                      "key": "order",
+                      "value": "name_desc"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 18:58:52 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 2,\n    \"user_name\": \"Luis García\",\n    \"followed\": [\n        {\n            \"user_id\": 3,\n            \"user_name\": \"María Pérez\"\n        },\n        {\n            \"user_id\": 1,\n            \"user_name\": \"Ana Torres\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "400 - Filtro de orden no válido",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/2/followed/list?order=name_descc",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "2", "followed", "list"],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "name_asc",
+                      "disabled": true
+                    },
+                    {
+                      "key": "order",
+                      "value": "name_descc"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 02:16:20 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El orden indicado es inválido.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "US_0013 Add favorite post a user",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/users/:userId/favorites/:postId",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users", ":userId", "favorites", ":postId"],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                },
+                {
+                  "key": "postId",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 - 0K",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/:userId/favorites/:postId",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", ":userId", "favorites", ":postId"],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "1"
+                    },
+                    {
+                      "key": "postId",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 02:22:47 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 1,\n    \"user_name\": \"Ana Torres\",\n    \"favorite_posts\": [\n        {\n            \"postId\": 1,\n            \"userId\": 1,\n            \"date\": \"03-10-2023\",\n            \"product\": {\n                \"productId\": 1,\n                \"productName\": \"Camiseta Deportiva\",\n                \"type\": \"Ropa\",\n                \"brand\": \"Adidas\",\n                \"color\": \"Rojo\",\n                \"notes\": \"Ideal para correr y hacer ejercicio.\"\n            },\n            \"category\": 2,\n            \"price\": 29.99,\n            \"discount\": 0,\n            \"promotionEndDate\": null\n        },\n        {\n            \"postId\": 2,\n            \"userId\": 2,\n            \"date\": \"03-10-2023\",\n            \"product\": {\n                \"productId\": 2,\n                \"productName\": \"Pantalones Deportivos\",\n                \"type\": \"Ropa\",\n                \"brand\": \"Nike\",\n                \"color\": \"Negro\",\n                \"notes\": \"Comodidad y estilo.\"\n            },\n            \"category\": 2,\n            \"price\": 39.99,\n            \"discount\": 0,\n            \"promotionEndDate\": null\n        },\n        {\n            \"postId\": 3,\n            \"userId\": 3,\n            \"date\": \"03-10-2023\",\n            \"product\": {\n                \"productId\": 3,\n                \"productName\": \"Zapatillas Running\",\n                \"type\": \"Calzado\",\n                \"brand\": \"Puma\",\n                \"color\": \"Blanco\",\n                \"notes\": \"Amortiguación avanzada.\"\n            },\n            \"category\": 1,\n            \"price\": 79.99,\n            \"discount\": 0,\n            \"promotionEndDate\": null\n        },\n        {\n            \"postId\": 5,\n            \"userId\": 5,\n            \"date\": \"03-10-2023\",\n            \"product\": {\n                \"productId\": 5,\n                \"productName\": \"Botella de Agua\",\n                \"type\": \"Accesorio\",\n                \"brand\": \"CamelBak\",\n                \"color\": \"Transparente\",\n                \"notes\": \"Ideal para hidratarse en el deporte.\"\n            },\n            \"category\": 3,\n            \"price\": 12.99,\n            \"discount\": 0,\n            \"promotionEndDate\": null\n        }\n    ]\n}"
+            },
+            {
+              "name": "404 - Not Found user",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/:userId/favorites/:postId",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", ":userId", "favorites", ":postId"],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "111"
+                    },
+                    {
+                      "key": "postId",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 24 Jan 2025 16:44:43 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El usuario no fue encontrado\"\n}"
+            },
+            {
+              "name": "404 - Not found Post",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/:userId/favorites/:postId",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", ":userId", "favorites", ":postId"],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "1"
+                    },
+                    {
+                      "key": "postId",
+                      "value": "1111"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 24 Jan 2025 16:45:06 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"La publicación no fue encontrada\"\n}"
+            },
+            {
+              "name": "400 - Bad request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/:userId/favorites/:postId",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", ":userId", "favorites", ":postId"],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "1"
+                    },
+                    {
+                      "key": "postId",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 24 Jan 2025 16:45:46 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"La publicación ya es favorita para ese usuario\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "US_0013 Get favorites post for userId",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/users/:userId/favorites/list",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users", ":userId", "favorites", "list"],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 - OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/:userId/favorites/list",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", ":userId", "favorites", "list"],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 24 Jan 2025 17:07:26 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"favorites\": [\n        {\n            \"post_id\": 1,\n            \"user_id\": 1,\n            \"date\": \"03-10-2023\",\n            \"product\": {\n                \"product_id\": 1,\n                \"product_name\": \"Camiseta Deportiva\",\n                \"type\": \"Ropa\",\n                \"brand\": \"Adidas\",\n                \"color\": \"Rojo\",\n                \"notes\": \"Ideal para correr y hacer ejercicio.\"\n            },\n            \"category\": 2,\n            \"price\": 29.99,\n            \"has_promo\": false,\n            \"discount\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "404 - Not Found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/:userId/favorites/list",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", ":userId", "favorites", "list"],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "1111"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 24 Jan 2025 17:08:45 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El usuario no fue encontrado\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "US_0015 Get Follow Suggestions For UserId",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/users/1/suggestions?limit=5",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users", "1", "suggestions"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 Ok",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/1/suggestions",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "1", "suggestions"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 01:24:45 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"user_id\": 10,\n        \"user_name\": \"Fernando Ruiz\",\n        \"brandsSold\": \"NIKE, ADIDAS\"\n    },\n    {\n        \"user_id\": 2,\n        \"user_name\": \"Luis García\",\n        \"brandsSold\": \"NIKE\"\n    }\n]"
+            },
+            {
+              "name": "404 Not Found - No favourite posts",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/4/suggestions",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "4", "suggestions"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 00:46:31 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El usuario no posee posts favoritos.\"\n}"
+            },
+            {
+              "name": "404 Not Found - No follow suggestions found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/3/suggestions",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "3", "suggestions"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 01:09:14 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"No encontramos sugerencias de vendedores que el usuario pueda seguir.\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "posts",
+      "item": [
+        {
+          "name": "US_0006 - Recent posts from followed",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/products/followed/1/list",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["products", "followed", "1", "list"]
+            }
+          },
+          "response": [
+            {
+              "name": "200 Ok",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/followed/8/list",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "followed", "8", "list"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 02:29:30 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 8,\n    \"posts\": [\n        {\n            \"post_id\": 13,\n            \"user_id\": 10,\n            \"date\": \"21-01-2025\",\n            \"product\": {\n                \"product_id\": 13,\n                \"product_name\": \"Camiseta de la Selección Argentina\",\n                \"type\": \"Ropa\",\n                \"brand\": \"adidas\",\n                \"color\": \"Blanco\",\n                \"notes\": \"Diseñada para tirar facha.\"\n            },\n            \"category\": 2,\n            \"price\": 49.99\n        },\n        {\n            \"post_id\": 12,\n            \"user_id\": 10,\n            \"date\": \"19-01-2025\",\n            \"product\": {\n                \"product_id\": 12,\n                \"product_name\": \"Zapatillas de Senderismo\",\n                \"type\": \"Calzado\",\n                \"brand\": \"The North Face\",\n                \"color\": \"Marrón\",\n                \"notes\": \"Perfectas para terrenos difíciles.\"\n            },\n            \"category\": 1,\n            \"price\": 129.99\n        },\n        {\n            \"post_id\": 11,\n            \"user_id\": 10,\n            \"date\": \"18-01-2025\",\n            \"product\": {\n                \"product_id\": 11,\n                \"product_name\": \"Sudadera Deportiva\",\n                \"type\": \"Ropa\",\n                \"brand\": \"Nike\",\n                \"color\": \"Negro\",\n                \"notes\": \"Diseñada para mantener el calor.\"\n            },\n            \"category\": 2,\n            \"price\": 49.99\n        }\n    ]\n}"
+            },
+            {
+              "name": "404 Not Found - No followers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/followed/10/list",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "followed", "10", "list"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jan 2025 20:08:24 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"No se encontraron seguidores para el usuario con ID: 10\"\n}"
+            },
+            {
+              "name": "404 Not Found - No recent posts",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/followed/1/list",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "followed", "1", "list"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 02:29:59 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"No se encontraron publicaciones recientes para los seguidores del usuario con ID: 1\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "US_0005 - Create Post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_id\": 1,\n    \"date\": \"15-10-2023\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/products/post",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["products", "post"]
+            }
+          },
+          "response": [
+            {
+              "name": "200 Ok",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"user_id\": 1,\n    \"date\": \"15-10-2023\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/products/post",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "post"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 05:36:35 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"post_id\": 26,\n    \"user_id\": 1,\n    \"date\": \"15-10-2023\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.5\n}"
+            },
+            {
+              "name": "404 Not Found",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"user_id\": 111,\n    \"date\": \"15-10-2023\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/products/post",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "post"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 05:37:06 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El vendedor no existe\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "US_0009 - Order posts by date",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/products/followed/8/list?order=date_asc",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["products", "followed", "8", "list"],
+              "query": [
+                {
+                  "key": "order",
+                  "value": "date_asc"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 Ok - Default order",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/followed/1/list",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "followed", "1", "list"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 13:07:19 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 1,\n    \"posts\": [\n        {\n            \"user_id\": 8,\n            \"post_id\": 25,\n            \"date\": \"17-01-2025\",\n            \"product\": {\n                \"product_id\": 15,\n                \"product_name\": \"Zapatillas para Entrenamiento\",\n                \"type\": \"Calzado\",\n                \"brand\": \"Reebok\",\n                \"color\": \"Blanco\",\n                \"notes\": \"Gran soporte en actividades intensas.\"\n            },\n            \"category\": 1,\n            \"price\": 99.99\n        },\n        {\n            \"user_id\": 7,\n            \"post_id\": 24,\n            \"date\": \"16-01-2025\",\n            \"product\": {\n                \"product_id\": 14,\n                \"product_name\": \"Pantalones Cortos\",\n                \"type\": \"Ropa\",\n                \"brand\": \"Puma\",\n                \"color\": \"Negro\",\n                \"notes\": \"Ligereza y movilidad.\"\n            },\n            \"category\": 2,\n            \"price\": 24.99\n        },\n        {\n            \"user_id\": 6,\n            \"post_id\": 23,\n            \"date\": \"15-01-2025\",\n            \"product\": {\n                \"product_id\": 13,\n                \"product_name\": \"Mallas Deportivas\",\n                \"type\": \"Ropa\",\n                \"brand\": \"Nike\",\n                \"color\": \"Gris\",\n                \"notes\": \"Ajuste perfecto para entrenamiento.\"\n            },\n            \"category\": 2,\n            \"price\": 29.99\n        },\n        {\n            \"user_id\": 9,\n            \"post_id\": 22,\n            \"date\": \"14-01-2025\",\n            \"product\": {\n                \"product_id\": 12,\n                \"product_name\": \"Camiseta de Compresión\",\n                \"type\": \"Ropa\",\n                \"brand\": \"Under Armour\",\n                \"color\": \"Rojo\",\n                \"notes\": \"Apoyo muscular avanzado.\"\n            },\n            \"category\": 2,\n            \"price\": 34.99\n        },\n        {\n            \"user_id\": 8,\n            \"post_id\": 21,\n            \"date\": \"13-01-2025\",\n            \"product\": {\n                \"product_id\": 11,\n                \"product_name\": \"Gorra para Correr\",\n                \"type\": \"Accesorio\",\n                \"brand\": \"Adidas\",\n                \"color\": \"Azul\",\n                \"notes\": \"Evita el sudor mientras corres.\"\n            },\n            \"category\": 3,\n            \"price\": 14.99\n        },\n        {\n            \"user_id\": 7,\n            \"post_id\": 20,\n            \"date\": \"12-01-2025\",\n            \"product\": {\n                \"product_id\": 10,\n                \"product_name\": \"Reloj Deportivo\",\n                \"type\": \"Accesorio\",\n                \"brand\": \"Garmin\",\n                \"color\": \"Negro\",\n                \"notes\": \"Monitorea tu actividad física.\"\n            },\n            \"category\": 4,\n            \"price\": 149.99\n        },\n        {\n            \"user_id\": 6,\n            \"post_id\": 19,\n            \"date\": \"11-01-2025\",\n            \"product\": {\n                \"product_id\": 9,\n                \"product_name\": \"Cinturón Deportivo\",\n                \"type\": \"Accesorio\",\n                \"brand\": \"Under Armour\",\n                \"color\": \"Verde\",\n                \"notes\": \"Ideal para llevar tus cosas mientras corres.\"\n            },\n            \"category\": 3,\n            \"price\": 19.99\n        },\n        {\n            \"user_id\": 9,\n            \"post_id\": 18,\n            \"date\": \"10-01-2025\",\n            \"product\": {\n                \"product_id\": 8,\n                \"product_name\": \"Calcetines Técnicos\",\n                \"type\": \"Ropa\",\n                \"brand\": \"Nike\",\n                \"color\": \"Negro\",\n                \"notes\": \"Evita rozaduras durante el ejercicio.\"\n            },\n            \"category\": 2,\n            \"price\": 9.99\n        },\n        {\n            \"user_id\": 8,\n            \"post_id\": 17,\n            \"date\": \"09-01-2025\",\n            \"product\": {\n                \"product_id\": 7,\n                \"product_name\": \"Camiseta Térmica\",\n                \"type\": \"Ropa\",\n                \"brand\": \"The North Face\",\n                \"color\": \"Blanco\",\n                \"notes\": \"Calidez en clima frío.\"\n            },\n            \"category\": 2,\n            \"price\": 39.99\n        }\n    ]\n}"
+            },
+            {
+              "name": "200 Ok - Descending order",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/followed/1/list?order=date_desc",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "followed", "1", "list"],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "date_desc"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 13:06:15 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 1,\n    \"posts\": [\n        {\n            \"user_id\": 8,\n            \"post_id\": 25,\n            \"date\": \"17-01-2025\",\n            \"product\": {\n                \"product_id\": 15,\n                \"product_name\": \"Zapatillas para Entrenamiento\",\n                \"type\": \"Calzado\",\n                \"brand\": \"Reebok\",\n                \"color\": \"Blanco\",\n                \"notes\": \"Gran soporte en actividades intensas.\"\n            },\n            \"category\": 1,\n            \"price\": 99.99\n        },\n        {\n            \"user_id\": 7,\n            \"post_id\": 24,\n            \"date\": \"16-01-2025\",\n            \"product\": {\n                \"product_id\": 14,\n                \"product_name\": \"Pantalones Cortos\",\n                \"type\": \"Ropa\",\n                \"brand\": \"Puma\",\n                \"color\": \"Negro\",\n                \"notes\": \"Ligereza y movilidad.\"\n            },\n            \"category\": 2,\n            \"price\": 24.99\n        },\n        {\n            \"user_id\": 6,\n            \"post_id\": 23,\n            \"date\": \"15-01-2025\",\n            \"product\": {\n                \"product_id\": 13,\n                \"product_name\": \"Mallas Deportivas\",\n                \"type\": \"Ropa\",\n                \"brand\": \"Nike\",\n                \"color\": \"Gris\",\n                \"notes\": \"Ajuste perfecto para entrenamiento.\"\n            },\n            \"category\": 2,\n            \"price\": 29.99\n        },\n        {\n            \"user_id\": 9,\n            \"post_id\": 22,\n            \"date\": \"14-01-2025\",\n            \"product\": {\n                \"product_id\": 12,\n                \"product_name\": \"Camiseta de Compresión\",\n                \"type\": \"Ropa\",\n                \"brand\": \"Under Armour\",\n                \"color\": \"Rojo\",\n                \"notes\": \"Apoyo muscular avanzado.\"\n            },\n            \"category\": 2,\n            \"price\": 34.99\n        },\n        {\n            \"user_id\": 8,\n            \"post_id\": 21,\n            \"date\": \"13-01-2025\",\n            \"product\": {\n                \"product_id\": 11,\n                \"product_name\": \"Gorra para Correr\",\n                \"type\": \"Accesorio\",\n                \"brand\": \"Adidas\",\n                \"color\": \"Azul\",\n                \"notes\": \"Evita el sudor mientras corres.\"\n            },\n            \"category\": 3,\n            \"price\": 14.99\n        },\n        {\n            \"user_id\": 7,\n            \"post_id\": 20,\n            \"date\": \"12-01-2025\",\n            \"product\": {\n                \"product_id\": 10,\n                \"product_name\": \"Reloj Deportivo\",\n                \"type\": \"Accesorio\",\n                \"brand\": \"Garmin\",\n                \"color\": \"Negro\",\n                \"notes\": \"Monitorea tu actividad física.\"\n            },\n            \"category\": 4,\n            \"price\": 149.99\n        },\n        {\n            \"user_id\": 6,\n            \"post_id\": 19,\n            \"date\": \"11-01-2025\",\n            \"product\": {\n                \"product_id\": 9,\n                \"product_name\": \"Cinturón Deportivo\",\n                \"type\": \"Accesorio\",\n                \"brand\": \"Under Armour\",\n                \"color\": \"Verde\",\n                \"notes\": \"Ideal para llevar tus cosas mientras corres.\"\n            },\n            \"category\": 3,\n            \"price\": 19.99\n        },\n        {\n            \"user_id\": 9,\n            \"post_id\": 18,\n            \"date\": \"10-01-2025\",\n            \"product\": {\n                \"product_id\": 8,\n                \"product_name\": \"Calcetines Técnicos\",\n                \"type\": \"Ropa\",\n                \"brand\": \"Nike\",\n                \"color\": \"Negro\",\n                \"notes\": \"Evita rozaduras durante el ejercicio.\"\n            },\n            \"category\": 2,\n            \"price\": 9.99\n        },\n        {\n            \"user_id\": 8,\n            \"post_id\": 17,\n            \"date\": \"09-01-2025\",\n            \"product\": {\n                \"product_id\": 7,\n                \"product_name\": \"Camiseta Térmica\",\n                \"type\": \"Ropa\",\n                \"brand\": \"The North Face\",\n                \"color\": \"Blanco\",\n                \"notes\": \"Calidez en clima frío.\"\n            },\n            \"category\": 2,\n            \"price\": 39.99\n        }\n    ]\n}"
+            },
+            {
+              "name": "400 Bad Request - invalid order",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/followed/1/list?order=hola",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "followed", "1", "list"],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "hola"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 13:08:24 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El orden indicado es inválido: el mismo debe ser 'date_asc' o 'date_desc'.\"\n}"
+            },
+            {
+              "name": "200 Ok - Ascending order",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/followed/8/list?order=date_asc",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "followed", "8", "list"],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "date_asc"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 02:33:37 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 8,\n    \"posts\": [\n        {\n            \"post_id\": 11,\n            \"user_id\": 10,\n            \"date\": \"18-01-2025\",\n            \"product\": {\n                \"product_id\": 11,\n                \"product_name\": \"Sudadera Deportiva\",\n                \"type\": \"Ropa\",\n                \"brand\": \"Nike\",\n                \"color\": \"Negro\",\n                \"notes\": \"Diseñada para mantener el calor.\"\n            },\n            \"category\": 2,\n            \"price\": 49.99\n        },\n        {\n            \"post_id\": 12,\n            \"user_id\": 10,\n            \"date\": \"19-01-2025\",\n            \"product\": {\n                \"product_id\": 12,\n                \"product_name\": \"Zapatillas de Senderismo\",\n                \"type\": \"Calzado\",\n                \"brand\": \"The North Face\",\n                \"color\": \"Marrón\",\n                \"notes\": \"Perfectas para terrenos difíciles.\"\n            },\n            \"category\": 1,\n            \"price\": 129.99\n        },\n        {\n            \"post_id\": 13,\n            \"user_id\": 10,\n            \"date\": \"21-01-2025\",\n            \"product\": {\n                \"product_id\": 13,\n                \"product_name\": \"Camiseta de la Selección Argentina\",\n                \"type\": \"Ropa\",\n                \"brand\": \"adidas\",\n                \"color\": \"Blanco\",\n                \"notes\": \"Diseñada para tirar facha.\"\n            },\n            \"category\": 2,\n            \"price\": 49.99\n        }\n    ]\n}"
+            },
+            {
+              "name": "200 Ok - Descending order",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/followed/8/list?order=date_desc",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "followed", "8", "list"],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "date_desc"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 02:34:35 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 8,\n    \"posts\": [\n        {\n            \"post_id\": 13,\n            \"user_id\": 10,\n            \"date\": \"21-01-2025\",\n            \"product\": {\n                \"product_id\": 13,\n                \"product_name\": \"Camiseta de la Selección Argentina\",\n                \"type\": \"Ropa\",\n                \"brand\": \"adidas\",\n                \"color\": \"Blanco\",\n                \"notes\": \"Diseñada para tirar facha.\"\n            },\n            \"category\": 2,\n            \"price\": 49.99\n        },\n        {\n            \"post_id\": 12,\n            \"user_id\": 10,\n            \"date\": \"19-01-2025\",\n            \"product\": {\n                \"product_id\": 12,\n                \"product_name\": \"Zapatillas de Senderismo\",\n                \"type\": \"Calzado\",\n                \"brand\": \"The North Face\",\n                \"color\": \"Marrón\",\n                \"notes\": \"Perfectas para terrenos difíciles.\"\n            },\n            \"category\": 1,\n            \"price\": 129.99\n        },\n        {\n            \"post_id\": 11,\n            \"user_id\": 10,\n            \"date\": \"18-01-2025\",\n            \"product\": {\n                \"product_id\": 11,\n                \"product_name\": \"Sudadera Deportiva\",\n                \"type\": \"Ropa\",\n                \"brand\": \"Nike\",\n                \"color\": \"Negro\",\n                \"notes\": \"Diseñada para mantener el calor.\"\n            },\n            \"category\": 2,\n            \"price\": 49.99\n        }\n    ]\n}"
+            },
+            {
+              "name": "400 Bad Request - Invalid Order",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/followed/8/list?order=bla",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "followed", "8", "list"],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "bla"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 02:35:05 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El orden indicado es inválido.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "US_0010 - Create Post Promo",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/products/promo-post",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["products", "promo-post"]
+            }
+          },
+          "response": [
+            {
+              "name": "200- Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/products/promo-post",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "promo-post"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 17:09:22 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"post_id\": 27,\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.5,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}"
+            },
+            {
+              "name": "404 - Not Found",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"user_id\": 111,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/products/promo-post",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "promo-post"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 17:09:45 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El vendedor no existe\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "US_0011 - Count Promo Post By SellerID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/products/promo-post/count?user_id=10",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["products", "promo-post", "count"],
+              "query": [
+                {
+                  "key": null,
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "user_id",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 - OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/promo-post/count?user_id=10",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "promo-post", "count"],
+                  "query": [
+                    {
+                      "key": null,
+                      "value": "1",
+                      "disabled": true
+                    },
+                    {
+                      "key": "user_id",
+                      "value": "10"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 21:24:31 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 10,\n    \"user_name\": \"Fernando Ruiz\",\n    \"promo_products_count\": 2\n}"
+            },
+            {
+              "name": "404 - Not Found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/promo-post/count?user_id=13",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "promo-post", "count"],
+                  "query": [
+                    {
+                      "key": null,
+                      "value": "1",
+                      "disabled": true
+                    },
+                    {
+                      "key": "user_id",
+                      "value": "13"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 21:27:27 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El vendedor no existe\"\n}"
+            },
+            {
+              "name": "403 - Forbidden",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/promo-post/count?user_id=11",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "promo-post", "count"],
+                  "query": [
+                    {
+                      "key": null,
+                      "value": "1",
+                      "disabled": true
+                    },
+                    {
+                      "key": "user_id",
+                      "value": "11"
+                    }
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 23 Jan 2025 21:29:14 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El usuario a seguir no es un vendedor\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "US_0012 - Create Post Promo End Date",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-09-2060\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"has_EndDate\": true,\n    \"discount\": 0.25,\n    \"promotionEndDate\": \"30-05-2028\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/products/promo-post-end-date",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["products", "promo-post-end-date"]
+            }
+          },
+          "response": [
+            {
+              "name": "403 -  Forbidden",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-09-2060\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"has_EndDate\": true,\n    \"discount\": 0.25,\n    \"promotionEndDate\": \"30-05-2028\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/products/promo-post-end-date",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "promo-post-end-date"]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            },
+            {
+              "name": "201 - Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-09-2023\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25,\n    \"promotionEndDate\": \"30-05-2028\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/products/promo-post-end-date",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "promo-post-end-date"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 02:37:41 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"post_id\": 24,\n    \"user_id\": 1,\n    \"date\": \"29-09-2023\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red & Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.5,\n    \"has_promo\": true,\n    \"discount\": 0.25,\n    \"promotionEndDate\": \"30-05-2028\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "follows",
+      "item": [
+        {
+          "name": "US_0001 - Follow Seller",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/users/2/follow/8",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users", "2", "follow", "8"]
+            }
+          },
+          "response": [
+            {
+              "name": "400 - Vendedor ya seguido por el mismo usuario",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/1/follow/6",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "1", "follow", "6"]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 02:39:16 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Este usuario ya está siguiendo al usuario especificado.\"\n}"
+            },
+            {
+              "name": "200 -  OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/10/follow/8",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "10", "follow", "8"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 02:41:07 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user_id\": 10,\n    \"userIdToFollow\": 8\n}"
+            },
+            {
+              "name": "400 - El usuario no se puede seguir a si mismo.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/2/follow/2",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "2", "follow", "2"]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El usuario no se puede seguir a si mismo.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "US_0007 - Unfollow Seller",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/users/1/unfollow/6",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users", "1", "unfollow", "6"]
+            }
+          },
+          "response": [
+            {
+              "name": "400 - No existe seguimiento de este usuario hacia el vendedor",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/1/unfollow/2",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "1", "unfollow", "2"]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 02:41:56 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"No existe seguimiento de este usuario hacia el usuario especificado.\"\n}"
+            },
+            {
+              "name": "204 -  No Content",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/users/1/unfollow/6",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["users", "1", "unfollow", "6"]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "stock",
+      "item": [
+        {
+          "name": "US_0014 - Create stock for Post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"units\":10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/stock/1",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["stock", "1"]
+            }
+          },
+          "response": [
+            {
+              "name": "404- Post not found",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"units\":10\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/stock/100",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["stock", "100"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 02:42:26 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"La publicación no fue encontrada\"\n}"
+            },
+            {
+              "name": "201 - Stock created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"units\":10\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/stock/1",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["stock", "1"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 24 Jan 2025 16:09:18 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"units\": 10\n}"
+            }
+          ]
+        },
+        {
+          "name": "US_0014 - Get post detail with stock",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/products/post/1",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["products", "post", "1"]
+            }
+          },
+          "response": [
+            {
+              "name": "200 - Post with detail and stock",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/post/1",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "post", "1"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 24 Jan 2025 16:09:27 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"post_id\": 1,\n    \"user_id\": 1,\n    \"stock\": {\n        \"units\": 10\n    },\n    \"date\": \"03-10-2023\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Camiseta Deportiva\",\n        \"type\": \"Ropa\",\n        \"brand\": \"Adidas\",\n        \"color\": \"Rojo\",\n        \"notes\": \"Ideal para correr y hacer ejercicio.\"\n    },\n    \"category\": 2,\n    \"price\": 29.99,\n    \"has_promo\": false,\n    \"discount\": 0.0\n}"
+            },
+            {
+              "name": "404 - Post not found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/post/100",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "post", "100"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Jan 2025 02:43:02 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"La publicación no fue encontrada\"\n}"
+            },
+            {
+              "name": "200 - Get post detail not stock",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/products/post/2",
+                  "host": ["localhost"],
+                  "port": "8080",
+                  "path": ["products", "post", "2"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 24 Jan 2025 16:18:03 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"post_id\": 2,\n    \"user_id\": 2,\n    \"date\": \"03-10-2023\",\n    \"product\": {\n        \"product_id\": 2,\n        \"product_name\": \"Pantalones Deportivos\",\n        \"type\": \"Ropa\",\n        \"brand\": \"Nike\",\n        \"color\": \"Negro\",\n        \"notes\": \"Comodidad y estilo.\"\n    },\n    \"category\": 2,\n    \"price\": 39.99,\n    \"has_promo\": false,\n    \"discount\": 0.0\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
