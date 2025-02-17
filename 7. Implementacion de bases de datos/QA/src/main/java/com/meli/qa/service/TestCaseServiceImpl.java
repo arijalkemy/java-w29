@@ -3,23 +3,32 @@ package com.meli.qa.service;
 import com.meli.qa.dto.request.AddTestCaseRequestDto;
 import com.meli.qa.dto.request.TestCaseDto;
 import com.meli.qa.model.TestCase;
+import com.meli.qa.model.User;
 import com.meli.qa.repository.ITestCaseRepository;
+import com.meli.qa.repository.IUserRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class TestCaseServiceImpl implements ITestCaseService {
 
     private final ITestCaseRepository testCaseRepository;
+    private final IUserRepository userRepository;
 
-    public TestCaseServiceImpl(ITestCaseRepository testCaseRepository) {
+    public TestCaseServiceImpl(
+            ITestCaseRepository testCaseRepository,
+            IUserRepository userRepository
+    ) {
         this.testCaseRepository = testCaseRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
     public TestCaseDto save(AddTestCaseRequestDto testCaseDto) {
+        User pepito = userRepository.save(new User("Pepito"));
 
         TestCase testCase = TestCase.builder()
                 .description(testCaseDto.getDescription())
@@ -27,32 +36,21 @@ public class TestCaseServiceImpl implements ITestCaseService {
                 .passed(testCaseDto.getPassed())
                 .numberOfTries(testCaseDto.getNumberOfTries())
                 .lastUpdate(LocalDate.now())
+                .testDoneBy(Set.of(pepito))
                 .build();
-        System.out.println(testCase);
-        TestCase testCaseCreated = this.testCaseRepository.save(testCase);
-        System.out.println(testCaseCreated);
 
-        return TestCaseDto.builder()
-                .idCase(testCaseCreated.getIdCase())
-                .description(testCaseCreated.getDescription())
-                .numberOfTries(testCaseCreated.getNumberOfTries())
-                .passed(testCaseCreated.getPassed())
-                .tested(testCaseCreated.getTested())
-                .lastUpdate(testCaseCreated.getLastUpdate())
-                .build();
+        TestCase testCaseCreated = this.testCaseRepository.save(testCase);
+
+        return this.getTestCaseDto(testCaseCreated);
     }
 
     @Override
     public List<TestCaseDto> findAll() {
         return this.testCaseRepository.findAll().stream().map(
-                testCase -> TestCaseDto.builder()
-                        .idCase(testCase.getIdCase())
-                        .description(testCase.getDescription())
-                        .numberOfTries(testCase.getNumberOfTries())
-                        .passed(testCase.getPassed())
-                        .tested(testCase.getTested())
-                        .lastUpdate(testCase.getLastUpdate())
-                        .build()
+                testCase -> {
+                    System.out.println(testCase);
+                    return this.getTestCaseDto(testCase);
+                }
         ).toList();
     }
 
@@ -60,15 +58,7 @@ public class TestCaseServiceImpl implements ITestCaseService {
     public TestCaseDto findById(Long id) {
         TestCase testCase = this.testCaseRepository.findById(id).orElse(null);
 
-        return TestCaseDto.builder()
-                .idCase(testCase.getIdCase())
-                .description(testCase.getDescription())
-                .numberOfTries(testCase.getNumberOfTries())
-                .passed(testCase.getPassed())
-                .tested(testCase.getTested())
-                .lastUpdate(testCase.getLastUpdate())
-                .build();
-
+        return this.getTestCaseDto(testCase);
     }
 
     @Override
@@ -84,18 +74,22 @@ public class TestCaseServiceImpl implements ITestCaseService {
 
         TestCase testCaseUpdated = this.testCaseRepository.save(testCase);
 
-        return TestCaseDto.builder()
-                .idCase(testCaseUpdated.getIdCase())
-                .description(testCaseUpdated.getDescription())
-                .numberOfTries(testCaseUpdated.getNumberOfTries())
-                .passed(testCaseUpdated.getPassed())
-                .tested(testCaseUpdated.getTested())
-                .lastUpdate(testCaseUpdated.getLastUpdate())
-                .build();
+        return this.getTestCaseDto(testCaseUpdated);
     }
 
     @Override
     public void delete(Long id) {
         this.testCaseRepository.deleteById(id);
+    }
+
+    private TestCaseDto getTestCaseDto(TestCase testCase) {
+        return TestCaseDto.builder()
+                .idCase(testCase.getIdCase())
+                .description(testCase.getDescription())
+                .numberOfTries(testCase.getNumberOfTries())
+                .passed(testCase.getPassed())
+                .tested(testCase.getTested())
+                .lastUpdate(testCase.getLastUpdate())
+                .build();
     }
 }

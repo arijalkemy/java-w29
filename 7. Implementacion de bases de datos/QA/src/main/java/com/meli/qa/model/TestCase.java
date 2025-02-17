@@ -5,14 +5,15 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Table(name = "test_case")
 @Builder
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@Getter
+@Setter
 public class TestCase {
 
     @Id
@@ -31,4 +32,13 @@ public class TestCase {
 
     @Column(name = "last_update")
     private LocalDate lastUpdate;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "test_done_by",
+            joinColumns = @JoinColumn(referencedColumnName = "id_case"),
+            inverseJoinColumns = @JoinColumn(referencedColumnName = "id")
+    )
+    private Set<User> testDoneBy;
+
 }

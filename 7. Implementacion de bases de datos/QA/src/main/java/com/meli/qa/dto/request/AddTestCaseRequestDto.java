@@ -2,8 +2,6 @@ package com.meli.qa.dto.request;
 
 import lombok.Getter;
 
-import java.time.LocalDate;
-
 @Getter
 public class AddTestCaseRequestDto {
 
@@ -14,6 +12,4 @@ public class AddTestCaseRequestDto {
     Boolean tested;
 
     int numberOfTries;
-
-    LocalDate lastUpdated;
 }
