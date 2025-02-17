@@ -1,0 +1,65 @@
+GET /clientes/_search
+{
+    "query": {
+        "match": {
+          "localidad": "Posadas"
+        }
+    }
+}
+
+
+POST /clientes/_doc
+{
+    "nombre":"Paolo",
+    "apellido":"Maldini",
+    "pais":"IT",
+    "localidad":"Posadas"
+}
+
+POST /clientes/_doc
+{
+    "nombre": "Lionel",
+    "apellido": "Messi",
+    "pais": "AR",
+    "localidad": "Rosario"
+}
+
+POST /clientes/_doc
+{
+    "nombre": "Neymar",
+    "apellido": "Junior",
+    "pais": "BR",
+    "localidad": "Rio de Janeiro"
+}
+
+POST /clientes/_doc
+{
+    "nombre": "James",
+    "apellido": "Rodriguez",
+    "pais": "CO",
+    "localidad": "Cucuta"
+}
+
+POST /clientes/_doc
+{
+    "nombre": "Rafael",
+    "apellido": "Marquez",
+    "pais": "MX",
+    "localidad": "Zamora"
+}
+
+
+GET /clientes/_search
+{
+    "query": {
+        "bool": {
+            "should": [
+                { "match": { "nombre": "Paolo" } },
+                { "match": { "nombre": "Lionel" } },
+                { "match": { "nombre": "Neymar" } },
+                { "match": { "nombre": "James" } },
+                { "match": { "nombre": "Rafael" } }
+            ]
+        }
+    }
+}
