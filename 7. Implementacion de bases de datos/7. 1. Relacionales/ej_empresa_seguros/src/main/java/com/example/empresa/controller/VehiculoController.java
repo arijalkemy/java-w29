@@ -2,6 +2,7 @@ package com.example.empresa.controller;
 
 import com.example.empresa.dto.PatenteAndMarcaDto;
 import com.example.empresa.dto.PatenteMarcaModeloDto;
+import com.example.empresa.dto.VehiculoSiniestro;
 import com.example.empresa.service.VehiculoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +15,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/vehiculos")
-@Validated
 @RequiredArgsConstructor
 public class VehiculoController {
 
@@ -38,5 +38,10 @@ public class VehiculoController {
     @GetMapping("/siniestro-mayor-a-10000")
     public ResponseEntity<List<PatenteMarcaModeloDto>> getVehiculosConSiniestroMayorA10000() {
         return ResponseEntity.ok(vehiculoService.getVehiculosConSiniestroMayorA10000());
+    }
+
+    @GetMapping("/siniestro-mayor-a-10000-and-total-perdida-economica")
+    public ResponseEntity<List<VehiculoSiniestro>> getVehiculosConSiniestroMayorA10000AndTotalPerdidaEconomica() {
+        return ResponseEntity.ok(vehiculoService.getVehiculosConSiniestroMayorA10000AndTotalPerdidaEconomica());
     }
 }

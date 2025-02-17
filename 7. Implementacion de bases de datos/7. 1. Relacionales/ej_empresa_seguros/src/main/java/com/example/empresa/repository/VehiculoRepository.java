@@ -9,15 +9,18 @@ import java.util.List;
 
 @Repository
 public interface VehiculoRepository extends JpaRepository<Vehiculo, Integer> {
-    @Query("SELECT v.patente FROM Vehiculo v")
-    List<String> findAllPatentes();
+    @Query("SELECT v FROM Vehiculo v ORDER BY v.anio")
+    List<Vehiculo> findAllPatentesAndMarcas();
 
-    @Query("SELECT v.patente, v.marca FROM Vehiculo v ORDER BY v.anio")
-    List<String[]> findAllPatentesAndMarcas();
+    @Query("SELECT v FROM Vehiculo v WHERE v.cantidadRuedas = :cantidadRuedas AND v.anio = :anio")
+    List<Vehiculo> findAllByRuedasAndYear(Integer cantidadRuedas, Integer anio);
 
-    @Query("SELECT v.patente FROM Vehiculo v WHERE v.cantidadRuedas = :cantidadRuedas AND v.anio = :anio")
-    List<String> findAllByRuedasAndYear(Integer cantidadRuedas, Integer anio);
+    @Query("SELECT v FROM Vehiculo v JOIN v.siniestros s WHERE s.perdidaEconomica >= :monto")
+    List<Vehiculo> findAllByPerdidaEconomica(Double monto);
 
-    @Query("SELECT v.patente, v.marca, v.modelo FROM Vehiculo v JOIN v.siniestros s WHERE s.perdidaEconomica >= :monto")
-    List<String[]> findAllByPerdidaEconomica(Integer monto);
+    @Query("SELECT v, SUM(s.perdidaEconomica) FROM Vehiculo v " +
+            "JOIN v.siniestros s " +
+            "WHERE s.perdidaEconomica >= :monto " +
+            "GROUP BY v.id")
+    List<Object[]> findTotalPerdidaEconomicaOfSiniestrosGreaterThan(Double monto);
 }

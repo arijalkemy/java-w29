@@ -121,4 +121,64 @@ De las clases mencionadas, se sabe que un vehículo puede denunciar múltiples s
 
 ### Listar la matrícula, marca y modelo de todos los vehículos que hayan tenido un siniestro con pérdida mayor de 10000 pesos y mostrar a cuánto ascendió la pérdida total de todos ellos.
 
-### Almacenar el resultado de la consulta en una lista de listas de dos elementos; el primero será un Vehículo y el segundo un Integer. Habrá que crear la clase VehiculoSiniestro con su correspondiente constructor.
+Almacenar el resultado de la consulta en una lista de listas de dos elementos; el primero será un Vehículo y el segundo un Integer. Habrá que crear la clase VehiculoSiniestro con su correspondiente constructor.
+
+```json
+[
+   {
+      "vehiculo": {
+         "id": 1,
+         "marca": "Ford",
+         "modelo": "Fiesta",
+         "patente": "ABC123",
+         "anio": 2010,
+         "cantidad_ruedas": 4
+      },
+      "total_perdida_economica": 1500000
+   },
+   {
+      "vehiculo": {
+         "id": 2,
+         "marca": "Chevrolet",
+         "modelo": "Corsa",
+         "patente": "DEF456",
+         "anio": 2025,
+         "cantidad_ruedas": 4
+      },
+      "total_perdida_economica": 500000
+   },
+   {
+      "vehiculo": {
+         "id": 3,
+         "marca": "Fiat",
+         "modelo": "Uno",
+         "patente": "GHI789",
+         "anio": 2025,
+         "cantidad_ruedas": 4
+      },
+      "total_perdida_economica": 300000
+   },
+   {
+      "vehiculo": {
+         "id": 4,
+         "marca": "Renault",
+         "modelo": "Clio",
+         "patente": "JKL012",
+         "anio": 2018,
+         "cantidad_ruedas": 4
+      },
+      "total_perdida_economica": 400000
+   },
+   {
+      "vehiculo": {
+         "id": 5,
+         "marca": "Peugeot",
+         "modelo": "208",
+         "patente": "MNO345",
+         "anio": 2019,
+         "cantidad_ruedas": 4
+      },
+      "total_perdida_economica": 500000
+   }
+]
+```
