@@ -1,0 +1,186 @@
+[
+  {
+    "id": "1",
+    "name": "Don Quijote",
+    "author": "Cervantes",
+    "numberOfPages": 500,
+    "editorial": "Espasa",
+    "publicationYear": 1605
+  },
+  {
+    "id": "2",
+    "name": "Cien años de soledad",
+    "author": "García Márquez",
+    "numberOfPages": 417,
+    "editorial": "Sudamericana",
+    "publicationYear": 1967
+  },
+  {
+    "id": "3",
+    "name": "La sombra del viento",
+    "author": "Carlos Ruiz Zafón",
+    "numberOfPages": 400,
+    "editorial": "Planeta",
+    "publicationYear": 2001
+  },
+  {
+    "id": "4",
+    "name": "El amor en los tiempos del cólera",
+    "author": "Gabriel García Márquez",
+    "numberOfPages": 368,
+    "editorial": "Alfaguara",
+    "publicationYear": 1985
+  },
+  {
+    "id": "5",
+    "name": "Rayuela",
+    "author": "Julio Cortázar",
+    "numberOfPages": 592,
+    "editorial": "Sudamericana",
+    "publicationYear": 1963
+  },
+  {
+    "id": "6",
+    "name": "Ficciones",
+    "author": "Jorge Luis Borges",
+    "numberOfPages": 224,
+    "editorial": "Emecé",
+    "publicationYear": 1944
+  },
+  {
+    "id": "7",
+    "name": "El túnel",
+    "author": "Ernesto Sabato",
+    "numberOfPages": 182,
+    "editorial": "Emecé",
+    "publicationYear": 1948
+  },
+  {
+    "id": "8",
+    "name": "Pedro Páramo",
+    "author": "Juan Rulfo",
+    "numberOfPages": 124,
+    "editorial": "Siglo XXI",
+    "publicationYear": 1955
+  },
+  {
+    "id": "9",
+    "name": "La casa de los espíritus",
+    "author": "Isabel Allende",
+    "numberOfPages": 433,
+    "editorial": "Plaza & Janés",
+    "publicationYear": 1982
+  },
+  {
+    "id": "10",
+    "name": "La ciudad y los perros",
+    "author": "Mario Vargas Llosa",
+    "numberOfPages": 300,
+    "editorial": "Seix Barral",
+    "publicationYear": 1963
+  },
+  {
+    "id": "11",
+    "name": "El otoño del patriarca",
+    "author": "Gabriel García Márquez",
+    "numberOfPages": 407,
+    "editorial": "Editorial Sudamericana",
+    "publicationYear": 1975
+  },
+  {
+    "id": "12",
+    "name": "Crónica de una muerte anunciada",
+    "author": "Gabriel García Márquez",
+    "numberOfPages": 122,
+    "editorial": "Alfaguara",
+    "publicationYear": 1981
+  },
+  {
+    "id": "13",
+    "name": "Cien años de soledad",
+    "author": "Gabriel García Márquez",
+    "numberOfPages": 417,
+    "editorial": "Sudamericana",
+    "publicationYear": 1967
+  },
+  {
+    "id": "14",
+    "name": "La tregua",
+    "author": "Mario Benedetti",
+    "numberOfPages": 186,
+    "editorial": "Plaza & Janés",
+    "publicationYear": 1960
+  },
+  {
+    "id": "15",
+    "name": "El coronel no tiene quien le escriba",
+    "author": "Gabriel García Márquez",
+    "numberOfPages": 128,
+    "editorial": "Oveja Negra",
+    "publicationYear": 1961
+  },
+  {
+    "id": "16",
+    "name": "El general en su laberinto",
+    "author": "Gabriel García Márquez",
+    "numberOfPages": 384,
+    "editorial": "Editorial Norma",
+    "publicationYear": 1989
+  },
+  {
+    "id": "17",
+    "name": "Los pasos perdidos",
+    "author": "Alejo Carpentier",
+    "numberOfPages": 376,
+    "editorial": "Tusquets",
+    "publicationYear": 1953
+  },
+  {
+    "id": "18",
+    "name": "El Aleph",
+    "author": "Jorge Luis Borges",
+    "numberOfPages": 86,
+    "editorial": "Emecé",
+    "publicationYear": 1949
+  },
+  {
+    "id": "19",
+    "name": "Sobre héroes y tumbas",
+    "author": "Ernesto Sabato",
+    "numberOfPages": 480,
+    "editorial": "Emecé",
+    "publicationYear": 1961
+  },
+  {
+    "id": "20",
+    "name": "La invención de Morel",
+    "author": "Adolfo Bioy Casares",
+    "numberOfPages": 228,
+    "editorial": "Planeta",
+    "publicationYear": 1940
+  },
+  {
+    "id": "21",
+    "name": "El laberinto de la soledad",
+    "author": "Octavio Paz",
+    "numberOfPages": 376,
+    "editorial": "Fondo de Cultura Económica",
+    "publicationYear": 1950
+  },
+  {
+    "id": "22",
+    "name": "La hojarasca",
+    "author": "Gabriel García Márquez",
+    "numberOfPages": 176,
+    "editorial": "Oveja Negra",
+    "publicationYear": 1955
+  },
+  {
+    "id": "23",
+    "name": "El rastro de tu sangre en la nieve",
+    "author": "Gabriel García Márquez",
+    "numberOfPages": 96,
+    "editorial": "Oveja Negra",
+    "publicationYear": 1993
+  }
+]

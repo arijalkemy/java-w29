@@ -27,9 +27,10 @@ public class Main {
 
     }
     //Duda ejercicio
+    //downcasting upcasting
     public static String comerAnimal(Animal animal) {
         if (animal instanceof Gato) {
-            return ((Gato) animal).comerCarne();
+            return ((Gato)animal).comerCarne();
         } else if (animal instanceof Perro) {
             return ((Perro) animal).comerCarne();
         } else if (animal instanceof Vaca) {
