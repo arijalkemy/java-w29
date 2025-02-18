@@ -1,0 +1,21 @@
+POST books/_bulk
+{ "index": {} }
+{ "title": "Cien años de soledad", "author": "Gabriel García Márquez", "numberOfPages": 417, "editorial": "Sudamericana", "publicationYear": 1967 }
+{ "index": {} }
+{ "title": "1984", "author": "George Orwell", "numberOfPages": 328, "editorial": "Secker & Warburg", "publicationYear": 1949 }
+{ "index": {} }
+{ "title": "El principito", "author": "Antoine de Saint-Exupéry", "numberOfPages": 96, "editorial": "Reynal & Hitchcock", "publicationYear": 1943 }
+{ "index": {} }
+{ "title": "Don Quijote de la Mancha", "author": "Miguel de Cervantes", "numberOfPages": 863, "editorial": "Francisco de Robles", "publicationYear": 1605 }
+{ "index": {} }
+{ "title": "Crimen y castigo", "author": "Fiódor Dostoyevski", "numberOfPages": 671, "editorial": "The Russian Messenger", "publicationYear": 1866 }
+{ "index": {} }
+{ "title": "Orgullo y prejuicio", "author": "Jane Austen", "numberOfPages": 432, "editorial": "T. Egerton", "publicationYear": 1813 }
+{ "index": {} }
+{ "title": "Ulises", "author": "James Joyce", "numberOfPages": 730, "editorial": "Sylvia Beach", "publicationYear": 1922 }
+{ "index": {} }
+{ "title": "Moby-Dick", "author": "Herman Melville", "numberOfPages": 635, "editorial": "Harper & Brothers", "publicationYear": 1851 }
+{ "index": {} }
+{ "title": "En busca del tiempo perdido", "author": "Marcel Proust", "numberOfPages": 4215, "editorial": "Grasset", "publicationYear": 1913 }
+{ "index": {} }
+{ "title": "Fahrenheit 451", "author": "Ray Bradbury", "numberOfPages": 249, "editorial": "Ballantine Books", "publicationYear": 1953 }
