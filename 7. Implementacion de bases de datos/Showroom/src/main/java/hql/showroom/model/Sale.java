@@ -25,7 +25,7 @@ public class Sale {
     @Column(nullable = false)
     private Double total;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "payment_method")
     private String paymentMethod;
 
     @ManyToMany

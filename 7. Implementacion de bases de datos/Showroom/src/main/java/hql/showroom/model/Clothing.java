@@ -41,7 +41,7 @@ public class Clothing {
     @Column(nullable = false)
     private Integer quantity;
 
-    @Column(nullable = false)
+    @Column(name = "sale_price", nullable = false)
     private Double salePrice;
 
     @ManyToMany(mappedBy = "clothingList")
