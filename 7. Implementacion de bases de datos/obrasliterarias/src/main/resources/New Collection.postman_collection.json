@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "f60f4fde-69a5-40c7-8244-bfb973c12c1e",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40986361"
+	},
+	"item": [
+		{
+			"name": "ObrasLiterarias Copy",
+			"item": [
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/literally/322",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"literally",
+								"322"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"/*// Datos de las 10 obras literarias",
+									"const literaryWorks = [",
+									"    {",
+									"        \"id\": \"1\",",
+									"        \"name\": \"Cien años de soledad\",",
+									"        \"quantityPages\": 417,",
+									"        \"year\": 1967,",
+									"        \"author\": {",
+									"            \"id\": \"1\",",
+									"            \"name\": \"Gabriel García Márquez\"",
+									"        },",
+									"        \"editorial\": {",
+									"            \"id\": \"1\",",
+									"            \"name\": \"Editorial Sudamericana\"",
+									"        }",
+									"    },",
+									"    {",
+									"        \"id\": \"2\",",
+									"        \"name\": \"Don Quijote de la Mancha\",",
+									"        \"quantityPages\": 1072,",
+									"        \"year\": 1605,",
+									"        \"author\": {",
+									"            \"id\": \"2\",",
+									"            \"name\": \"Miguel de Cervantes\"",
+									"        },",
+									"        \"editorial\": {",
+									"            \"id\": \"2\",",
+									"            \"name\": \"Editorial Planeta\"",
+									"        }",
+									"    },",
+									"    {",
+									"        \"id\": \"3\",",
+									"        \"name\": \"1984\",",
+									"        \"quantityPages\": 328,",
+									"        \"year\": 1949,",
+									"        \"author\": {",
+									"            \"id\": \"3\",",
+									"            \"name\": \"George Orwell\"",
+									"        },",
+									"        \"editorial\": {",
+									"            \"id\": \"3\",",
+									"            \"name\": \"Penguin\"",
+									"        }",
+									"    },",
+									"    {",
+									"        \"id\": \"4\",",
+									"        \"name\": \"El amor en los tiempos del cólera\",",
+									"        \"quantityPages\": 348,",
+									"        \"year\": 1985,",
+									"        \"author\": {",
+									"            \"id\": \"4\",",
+									"            \"name\": \"Gabriel García Márquez\"",
+									"        },",
+									"        \"editorial\": {",
+									"            \"id\": \"1\",",
+									"            \"name\": \"Editorial Sudamericana\"",
+									"        }",
+									"    },",
+									"    {",
+									"        \"id\": \"5\",",
+									"        \"name\": \"La sombra del viento\",",
+									"        \"quantityPages\": 560,",
+									"        \"year\": 2001,",
+									"        \"author\": {",
+									"            \"id\": \"5\",",
+									"            \"name\": \"Carlos Ruiz Zafón\"",
+									"        },",
+									"        \"editorial\": {",
+									"            \"id\": \"4\",",
+									"            \"name\": \"Planeta\"",
+									"        }",
+									"    },",
+									"    {",
+									"        \"id\": \"6\",",
+									"        \"name\": \"El príncipe\",",
+									"        \"quantityPages\": 112,",
+									"        \"year\": 1532,",
+									"        \"author\": {",
+									"            \"id\": \"6\",",
+									"            \"name\": \"Nicolás Maquiavelo\"",
+									"        },",
+									"        \"editorial\": {",
+									"            \"id\": \"5\",",
+									"            \"name\": \"Ediciones Akal\"",
+									"        }",
+									"    },",
+									"    {",
+									"        \"id\": \"7\",",
+									"        \"name\": \"Matar a un ruiseñor\",",
+									"        \"quantityPages\": 324,",
+									"        \"year\": 1960,",
+									"        \"author\": {",
+									"            \"id\": \"7\",",
+									"            \"name\": \"Harper Lee\"",
+									"        },",
+									"        \"editorial\": {",
+									"            \"id\": \"6\",",
+									"            \"name\": \"Editorial HarperCollins\"",
+									"        }",
+									"    },",
+									"    {",
+									"        \"id\": \"8\",",
+									"        \"name\": \"El gran Gatsby\",",
+									"        \"quantityPages\": 180,",
+									"        \"year\": 1925,",
+									"        \"author\": {",
+									"            \"id\": \"8\",",
+									"            \"name\": \"F. Scott Fitzgerald\"",
+									"        },",
+									"        \"editorial\": {",
+									"            \"id\": \"7\",",
+									"            \"name\": \"Scribner\"",
+									"        }",
+									"    },",
+									"    {",
+									"        \"id\": \"9\",",
+									"        \"name\": \"Ulises\",",
+									"        \"quantityPages\": 730,",
+									"        \"year\": 1922,",
+									"        \"author\": {",
+									"            \"id\": \"9\",",
+									"            \"name\": \"James Joyce\"",
+									"        },",
+									"        \"editorial\": {",
+									"            \"id\": \"8\",",
+									"            \"name\": \"Shakespeare and Company\"",
+									"        }",
+									"    },",
+									"    {",
+									"        \"id\": \"10\",",
+									"        \"name\": \"Cronica de amor una muerte anunciada\",",
+									"        \"quantityPages\": 671,",
+									"        \"year\": 1981,",
+									"        \"author\": {",
+									"            \"id\": \"1\",",
+									"            \"name\": \"Gabriel García Márquez\"",
+									"        },",
+									"        \"editorial\": {",
+									"            \"id\": \"9\",",
+									"            \"name\": \"La Oveja Negra\"",
+									"        }",
+									"    }",
+									"];",
+									"",
+									"// Enviar una solicitud por cada obra literaria",
+									"let currentIndex = 0;",
+									"",
+									"pm.variables.set('currentIndex', currentIndex); // Guardar el índice de la obra actual",
+									"",
+									"// Establecer el cuerpo de la solicitud con la obra literaria actual",
+									"pm.request.body.raw = JSON.stringify(literaryWorks[currentIndex]);",
+									"",
+									"// Incrementar el índice para la siguiente obra",
+									"pm.variables.set('currentIndex', currentIndex + 1);",
+									"*/"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"id\": \"322\",\n        \"name\": \"1984\",\n        \"quantityPages\": 328,\n        \"year\": 1949,\n        \"author\": {\n            \"id\": \"3\",\n            \"name\": \"George Orwell\"\n        },\n        \"editorial\": {\n            \"id\": \"3\",\n            \"name\": \"Penguin\"\n        }\n    }\n/*\n\n    {\n        \"id\": \"2\",\n        \"name\": \"Don Quijote de la Mancha\",\n        \"quantityPages\": 1072,\n        \"year\": 1605,\n        \"author\": {\n            \"id\": \"2\",\n            \"name\": \"Miguel de Cervantes\"\n        },\n        \"editorial\": {\n            \"id\": \"2\",\n            \"name\": \"Editorial Planeta\"\n        }\n    }\n/*\n\n    {\n        \"id\": \"4\",\n        \"name\": \"El amor en los tiempos del cólera\",\n        \"quantityPages\": 348,\n        \"year\": 1985,\n        \"author\": {\n            \"id\": \"4\",\n            \"name\": \"Gabriel García Márquez\"\n        },\n        \"editorial\": {\n            \"id\": \"1\",\n            \"name\": \"Editorial Sudamericana\"\n        }\n    }\n    */",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/literally",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"literally"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"1\",\n    \"name\": \"El Quijote\",\n    \"quantityPages\": 300,\n    \"year\": 1605,\n    \"author\": {\n        \"id\":\"1\",\n        \"name\": \"Miguel de Cervantes\"\n    },\n    \"editorial\": {\n        \"id\":\"1\",\n        \"name\": \"Editorial ABC\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/literally",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"literally"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByAutorName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/literally/findByAuthorName/Gabriel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"literally",
+								"findByAuthorName",
+								"Gabriel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByEditorialName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/literally/findByNameEditorial/eja",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"literally",
+								"findByNameEditorial",
+								"eja"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByTitleName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/literally/findByNameTitle/mor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"literally",
+								"findByNameTitle",
+								"mor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIndTop5MaxPages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/literally/TopFiveMaxPages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"literally",
+								"TopFiveMaxPages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findBeforeYear",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/literally/BeforeYear/1700",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"literally",
+								"BeforeYear",
+								"1700"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
