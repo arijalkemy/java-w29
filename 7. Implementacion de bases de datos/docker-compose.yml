@@ -1,0 +1,31 @@
+services:
+  es01:
+    image: elasticsearch:8.17.2
+    container_name: es01
+    networks:
+      - elastic
+    ports:
+      - 9200:9200
+    environment:
+      - discovery.type=single-node
+    volumes:
+      - es01_data:/usr/share/elasticsearch/data
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+
+  kib01:
+    image: kibana:8.17.2
+    container_name: kib01
+    networks:
+      - elastic
+    ports:
+      - 5601:5601
+
+volumes:
+  es01_data: {}
+
+networks:
+  elastic:
+    driver: bridge

@@ -1,0 +1,8 @@
+POST http://localhost:8080/miniseries
+Content-Type: application/json
+
+{
+  "name": "The Mandalorian",
+  "rating": 8.7,
+  "amount_of_awards": 7
+}

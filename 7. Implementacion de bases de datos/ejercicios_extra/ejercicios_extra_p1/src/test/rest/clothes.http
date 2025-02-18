@@ -1,0 +1,38 @@
+POST http://localhost:8080/api/clothes
+Content-Type: application/json
+
+{
+  "name": "Pantalones",
+  "type": "Pantalones",
+  "brand": "Levis",
+  "color": "Azul",
+  "size": "M",
+  "amount": "10",
+  "price": 100.0
+}
+
+###
+GET http://localhost:8080/api/clothes
+
+###
+GET http://localhost:8080/api/clothes/1
+
+###
+PUT http://localhost:8080/api/clothes/1
+Content-Type: application/json
+
+  {
+    "name": "Vestido de Noche Dior",
+    "type": "Vestido de Noche",
+    "brand": "Dior",
+    "color": "Negro",
+    "size": "M",
+    "amount": "5",
+    "price": 250.0
+  }
+
+###
+DELETE http://localhost:8080/api/clothes/1
+
+###
+GET http://localhost:8080/api/clothes?name=hem
