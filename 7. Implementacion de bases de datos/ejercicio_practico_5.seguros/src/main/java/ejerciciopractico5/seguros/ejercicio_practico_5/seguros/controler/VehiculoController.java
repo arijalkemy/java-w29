@@ -2,11 +2,10 @@ package ejerciciopractico5.seguros.ejercicio_practico_5.seguros.controler;
 
 import ejerciciopractico5.seguros.ejercicio_practico_5.seguros.dto.*;
 import ejerciciopractico5.seguros.ejercicio_practico_5.seguros.service.VehiculoService;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 
