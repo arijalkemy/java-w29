@@ -2,7 +2,6 @@ package com.meli.segurovehiculos.controller;
 
 import com.meli.segurovehiculos.dto.VehicleDto;
 import com.meli.segurovehiculos.service.vehicle.IVehicleService;
-import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

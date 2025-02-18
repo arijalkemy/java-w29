@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "vehicles")
+@Table(name = "vehicle")
 @Data
 public class Vehicle {
 
@@ -24,10 +24,11 @@ public class Vehicle {
 
     private String brand;
 
-    private int year;
+    private Integer year;
 
-    private int numberOfWheels;
+    @Column(name = "number_of_wheels")
+    private Integer numberOfWheels;
 
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
-    private List<Accident> accidents = new ArrayList<>();
+    private List<Accident> accidents;
 }
