@@ -1,10 +1,13 @@
 package hql.showroom.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Getter @Setter
@@ -40,5 +43,10 @@ public class Clothing {
 
     @Column(nullable = false)
     private Double salePrice;
+
+    @ManyToMany(mappedBy = "clothingList")
+    @JsonIgnore
+    private List<Sale> sales;
+
 
 }
