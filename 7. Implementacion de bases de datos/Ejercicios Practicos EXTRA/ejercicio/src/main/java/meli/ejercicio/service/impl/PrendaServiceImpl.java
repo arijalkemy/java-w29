@@ -44,27 +44,6 @@ public class PrendaServiceImpl implements PrendaService {
     @Override
     public PrendaDTO update(Long id, PrendaDTO prendaDTO) {
         Prenda prenda = prendaRepository.findById(id).orElseThrow(() -> new NotFoundException("Prenda not found"));
-        if(prendaDTO.getTipo() != null) {
-            prenda.setTipo(prendaDTO.getTipo());
-        }
-        if(prendaDTO.getMarca() != null) {
-            prenda.setMarca(prendaDTO.getMarca());
-        }
-        if(prendaDTO.getColor() != null) {
-            prenda.setColor(prendaDTO.getColor());
-        }
-        if(prendaDTO.getTalle() != null) {
-            prenda.setTalle(prendaDTO.getTalle());
-        }
-        if(prendaDTO.getNombre() != null) {
-            prenda.setNombre(prendaDTO.getNombre());
-        }
-        if(prendaDTO.getCantidad() != null) {
-            prenda.setCantidad(prendaDTO.getCantidad());
-        }
-        if(prendaDTO.getPrecioVenta() != null) {
-            prenda.setPrecioVenta(prendaDTO.getPrecioVenta());
-        }
         return modelMapper.map(prendaRepository.save(prenda), PrendaDTO.class);
     }
 }
