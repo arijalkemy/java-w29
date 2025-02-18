@@ -1,0 +1,20 @@
+package com.example.ejercicioextra1.dto.reponse;
+
+
+import lombok.*;
+
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@EqualsAndHashCode
+public class PostPrendasResponseDto {
+    private Long id;
+    private String nombre;
+    private String tipo;
+    private String marca;
+    private String color;
+    private String talle;
+    private Integer cantidad;
+    private Double precioVenta;
+}
