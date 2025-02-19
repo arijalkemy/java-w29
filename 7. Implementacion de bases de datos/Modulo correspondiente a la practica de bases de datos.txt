@@ -1,1 +1,2 @@
-1. JPA + Hibernate Live - 1. MiniSeries
+1. JPA + Hibernate Live - MiniSeries
+2. CRUD con JPA - ThePearls
