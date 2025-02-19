@@ -16,6 +16,6 @@ public class GetPrendasForVentaResponseDto {
     private Long id;
     private LocalDate fecha;
     private Double total;
-    List<Prenda> prendas;
+    List<PostPrendasResponseDto> prendas;
 
 }

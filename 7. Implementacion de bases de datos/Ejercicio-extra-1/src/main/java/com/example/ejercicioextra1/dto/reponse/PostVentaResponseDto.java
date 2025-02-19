@@ -1,5 +1,6 @@
 package com.example.ejercicioextra1.dto.reponse;
 
+import com.example.ejercicioextra1.dto.request.PostVentaRequestDto;
 import com.example.ejercicioextra1.entity.Prenda;
 import lombok.*;
 
@@ -16,5 +17,5 @@ public class PostVentaResponseDto {
     private LocalDate fecha;
     private Double total;
     private String medioPago;
-    private List<Prenda> prendas;
+    private List<PostPrendasResponseDto> prendas;
 }

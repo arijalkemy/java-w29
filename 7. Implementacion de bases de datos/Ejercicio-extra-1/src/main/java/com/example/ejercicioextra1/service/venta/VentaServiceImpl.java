@@ -1,6 +1,7 @@
 package com.example.ejercicioextra1.service.venta;
 
 import com.example.ejercicioextra1.dto.reponse.GetPrendasForVentaResponseDto;
+import com.example.ejercicioextra1.dto.reponse.PostPrendasResponseDto;
 import com.example.ejercicioextra1.dto.reponse.PostVentaResponseDto;
 import com.example.ejercicioextra1.dto.request.PostVentaRequestDto;
 import com.example.ejercicioextra1.entity.Prenda;
@@ -24,8 +25,7 @@ public class VentaServiceImpl implements IVentaService {
     @Override
     public PostVentaResponseDto save(PostVentaRequestDto postVentaRequestDto) {
         Venta venta = mapToVenta(postVentaRequestDto);
-        Venta newVenta = ventaRepository.save(venta);
-        return mapToPostVentaResponseDto(newVenta);
+        return mapToPostVentaResponseDto(ventaRepository.save(venta));
     }
 
     @Override
@@ -44,7 +44,12 @@ public class VentaServiceImpl implements IVentaService {
     @Override
     public void modifyById(Long id, PostVentaRequestDto postVentaRequestDto) {
         ventaRepository.findById(id).orElseThrow(RuntimeException::new);
+
         Venta udateVenta = mapToVenta(postVentaRequestDto);
+
+        prendaRepository.findAllByVentaId(id)
+                .forEach(prenda -> prenda.setVenta(null));
+
         udateVenta.setId(id);
         ventaRepository.save(udateVenta);
     }
@@ -60,11 +65,13 @@ public class VentaServiceImpl implements IVentaService {
         Venta venta = ventaRepository.findById(id).orElseThrow(RuntimeException::new);
         List<Prenda> prendas = venta.getPrendas();
 
+
+
         return GetPrendasForVentaResponseDto.builder()
                 .id(venta.getId())
                 .fecha(venta.getFecha())
                 .total(venta.getTotal())
-                .prendas(prendas)
+                .prendas(prendas.stream().map(this::mapToPostPrendasResponseDto).toList())
                 .build();
     }
 
@@ -74,7 +81,7 @@ public class VentaServiceImpl implements IVentaService {
                 .fecha(venta.getFecha())
                 .total(venta.getTotal())
                 .medioPago(venta.getMedioPago())
-                .prendas(venta.getPrendas())
+                .prendas(venta.getPrendas().stream().map(this::mapToPostPrendasResponseDto).toList())
                 .build();
     }
 
@@ -83,11 +90,28 @@ public class VentaServiceImpl implements IVentaService {
                 .map(prenda -> prendaRepository.findById(prenda).orElseThrow(RuntimeException::new))
                 .toList();
 
-        return Venta.builder()
+        Venta venta = Venta.builder()
                 .fecha(postVentaRequestDto.getFecha())
                 .total(postVentaRequestDto.getTotal())
                 .medioPago(postVentaRequestDto.getMedioPago())
                 .prendas(prendas)
+                .build();
+
+        prendas.forEach(prenda -> prenda.setVenta(venta));
+
+        return venta;
+    }
+
+    private PostPrendasResponseDto mapToPostPrendasResponseDto(Prenda prenda) {
+        return PostPrendasResponseDto.builder()
+                .id(prenda.getId())
+                .nombre(prenda.getNombre())
+                .tipo(prenda.getTipo())
+                .marca(prenda.getMarca())
+                .color(prenda.getColor())
+                .talle(prenda.getTalle())
+                .cantidad(prenda.getCantidad())
+                .precioVenta(prenda.getPrecioVenta())
                 .build();
     }
 }

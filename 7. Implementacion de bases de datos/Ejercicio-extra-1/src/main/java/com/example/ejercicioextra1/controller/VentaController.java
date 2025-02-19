@@ -41,4 +41,10 @@ public class VentaController {
         return new ResponseEntity<>(ventaService.getPrendasForVenta(id), HttpStatus.OK);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<?> modifySaleById(@PathVariable Long id, @RequestBody PostVentaRequestDto postVentaRequestDto) {
+        ventaService.modifyById(id, postVentaRequestDto);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }

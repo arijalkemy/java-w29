@@ -9,5 +9,6 @@ public interface IPrendaRepository extends JpaRepository<Prenda, Long> {
 
     List<Prenda> findAllByTalle(String talle);
     List<Prenda> findAllByNombre(String nombre);
+    List<Prenda> findAllByVentaId(Long id);
 
 }
