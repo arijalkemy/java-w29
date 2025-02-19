@@ -1,0 +1,352 @@
+PUT /zapatillas
+{
+    "mappings": {
+        "properties": {
+            "nombre": {
+                "type": "text"
+            },
+            "marca": {
+                "type": "keyword"
+            },
+            "talla": {
+                "type": "keyword"
+            },
+            "color": {
+                "type": "keyword"
+            },
+            "material": {
+                "type": "keyword"
+            },
+            "precio": {
+                "type": "float"
+            },
+            "stock": {
+                "type": "integer"
+            },
+            "fecha_lanzamiento": {
+                "type": "date"
+            }
+        }
+    }
+}
+
+POST /zapatillas/_bulk
+{
+    "index": {
+        "_id": 1
+    }
+}
+{
+    "nombre": "Nike Air Max 2021",
+    "marca": "Nike",
+    "talla": "42",
+    "color": "Negro",
+    "material": "Cuero",
+    "precio": 120.99,
+    "stock": 50,
+    "fecha_lanzamiento": "2021-01-15"
+}
+{
+    "index": {
+        "_id": 2
+    }
+}
+{
+    "nombre": "Adidas Ultraboost",
+    "marca": "Adidas",
+    "talla": "44",
+    "color": "Blanco",
+    "material": "Textil",
+    "precio": 180.50,
+    "stock": 30,
+    "fecha_lanzamiento": "2020-09-25"
+}
+{
+    "index": {
+        "_id": 3
+    }
+}
+{
+    "nombre": "Puma RS-X",
+    "marca": "Puma",
+    "talla": "43",
+    "color": "Azul",
+    "material": "Sintético",
+    "precio": 110.75,
+    "stock": 40,
+    "fecha_lanzamiento": "2021-06-10"
+}
+{
+    "index": {
+        "_id": 4
+    }
+}
+{
+    "nombre": "Reebok Nano X1",
+    "marca": "Reebok",
+    "talla": "41",
+    "color": "Rojo",
+    "material": "Textil",
+    "precio": 140.30,
+    "stock": 25,
+    "fecha_lanzamiento": "2021-02-20"
+}
+{
+    "index": {
+        "_id": 5
+    }
+}
+{
+    "nombre": "New Balance 990v5",
+    "marca": "New Balance",
+    "talla": "46",
+    "color": "Gris",
+    "material": "Cuero",
+    "precio": 175.00,
+    "stock": 20,
+    "fecha_lanzamiento": "2020-11-10"
+}
+{
+    "index": {
+        "_id": 6
+    }
+}
+{
+    "nombre": "Asics Gel-Kayano 27",
+    "marca": "Asics",
+    "talla": "40",
+    "color": "Negro",
+    "material": "Malla",
+    "precio": 160.00,
+    "stock": 35,
+    "fecha_lanzamiento": "2021-05-05"
+}
+{
+    "index": {
+        "_id": 7
+    }
+}
+{
+    "nombre": "Nike React Infinity Run",
+    "marca": "Nike",
+    "talla": "45",
+    "color": "Verde",
+    "material": "Textil",
+    "precio": 150.99,
+    "stock": 22,
+    "fecha_lanzamiento": "2021-04-30"
+}
+{
+    "index": {
+        "_id": 8
+    }
+}
+{
+    "nombre": "Adidas NMD R1",
+    "marca": "Adidas",
+    "talla": "42",
+    "color": "Blanco",
+    "material": "Sintético",
+    "precio": 130.00,
+    "stock": 60,
+    "fecha_lanzamiento": "2020-08-01"
+}
+{
+    "index": {
+        "_id": 9
+    }
+}
+{
+    "nombre": "Saucony Endorphin Speed",
+    "marca": "Saucony",
+    "talla": "44",
+    "color": "Negro",
+    "material": "Textil",
+    "precio": 170.00,
+    "stock": 15,
+    "fecha_lanzamiento": "2021-03-10"
+}
+{
+    "index": {
+        "_id": 10
+    }
+}
+{
+    "nombre": "Brooks Glycerin 19",
+    "marca": "Brooks",
+    "talla": "43",
+    "color": "Azul",
+    "material": "Malla",
+    "precio": 140.50,
+    "stock": 30,
+    "fecha_lanzamiento": "2021-02-01"
+}
+{
+    "index": {
+        "_id": 11
+    }
+}
+{
+    "nombre": "Under Armour HOVR Phantom",
+    "marca": "Under Armour",
+    "talla": "44",
+    "color": "Negro",
+    "material": "Sintético",
+    "precio": 150.00,
+    "stock": 40,
+    "fecha_lanzamiento": "2020-12-20"
+}
+{
+    "index": {
+        "_id": 12
+    }
+}
+{
+    "nombre": "Nike ZoomX Vaporfly Next",
+    "marca": "Nike",
+    "talla": "42",
+    "color": "Blanco",
+    "material": "Textil",
+    "precio": 250.00,
+    "stock": 10,
+    "fecha_lanzamiento": "2020-09-05"
+}
+{
+    "index": {
+        "_id": 13
+    }
+}
+{
+    "nombre": "Puma Future Rider",
+    "marca": "Puma",
+    "talla": "40",
+    "color": "Amarillo",
+    "material": "Textil",
+    "precio": 110.00,
+    "stock": 50,
+    "fecha_lanzamiento": "2020-07-15"
+}
+{
+    "index": {
+        "_id": 14
+    }
+}
+{
+    "nombre": "Adidas Solarboost",
+    "marca": "Adidas",
+    "talla": "41",
+    "color": "Negro",
+    "material": "Textil",
+    "precio": 120.00,
+    "stock": 20,
+    "fecha_lanzamiento": "2021-01-01"
+}
+{
+    "index": {
+        "_id": 15
+    }
+}
+{
+    "nombre": "Reebok Floatride Energy 3",
+    "marca": "Reebok",
+    "talla": "43",
+    "color": "Azul",
+    "material": "Sintético",
+    "precio": 130.50,
+    "stock": 30,
+    "fecha_lanzamiento": "2021-02-25"
+}
+{
+    "index": {
+        "_id": 16
+    }
+}
+{
+    "nombre": "New Balance Fresh Foam 1080v11",
+    "marca": "New Balance",
+    "talla": "45",
+    "color": "Verde",
+    "material": "Malla",
+    "precio": 160.99,
+    "stock": 25,
+    "fecha_lanzamiento": "2020-10-10"
+}
+{
+    "index": {
+        "_id": 17
+    }
+}
+{
+    "nombre": "Asics Gel-Nimbus 23",
+    "marca": "Asics",
+    "talla": "46",
+    "color": "Blanco",
+    "material": "Malla",
+    "precio": 170.50,
+    "stock": 30,
+    "fecha_lanzamiento": "2020-11-25"
+}
+{
+    "index": {
+        "_id": 18
+    }
+}
+{
+    "nombre": "Nike Air Zoom Pegasus 38",
+    "marca": "Nike",
+    "talla": "44",
+    "color": "Negro",
+    "material": "Textil",
+    "precio": 140.00,
+    "stock": 45,
+    "fecha_lanzamiento": "2021-06-15"
+}
+{
+    "index": {
+        "_id": 19
+    }
+}
+{
+    "nombre": "Adidas Adizero Adios Pro",
+    "marca": "Adidas",
+    "talla": "42",
+    "color": "Blanco",
+    "material": "Textil",
+    "precio": 220.00,
+    "stock": 12,
+    "fecha_lanzamiento": "2021-05-12"
+}
+{
+    "index": {
+        "_id": 20
+    }
+}
+{
+    "nombre": "Puma Speed 500",
+    "marca": "Puma",
+    "talla": "43",
+    "color": "Azul",
+    "material": "Sintético",
+    "precio": 130.00,
+    "stock": 50,
+    "fecha_lanzamiento": "2021-01-05"
+}
+
+GET /zapatillas/_search
+{
+    "query": {
+        "match_all": {}
+    }
+}
+
+GET /zapatillas/_mapping
+
+GET /zapatillas/_search
+
+{
+    "query": {
+        "match": {
+            "marca": "Nike"
+        }
+    }
+}
