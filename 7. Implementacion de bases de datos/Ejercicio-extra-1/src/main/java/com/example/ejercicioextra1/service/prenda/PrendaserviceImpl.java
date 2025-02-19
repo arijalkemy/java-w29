@@ -2,13 +2,12 @@ package com.example.ejercicioextra1.service.prenda;
 
 import com.example.ejercicioextra1.dto.reponse.PostPrendasResponseDto;
 import com.example.ejercicioextra1.dto.request.PostPrendasRequestDto;
-import com.example.ejercicioextra1.entity.Prenda;
-import com.example.ejercicioextra1.repository.IPrendaRepository;
+import com.example.ejercicioextra1.entity.jpa.Prenda;
+import com.example.ejercicioextra1.repository.jpa.IPrendaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor

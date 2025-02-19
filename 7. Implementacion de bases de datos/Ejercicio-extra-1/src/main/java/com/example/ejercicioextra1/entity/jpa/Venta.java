@@ -1,4 +1,4 @@
-package com.example.ejercicioextra1.entity;
+package com.example.ejercicioextra1.entity.jpa;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;

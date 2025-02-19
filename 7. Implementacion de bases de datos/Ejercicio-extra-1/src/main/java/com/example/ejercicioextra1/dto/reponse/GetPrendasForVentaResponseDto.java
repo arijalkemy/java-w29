@@ -1,6 +1,4 @@
 package com.example.ejercicioextra1.dto.reponse;
-
-import com.example.ejercicioextra1.entity.Prenda;
 import lombok.*;
 
 import java.time.LocalDate;

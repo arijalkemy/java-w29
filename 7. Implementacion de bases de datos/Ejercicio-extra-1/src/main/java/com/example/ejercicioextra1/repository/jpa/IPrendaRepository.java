@@ -1,6 +1,6 @@
-package com.example.ejercicioextra1.repository;
+package com.example.ejercicioextra1.repository.jpa;
 
-import com.example.ejercicioextra1.entity.Prenda;
+import com.example.ejercicioextra1.entity.jpa.Prenda;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

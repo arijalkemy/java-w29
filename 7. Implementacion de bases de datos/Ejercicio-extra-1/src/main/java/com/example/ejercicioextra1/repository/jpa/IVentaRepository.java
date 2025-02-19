@@ -1,6 +1,6 @@
-package com.example.ejercicioextra1.repository;
+package com.example.ejercicioextra1.repository.jpa;
 
-import com.example.ejercicioextra1.entity.Venta;
+import com.example.ejercicioextra1.entity.jpa.Venta;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

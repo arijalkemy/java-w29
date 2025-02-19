@@ -4,16 +4,15 @@ import com.example.ejercicioextra1.dto.reponse.GetPrendasForVentaResponseDto;
 import com.example.ejercicioextra1.dto.reponse.PostPrendasResponseDto;
 import com.example.ejercicioextra1.dto.reponse.PostVentaResponseDto;
 import com.example.ejercicioextra1.dto.request.PostVentaRequestDto;
-import com.example.ejercicioextra1.entity.Prenda;
-import com.example.ejercicioextra1.entity.Venta;
-import com.example.ejercicioextra1.repository.IPrendaRepository;
-import com.example.ejercicioextra1.repository.IVentaRepository;
+import com.example.ejercicioextra1.entity.jpa.Prenda;
+import com.example.ejercicioextra1.entity.jpa.Venta;
+import com.example.ejercicioextra1.repository.jpa.IPrendaRepository;
+import com.example.ejercicioextra1.repository.jpa.IVentaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
