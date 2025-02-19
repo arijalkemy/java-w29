@@ -1,6 +1,7 @@
 package com.autos.empresaseguros.controller;
 
 import com.autos.empresaseguros.dto.VehiculoDTO;
+import com.autos.empresaseguros.dto.VehiculoSiniestroDto;
 import com.autos.empresaseguros.model.Vehiculo;
 import com.autos.empresaseguros.service.IVehiculoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,27 @@ public class VehiculoController {
     }
 
     @GetMapping("/patents")
-    public ResponseEntity<List<VehiculoDTO>> getPatentes(){
+    public ResponseEntity<List<VehiculoDTO>> getPatents(){
         return new ResponseEntity<>(vehiculoService.searchPatentes(), HttpStatus.OK);
+    }
+
+    @GetMapping("/patents-and-brand")
+    public ResponseEntity<List<VehiculoDTO>> getPatentsAndBrandForYear(){
+        return new ResponseEntity<>(vehiculoService.searchPatentsAndBrandForYear(), HttpStatus.OK);
+    }
+
+    @GetMapping("/patents-with-wheels")
+    public ResponseEntity<List<VehiculoDTO>> getPatentsWithWheels(){
+        return new ResponseEntity<>(vehiculoService.searchPatentsWithWheels(), HttpStatus.OK);
+    }
+
+    @GetMapping("/vehicles-with-loss")
+    public ResponseEntity<List<VehiculoDTO>> getVehiclesWithLoss(){
+        return new ResponseEntity<>(vehiculoService.searchVehiclesWithLoss(), HttpStatus.OK);
+    }
+
+    @GetMapping("/siniestros/vehicles-with-loss")
+    public ResponseEntity<List<VehiculoSiniestroDto>> getSiniestrosVehiclesWithLoss(){
+        return new ResponseEntity<>(vehiculoService.searchiniestrosVehiclesWithLoss(), HttpStatus.OK);
     }
 }

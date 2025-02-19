@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -22,4 +24,6 @@ public class Vehiculo {
     private int anioFabricacion;
     @Column(name = "cantidad_ruedas")
     private int cantidadRuedas;
+    @OneToMany(mappedBy = "vehiculo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Siniestro> siniestro;
 }

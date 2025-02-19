@@ -18,6 +18,6 @@ public class Siniestro {
     @Column(name = "perdida_economica")
     private float perdidaEconomica;
     @ManyToOne
-    @JoinColumn(name = "id_vehiculo_denunciado", referencedColumnName = "id")
+    @JoinColumn(name = "vehiculo_id", referencedColumnName = "id")
     private Vehiculo vehiculo;
 }
