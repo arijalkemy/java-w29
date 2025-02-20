@@ -2,7 +2,6 @@ package com.bootcamp.showroom.controller;
 
 import com.bootcamp.showroom.dto.PrendaDto;
 import com.bootcamp.showroom.service.IPrendaService;
-import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

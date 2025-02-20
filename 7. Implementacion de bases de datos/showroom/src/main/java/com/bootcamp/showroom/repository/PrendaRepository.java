@@ -1,6 +1,5 @@
 package com.bootcamp.showroom.repository;
 
-import com.bootcamp.showroom.dto.PrendaDto;
 import com.bootcamp.showroom.entity.Prenda;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

@@ -1,7 +1,8 @@
 package com.bootcamp.showroom.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -11,7 +12,6 @@ import java.util.Set;
 @Table(name = "ventas")
 @Getter
 @Setter
-@EqualsAndHashCode
 public class Venta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ public class Venta {
     private LocalDate fecha;
     private Double total;
     private String medioPago;
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany
     @JoinTable(
             name = "venta_prenda",
             joinColumns = @JoinColumn(name = "venta_numero"),
