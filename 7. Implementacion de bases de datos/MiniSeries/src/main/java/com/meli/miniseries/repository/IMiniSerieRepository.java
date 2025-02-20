@@ -1,4 +1,10 @@
 package com.meli.miniseries.repository;
 
-public interface IMiniSerieRepository {
+import com.meli.miniseries.model.MiniSerie;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface IMiniSerieRepository extends JpaRepository<MiniSerie, Long> {
+
 }

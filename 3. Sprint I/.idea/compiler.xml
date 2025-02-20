@@ -9,9 +9,11 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
-        <module name="be_java_hisp_w29_g9" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="be_java_hisp_w29_g9" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
