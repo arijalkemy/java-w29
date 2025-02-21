@@ -25,4 +25,7 @@ public class TestCase {
     Integer numberOfTries;
     @Column(name = "last_update")
     LocalDate lastUpdate;
+    @ManyToOne
+    @JoinColumn(name = "feature_id", nullable = false)
+    Feature feature;
 }
