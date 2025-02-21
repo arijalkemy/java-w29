@@ -8,6 +8,7 @@ services:
       - 9200:9200
     environment:
       - discovery.type=single-node
+      - xpack.security.enabled=false
     volumes:
       - es01_data:/usr/share/elasticsearch/data
     deploy:

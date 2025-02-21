@@ -49,3 +49,60 @@ VALUES
 INSERT INTO dresses (name, type, brand, color, size, amount, price)
 VALUES 
 ('Vestido Almidonado', 'Vestido Formal', 'Guess', 'Azul Oscuro', 'S', 6, 89.99);
+
+-- Insertar 5 facturas con diferentes combinaciones de vestidos
+
+-- Factura 1
+INSERT INTO sales (date, total, payment_method)
+VALUES ('2023-07-20', 769.98, 'Tarjeta de Crédito');
+
+-- Relaciones para Factura 1 (IDs de vestidos: 1, 3, 5)
+INSERT INTO sales_dresses (sale_id, dress_id)
+VALUES
+(1, 1),  -- Vestido de Noche Clásico
+(1, 3),  -- Vestido Formal
+(1, 5);  -- Vestido de Fiesta
+
+-- Factura 2
+INSERT INTO sales (date, total, payment_method)
+VALUES ('2023-07-21', 239.97, 'Cash');
+
+-- Relaciones para Factura 2 (IDs de vestidos: 2, 4, 6)
+INSERT INTO sales_dresses (sale_id, dress_id)
+VALUES
+(2, 2),  -- Vestido Casual
+(2, 4),  -- Vestido Bohemio Verano
+(2, 6);  -- Vestido Casual Otoño
+
+-- Factura 3
+INSERT INTO sales (date, total, payment_method)
+VALUES ('2023-07-22', 788.98, 'Tarjeta de Débito');
+
+-- Relaciones para Factura 3 (IDs de vestidos: 7, 8, 9)
+INSERT INTO sales_dresses (sale_id, dress_id)
+VALUES
+(3, 7),  -- Vestido Tiro Cruzado
+(3, 8),  -- Vestido Tule
+(3, 9);  -- Vestido Casual Primavera
+
+-- Factura 4
+INSERT INTO sales (date, total, payment_method)
+VALUES ('2023-07-23', 939.98, 'PayPal');
+
+-- Relaciones para Factura 4 (IDs de vestidos: 10, 2, 8)
+INSERT INTO sales_dresses (sale_id, dress_id)
+VALUES
+(4, 10), -- Vestido Almidonado
+(4, 2),  -- Vestido Casual
+(4, 8);  -- Vestido Tule
+
+-- Factura 5
+INSERT INTO sales (date, total, payment_method)
+VALUES ('2023-07-24', 499.98, 'Tarjeta de Crédito');
+
+-- Relaciones para Factura 5 (IDs de vestidos: 5, 9, 10)
+INSERT INTO sales_dresses (sale_id, dress_id)
+VALUES
+(5, 5),  -- Vestido de Fiesta
+(5, 9),  -- Vestido Casual Primavera
+(5, 10); -- Vestido Almidonado

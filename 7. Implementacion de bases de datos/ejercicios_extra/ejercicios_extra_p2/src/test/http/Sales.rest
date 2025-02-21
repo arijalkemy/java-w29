@@ -1,0 +1,24 @@
+POST http://localhost:8080/api/sales
+Content-Type: application/json
+
+{
+  "date": "2021-10-10",
+  "total": 1000,
+  "payment_method": "CASH",
+  "dresses": [
+    {
+      "name": "Night Dress",
+      "type": "NIGHT",
+      "brand": "Zara",
+      "color": "Black",
+      "size": "M",
+      "amount": 1,
+      "price": 500
+    }
+  ]
+}
+###
+GET http://localhost:8080/api/sales
+
+###
+GET http://localhost:8080/api/sales/AdvDJpUB4P7sAzUipRDH
