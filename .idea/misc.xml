@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/2. Modulo Spring/P2-PG/pom.xml" />
+        <option value="$PROJECT_DIR$/2. Modulo Spring/pom.xml" />
+        <option value="$PROJECT_DIR$/P1-BLOG/pom.xml" />
+        <option value="$PROJECT_DIR$/2. Modulo Spring/P1-Deportistas/pom.xml" />
+        <option value="$PROJECT_DIR$/2. Modulo Spring/P1-STARWARS/pom.xml" />
+        <option value="$PROJECT_DIR$/2. Modulo Spring/P1-VIVO/pom.xml" />
+        <option value="$PROJECT_DIR$/2. Modulo Spring/P2-VIVO/pom.xml" />
+        <option value="$USER_HOME$/Downloads/be_java_hisp_w29_g06/pom.xml" />
+        <option value="$PROJECT_DIR$/be_java_hisp_w29_g06/pom.xml" />
+        <option value="$PROJECT_DIR$/3. Sprint I/be_java_hisp_w29_g06/pom.xml" />
+        <option value="$PROJECT_DIR$/3. Sprint I/pom.xml" />
+        <option value="$PROJECT_DIR$/4. Testing/calculadoraMetrosCuadrados/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/2. Modulo Spring/P1-BLOG/pom.xml" />
+        <option value="$PROJECT_DIR$/2. Modulo Spring/P1-Blog/pom.xml" />
+        <option value="$PROJECT_DIR$/4. Testing/calculadoraMetrosCuadrados/pom.xml" />
+        <option value="$PROJECT_DIR$/6. Bases de datos/Miniserie/pom.xml" />
+        <option value="$PROJECT_DIR$/P1-BLOG/pom.xml" />
+        <option value="$USER_HOME$/Downloads/be_java_hisp_w29_g06/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
