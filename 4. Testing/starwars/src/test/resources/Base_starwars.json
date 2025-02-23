@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Luke Skywalker",
+    "hair_color": "Blond",
+    "skin_color": "Fair",
+    "eye_color": "Blue",
+    "birth_year": "19BBY",
+    "gender": "Male",
+    "homeworld": "Tatooine",
+    "species": "Human",
+    "height": 172,
+    "mass": 77
+  },
+  {
+    "name": "Darth Vader",
+    "hair_color": "None",
+    "skin_color": "Pale",
+    "eye_color": "Yellow",
+    "birth_year": "41.9BBY",
+    "gender": "Male",
+    "homeworld": "Tatooine",
+    "species": "Human",
+    "height": 202,
+    "mass": 136
+  }
+]
