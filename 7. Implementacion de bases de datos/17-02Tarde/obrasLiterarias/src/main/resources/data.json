@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "Don Quijote de la Mancha",
+    "autor": "Miguel de Cervantes",
+    "cantidad_de_paginas": 1023,
+    "editorial": "Editorial X",
+    "anio_primer_publicacion": 1605
+  },
+  {
+    "id": 2,
+    "nombre": "Cien Años de Soledad",
+    "autor": "Gabriel García Márquez",
+    "cantidad_de_paginas": 417,
+    "editorial": "Editorial Y",
+    "anio_primer_publicacion": 1967
+  },
+  {
+    "id": 3,
+    "nombre": "1984",
+    "autor": "George Orwell",
+    "cantidad_de_paginas": 328,
+    "editorial": "Editorial Z",
+    "anio_primer_publicacion": 1949
+  }
+]
