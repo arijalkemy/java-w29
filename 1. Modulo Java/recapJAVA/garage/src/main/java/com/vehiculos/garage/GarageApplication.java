@@ -3,7 +3,7 @@ package com.vehiculos.garage;
 import java.util.List;
 
 public class GarageApplication {
-    
+
     public static void main(String[] args) {
         List<Vehiculo> listaVehiculos = List.of(
                 new Vehiculo("Fiesta", "Ford", 1000),
