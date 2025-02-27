@@ -2,3 +2,4 @@
 2. CRUD con JPA - ThePearls
 3. CRUD con JPA Live - Tester
 4. Relaciones JPA - Proyecto
+5. HQL Ejercicio Práctico - MoviesHQL
