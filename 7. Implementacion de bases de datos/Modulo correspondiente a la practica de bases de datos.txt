@@ -3,3 +3,4 @@
 3. CRUD con JPA Live - Tester
 4. Relaciones JPA - Proyecto
 5. HQL Ejercicio Práctico - MoviesHQL
+6. HQL Live - Vehicles
