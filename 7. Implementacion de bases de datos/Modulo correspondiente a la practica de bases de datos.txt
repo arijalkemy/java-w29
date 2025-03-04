@@ -5,3 +5,4 @@
 5. HQL Ejercicio Práctico - MoviesHQL
 6. HQL Live - Vehicles
 7. NOSQL Elasticsearch - Employees
+8. NOSQL Elasticsearch - Products
