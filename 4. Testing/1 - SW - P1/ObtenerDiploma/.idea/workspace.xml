@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d75b3f77-2b5a-4820-8c7f-fa11d911ca9a" name="Default Changelist" comment="Spring 2 - Practica TT - Obetener Diploma">
-      <change beforePath="$PROJECT_DIR$/../../../2. Modulo Spring/Archivo/2-SPRING-P2/ejemploSpring/src/main/java/com/example/ejemploSpring/controller/RomanNumbersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. Modulo Spring/Archivo/2-SPRING-P2/ejemploSpring/src/main/java/com/example/ejemploSpring/controller/RomanNumbersApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Modulo Spring/Archivo/3-SPRING-P2-VIVO/morse/src/main/java/Controller/MorseCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. Modulo Spring/Archivo/3-SPRING-P2-VIVO/morse/src/main/java/Controller/MorseCodeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Modulo Spring/Archivo/4-SPRING-DTO-RESPONSE-ENTITY-P1-VIVO/ejemploSpring/src/main/java/com/example/ejemploSpring/controller/AgeCalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. Modulo Spring/Archivo/4-SPRING-DTO-RESPONSE-ENTITY-P1-VIVO/ejemploSpring/src/main/java/com/example/ejemploSpring/controller/AgeCalculatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Modulo Spring/Spring-P1/ejercici1Spring.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Modulo Spring/Spring-P1/ejercici1Spring/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Modulo Spring/Spring-P1/ejercici1Spring/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Modulo Spring/Spring-P1/ejercici1Spring/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Modulo Spring/Spring-P1/ejercici1Spring/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Modulo Spring/Spring-P1/ejercici1Spring/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Modulo Spring/Spring-P1/ejercici1Spring/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Modulo Spring/Spring-P1/ejercici1Spring/src/main/java/com/example/ejercici1Spring/Ejercici1SpringApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Modulo Spring/Spring-P1/ejercici1Spring/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. Modulo Spring/Spring-P1/ejercici1Spring/src/test/java/com/example/ejercici1Spring/Ejercici1SpringApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../3. Sprint I/be_java_hisp_w29_g10" beforeDir="false" afterPath="$PROJECT_DIR$/../../../3. Sprint I/be_java_hisp_w29_g10" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,21 +76,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ObtenerDiplomaApplication.executor": "Run",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "silvia__moreno",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/silmoreno/Documents/BootCampGit/java-w29/4. Testing/1 - SW - P1/ObtenerDiploma",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ObtenerDiplomaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;silvia__moreno&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/silmoreno/Documents/BootCampGit/java-w29/4. Testing/1 - SW - P1/ObtenerDiploma&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/com/meli/obtenerdiploma" />
@@ -223,6 +211,8 @@
       <updated>1619721005383</updated>
       <workItem from="1738288606171" duration="311000" />
       <workItem from="1738288922210" duration="171000" />
+      <workItem from="1738290424042" duration="3426000" />
+      <workItem from="1738706649399" duration="944000" />
     </task>
     <task id="LOCAL-00001" summary="Spring 2 - Practica TT - Obetener Diploma">
       <created>1619721212242</created>
