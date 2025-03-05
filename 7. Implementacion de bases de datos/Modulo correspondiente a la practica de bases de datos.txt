@@ -6,3 +6,4 @@
 6. HQL Live - Vehicles
 7. NOSQL Elasticsearch - Employees
 8. NOSQL Elasticsearch - Products
+9. Elasticsearch y spring data LIVE - LiteraryWorks
