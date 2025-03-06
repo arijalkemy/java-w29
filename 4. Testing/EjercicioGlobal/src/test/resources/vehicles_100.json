@@ -1,0 +1,4 @@
+[{"id":1,"brand":"Pontiac","model":"Fiero","registration":"6603","year":1987,"color":"Mauv","max_speed":85,"fuel_type":"gasoline","transmission":"semi-automatic","passengers":2,"height":105.43,"width":280.28,"weight":288.8},
+{"id":2,"brand":"Buick","model":"LeSabre","registration":"81962","year":2005,"color":"Green","max_speed":240,"fuel_type":"gasoline","transmission":"semi-automatic","passengers":6,"height":207.93,"width":125.94,"weight":199.22},
+{"id":3,"brand":"Mitsubishi","model":"Excel","registration":"0904","year":1987,"color":"Green","max_speed":89,"fuel_type":"gas","transmission":"automatic","passengers":5,"height":39.18,"width":290.82,"weight":121.17},
+{"id":4,"brand":"Toyota","model":"4Runner","registration":"496","year":1994,"color":"Puce","max_speed":127,"fuel_type":"gas","transmission":"automatic","passengers":1,"height":251.59,"width":121.06,"weight":65.19}]

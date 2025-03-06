@@ -3,6 +3,7 @@ package com.bootcampW22.EjercicioGlobal.repository;
 import com.bootcampW22.EjercicioGlobal.entity.Vehicle;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.ResourceUtils;
 
@@ -15,8 +16,10 @@ import java.util.List;
 public class VehicleRepositoryImpl implements IVehicleRepository{
 
     private List<Vehicle> listOfVehicles = new ArrayList<>();
+    private final Environment environment;
 
-    public VehicleRepositoryImpl() throws IOException {
+    public VehicleRepositoryImpl(Environment environment) throws IOException {
+        this.environment = environment;
         loadDataBase();
     }
     @Override
@@ -55,12 +58,19 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
 
     private void loadDataBase() throws IOException {
         File file;
+
+        if (isTestEnvironment()) {
+            file = new File("src/test/resources/vehicles_100.json");
+        } else {
+            file = ResourceUtils.getFile("classpath:vehicles_100.json");
+        }
+
         ObjectMapper objectMapper = new ObjectMapper();
-        List<Vehicle> vehicles ;
+        listOfVehicles = objectMapper.readValue(file, new TypeReference<List<Vehicle>>() {});
+    }
 
-        file= ResourceUtils.getFile("classpath:vehicles_100.json");
-        vehicles= objectMapper.readValue(file,new TypeReference<List<Vehicle>>(){});
-
-        listOfVehicles = vehicles;
+    private boolean isTestEnvironment() {
+        return environment.getActiveProfiles().length > 0 &&
+                environment.getActiveProfiles()[0].equals("test");
     }
 }
