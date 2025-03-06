@@ -1,0 +1,7 @@
+GET http://localhost:8080/vehicles
+
+###
+GET http://localhost:8080/vehicles/color/Mauv/year/1986
+
+###
+GET http://localhost:8080/vehicles/color/NoExiste/year/1986
