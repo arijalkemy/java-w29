@@ -29,7 +29,7 @@ public class VehicleController {
     }
 
     @GetMapping("/brand/{brand}/between/{start_year}/{end_year}")
-    public ResponseEntity<?> getVehiclesByColorAndRangeOfYear(@PathVariable String brand, @PathVariable int start_year, @PathVariable int end_year){
+    public ResponseEntity<?> getVehiclesByBrandAndRangeOfYear(@PathVariable String brand, @PathVariable int start_year, @PathVariable int end_year){
         return new ResponseEntity<>(vehicleService.searchVehiclesByBrandAndRangeOfYear(brand,start_year,end_year),HttpStatus.OK);
     }
 

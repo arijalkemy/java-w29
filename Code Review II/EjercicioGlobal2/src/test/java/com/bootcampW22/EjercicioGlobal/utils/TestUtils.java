@@ -1,9 +1,7 @@
-package com.bootcampW22.EjercicioGlobal;
+package com.bootcampW22.EjercicioGlobal.utils;
 
 import com.bootcampW22.EjercicioGlobal.dto.VehicleDto;
 import com.bootcampW22.EjercicioGlobal.entity.Vehicle;
-import com.bootcampW22.EjercicioGlobal.utils.VehicleBuilder;
-import com.github.javafaker.Faker;
 
 import java.util.*;
 import java.util.stream.Collectors;

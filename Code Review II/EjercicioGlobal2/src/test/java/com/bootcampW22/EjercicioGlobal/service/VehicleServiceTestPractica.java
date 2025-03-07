@@ -1,6 +1,5 @@
 package com.bootcampW22.EjercicioGlobal.service;
 
-import com.bootcampW22.EjercicioGlobal.TestUtils;
 import com.bootcampW22.EjercicioGlobal.dto.VehicleAvgCapacityByBrandDto;
 import com.bootcampW22.EjercicioGlobal.dto.VehicleAvgSpeedByBrandDto;
 import com.bootcampW22.EjercicioGlobal.dto.VehicleDto;
@@ -14,21 +13,16 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
 
-import static com.bootcampW22.EjercicioGlobal.TestUtils.*;
+import static com.bootcampW22.EjercicioGlobal.utils.TestUtils.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.never;
 
 @ExtendWith(MockitoExtension.class)
-public class VehicleServiceTest {
+public class VehicleServiceTestPractica {
     private static final Faker faker = new Faker();
     private static final Random random = new Random();
 
