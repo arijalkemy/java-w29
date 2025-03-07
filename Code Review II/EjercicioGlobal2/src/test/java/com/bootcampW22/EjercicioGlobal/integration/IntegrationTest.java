@@ -1,0 +1,139 @@
+package com.bootcampW22.EjercicioGlobal.integration;
+
+import com.bootcampW22.EjercicioGlobal.entity.Vehicle;
+import com.bootcampW22.EjercicioGlobal.repository.VehicleRepositoryImpl;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.event.annotation.BeforeTestClass;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.util.ResourceUtils;
+
+import static org.hamcrest.Matchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+@SpringBootTest
+@AutoConfigureMockMvc
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+public class IntegrationTest {
+    @Autowired
+    MockMvc mockMvc;
+
+    @Autowired
+    VehicleRepositoryImpl vehicleRepository;
+
+    @BeforeAll
+    public void loadTestDataBase() throws IOException {
+        File file;
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<Vehicle> vehicles;
+
+        file = ResourceUtils.getFile("src/test/resources/vehicles_test.json");
+        vehicles = objectMapper.readValue(file, new TypeReference<>(){});
+
+        vehicleRepository.setTestData(vehicles);
+    }
+
+    @Test
+    @DisplayName("US0001 - Integration Test: Get Vehicles By Year And Color - Happy Path")
+    public void getVehiclesByColorAndYearOkTest() throws Exception {
+        // Arrange
+        Integer year = 2001;
+        String color = "Green";
+
+        // Act & Assert
+        mockMvc.perform(get("/vehicles/color/{color}/year/{year}", color, year))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.size()").value(3))
+                .andExpect(jsonPath("$[*].color").value(everyItem(equalToIgnoringCase(color))))
+                .andExpect(jsonPath("$[*].year").value(everyItem(is(year))));
+    }
+
+    @Test
+    @DisplayName("US0001 - Integration Test: Get Vehicles By Year And Color - NotFoundException")
+    public void getVehiclesByColorAndYearThrowNotFoundExceptionTest() throws Exception {
+        // Arrange
+        Integer year = 2001;
+        String nonExistentColor = "Red";
+
+        // Act & Assert
+        mockMvc.perform(get("/vehicles/color/{color}/year/{year}", nonExistentColor, year))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.message").value("No se encontraron vehículos con esos criterios."));
+    }
+
+    @Test
+    @DisplayName("US0003 - Integration Test: Get Average Speed By Brand - Happy Path")
+    public void getAverageSpeedByBrandOkTest() throws Exception {
+        // Arrange
+        String brand = "Chevrolet";
+
+        // Act & Assert
+        mockMvc.perform(get("/vehicles/average_speed/brand/{brand}", brand))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.average_speed").value(146.5));
+    }
+
+    @Test
+    @DisplayName("US0003 - Integration Test: Get Average Speed By Brand - NotFoundException")
+    public void getAverageSpeedByBrandThrowNotFoundExceptionTest() throws Exception {
+        // Arrange
+        String nonExistentBrand = "Ford";
+
+        // Act & Assert
+        mockMvc.perform(get("/vehicles/average_speed/brand/{brand}", nonExistentBrand))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.message").value("No se encontraron vehículos de esa marca."));
+    }
+
+    @Test
+    @DisplayName("US0005 - Integration Test: Get Vehicles By Range Of Weight - Happy Path")
+    public void getVehiclesByRangeOfWeightOkTest() throws Exception {
+        // Arrange
+        Double weight_min = 200.0;
+        Double weight_max = 288.8;
+
+        // Act & Assert
+        mockMvc.perform(get("/vehicles/weight")
+                        .param("min", String.valueOf(weight_min))
+                        .param("max", String.valueOf(weight_max)))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.size()").value(4))
+                .andExpect(jsonPath("$[*].weight").value(everyItem(greaterThanOrEqualTo(weight_min))))
+                .andExpect(jsonPath("$[*].weight").value(everyItem(lessThanOrEqualTo(weight_max))));
+    }
+
+    @Test
+    @DisplayName("US0005 - Integration Test: Get Vehicles By Range Of Weight - NotFoundException")
+    public void getVehiclesByRangeOfWeightThrowNotFoundExceptionTest() throws Exception {
+        // Arrange
+        Double weight_min = 288.9;
+        Double weight_max = 350.0;
+
+        // Act & Assert
+        mockMvc.perform(get("/vehicles/weight")
+                        .param("min", String.valueOf(weight_min))
+                        .param("max", String.valueOf(weight_max)))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.message").value("No se encontraron vehículos en ese rango de peso."));
+    }
+}
