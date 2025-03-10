@@ -4,41 +4,47 @@
 
 # Project be_java_hisp_w29_g07
 
-Welcome to the **be_java_hisp_w29_g07** project. This repository contains sprint one of bootcamp java wave29.
+Welcome to the **be_java_hisp_w29_g07** project. This repository contains sprint two of bootcamp java wave 29.
 
 ---
 
 ## 📚 Table of Contents
 
-- [Completed Sprints](#completed-sprints)
-- [Seeds](#seeds)
-- [Postman Collection](#postman-collection)
-- [Functional Requirements](#functional-requirements)
-- [Swagger](#swagger)
+- [Completed Sprints](#-completed-sprints)
+- [Test Coverage](#-test-coverage)
+- [Seeds](#-seeds)
+- [Postman Collection](#-postman-collection)
+- [Functional Requirements](#-functional-requirements)
+- [Swagger](#-swagger)
 - [Class Diagram](#-class-diagram)
 
 ---
 
-## 📋Completed Sprints
+## 📋 Completed Sprints
 - [x] **Sprint 1**
-
+- [x] **Sprint 2**
 
 ---
 
-## 🌱Seeds
+## 🧪 Test Coverage
+![img.png](img.png)
+
+---
+
+## 🌱 Seeds
 
 - **[Users](./src/main/resources/users.json)**  
 - **[Posts](./src/main/resources/posts.json)**  
 
 ---
 
-## 🛠Postman Collection
+## 🛠 Postman Collection
 - **[Postman Collection](./src/main/resources/postman_collection.json)**  
 
 
 ---
 
-## 📊Swagger
+## 📊 Swagger
 
 You can access the API documentation through the following URL:
 
@@ -46,9 +52,10 @@ You can access the API documentation through the following URL:
 
 ---
 
-## 📝Functional Requirements
+## 📝 Functional Requirements
 
 - **[Functional Requirements Document](./src/main/resources/functional_requirements.docx)**
+- **[Testing Requirements Document](./src/main/resources/testing_requirements.docx)**
 
 ---
 

@@ -53,7 +53,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 public class PostControllerIntegrationTest {
-    
+
     @Autowired
     private IPostRepository postRepository;
 
@@ -73,7 +73,7 @@ public class PostControllerIntegrationTest {
     public void setUp() {
 
         followRepository.deleteAll();
-        postRepository.deleteAll();     
+        postRepository.deleteAll();
     }
 
     /**
@@ -102,11 +102,12 @@ public class PostControllerIntegrationTest {
 
         String jsonRes = res.getResponse().getContentAsString();
 
-        PromoPostDTOOut promoPostDTOOutRes = UtilObjectMapper.getObjectMapper().readValue(jsonRes, new TypeReference<PromoPostDTOOut>() {});
+        PromoPostDTOOut promoPostDTOOutRes = UtilObjectMapper.getObjectMapper().readValue(jsonRes, new TypeReference<PromoPostDTOOut>() {
+        });
         promoPostDTOOutExpected.setPost_id(promoPostDTOOutRes.getPost_id());
         assertEquals(promoPostDTOOutExpected, promoPostDTOOutRes);
     }
-        
+
     /**
      * Integration test to verify that posts from followed users are returned when no order parameter is provided.
      * <p>
@@ -158,7 +159,7 @@ public class PostControllerIntegrationTest {
      * </p>
      */
     @Test
-        void givenExistingUnorderedPosts_whenFindListUsersFollowedPosts_thenReturnPostsOrderedByDateDesc() throws Exception {
+    void givenExistingUnorderedPosts_whenFindListUsersFollowedPosts_thenReturnPostsOrderedByDateDesc() throws Exception {
         User userFollower = UtilUserFactory.getUser("user1", 1);
         User followedSeller1 = UtilUserFactory.getSeller(2);
         User followedSeller2 = UtilUserFactory.getSeller(4);
@@ -260,7 +261,7 @@ public class PostControllerIntegrationTest {
      */
     @Test
     public void givenExistingPostId_WhenFindPostById_ThenReturnSuccess() throws Exception {
-        Post post = UtilPostFactory.getPostByUser(1,1);
+        Post post = UtilPostFactory.getPostByUser(1, 1);
         postRepository.savePost(post);
 
         String responseContent = mockMvc.perform(get("/products/findPost/{id}", post.getId()))
@@ -386,7 +387,8 @@ public class PostControllerIntegrationTest {
 
         String jsonRes = res.getResponse().getContentAsString();
 
-        ListPostDTO listPostDTORes = UtilObjectMapper.getObjectMapper().readValue(jsonRes, new TypeReference<ListPostDTO>() {});
+        ListPostDTO listPostDTORes = UtilObjectMapper.getObjectMapper().readValue(jsonRes, new TypeReference<ListPostDTO>() {
+        });
         assertNotNull(listPostDTORes);
         assertEquals(postsExpected.size(), listPostDTORes.getPosts().size());
         List<PostDTO> postsDTOExpected = postsExpected.stream()
@@ -420,4 +422,74 @@ public class PostControllerIntegrationTest {
                 .andExpect(jsonPath("$[2].post_id").value(posts.get(2).getId()));
     }
 
+    /**
+     * Integration Test to verify that when a valid post is added,
+     * the controller returns a ResponseEntity containing the expected PostSaveDTO with HTTP status OK.
+     * <p>
+     * This test simulates the creation of a new post
+     * Additionally, it checks that the post has been correctly saved in the repository by
+     * </p>
+     */
+    @Test
+    void givenValidPost_whenAddPost_thenReturnPostSaveDTO() throws Exception {
+        Post post = UtilPostFactory.getPost();
+        String postJson = UtilObjectMapper.getObjectMapper().writeValueAsString(post);
+        postRepository.savePost(post);
+        mockMvc.perform(post("/products/post")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(postJson))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.message").value(Messages.POST_CREATED_SUCCESSFULLY));
+
+        Post savedPost = postRepository.findPostById(post.getId()).orElse(null);
+        assertNotNull(savedPost);
+        assertEquals(post.getId(), savedPost.getId());
+        assertEquals(post.getUserId(), savedPost.getUserId());
+    }
+
+    /**
+     * Integration Test to verify that when an invalid post with promotion is attempted to be added,
+     * the controller returns a 400 Bad Request status and an appropriate error message.
+     * <p>
+     * This test simulates the creation of a post with the promotion flag set to true,
+     * which is considered invalid according to the business rules. It populates a Post object
+     * </p>
+     */
+    @Test
+    void givenInvalidPostWithPromo_whenAddPost_thenReturnPostSaveDTO() throws Exception {
+        Post post = UtilPostFactory.getPost();
+        post.setHasPromo(true);
+        String postJson = UtilObjectMapper.getObjectMapper().writeValueAsString(post);
+        postRepository.savePost(post);
+        mockMvc.perform(post("/products/post")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(postJson))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.message").value(Messages.POST_CANNOT_HAVE_PROMOTION));
+    }
+
+
+    /**
+     * Integration Test to verify that when an invalid post with promotion is attempted to be added,
+     * the controller returns a 400 Bad Request status and an appropriate error message.
+     * <p>
+     * This test simulates the creation of a post with the Discount
+     * which is considered invalid according to the business rules. It populates a Post object
+     * </p>
+     */
+    @Test
+    void givenInvalidPostWithDiscount_whenAddPost_thenReturnPostSaveDTO() throws Exception {
+        Post post = UtilPostFactory.getPost();
+        post.setDiscount(20.0);
+        String postJson = UtilObjectMapper.getObjectMapper().writeValueAsString(post);
+        postRepository.savePost(post);
+        mockMvc.perform(post("/products/post")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(postJson))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.message").value(Messages.POST_CANNOT_HAVE_DISCOUNT));
+    }
 }

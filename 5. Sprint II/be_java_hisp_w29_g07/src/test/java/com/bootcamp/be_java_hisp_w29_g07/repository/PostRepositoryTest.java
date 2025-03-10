@@ -4,6 +4,7 @@ import com.bootcamp.be_java_hisp_w29_g07.entity.Post;
 import com.bootcamp.be_java_hisp_w29_g07.util.UtilPostFactory;
 import com.bootcamp.be_java_hisp_w29_g07.util.UtilUserFactory;
 import org.junit.jupiter.api.Assertions;
+
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -31,7 +32,6 @@ class PostRepositoryTest {
      * Set up the test environment before each test method is run.
      * Initializes the {@link IPostRepository} with its concrete implementation {@link PostRepositoryImpl}.
      * This ensures that a fresh instance is created for each test.
-     *
      */
     @BeforeEach
     public void setUp() throws IOException {
@@ -48,7 +48,7 @@ class PostRepositoryTest {
      * </p>
      */
     @Test
-     void givenExistingUserId_whenFindPromoPost_thenReturnPromoPostCount() {
+    void givenExistingUserId_whenFindPromoPost_thenReturnPromoPostCount() {
         Integer userId = 4;
         Long expected = 1L;
         Post postA = UtilPostFactory.getPostByUser(userId, 1);
@@ -79,18 +79,6 @@ class PostRepositoryTest {
         Long response = postRepository.findPromoPostCountByUserId(userId);
 
         assertEquals(expected, response);
-    }
-
-    @Test
-    void savePost() {
-    }
-
-    @Test
-    void findAll() {
-    }
-
-    @Test
-    void findNextId() {
     }
 
     /**
@@ -191,7 +179,7 @@ class PostRepositoryTest {
      * Unit Test to verify that when an existing post ID is provided,
      * the repository returns an Optional containing the post with the matching ID.
      */
-     void givenExistingUserId_WhenFindPostById_ThenReturnOptional() {
+    void givenExistingUserId_WhenFindPostById_ThenReturnOptional() {
         Integer postId = 1;
         Post post = UtilPostFactory.getPostByUser(1, 1);
         postRepository.savePost(post);
@@ -246,6 +234,25 @@ class PostRepositoryTest {
         assertEquals(1, result.getFirst().getUserId());
         assertEquals("Laptop", result.getFirst().getProduct().getName());
         assertEquals("cars", result.get(1).getProduct().getName());
+    }
+
+
+    /**
+     * Unit Test to verify that when a new post is added to the repository,
+     * the correct post instance with assigned ID is returned.
+     * <p>
+     * This test creates a new post using a utility factory,
+     * saves it to the repository, and verifies that the returned post
+     * contains the expected attributes, including the unique generated ID.
+     * </p>
+     */
+    @Test
+    void givenExistentPost_whenSavePost_thenReturnNewPost() {
+        Post expectedPost = UtilPostFactory.getPost();
+
+        Post responsePost = postRepository.savePost(expectedPost);
+        expectedPost.setId(responsePost.getId());
+        assertEquals(expectedPost, responsePost);
     }
 
 }

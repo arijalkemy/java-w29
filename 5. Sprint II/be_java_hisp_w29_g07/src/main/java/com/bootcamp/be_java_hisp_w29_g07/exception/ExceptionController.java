@@ -35,18 +35,6 @@ public class ExceptionController {
     }
 
     /**
-     * Handles ConflictException and returns a 409 CONFLICT response.
-     *
-     * @param e the exception thrown when a conflict occurs
-     * @return the response entity with error details and HTTP status 409
-     */
-    @ExceptionHandler(ConflictException.class)
-    public ResponseEntity<ExceptionDTO> handleConflictException(ConflictException e) {
-        ExceptionDTO exceptionDTO = new ExceptionDTO(e.getMessage());
-        return new ResponseEntity<>(exceptionDTO, HttpStatus.CONFLICT);
-    }
-
-    /**
      * Handles BadRequestException and returns a 400 BAD REQUEST response.
      *
      * @param e the exception thrown when a bad request is made

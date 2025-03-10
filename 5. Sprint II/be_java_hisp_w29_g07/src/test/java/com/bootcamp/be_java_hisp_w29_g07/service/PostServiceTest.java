@@ -1,6 +1,8 @@
 package com.bootcamp.be_java_hisp_w29_g07.service;
 
 import com.bootcamp.be_java_hisp_w29_g07.Enum.UserType;
+import com.bootcamp.be_java_hisp_w29_g07.constants.Messages;
+import com.bootcamp.be_java_hisp_w29_g07.dto.response.PostSaveDTO;
 import com.bootcamp.be_java_hisp_w29_g07.dto.response.PromoCountPostDTO;
 import com.bootcamp.be_java_hisp_w29_g07.dto.PostDTO;
 import com.bootcamp.be_java_hisp_w29_g07.dto.response.ListPostDTO;
@@ -248,7 +250,7 @@ class PostServiceTest {
     @Test
     void givenExistingPostId_WhenFindPostById_ThenReturnPostDTO() {
         Integer postId = 1;
-        Post post = UtilPostFactory.getPostByUser(1,1);
+        Post post = UtilPostFactory.getPostByUser(1, 1);
         when(postRepository.findPostById(postId)).thenReturn(Optional.of(post));
 
         PostDTO postDTO = postService.findPostById(postId);
@@ -566,4 +568,163 @@ class PostServiceTest {
 
         verify(postRepository).findAll();
     }
+
+    /**
+     * Unit Test to verify that when a valid post is added,
+     * the service returns a PostSaveDTO indicating a successful creation.
+     * <p>
+     * This test simulates the addition of a new post by creating a valid PostDTO
+     * and then mocks the responses from the userService and postRepository.
+     * savePost methods were called at least once.
+     * </p>
+     */
+    @Test
+    void givenValidPost_whenAddPost_thenReturnPostSaveDTO() {
+
+        User user1 = UtilUserFactory.getSeller("Juan", 1);
+
+        PostDTO postDTO = UtilPostFactory.getPostDTO(1);
+
+        Post expectedPost = UtilObjectMapper.getObjectMapper().convertValue(postDTO, Post.class);
+        expectedPost.setId(1);
+
+        when(userService.findUserById(user1.getId())).thenReturn(user1);
+        when(postRepository.savePost(expectedPost)).thenReturn(expectedPost);
+
+        PostSaveDTO actualPostSaveDto = postService.addPost(postDTO);
+
+        PostSaveDTO expectedPostSaveDTO = new PostSaveDTO(Messages.POST_CREATED_SUCCESSFULLY,
+                UtilObjectMapper.getObjectMapper().convertValue(expectedPost, PostDTO.class));
+
+        verify(userService).findUserById(user1.getId());
+        verify(postRepository).savePost(expectedPost);
+
+        assertEquals(expectedPostSaveDTO.getMessage(), actualPostSaveDto.getMessage());
+        assertEquals(expectedPostSaveDTO.getPost(), actualPostSaveDto.getPost());
+    }
+
+    /**
+     * Unit Test to verify that when an attempt is made to add a post
+     * with a non-seller user, a BadRequestException is thrown.
+     * <p>
+     * This test simulates a scenario where a user is created that does not have
+     * for this user, it checks that a BadRequestException is thrown with the
+     * called to retrieve the user and that the postRepository's savePost method
+     * was never called.
+     * </p>
+     */
+    @Test
+    void givenNoSellerUser_whenAddPost_thenReturnPostSaveDTO() {
+        User userNoSeller = UtilUserFactory.getUser("juan", 999);
+
+        PostDTO postDTO = UtilPostFactory.getPostDTO(userNoSeller.getId());
+
+        when(userService.findUserById(userNoSeller.getId())).thenReturn(userNoSeller);
+
+        Exception exception = assertThrows(BadRequestException.class, () -> postService.addPost(postDTO));
+        assertEquals(Messages.USER_NOT_SELLER_MSG, exception.getMessage());
+        verify(userService).findUserById(userNoSeller.getId());
+        verify(postRepository, never()).savePost(any());
+    }
+
+    /**
+     * Unit Test to verify that when a post with a promotion is attempted to be added,
+     * a BadRequestException is thrown.
+     * <p>
+     * This test simulates a scenario where a seller user is created and a PostDTO
+     * is populated with the has_promo flag set to true. It mocks the response from
+     * PostDTO, it verifies that a BadRequestException is thrown with the expected
+     * </p>
+     */
+    @Test
+    void givenPostWithPromo_whenAddPost_thenReturnPostSaveDTO() {
+        User userSeller = UtilUserFactory.getSeller(1);
+        PostDTO postDTO = UtilPostFactory.getPostDTO(userSeller.getId());
+        postDTO.setHas_promo(true);
+
+        when(userService.findUserById(userSeller.getId())).thenReturn(userSeller);
+
+        Exception exception = assertThrows(BadRequestException.class, () -> {
+            postService.addPost(postDTO);
+        });
+        assertEquals(Messages.POST_CANNOT_HAVE_PROMOTION, exception.getMessage());
+        verify(postRepository, never()).savePost(any());
+    }
+
+    /**
+     * Unit Test to verify that when a post with a null promotion flag is attempted to be added,
+     * a BadRequestException is thrown.
+     * <p>
+     * This test simulates the addition of a new post where the has_promo field is set to null.
+     * It mocks the response from userService to ensure a valid seller user is returned.
+     * BadRequestException is thrown with the expected error message. Additionally,
+     * it verifies that the postRepository's savePost method was never invoked.
+     * </p>
+     */
+    @Test
+    void givenPostWithNullPromo_whenAddPost_thenReturnPostSaveDTO() {
+        User userSeller = UtilUserFactory.getSeller(1);
+        PostDTO postDTO = UtilPostFactory.getPostDTO(userSeller.getId());
+        postDTO.setHas_promo(null);
+
+        when(userService.findUserById(userSeller.getId())).thenReturn(userSeller);
+
+        Exception exception = assertThrows(BadRequestException.class, () -> {
+            postService.addPost(postDTO);
+        });
+        assertEquals(Messages.POST_CANNOT_HAVE_PROMOTION, exception.getMessage());
+        verify(postRepository, never()).savePost(any());
+    }
+
+    /**
+     * Unit Test to verify that when a post with a discount is attempted to be added,
+     * a BadRequestException is thrown.
+     * <p>
+     * This test simulates a scenario where a seller user is created and a PostDTO is populated
+     * with a discount value. It mocks the response from userService to return the seller.
+     * BadRequestException is thrown with the expected error message. It also confirms that
+     * the postRepository's savePost method was never called.
+     * </p>
+     */
+    @Test
+    void givenPostWithDiscount_whenAddPost_thenReturnPostSaveDTO() {
+        User userSeller = UtilUserFactory.getSeller(1);
+        PostDTO postDTO = UtilPostFactory.getPostDTO(userSeller.getId());
+        postDTO.setDiscount(39.0);
+
+        when(userService.findUserById(userSeller.getId())).thenReturn(userSeller);
+
+        Exception exception = assertThrows(BadRequestException.class, () -> {
+            postService.addPost(postDTO);
+        });
+        assertEquals(Messages.POST_CANNOT_HAVE_DISCOUNT, exception.getMessage());
+        verify(postRepository, never()).savePost(any());
+    }
+
+    /**
+     * Unit Test to verify that when a post with a null discount is attempted to be added,
+     * a BadRequestException is thrown.
+     * <p>
+     * This test simulates a scenario where a valid seller user is created and a PostDTO
+     * is set up with a null discount value. It mocks the response from userService
+     * it checks that a BadRequestException is thrown with the expected error message.
+     * Additionally, it verifies that the postRepository's savePost method was never invoked.
+     * </p>
+     */
+    @Test
+    void givenPostWithNullDiscount_whenAddPost_thenReturnPostSaveDTO() {
+        User userSeller = UtilUserFactory.getSeller(1);
+        PostDTO postDTO = UtilPostFactory.getPostDTO(userSeller.getId());
+        postDTO.setDiscount(null);
+
+        when(userService.findUserById(userSeller.getId())).thenReturn(userSeller);
+
+        Exception exception = assertThrows(BadRequestException.class, () -> {
+            postService.addPost(postDTO);
+        });
+        assertEquals(Messages.POST_CANNOT_HAVE_DISCOUNT, exception.getMessage());
+        verify(postRepository, never()).savePost(any());
+    }
+
+
 }

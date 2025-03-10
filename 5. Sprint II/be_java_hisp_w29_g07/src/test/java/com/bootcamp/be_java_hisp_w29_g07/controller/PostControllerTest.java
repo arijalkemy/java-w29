@@ -1,9 +1,11 @@
 package com.bootcamp.be_java_hisp_w29_g07.controller;
 
 import com.bootcamp.be_java_hisp_w29_g07.Enum.UserType;
+import com.bootcamp.be_java_hisp_w29_g07.constants.Messages;
 import com.bootcamp.be_java_hisp_w29_g07.dto.PostDTO;
 import com.bootcamp.be_java_hisp_w29_g07.dto.request.PromoPostDTOIn;
 import com.bootcamp.be_java_hisp_w29_g07.dto.response.ListPostDTO;
+import com.bootcamp.be_java_hisp_w29_g07.dto.response.PostSaveDTO;
 import com.bootcamp.be_java_hisp_w29_g07.dto.response.PromoCountPostDTO;
 import com.bootcamp.be_java_hisp_w29_g07.dto.response.PromoPostDTOOut;
 import com.bootcamp.be_java_hisp_w29_g07.entity.Post;
@@ -101,7 +103,6 @@ public class PostControllerTest {
      * It ensures that when the promotional post count is fetched, the correct data is returned
      * with a `200 OK` status and the expected promotional post count in the response body.
      * </p>
-     *
      */
     @Test
     void givenExistingUserId_whenFindPromoPost_thenReturnSuccessPromoPostCount() {
@@ -175,7 +176,7 @@ public class PostControllerTest {
      * the controller returns a ResponseEntity containing the expected PostDTO with HTTP status OK.
      */
     @Test
-    public void givenExistingPostId_WhenFindPostById_ThenReturnSuccessResponseEntity(){
+    public void givenExistingPostId_WhenFindPostById_ThenReturnSuccessResponseEntity() {
         Integer postId = 1;
         PostDTO postDTO = UtilPostFactory.getPostDTO(1);
         when(postService.findPostById(postId)).thenReturn(postDTO);
@@ -193,7 +194,7 @@ public class PostControllerTest {
      * the controller returns a ResponseEntity containing the expected ListPostDTO with HTTP status OK.
      */
     @Test
-    public void givenExistingPosts_whenFindAllPostsBySellerId_thenReturnSuccessResponseEntity(){
+    public void givenExistingPosts_whenFindAllPostsBySellerId_thenReturnSuccessResponseEntity() {
         Integer userIdSeller = 2;
         List<PostDTO> postDTOList = UtilPostFactory.getPostDTOList(userIdSeller);
         ListPostDTO listPostDTO = new ListPostDTO(userIdSeller, postDTOList);
@@ -218,8 +219,7 @@ public class PostControllerTest {
      * </p>
      */
     @Test
-    public void givenExistingPost_whenGetAll_thenReturnListOfPostDTOs()
-    {
+    public void givenExistingPost_whenGetAll_thenReturnListOfPostDTOs() {
         List<PostDTO> mockResponse = new ArrayList<>();
         PostDTO post1 = UtilPostFactory.getPostDto();
         PostDTO post2 = UtilPostFactory.getPostDto();
@@ -236,6 +236,33 @@ public class PostControllerTest {
 
         assertNotNull(response.getBody());
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(mockResponse,response.getBody());
+        assertEquals(mockResponse, response.getBody());
+    }
+
+    /**
+     * Unit Test to verify that when a valid post is added,
+     * the controller returns a ResponseEntity containing the expected PostSaveDTO with HTTP status OK.
+     * <p>
+     * This test simulates the addition of a new post by creating a PostDTO object,
+     * body is not null, that it contains the expected data, and that the HTTP status is 200 OK.
+     * Additionally, it checks that the postService's addPost method is invoked at least once.
+     * </p>
+     */
+    @Test
+    public void givenValidPost_whenAddPost_thenReturnPostSaveDTO() {
+        User user = UtilUserFactory.getUser("juan", 1);
+        PostDTO postDTO = UtilPostFactory.getPostDTO(user.getId());
+        PostSaveDTO expectedSaveDTO = new PostSaveDTO(Messages.POST_CREATED_SUCCESSFULLY, postDTO);
+
+        when(postService.addPost(postDTO)).thenReturn(expectedSaveDTO);
+
+        ResponseEntity<PostSaveDTO> responseEntity = postController.addPost(postDTO);
+
+        assertNotNull(responseEntity.getBody());
+        assertEquals(expectedSaveDTO, responseEntity.getBody());
+        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+
+        verify(postService, atLeastOnce()).addPost(postDTO);
+
     }
 }
