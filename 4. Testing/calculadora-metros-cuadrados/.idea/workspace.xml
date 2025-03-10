@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c1decc56-b7fc-4376-a06f-16e91518e457" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../ObtenerDiploma con Moks/src/main/java/com/meli/obtenerdiploma/util/Datos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ObtenerDiploma con Moks/src/test/java/com/meli/obtenerdiploma/service/ObtenerDiplomaServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ObtenerDiploma con Moks/src/test/java/com/meli/obtenerdiploma/service/StudentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1. Modulo Java/Modulo correspondiente a la practica de Java.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;0cirosanchez&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/arijalkemy/java-w29.git&quot;,
+    &quot;accountId&quot;: &quot;46f97380-dbc8-47c2-bd29-979a1af503f2&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="1nWGoHdoIAz5GxjF9lQSTCz5o00" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;sanchez__ciro&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/cisanchez/Documents/GitHub/java-w29/4. Testing/calculadora-metros-cuadrados&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.mercadolibre.calculadorametroscuadrados.dto" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CalculadoraMetrosCuadradosApplicationTests">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculadoraMetrosCuadradosApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="calculadora-metros-cuadrados" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mercadolibre.calculadorametroscuadrados.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mercadolibre.calculadorametroscuadrados" />
+      <option name="MAIN_CLASS_NAME" value="com.mercadolibre.calculadorametroscuadrados.CalculadoraMetrosCuadradosApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculadoraMetrosCuadradosApplicationTests.calculateHousePrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="calculadora-metros-cuadrados" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mercadolibre.calculadorametroscuadrados.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mercadolibre.calculadorametroscuadrados" />
+      <option name="MAIN_CLASS_NAME" value="com.mercadolibre.calculadorametroscuadrados.CalculadoraMetrosCuadradosApplicationTests" />
+      <option name="METHOD_NAME" value="calculateHousePrice" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculadoraMetrosCuadradosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="calculadora-metros-cuadrados" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mercadolibre.calculadorametroscuadrados.CalculadoraMetrosCuadradosApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CalculadoraMetrosCuadradosApplicationTests" />
+        <item itemvalue="JUnit.CalculadoraMetrosCuadradosApplicationTests.calculateHousePrice" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.117" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.117" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1decc56-b7fc-4376-a06f-16e91518e457" name="Default Changelist" comment="" />
+      <created>1611498611387</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611498611387</updated>
+      <workItem from="1611498612591" duration="3898000" />
+      <workItem from="1738331889190" duration="1761000" />
+      <workItem from="1738346149413" duration="687000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
