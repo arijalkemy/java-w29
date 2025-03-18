@@ -1,0 +1,10 @@
+[
+  {
+    "nombre": "Ensalada de Repollo y Remolacha",
+    "ingredientes": ["Repollo", "Remolacha"]
+  },
+  {
+    "nombre": "Pizza de Queso Mozzarella y Tomate",
+    "ingredientes": ["Queso mozzarella", "Salsa de tomate en conserva"]
+  }
+]
