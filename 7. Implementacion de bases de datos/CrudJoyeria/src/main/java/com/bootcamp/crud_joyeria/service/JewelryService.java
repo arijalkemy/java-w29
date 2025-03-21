@@ -7,6 +7,7 @@ import com.bootcamp.crud_joyeria.model.Jewel;
 import com.bootcamp.crud_joyeria.repository.JewelryRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +21,9 @@ public class JewelryService implements IJewelryService {
 
     @Override
     public String createJewel(CreateJewelRequestBody request) {
-        Jewel jewel = objectMapper.convertValue(request, Jewel.class);
+//        Jewel jewel = objectMapper.convertValue(request, Jewel.class);
+        ModelMapper modelMapper = new ModelMapper();
+        Jewel jewel = modelMapper.map(request, Jewel.class);
         jewelryRepository.save(jewel);
         return String.format("Jewel %s created with id %d", jewel.getName(), jewel.getId());
     }
