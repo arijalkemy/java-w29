@@ -1,0 +1,14 @@
+/app/src/test/java/com/mercadolibre/final_project_bootcamp_esp_32/config/ControllerExceptionHandlerTest.java
+/app/src/test/java/com/mercadolibre/final_project_bootcamp_esp_32/config/JwtFilterTest.java
+/app/src/test/java/com/mercadolibre/final_project_bootcamp_esp_32/integration/ControllerExceptionHandlerTest.java
+/app/src/test/java/com/mercadolibre/final_project_bootcamp_esp_32/integration/ControllerTest.java
+/app/src/test/java/com/mercadolibre/final_project_bootcamp_esp_32/integration/GenerateDocTest.java
+/app/src/test/java/com/mercadolibre/final_project_bootcamp_esp_32/integration/IntegrationTest.java
+/app/src/test/java/com/mercadolibre/final_project_bootcamp_esp_32/integration/PingControllerTest.java
+/app/src/test/java/com/mercadolibre/final_project_bootcamp_esp_32/unit/ScopeUtilsTest.java
+/app/src/test/java/com/mercadolibre/final_project_bootcamp_esp_32/unit/beans/RandomSampleBeanTest.java
+/app/src/test/java/com/mercadolibre/final_project_bootcamp_esp_32/unit/controller/AuthControllerTest.java
+/app/src/test/java/com/mercadolibre/final_project_bootcamp_esp_32/unit/exceptions/InternalServerErrorExceptionTest.java
+/app/src/test/java/com/mercadolibre/final_project_bootcamp_esp_32/unit/service/AuthServiceTest.java
+/app/src/test/java/com/mercadolibre/final_project_bootcamp_esp_32/unit/service/PurchaseOrderServiceTest.java
+/app/src/test/java/com/mercadolibre/final_project_bootcamp_esp_32/unit/util/JwtUtilTest.java

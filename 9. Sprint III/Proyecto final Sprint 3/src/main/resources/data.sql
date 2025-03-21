@@ -1,0 +1,66 @@
+-- Insertar datos en BUYER
+INSERT INTO BUYER (EMAIL,PASSWORD)
+VALUES
+    ('juan@prueba.com','1234'),
+    ('pepe@pagamas.com','123');
+
+-- Insertar datos en SELLER
+INSERT INTO SELLER (ID)
+VALUES
+    (1),
+    (2);
+
+-- Insertar datos en INTERNAL_USER (Asegúrate de que los IDs sean 1 y 2)
+INSERT INTO INTERNAL_USER (EMAIL,PASSWORD)
+VALUES
+    ('juan2@prueba.com','1234'),
+    ('pepe@argento.com','123');
+
+-- Insertar datos en WAREHOUSE (Ahora con INTERNAL_USER_ID correctos)
+INSERT INTO WAREHOUSE (INTERNAL_USER_ID)
+VALUES
+    (1),  -- Asegúrate de que INTERNAL_USER_ID coincida con lo insertado en INTERNAL_USER
+    (2);
+
+-- Insertar datos en SECTION
+INSERT INTO SECTION (SECTION_TYPE, WAREHOUSE_CODE)
+VALUES
+    ('FS', 1),
+    ('FF', 1),
+    ('FS', 2),
+    ('FF', 2);
+
+-- Insertar datos en PRODUCT
+INSERT INTO PRODUCT ( NAME, PRICE, PRODUCT_TYPE, SELLER_ID)
+VALUES
+    ( 'Product A', 10.50, 'FS', 1),
+    ( 'Product B', 20.75, 'FF', 2);
+
+-- Insertar datos en PURCHASE_ORDER
+INSERT INTO PURCHASE_ORDER (DATE, BUYER_ID, STATUS)
+VALUES
+    ('2025-03-01', 1, 'CART'),
+    ( '2025-03-05', 2, 'CART');
+
+-- Insertar datos en PRODUCT_BATCH
+INSERT INTO PRODUCT_BATCH (BATCH_NUMBER, CURRENT_QUANTITY, CURRENT_TEMPERATURE, DUE_DATE, INITIAL_QUANTITY, MANUFACTURING_DATE, MANUFACTURING_TIME, MINIMUM_TEMPERATURE, PRODUCT_ID, SECTION_CODE)
+VALUES
+    ( 101, 500, 23.5, '2025-04-15', 1000, '2025-01-10', '2025-01-10 10:00:00', 20.0, 1,1),
+    ( 102, 300, 22.0, '2026-07-10', 600, '2025-02-20', '2025-02-20 14:30:00', 18.5, 2,2),
+    ( 104, 300, 22.0, '2026-04-10', 600, '2025-02-20', '2025-02-20 14:30:00', 18.5, 2,4),
+    ( 103, 300, 22.0, '2026-07-10', 600, '2025-02-20', '2025-02-20 14:30:00', 18.5, 2,4),
+    ( 106, 300, 22.0, '2026-07-10', 600, '2025-02-20', '2025-02-20 14:30:00', 18.5, 2,2);
+
+
+-- Insertar datos en INBOUND_ORDER
+INSERT INTO INBOUND_ORDER (ORDER_NUMBER, ORDER_DATE, INTERNAL_USER_ID, SECTION_CODE)
+VALUES
+    (1, '2025-03-01', 1, 1),
+    (2, '2025-03-02', 2, 2);
+
+-- Insertar datos en PRODUCT_PURCHASE_ORDER
+INSERT INTO PRODUCT_PURCHASE_ORDER (QUANTITY, PRODUCT_ID, PURCHASE_ORDER_ID)
+VALUES
+    ( 100, 1, 1),
+    ( 100, 1, 2),
+    ( 150, 2, 2);

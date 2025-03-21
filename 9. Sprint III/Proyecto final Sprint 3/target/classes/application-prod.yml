@@ -1,0 +1,30 @@
+# "prod" suffix properties file. Scopes name samples: "prod", "web-prod", "api-prod", etc.
+# Overrides application.yml default properties
+spring:
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+    defer-datasource-initialization: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${SECRET_DB_MYSQL_DESAENV10_FULFILlMENT_FULFILlMENT_ENDPOINT}/fullfilment?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8
+    username: ${SECRET_DB_MYSQL_DESAENV10_FULFILlMENT_FULFILlMENT_WPROD_USER}
+    password: ${SECRET_DB_MYSQL_DESAENV10_FULFILlMENT_FULFILlMENT_WPROD}
+
+application:
+  security:
+    jwt:
+      secret-key: ${SECRET_KEY}
+
+logging.level.org.hibernate.SQL: DEBUG
+
+
+
+
+
+
+
+
