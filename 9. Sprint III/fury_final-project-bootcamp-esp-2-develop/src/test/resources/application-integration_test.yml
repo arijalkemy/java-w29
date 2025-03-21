@@ -1,0 +1,29 @@
+# "test" suffix properties file. Scopes name samples: "test", "web-test", "api-test", etc.
+# Overrides application.yml default properties
+
+# Properties file for local/dev environment
+# You need to configure the environment variable in your IDE, more info in README.md
+# Overrides application.yml default properties
+
+spring:
+  aop.auto: false
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE
+test:
+  auth:
+    supervisor-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiU1VQRVJWSVNPUiIsIm5hbWUiOiJKdWFuIFBlcmV6IiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlNVUEVSVklTT1IifV0sInN1YiI6InN1cGVydmlzb3Jfbm9ydGUiLCJpYXQiOjE3NDI0OTcyMjcsImV4cCI6MTc0NTEyNTIyN30.BnQRHoImQ5zZsO04VbZTmEcAjSsduJGnfVJ_ZamvJsE
+    buyer-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQlVZRVIiLCJuYW1lIjoiSnVhbiBQZXJleiIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJCVVlFUiJ9XSwic3ViIjoiYnV5ZXJfanVhbiIsImlhdCI6MTc0MjQ5NjgzOCwiZXhwIjoxNzQ1MTI0ODM4fQ.-3vroouv1ZSZ3UaV9VI28_EsOnJHxdRer4oUV52WNNA
+      

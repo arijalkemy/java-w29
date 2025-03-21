@@ -1,0 +1,1 @@
+FROM hub.furycloud.io/mercadolibre/distroless-java:17-mini

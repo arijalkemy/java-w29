@@ -1,0 +1,26 @@
+# Properties file for local/dev environment
+# You need to configure the environment variable in your IDE, more info in README.md
+# Overrides application.yml default properties
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: ${SECRET_DB_MYSQL_DESAENV10_FINALPROJECT_FINALPROJECT_WPROD}
+    password: ${SECRET_DB_MYSQL_DESAENV10_FINALPROJECT_FINALPROJECT_WPROD_USER}
+    url: jdbc:mysql://proxysql.master.meliseginf.com:6612/finalProject?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&characterEncoding=UTF-8
+
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+    defer-datasource-initialization: true # Asegura que las tablas se creen antes de ejecutar data.sql
+    hibernate:
+      ddl-auto: none
+
+  sql:
+    init:
+      mode: never # Siempre ejecutar data.sql después de crear el esquema
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE
