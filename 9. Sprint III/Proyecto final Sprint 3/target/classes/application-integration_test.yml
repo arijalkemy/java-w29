@@ -1,0 +1,21 @@
+# Properties file for integration tests
+# Overrides application.yml default properties
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: admin
+    password: admin
+  h2:
+    console:
+      enabled: true
+application:
+  security:
+    jwt:
+      #secret-key: ${SECRET_KEY}
+      secret-key: EstaEsUnaClaveSuperSecretaParaFirmarElJWT123

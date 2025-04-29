@@ -1,0 +1,31 @@
+{
+  "title": "Readable Project Name (required)",
+  "motivation": "A short statement explaining why this project is Inner Source and why contributors should care (required)",
+  "contributions": [
+    "List",
+    "Of",
+    "Requested",
+    "Contribtions",
+    "Like",
+    "Bugfixes",
+    "Features",
+    "Help Wanted",
+    "Documentation",
+    "..."
+  ],
+  "skills": [
+    "Skills",
+    "Required",
+    "To",
+    "Contribute",
+    "Like",
+    "Go",
+    "Java",
+    "Spring",
+    "WebFlux",
+    "..."
+  ],
+  "logo": "path/to/your/project-logo.png (optional)",
+  "docs": "http://url/to/project/documentation (optional)",
+  "language": "The project's language. Example: JavaScript (optional)"
+}
